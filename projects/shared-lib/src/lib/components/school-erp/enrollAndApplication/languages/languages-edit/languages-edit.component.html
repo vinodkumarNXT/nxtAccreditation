@@ -1,0 +1,48 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="acc-EditForm-container">
+        <form (ngSubmit)="isEdit ? updateForm () : submitForm()" class="acc-form-container" [formGroup]="form">
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Code"}}</mat-label>
+                        <input matInput formControlName="code" required />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Name"}}</mat-label>
+                        <input matInput formControlName="name" required />
+                    </mat-form-field>
+                </div>
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"LTR"}}</mat-label>
+                        <input matInput formControlName="ltr" required />
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+                <div class="formSubmit form-group" fxFlex="1 1 100%">
+                    <button mat-flat-button color="primary" type="submit">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

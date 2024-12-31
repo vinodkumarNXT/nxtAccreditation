@@ -1,0 +1,39 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">Add</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+
+    <div class="acc-EditForm-container">
+
+        <form  class="acc-form-container" >
+            <div class="row" fxLayout="row" fxLayout.xs="column">
+
+                <div fxFlex="50" fxFlex.md="100" class="form-group">
+
+
+                    <div fxFlex="50" fxFlex.md="100" class="form-group">
+                        <mat-form-field>
+                            <mat-label>Role Name</mat-label>
+                            <input matInput  formControlName="roleName"  required />
+                        </mat-form-field>
+                    </div>
+
+                    
+                </div>
+
+                <div class="acc-form-submit">
+                    <button mat-flat-button color="primary" type="submit">Submit</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+</mat-dialog-content>

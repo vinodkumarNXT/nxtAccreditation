@@ -1,0 +1,180 @@
+[
+    {
+      "label": "Curricular Aspects",
+      "icon": "build",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Design and Development",
+          "icon": "design_services",
+          "route": "",
+          "subMenu": [
+            { "label": "Curricular Developed", "icon": "school", "route": "/curricular-developed" },
+            { "label": "Percentage of Programmes", "icon": "percent", "route": "/percentage-programmes" },
+            { "label": "Average Percentage", "icon": "percent", "route": "/average-percentage" }
+          ]
+        },
+        {
+          "label": "Academic Flexibility",
+          "icon": "trending_up",
+          "route": "",
+          "subMenu": [
+            { "label": "Percentage of New Courses", "icon": "trending_up", "route": "/percentage-new-courses" },
+            { "label": "Choice Based Credit System", "icon": "credit_card", "route": "/choice-based-credit-system" }
+          ]
+        },
+        {
+          "label": "Curriculum Enrichment",
+          "icon": "integration_instructions",
+          "route": "",
+          "subMenu": [
+            { "label": "Institution Integrates", "icon": "integration_instructions", "route": "/institution-integrates" },
+            { "label": "Transferable and Life Skills", "icon": "star_rate", "route": "/transferable-life-skills" },
+            { "label": "Students Enrolled", "icon": "group", "route": "/students-enrolled" },
+            { "label": "Undertaking Field Projects", "icon": "work", "route": "/undertaking-field-projects" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Feedback System",
+      "icon": "feedback",
+      "route": "",
+      "subMenu": [
+        { "label": "Design and Review", "icon": "edit", "route": "/design-review" },
+        { "label": "Feedback Processes", "icon": "feedback", "route": "/feedback-processes" }
+      ]
+    },
+    {
+      "label": "Teaching-Learning and Evaluation",
+      "icon": "school",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Student Enrolment and Profile",
+          "icon": "person",
+          "route": "",
+          "subMenu": [
+            { "label": "Demand Ratio", "icon": "trending_up", "route": "/demand-ratio" },
+            { "label": "Reserved Categories", "icon": "category", "route": "/reserved-categories" }
+          ]
+        },
+        {
+          "label": "Catering to Student Diversity",
+          "icon": "diversity_3",
+          "route": "",
+          "subMenu": [
+            { "label": "Special Programmes", "icon": "star", "route": "/special-programmes" },
+            { "label": "Full Time Teacher Ratio", "icon": "ratio", "route": "/full-time-teacher-ratio" }
+          ]
+        },
+        {
+          "label": "Teaching - Learning Process",
+          "icon": "learning",
+          "route": "",
+          "subMenu": [
+            { "label": "Experiential Learning", "icon": "lightbulb", "route": "/experiential-learning" },
+            { "label": "Learning Processes", "icon": "process", "route": "/learning-processes" },
+            { "label": "Ratio of Students to Mentor", "icon": "ratio", "route": "/ratio-students-mentor" }
+          ]
+        },
+        {
+          "label": "Teacher Profile and Quality",
+          "icon": "person",
+          "route": "",
+          "subMenu": [
+            { "label": "Full Time Teachers", "icon": "person", "route": "/full-time-teachers" },
+            { "label": "Teachers with Ph.D", "icon": "school", "route": "/teachers-phd" },
+            { "label": "Teachers Who Received Awards", "icon": "trophy", "route": "/teachers-awards" }
+          ]
+        },
+        {
+          "label": "Evaluation Process and Reforms",
+          "icon": "assessment",
+          "route": "",
+          "subMenu": [
+            { "label": "Semester-end/ Year-end", "icon": "calendar_today", "route": "/semester-year-end" },
+            { "label": "Student Complaints/Grievances", "icon": "report", "route": "/student-complaints" },
+            { "label": "IT Integration and Reforms", "icon": "computer", "route": "/it-integration" },
+            { "label": "Automation of Examination", "icon": "automation", "route": "/automation-examination" }
+          ]
+        },
+        {
+          "label": "Student Performance and Learning",
+          "icon": "grade",
+          "route": "",
+          "subMenu": [
+            { "label": "Learning Outcomes", "icon": "star", "route": "/learning-outcomes" },
+            { "label": "Attainment of Programme Outcomes", "icon": "milestone", "route": "/attainment-programme-outcomes" },
+            { "label": "Pass Percentage of Students", "icon": "percent", "route": "/pass-percentage" }
+          ]
+        },
+        {
+          "label": "Student Satisfaction Survey",
+          "icon": "survey",
+          "route": "",
+          "subMenu": [
+            { "label": "Teaching Learning Process", "icon": "school", "route": "/teaching-learning-process" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Research, Innovations and Extension",
+      "icon": "research",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Research and Facilities",
+          "icon": "facility",
+          "route": "",
+          "subMenu": [
+            { "label": "Research Facilities", "icon": "factory", "route": "/research-facilities" },
+            { "label": "Teachers for Research", "icon": "person", "route": "/teachers-research" },
+            { "label": "Fellowship", "icon": "star", "route": "/fellowship" },
+            { "label": "Research Fellows", "icon": "group", "route": "/research-fellows" },
+            { "label": "Support Research", "icon": "support", "route": "/support-research" },
+            { "label": "Recognitions", "icon": "award", "route": "/recognitions" }
+          ]
+        },
+        {
+          "label": "Resource Mobilization for Research",
+          "icon": "money",
+          "route": "",
+          "subMenu": [
+            { "label": "Funding for Research", "icon": "money", "route": "/funding-research" },
+            { "label": "Grants for Research Projects", "icon": "credit_card", "route": "/grants-research-projects" },
+            { "label": "Number of Research Projects", "icon": "list", "route": "/number-research-projects" }
+          ]
+        },
+        {
+          "label": "Innovation Ecosystem",
+          "icon": "eco",
+          "route": "",
+          "subMenu": [
+            { "label": "Ecosystem for Innovations", "icon": "eco", "route": "/ecosystem-innovations" },
+            { "label": "Seminars Conducted", "icon": "event", "route": "/seminars-conducted" },
+            { "label": "Recognitions Received", "icon": "award", "route": "/recognitions-received" }
+          ]
+        },
+        {
+          "label": "Research Publications and Awards",
+          "icon": "library_books",
+          "route": "",
+          "subMenu": [
+            { "label": "Ethics for Research", "icon": "gavel", "route": "/ethics-research" },
+            { "label": "Incentives to Teachers", "icon": "money_off", "route": "/incentives-teachers" },
+            { "label": "Patents Published", "icon": "public", "route": "/patents-published" },
+            { "label": "Ph.Ds Awarded per Teacher", "icon": "school", "route": "/phds-awarded" },
+            { "label": "Research Papers per Teacher", "icon": "article", "route": "/research-papers" },
+            { "label": "Edited Volumes Published", "icon": "edit", "route": "/edited-volumes" },
+            { "label": "E-content Developed", "icon": "content_copy", "route": "/e-content-developed" },
+            { "label": "Bibliometrics", "icon": "bar_chart", "route": "/bibliometrics" },
+            { "label": "Citation Index in Scopus", "icon": "trending_up", "route": "/citation-index-scopus" },
+            { "label": "Web of Science", "icon": "search", "route": "/web-of-science" }
+          ]
+        }
+      ]
+    }
+  ]
+  

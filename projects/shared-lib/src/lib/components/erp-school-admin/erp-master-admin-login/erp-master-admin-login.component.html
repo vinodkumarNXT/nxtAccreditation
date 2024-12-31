@@ -1,0 +1,57 @@
+<div class="erp-masterAdmin-login" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxLayoutAlign="center stretch" fxFlex="0  0 500px"  class="erp-cardLogin"> 
+      <form (ngSubmit)="submitForm()" class="acc-form-container" [formGroup]="form">
+        <div fxLayout="column wrap" fxLayoutGap="4px">
+
+          <mat-form-field appearance="outline" class="form-group" fxFlex="1 1 48%">
+            <mat-icon matSuffix>account_circle</mat-icon>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Username or email"  formControlName="username"/>
+          </mat-form-field>
+      
+          <mat-form-field appearance="outline" class="form-group" fxFlex="1 1 48%">
+            <!-- <mat-icon matSuffix>password</mat-icon> -->
+              <input matInput placeholder="Please Enter Password" [type]="showPassword ? 'text' : 'password'"
+                formControlName="password" class="form-control">
+              <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                {{ showPassword ? 'visibility_off' : 'visibility' }}
+              </mat-icon>
+            <mat-error *ngIf="form.get('password').hasError('required')">
+              Password is required.
+            </mat-error>
+            <mat-error *ngIf="form.get('password').hasError('minlength')">
+              Password must be at least 6 characters long.
+            </mat-error>
+            <mat-error *ngIf="form.get('password').hasError('passwordInvalid')">
+              Password must contain at least one uppercase letter, one number, and one special character.
+            </mat-error>
+          </mat-form-field>
+          
+    
+          <mat-form-field appearance="outline" class="form-group" fxFlex="1 1 48%"> 
+            <mat-icon matSuffix>{{'Authenticator Code'}}</mat-icon>
+            <mat-label>{{"Authenticator Code"}}</mat-label>
+            <input matInput type="number" placeholder="Code" maxlength="6"   minlength="6"  formControlName="authentictorCode" />
+          </mat-form-field>
+    
+    
+        
+      
+          <div class="acc-form-submit" fxLayout="row" fxLayoutGap="5px">
+            <div class="formSubmit form-group" fxFlex="1 1 100%">
+                <button mat-flat-button color="primary" type="submit">{{'Submit' }}</button>
+
+            </div>
+
+
+            <div class="formSubmit form-group" fxFlex="1 1 100%">
+              <button mat-flat-button color="warn"  (click)="addNewUser()" type="button">{{'Register ?' }}</button>
+          </div>
+        </div>
+
+        </div>
+      </form>
+          
+    </mat-card>
+  </div>
+  

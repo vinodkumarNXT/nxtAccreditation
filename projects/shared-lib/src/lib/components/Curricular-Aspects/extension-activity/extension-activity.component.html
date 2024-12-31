@@ -1,0 +1,92 @@
+<div class="accre-forms-container card-1">
+    <!-- Title and Add Button Section -->
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
+      <div fxFlex="80">
+        <h3 class="acc-form-title card-title">{{"Contemporary Integration of Ethics, Gender, Values, and Sustainability in the Curriculum"}}</h3>
+      </div>
+      <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
+  
+      </div>
+    </div>
+    
+  
+    <div fxLayout="row" fxLayoutAlign="end end" class="filterBlockContainer">
+      <div class="filterBlock" fxFlex="30">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search Here...." #input>
+      </mat-form-field>
+      </div>
+      <div class="addCountBlock" fxFlex="7"   fxLayout="row" fxLayoutAlign="space-between center" flexlayouGap="10px">
+        <!-- <div class="globalTableCount">
+          Count: <span class="countNumber">{{ listData.length  }}</span></div> -->
+        <button mat-raised-button color="warn" (click)="openAddDialog()">
+          <mat-icon>add</mat-icon>
+          <span class="content">ADD</span>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Data Table Section -->
+    <table mat-table [dataSource]="dataSource" appScrollNearEnd class="mat-elevation-z8 nxtAccTable">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="socialIssue">
+        <th mat-header-cell *matHeaderCellDef>{{"Social Issue"}}</th>
+        <td mat-cell *matCellDef="let element">{{ element.socialIssue}}</td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef>{{" Year"}}</th>
+        <td mat-cell *matCellDef="let element">{{ element.year}}</td>
+      </ng-container>
+
+
+
+      <!-- Action Buttons Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="globalTableTheadAction">Actions</th>
+        <td mat-cell *matCellDef="let element" class="globalTableTDcellAction">
+          <button mat-button class="globalTableActionBtn" color="primary" (click)="viewElement(element)">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+          <button mat-button class="globalTableActionBtn nxtPrimary"   color="warn"(click)="editElement(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button class="globalTableActionBtn" color="warn" (click)="deleteElement(element)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+          <p class="NoFilterMatchFound" *ngIf="input?.value">  
+            No Data Matching<span class="filterValue"> "{{input.value}}"</span> 
+          </p>
+          <p class="NoFilterMatchFound" *ngIf="!input?.value">  
+            No data found
+          </p>
+        </td>
+      </tr>
+    </table>
+  
+     <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Select page of users"></mat-paginator>
+  
+    
+    
+  
+  </div>
+  
+  <!-- Spinner -->
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    

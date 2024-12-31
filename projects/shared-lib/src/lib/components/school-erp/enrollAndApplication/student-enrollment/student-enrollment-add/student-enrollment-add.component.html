@@ -1,0 +1,388 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+  <span fxFlex="94" class="ext-modal-title">{{ isEdit ? "Edit" : "Add" }}</span>
+  <span fxFlex="6">
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div class="acc-EditForm-container">
+    <form
+      (ngSubmit)="submitForm()"
+      class="acc-form-container"
+      [formGroup]="form"
+    >
+      <div fxLayout="row wrap" fxLayoutGap="4px">
+        <!-- Select Board -->
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Select Board" }}</mat-label>
+            <mat-select
+              (selectionChange)="onBoardSelection($event)"
+              [(value)]="selectedBoardID"
+            >
+              @for (board of boardList; track $index) {
+              <mat-option [value]="board.board_id">
+                {{ board.name }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Boards Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- "branchID": "BLR", -->
+        <!-- Select Year -->
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Applying Year" }}</mat-label>
+            <mat-select
+              (selectionChange)="onYearSelection($event)"
+              placeholder="Select Year"
+              formControlName="year"
+            >
+              @for (year of filteredGraduationYear; track $index) {
+              <mat-option [value]="year.id">
+                {{ year.current_year }}
+                <!-- Display only the year instead of the entire object -->
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Years Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Select Class -->
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Applying Class" }}</mat-label>
+            <mat-select placeholder="Select Class">
+              @for (class of academicClassList; track $index) {
+              <mat-option [value]="class.id">
+                {{ class.class_name }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Classes Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>Date Of Joining</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="dateOfJoining"
+              required
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "First Name" }}</mat-label>
+            <input matInput formControlName="firstName" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Middle Name" }}</mat-label>
+            <input matInput formControlName="middleName" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Last Name" }}</mat-label>
+            <input matInput formControlName="lastName" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "previousSchool" }}</mat-label>
+            <input matInput formControlName="previousSchool" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>Date Of Birth</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="dateOfBirth"
+              required
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Transfer Certificate Availablbe" }}</mat-label>
+            <mat-select placeholder="Select Class">
+              @for (agreedType of agreedTypeMetaData; track $index) {
+              <mat-option [value]="agreedType.id">
+                {{ agreedType.value }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Classes Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Medical Reports" }}</mat-label>
+            <mat-select placeholder="Select Class">
+              @for (agreedType of agreedTypeMetaData; track $index) {
+              <mat-option [value]="agreedType.id">
+                {{ agreedType.value }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Classes Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Select Class -->
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Select Gender" }}</mat-label>
+            <mat-select placeholder="Gender" formControlName="gender">
+              @for (gender of genderMetaData; track $index) {
+              <mat-option [value]="gender.value">
+                {{ gender.value }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Genders Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Select Blood Grpup " }}</mat-label>
+            <mat-select placeholder="Caste" formControlName="bloodGroup">
+              @for (bllodGroup of bloodGroupList; track $index) {
+              <mat-option [value]="bllodGroup.id">
+                {{ bllodGroup.name }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Classes Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Caste Category" }}</mat-label>
+            <mat-select
+              placeholder=" Select Caste"
+              formControlName="casteCategory"
+            >
+              @for (castCategory of castCategoryList; track $index) {
+              <mat-option [value]="castCategory.id">
+                {{ castCategory.name }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Classes Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Select Caste Category" }}</mat-label>
+            <mat-select placeholder="Caste" formControlName="caste">
+              @for (caste of castList; track $index) {
+              <mat-option [value]="caste.id">
+                {{ caste.name }}
+              </mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No Classes Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 100%">
+          <h2>Fill Address and Gurduan Details</h2>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Guardian Name" }}</mat-label>
+            <input matInput formControlName="guardianName" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Guardian Contact Number" }}</mat-label>
+            <input matInput formControlName="guardianContactNumber" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Guardian Email" }}</mat-label>
+            <input matInput formControlName="guardianEmail" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Emergency Contact Number" }}</mat-label>
+            <input matInput formControlName="emergencyContactNumber" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Address Line " }}</mat-label>
+            <input matInput formControlName="addressLine" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "Country" }}</mat-label>
+            <mat-select
+              formControlname="country"
+              (selectionChange)="updateStates($event)"
+            >
+              @for (country of countryList; track country) {
+              <mat-option [value]="country.id">{{ country.title }}</mat-option>
+              } @empty{
+              <mat-option>
+                {{ "No Country Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "State" }}</mat-label>
+            <mat-select
+              formControlname="state"
+              (selectionChange)="updateDistricts($event)"
+            >
+              @for (state of filteredStates; track state) {
+              <mat-option [value]="state.id">{{ state.title }}</mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No State Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "District" }}</mat-label>
+            <mat-select formControlname="district">
+              @for (district of filteredDistricts; track district) {
+              <mat-option [value]="district.id">{{
+                district.title
+              }}</mat-option>
+              }@empty{
+              <mat-option>
+                {{ "No District Found...!" }}
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Postal Code" }}</mat-label>
+            <input matInput formControlName="postalCode" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Residential Contact Number" }}</mat-label>
+            <input
+              matInput
+              formControlName="residentialContactNumber"
+              required
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Residential Contact Number" }}</mat-label>
+            <input matInput formControlName="Status" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group" fxFlex="1 1 48%">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ "Approved By" }}</mat-label>
+            <input matInput formControlName="approvedBy" required />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+        <div class="formSubmit form-group" fxFlex="1 1 100%">
+          <button mat-flat-button color="primary" type="submit">
+            {{ isUpdate ? "Update" : "Submit" }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>
+
+<ngx-loading
+  [show]="loading"
+  [config]="{ backdropBorderRadius: '3px' }"
+></ngx-loading>

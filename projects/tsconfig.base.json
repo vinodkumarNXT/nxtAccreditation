@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@shared-lib/*": ["shared-lib/src/public-api/*"]
+      }
+    }
+  }
+  

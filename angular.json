@@ -1,0 +1,504 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"shell": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/shell",
+			"sourceRoot": "projects/shell/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"webpackConfig":"webpack.config.js",
+						"outputPath": "dist/shell",
+						"index": "projects/shell/src/index.html",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/shell/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/shell/src/favicon.ico",
+							"projects/shell/src/assets"
+						],
+						"styles": [
+							"projects/shell/src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css" ,
+							"node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+							"node_modules/ngx-lightbox/lightbox.css",
+							"node_modules/primeng/resources/themes/saga-blue/theme.css",
+							"node_modules/primeng/resources/primeng.min.css",
+							"node_modules/primeicons/primeicons.css",
+							"node_modules/primeng/resources/primeng.min.css",
+							"node_modules/primeng/resources/themes/saga-blue/theme.css",
+							"node_modules/primeicons/primeicons.css"
+						],
+						"scripts": [],
+						"main": "projects/shell/src/main.ts",
+						"extraWebpackConfig": "projects/shell/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "30kb",
+									"maximumError": "100kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/shell/webpack.prod.config.js"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "shell:build:production",
+							"extraWebpackConfig": "projects/shell/webpack.prod.config.js"
+						},
+						"development": {
+							"buildTarget": "shell:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 5000,
+						"publicHost": "http://localhost:5000",
+						"extraWebpackConfig": "projects/shell/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"buildTarget": "shell:build",
+						"extraWebpackConfig": "projects/shell/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/shell/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/shell/src/favicon.ico",
+							"projects/shell/src/assets",
+							"src/lib/assets" ,
+							{
+								"glob": "**/*",
+								"input": "node_modules/shared-lib/assets",
+								"output": "assets/shared"
+							}
+
+						],
+						"styles": [
+							"projects/shell/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"accreditation": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/accreditation",
+			"sourceRoot": "projects/accreditation/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/accreditation",
+						
+						"index": "projects/accreditation/src/index.html",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "tsconfig.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/accreditation/src/favicon.ico",
+							"projects/accreditation/src/assets",
+							{
+								"glob": "**/*",
+								"input": "projects/accreditation/src/assets/",
+								"output": "./assets/"
+							}
+						],
+						"styles": [
+							"projects/accreditation/src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css",
+							"node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+							"node_modules/ngx-lightbox/lightbox.css",							"node_modules/ngx-lightbox/lightbox.css",
+							"node_modules/primeng/resources/themes/saga-blue/theme.css",
+							"node_modules/primeng/resources/primeng.min.css",
+							"node_modules/primeicons/primeicons.css",
+							"node_modules/primeng/resources/primeng.min.css",
+							"node_modules/primeng/resources/themes/saga-blue/theme.css",
+							"node_modules/primeicons/primeicons.css"
+						],
+						"main": "projects/accreditation/src/main.ts",
+						"extraWebpackConfig": "projects/accreditation/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "100kb",
+									"maximumError": "100kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/accreditation/webpack.prod.config.js"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"options": {
+						"port": 5001,
+						"publicHost": "http://localhost:5001",
+						"extraWebpackConfig": "projects/accreditation/webpack.config.js"
+					},
+					"configurations": {
+						"production": {
+							"buildTarget": "accreditation:build:production",
+							"extraWebpackConfig": "projects/accreditation/webpack.prod.config.js"
+						},
+						"development": {
+							"buildTarget": "accreditation:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				}
+			}
+		} ,
+
+		"erp": {
+    "projectType": "application",
+    "schematics": {
+        "@schematics/angular:component": {
+            "style": "scss"
+        }
+    },
+    "root": "projects/erp",
+    "sourceRoot": "projects/erp/src",
+    "prefix": "app",
+    "architect": {
+        "build": {
+            "builder": "ngx-build-plus:browser",
+            "options": {
+                "outputPath": "dist/erp",
+                "index": "projects/erp/src/index.html",
+                "polyfills": ["zone.js"],
+                "tsConfig": "tsconfig.json",
+                "inlineStyleLanguage": "scss",
+                "assets": [
+                    "projects/erp/src/favicon.ico",
+                    "projects/erp/src/assets",
+                    {
+                        "glob": "**/*",
+                        "input": "projects/erp/src/assets/",
+                        "output": "./assets/"
+                    }
+                ],
+                "styles": [
+                    "projects/erp/src/styles.scss",
+                    "node_modules/ngx-toastr/toastr.css",
+                    "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+                    "node_modules/ngx-lightbox/lightbox.css",							"node_modules/ngx-lightbox/lightbox.css",
+					"node_modules/primeng/resources/themes/saga-blue/theme.css",
+					"node_modules/primeng/resources/primeng.min.css",
+					"node_modules/primeicons/primeicons.css",
+					"node_modules/primeng/resources/primeng.min.css",
+					"node_modules/primeng/resources/themes/saga-blue/theme.css",
+					"node_modules/primeicons/primeicons.css"
+                ],
+                "main": "projects/erp/src/main.ts",
+                "extraWebpackConfig": "projects/erp/webpack.config.js",
+                "commonChunk": false
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "500kb",
+                            "maximumError": "1mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "100kb",
+                            "maximumError": "100kb"
+                        }
+                    ],
+                    "outputHashing": "all",
+                    "extraWebpackConfig": "projects/erp/webpack.prod.config.js"
+                },
+                "development": {
+                    "optimization": false,
+                    "extractLicenses": false,
+                    "sourceMap": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "builder": "ngx-build-plus:dev-server",
+            "options": {
+                "port": 5002,
+                "publicHost": "http://localhost:5002",
+                "extraWebpackConfig": "projects/erp/webpack.config.js"
+            },
+            "configurations": {
+                "production": {
+                    "buildTarget": "erp:build:production",
+                    "extraWebpackConfig": "projects/erp/webpack.prod.config.js"
+                },
+                "development": {
+                    "buildTarget": "erp:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        }
+    }
+},
+		"examination": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/examination",
+			"sourceRoot": "projects/examination/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/examination",
+						"index": "projects/examination/src/index.html",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/examination/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/examination/src/favicon.ico",
+							"projects/examination/src/assets"
+						],
+						"styles": [
+							"projects/examination/src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css",
+							"node_modules/ngx-lightbox/lightbox.css",
+							"node_modules/ngx-lightbox/lightbox.css",
+							"node_modules/primeng/resources/themes/saga-blue/theme.css",
+							"node_modules/primeng/resources/primeng.min.css",
+							"node_modules/primeicons/primeicons.css",
+							"node_modules/primeng/resources/primeng.min.css",
+							"node_modules/primeng/resources/themes/saga-blue/theme.css",
+							"node_modules/primeicons/primeicons.css"
+						],
+						"scripts": [],
+						"main": "projects/examination/src/main.ts",
+						"extraWebpackConfig": "projects/examination/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "100kb",
+									"maximumError": "100kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/examination/webpack.prod.config.js"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "examination:build:production",
+							"extraWebpackConfig": "projects/examination/webpack.prod.config.js"
+						},
+						"development": {
+							"buildTarget": "examination:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 5003,
+						"publicHost": "http://localhost:5003",
+						"extraWebpackConfig": "projects/examination/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"buildTarget": "examination:build",
+						"extraWebpackConfig": "projects/examination/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/examination/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/examination/src/favicon.ico",
+							"projects/examination/src/assets"
+						],
+						"styles": [
+							"projects/examination/src/styles.scss",
+							"node_modules/ngx-toastr/toastr.css",
+							"node_modules/ngx-lightbox/lightbox.css"
+						],
+						"scripts": []
+					}
+				}
+			}
+    },
+    "auth": {
+      "projectType": "library",
+      "root": "projects/auth",
+      "sourceRoot": "projects/auth/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/auth/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/auth/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/auth/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "shared-lib": {
+      "projectType": "library",
+      "root": "projects/shared-lib",
+      "sourceRoot": "projects/shared-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+			
+			
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/shared-lib/ng-package.json",
+			"assets": ["src/assets",
+			
+			{
+                "glob": "**/*",
+                "input": "node_modules/shared-lib/assets",
+                "output": "assets/shared"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/shared-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/shared-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/shared-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

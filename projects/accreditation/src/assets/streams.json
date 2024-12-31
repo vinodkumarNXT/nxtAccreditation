@@ -1,0 +1,39 @@
+{
+  "btech": [
+    { "value": "Computer-Science-Engineering", "text": "Computer Science & Engineering" },
+    { "value": "CSE-AI-ML", "text": "CSE (AI&ML)" },
+    { "value": "CSE-Data-Science", "text": "CSE (Data Science)" },
+    { "value": "Information-Technology", "text": "Information Technology" },
+    { "value": "Electronics-Communication-Engineering", "text": "Electronics & Communication Engineering" },
+    { "value": "Electrical-Electronic-Engineering", "text": "Electrical and Electronic Engineering" },
+    { "value": "Electronics-Telematics-Engineering", "text": "Electronics & Telematics Engineering" },
+    { "value": "Civil-Department", "text": "Civil Department" },
+    { "value": "Mechanical-Department", "text": "Mechanical Department" },
+    { "value": "Basic-Sciences-Department", "text": "Basic Sciences Department" },
+    { "value": "Humanities-Mathematics-Department", "text": "Humanities & Mathematics Department" }
+  ],
+  "mtech": [
+    { "value": "Computer-Science-Engineering", "text": "Computer Science & Engineering" },
+    { "value": "CSE-AI-ML", "text": "CSE (AI&ML)" },
+    { "value": "CSE-Data-Science", "text": "CSE (Data Science)" },
+    { "value": "Information-Technology", "text": "Information Technology" },
+    { "value": "Electronics-Communication-Engineering", "text": "Electronics & Communication Engineering" },
+    { "value": "Electrical-Electronic-Engineering", "text": "Electrical and Electronic Engineering" },
+    { "value": "Electronics-Telematics-Engineering", "text": "Electronics & Telematics Engineering" },
+    { "value": "Civil-Department", "text": "Civil Department" },
+    { "value": "Mechanical-Department", "text": "Mechanical Department" }
+  ],
+
+  "departments": [
+    { "value": "CSE", "text": "Computer Science & Engineering" },
+    { "value": "IT", "text": "Information Technology" },
+    { "value": "ECE", "text": "Electronics & Communication Engineering" },
+    { "value": "EEE", "text": "Electrical and Electronic Engineering" },
+    { "value": "ETE", "text": "Electronics & Telematics Engineering" },
+    { "value": "CIV", "text": "Civil Department" },
+    { "value": "MEC", "text": "Mechanical Department" },
+    { "value": "MINING", "text": "MINING ENGINEERING" },
+    { "value": "CHE", "text": "CHEMICAL ENGINEERING" },
+    { "value": "BIO-TECH", "text": "BIO-TECHNOLOGY" }
+  ]
+}

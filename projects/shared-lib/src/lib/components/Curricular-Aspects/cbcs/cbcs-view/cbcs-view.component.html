@@ -1,0 +1,154 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+  <span fxFlex="75" class="ext-modal-title"> View </span>
+  <span fxFlex="25" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
+    <!-- <button mat-button color="primary"  (click)="editElement(data.id)"  class="ext-modal-close">
+          <mat-icon>create</mat-icon>
+      </button>
+      <button mat-button  color="warn" (click)="deleteElement(data.id)" class="ext-modal-close">
+          <mat-icon>delete_outline</mat-icon>
+      </button> -->
+
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div
+    class="row view-details-block"
+    fxLayout="row wrap"
+    fxLayoutGap="4px"
+    fxLayout.xs="column"
+  >
+    @if(formData?.program_code.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.program_code) }"
+          >
+            {{ formData?.program_code?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.program_code }}</p>
+          <label>{{ "Programme Code" }}</label>
+        </div>
+      </div>
+    </div>
+    }
+     @if(formData?.program_name.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.program_name) }"
+          >
+            {{ formData?.program_name?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.program_name }}</p>
+          <label>{{ "Programme name" }}</label>
+        </div>
+      </div>
+    </div>
+    }
+     @if(formData?.introduction_year.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.introduction_year) }"
+          >
+            {{ formData?.introduction_year?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.introduction_year }}</p>
+          <label>{{ "Year of Introduction" }}</label>
+        </div>
+      </div>
+    </div>
+    }
+    @if(formData?.implementation_year.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{
+              color: getColorForItem(formData?.implementation_year)
+            }"
+          >
+            {{ formData?.implementation_year?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.implementation_year }}</p>
+          <label>{{ "Year of Implementation " }}</label>
+        </div>
+      </div>
+    </div>
+    }
+     @if(formData?.status.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.status) }"
+          >
+            {{ formData?.status?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.status }}</p>
+          <label>{{ "Status of Implementation " }}</label>
+        </div>
+      </div>
+    </div>
+    }
+     @if(formData?.revision_year.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.revision_year) }"
+          >
+            {{ formData?.revision_year?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.revision_year }}</p>
+          <label>{{ " Year of Revision  " }}</label>
+        </div>
+      </div>
+    </div>
+  }
+  @if(formData?.content_percentage.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.content_percentage) }"
+          >
+            {{ formData?.content_percentage?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.content_percentage }}</p>
+          <label>{{ "Content of Percentage  " }}</label>
+        </div>
+      </div>
+    </div>
+  }
+
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,426 @@
+[
+  {
+    "label": "Roles and Permission",
+    "icon": "home",
+    "subMenu": [
+      {
+        "label": "Role Master",
+        "icon": "person",
+        "route": "/role-master"
+      },
+      {
+        "label": "Feature Master",
+        "icon": "card_giftcard",
+        "route": "/feature-master"
+      },
+
+      {
+        "label": "Role & Perimissions",
+        "icon": "pan_tool",
+        "route": "/role-permission"
+      }
+    ]
+  }, {
+      "label": "Curricular Aspects",
+      "icon": "build",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Design and Development",
+          "icon": "design_services",
+          "route": "",
+          "subMenu": [
+            { "label": "Curricular Developed", "icon": "school", "route": "/curricular-developed" },
+            { "label": "Percentage of Programmes", "icon": "percent", "route": "/percentage-programmes" },
+            { "label": "Average Percentage", "icon": "percent", "route": "/average-percentage" }
+          ]
+        },
+        {
+          "label": "Academic Flexibility",
+          "icon": "trending_up",
+          "route": "",
+          "subMenu": [
+            { "label": "Percentage of New Courses", "icon": "trending_up", "route": "/percentageCourses" },
+            { "label": "CBCS", "icon": "credit_card", "route": "/cbcs" }
+          ]
+        },
+        {
+          "label": "Curriculum Enrichment",
+          "icon": "integration_instructions",
+          "route": "",
+          "subMenu": [
+            { "label": "Institution Integrates", "icon": "integration_instructions", "route": "/institution-integrates" },
+            { "label": "Transferable and Life Skills", "icon": "star_rate", "route": "/transferable-lifeSkills" },
+            { "label": "Students Enrolled", "icon": "group", "route": "/students-enrolled" },
+            { "label": "Undertaking Field Projects", "icon": "work", "route": "/UndertakingFieldProjects" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Feedback System",
+      "icon": "feedback",
+      "route": "",
+      "subMenu": [
+        { "label": "Design and Review", "icon": "edit", "route": "/design-review" },
+        { "label": "Feedback Processes", "icon": "feedback", "route": "/feedback-process" }
+      ]
+    },
+    {
+      "label": "Teaching-Learning and Evaluation",
+      "icon": "school",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Student Enrolment and Profile",
+          "icon": "person",
+          "route": "",
+          "subMenu": [
+            { "label": "Demand Ratio", "icon": "trending_up", "route": "/demand-ratio" },
+            { "label": "Reserved Categories", "icon": "category", "route": "/reserved-category" }
+          ]
+        },
+        {
+          "label": "Catering to Student Diversity",
+          "icon": "diversity_3",
+          "route": "",
+          "subMenu": [
+            { "label": "Special Programmes", "icon": "star", "route": "/special-program" },
+            { "label": "Full Time Teacher Ratio", "icon": "ratio", "route": "/full-time-teacher-ratio" }
+          ]
+        },
+        {
+          "label": "Teaching - Learning Process",
+          "icon": "learning",
+          "route": "",
+          "subMenu": [
+            { "label": "Experiential Learning", "icon": "lightbulb", "route": "/experimental-Learning" },
+            { "label": "Learning Processes", "icon": "process", "route": "/learning-processes" },
+            { "label": "Ratio of Students to Mentor", "icon": "ratio", "route": "/student-mentorRatio" }
+          ]
+        },
+        {
+          "label": "Teacher Profile and Quality",
+          "icon": "person",
+          "route": "",
+          "subMenu": [
+            { "label": "Full Time Teachers", "icon": "person", "route": "/full-time-teachers" },
+            { "label": "Teachers with Ph.D", "icon": "school", "route": "/phd-teachers" },
+            { "label": "Teachers Who Received Awards", "icon": "trophy", "route": "/awarded-teachers" }
+          ]
+        },
+        {
+          "label": "Evaluation Process and Reforms",
+          "icon": "assessment",
+          "route": "",
+          "subMenu": [
+            { "label": "Semester-end/ Year-end", "icon": "calendar_today", "route": "/end-semester" },
+            { "label": "Student Complaints/Grievances", "icon": "report", "route": "/student-complaints" },
+            { "label": "Integration & Reforms", "icon": "computer", "route": "/integration-reforms" },
+            { "label": "Automation of Examination", "icon": "automation", "route": "/automation-examination" }
+          ]
+        },
+        {
+          "label": "Student Performance and Learning",
+          "icon": "grade",
+          "route": "",
+          "subMenu": [
+            { "label": "Learning Outcomes", "icon": "star", "route": "/learning-outcomes" },
+            { "label": "Attainment of Programme Outcomes", "icon": "milestone", "route": "/program-outcomes" },
+            { "label": "Pass Percentage of Students", "icon": "percent", "route": "/student-PassPercentage-survey" }
+          ]
+        },
+        {
+          "label": "Student Satisfaction Survey",
+          "icon": "survey",
+          "route": "",
+          "subMenu": [
+            { "label": "Teaching Learning Process", "icon": "school", "route": "/teaching-learning-process" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Research, Innovations and Extension",
+      "icon": "research",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Research and Facilities",
+          "icon": "facility",
+          "route": "",
+          "subMenu": [
+            { "label": "Research Facilities", "icon": "factory", "route": "/research-facility" },
+            { "label": "Teachers for Research", "icon": "person", "route": "/teacher-research" },
+            { "label": "Fellowship", "icon": "star", "route": "/research-fellowship" },
+            { "label": "Research Fellows", "icon": "group", "route": "/research-fellow" },
+            { "label": "Support Research", "icon": "support", "route": "/support-research" },
+            { "label": "Recognitions", "icon": "award", "route": "/recognition" }
+          ]
+        },
+        {
+          "label": "Resource Mobilization for Research",
+          "icon": "money",
+          "route": "",
+          "subMenu": [
+            { "label": "Funding for Research", "icon": "money", "route": "/funding-research" },
+            { "label": "Grants for Research Projects", "icon": "credit_card", "route": "/project-grant" },
+            { "label": "Number of Research Projects", "icon": "list", "route": "/research-projects" }
+          ]
+        },
+        {
+          "label": "Innovation Ecosystem",
+          "icon": "eco",
+          "route": "",
+          "subMenu": [
+            { "label": "Ecosystem for Innovations", "icon": "eco", "route": "/ecosystem-innovations" },
+            { "label": "Seminars Conducted", "icon": "event", "route": "/seminars-conducted" },
+            { "label": "Recognitions Received", "icon": "award", "route": "/recognizations-received" }
+          ]
+        },
+        {
+          "label": "Research Publications and Awards",
+          "icon": "library_books",
+          "route": "",
+          "subMenu": [
+            { "label": "Ethics for Research", "icon": "gavel", "route": "/ethics-research" },
+            { "label": "Incentives to Teachers", "icon": "money_off", "route": "/teachers-incentivies" },
+            { "label": "Patents Published", "icon": "public", "route": "/patent-published" },
+            { "label": "Ph.Ds Awarded per Teacher", "icon": "school", "route": "/phds-awarded-teacher" },
+            { "label": "Research Papers per Teacher", "icon": "article", "route": "/teacher-research-papers" },
+            { "label": "Edited Volumes Published", "icon": "edit", "route": "/edited-volumes" },
+            { "label": "E-content Developed", "icon": "content_copy", "route": "/teacher-econtent" },
+            { "label": "Bibliometrics", "icon": "bar_chart", "route": "/biblio-metrics" },
+            { "label": "Citation Index in Scopus", "icon": "trending_up", "route": "/citation-index-scopus" },
+            { "label": "Web of Science", "icon": "search", "route": "/web-of-science" }
+          ]
+        },
+        {
+          "label": "Consultancy",
+          "icon": "library_books",
+          "route": "",
+          "subMenu": [
+            { "label": "policy on consultancy", "icon": "gavel", "route": "/ethics-research" },
+            { "label": "consultancy revenue", "icon": "money_off", "route": "/teachers-incentivies" }
+      
+          ]
+        },
+        {
+          "label": "Extension Activities",
+          "icon": "library_books",
+          "route": "",
+          "subMenu": [
+            { "label": "Extension Activities", "icon": "gavel", "route": "/ethics-research" },
+            { "label": "awards received", "icon": "money_off", "route": "/teachers-incentivies" },
+            { "label": "outreach programs", "icon": "money_off", "route": "/teachers-incentivies" },
+            { "label": "activity percentage", "icon": "money_off", "route": "/teachers-incentivies" }
+          ]
+        },
+
+        {
+          "label": "Collaboration",
+          "icon": "library_books",
+          "route": "",
+          "subMenu": [
+            { "label": "Collaborative Activities", "icon": "gavel", "route": "/ethics-research" },
+            { "label": "functional MoUs", "icon": "money_off", "route": "/teachers-incentivies" },
+            { "label": "outreach programs", "icon": "money_off", "route": "/teachers-incentivies" },
+            { "label": "activity percentage", "icon": "money_off", "route": "/teachers-incentivies" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Infrastructure and Learning Resources",
+      "icon": "infrastructure",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Physical Facilities",
+          "icon": "building",
+          "route": "",
+          "subMenu": [
+            { "label": "Facilities for Teaching-Learning", "icon": "school", "route": "/facilities-teaching-learning" },
+            { "label": "Facilities for Cultural Activities", "icon": "theater_comedy", "route": "/facilities-cultural" },
+            { "label": "General Campus Facilities", "icon": "campus", "route": "/campus-facilities" },
+            { "label": "Infrastructure Expenditure", "icon": "attach_money", "route": "/infrastructure-expenditure" }
+          ]
+        },
+        {
+          "label": "Library as a Learning Resource",
+          "icon": "local_library",
+          "route": "",
+          "subMenu": [
+            { "label": "Automation of the Library", "icon": "settings", "route": "/library-automation" },
+            { "label": "Library Resources", "icon": "book", "route": "/library-resources" },
+            { "label": "Library Expenditure", "icon": "money", "route": "/library-expenditure" },
+            { "label": "Library Users", "icon": "people", "route": "/library-users" }
+          ]
+        },
+        {
+          "label": "IT Infrastructure",
+          "icon": "computer",
+          "route": "",
+          "subMenu": [
+            { "label": "ICT Facilities", "icon": "devices", "route": "/ict-facilities" },
+            { "label": "IT Facilities", "icon": "desktop_windows", "route": "/it-facilities" },
+            { "label": "Student-Computer Ratio", "icon": "bar_chart", "route": "/student-computer-ratio" },
+            { "label": "Internet Bandwidth", "icon": "wifi", "route": "/internet-bandwidth" },
+            { "label": "Facilities for E-Content", "icon": "e_content", "route": "/facilities-e-content" }
+          ]
+        },
+        {
+          "label": "Maintenance of Campus Infrastructure",
+          "icon": "build",
+          "route": "",
+          "subMenu": [
+            { "label": "Maintenance of Physical Facilities", "icon": "engineering", "route": "/maintenance-physical-facilities" },
+            { "label": "Systems and Procedures", "icon": "settings_suggest", "route": "/systems-procedures" }
+          ]
+        }
+        
+       
+        
+      ]
+    },
+    {
+      "label": "Student Support and Progression",
+      "icon": "support",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Student Support",
+          "icon": "emoji_people",
+          "route": "",
+          "subMenu": [
+            { "label": "Scholarship Schemes", "icon": "school", "route": "/scholarship-schemes" },
+            { "label": "Career Counseling", "icon": "work", "route": "/career-counseling" },
+            { "label": "Capacity Development", "icon": "build", "route": "/capacity-development" },
+            { "label": "Student Grievances", "icon": "report", "route": "/student-grievances" }
+          ]
+        },
+        {
+          "label": "Student Progression",
+          "icon": "timeline",
+          "route": "",
+          "subMenu": [
+            { "label": "Government Examinations", "icon": "gavel", "route": "/government-examinations" },
+            { "label": "Percentage of Placement", "icon": "assessment", "route": "/placement-percentage" },
+            { "label": "Recently Graduated Students", "icon": "graduation", "route": "/recent-graduates" }
+          ]
+        },
+        {
+          "label": "Participation and Activities",
+          "icon": "sports",
+          "route": "",
+          "subMenu": [
+            { "label": "Medals Won by Students", "icon": "emoji_events", "route": "/medals-won" },
+            { "label": "Student Council", "icon": "groups", "route": "/student-council" },
+            { "label": "Competitions Organised", "icon": "celebration", "route": "/competitions-organised" }
+          ]
+        },
+        {
+          "label": "Alumni Engagement",
+          "icon": "group",
+          "route": "",
+          "subMenu": [
+            { "label": "Alumni Association", "icon": "groups", "route": "/alumni-association" },
+            { "label": "Alumni Contribution", "icon": "attach_money", "route": "/alumni-contribution" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Governance, Leadership and Management",
+      "icon": "account_balance",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Vision and Leadership",
+          "icon": "visibility",
+          "route": "",
+          "subMenu": [
+            { "label": "Administrative Governance", "icon": "business_center", "route": "/admin-governance" },
+            { "label": "Participative Management", "icon": "group_work", "route": "/participative-management" }
+          ]
+        },
+        {
+          "label": "Strategy Development and Deployment",
+          "icon": "lightbulb",
+          "route": "",
+          "subMenu": [
+            { "label": "Institutional Strategic Plan", "icon": "insights", "route": "/strategic-plan" },
+            { "label": "Institutional Bodies", "icon": "groups", "route": "/institutional-bodies" },
+            { "label": "Implements E-Governance", "icon": "computer", "route": "/e-governance" }
+          ]
+        },
+        {
+          "label": "Faculty Empowerment Strategies",
+          "icon": "supervised_user_circle",
+          "route": "",
+          "subMenu": [
+            { "label": "Appraisal System", "icon": "rate_review", "route": "/appraisal-system" },
+            { "label": "Financial Support", "icon": "money", "route": "/financial-support" },
+            { "label": "Training Programmes Organised", "icon": "school", "route": "/training-programmes" },
+            { "label": "Faculty Development Programmes", "icon": "local_library", "route": "/faculty-development" }
+          ]
+        },
+        {
+          "label": "Financial Management",
+          "icon": "account_balance_wallet",
+          "route": "",
+          "subMenu": [
+            { "label": "Mobilisation of Funds", "icon": "trending_up", "route": "/fund-mobilisation" },
+            { "label": "Grants Received from Government", "icon": "account_balance", "route": "/government-grants" },
+            { "label": "Grants Received from Non-Government", "icon": "credit_card", "route": "/non-government-grants" },
+            { "label": "Financial Audits", "icon": "receipt_long", "route": "/financial-audits" }
+          ]
+        },
+        {
+          "label": "Internal Quality Assurance System",
+          "icon": "verified",
+          "route": "",
+          "subMenu": [
+            { "label": "Quality Assurance Strategies", "icon": "stars", "route": "/quality-strategies" },
+            { "label": "Adopted Quality Assurance", "icon": "check_circle", "route": "/adopted-quality" },
+            { "label": "Incremental Improvements", "icon": "trending_up", "route": "/incremental-improvements" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "label": "Institutional Values and Best Practices",
+      "icon": "local_florist",
+      "route": "",
+      "subMenu": [
+        {
+          "label": "Values and Social Responsibilities",
+          "icon": "people",
+          "route": "",
+          "subMenu": [
+            { "label": "Promotion of Gender Equity", "icon": "female", "route": "/gender-equity" },
+            { "label": "Alternate Sources of Energy", "icon": "energy_savings", "route": "/alternate-energy" },
+            { "label": "Degradable and Non-Degradable Waste", "icon": "recycling", "route": "/waste-management" },
+            { "label": "Water Conservation Facilities", "icon": "water", "route": "/water-conservation" },
+            { "label": "Green Campus Initiatives", "icon": "park", "route": "/green-campus" },
+            { "label": "Audits on Environment and Energy", "icon": "assignment", "route": "/environment-audits" },
+            { "label": "Disabled-Friendly, Barrier-Free Environment", "icon": "accessible", "route": "/barrier-free" },
+            { "label": "Institutional Efforts", "icon": "group", "route": "/institutional-efforts" },
+            { "label": "Constitutional Obligations", "icon": "gavel", "route": "/constitutional-obligations" },
+            { "label": "Code of Conduct", "icon": "assignment_turned_in", "route": "/code-of-conduct" },
+            { "label": "Institution Celebrates", "icon": "celebration", "route": "/institution-celebrations" }
+          ]
+        },
+        {
+          "label": "Best Practices",
+          "icon": "thumb_up",
+          "route": "",
+          "subMenu": [
+            { "label": "Two Best Practices", "icon": "emoji_events", "route": "/best-practices" },
+            { "label": "Performance of the Institution", "icon": "assessment", "route": "/institution-performance" }
+          ]
+        }
+      ]
+    }
+  ]

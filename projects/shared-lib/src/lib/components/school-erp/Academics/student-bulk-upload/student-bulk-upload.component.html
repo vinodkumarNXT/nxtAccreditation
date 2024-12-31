@@ -1,0 +1,40 @@
+<mat-card class="example-card nxtBulkUpload" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title class="cardTitle">{{"Upload Student Data Bulk"}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+        <div class="uploadSection">
+            <div fxLayout="column" fxLayoutGap="4px" fxLayoutAlign="space-around center">
+                <div class="fileInput">
+                    <input  type="file" (change)="onFileSelect($event)" accept=".xlsx, .xls" />
+                </div>
+                <div  class="uploadBtn">
+                    <button mat-raised-button color="primary" (click)="submitForm()">Submit Bulk Enrollment</button>
+                </div>
+                <small class="allowedTypeOnly"> Allowed  .xlsx, .xls  Only</small>
+            </div>
+          
+        </div>
+
+      <h5 class="titleNote"> {{"Fill Excel Header  with Below Name Only"}}</h5>
+  
+      <div class="uploadRequireFileds">
+          <ul fxLayout="row wrap" fxLayoutGap="4px">
+        @for (item of displayedColumns; track $index) {
+            <li fxFlex="1 1 23%" >{{item}}</li>
+        }
+       </ul>
+      </div>
+
+      <div class="sampleDataDownload">
+        <button mat-raised-button color="warn" (click)="downloadExcel()">
+            <mat-icon>download</mat-icon> Download Sample Excel
+          </button>
+      </div>
+    </mat-card-content>
+    <mat-card-footer class="example-card-footer">
+          
+    </mat-card-footer>
+  </mat-card>
+  

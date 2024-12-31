@@ -1,0 +1,75 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="acc-EditForm-container">
+        <form (ngSubmit)="submitForm()" class="acc-form-container" [formGroup]="form">
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field appearance="outline">
+                        <mat-icon matSuffix>account_circle</mat-icon>
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Username or email" formControlName="username" />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-icon matSuffix>password</mat-icon> -->
+                        <input matInput placeholder="Please Enter Password" [type]="showPassword ? 'text' : 'password'"
+                            formControlName="password" class="form-control">
+                        <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                            {{ showPassword ? 'visibility_off' : 'visibility' }}
+                        </mat-icon>
+                        <mat-error *ngIf="form.get('password').hasError('required')">
+                            Password is required.
+                        </mat-error>
+                        <mat-error *ngIf="form.get('password').hasError('minlength')">
+                            Password must be at least 6 characters long.
+                        </mat-error>
+                        <mat-error *ngIf="form.get('password').hasError('passwordInvalid')">
+                            Password must contain at least one uppercase letter, one number, and one special character.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    @if(!loading && qrCodeUrl){
+                        <div>
+                            <h3>Scan this QR code with your Authenticator app:</h3>
+                            <img [src]="qrCodeUrl" alt="2FA QR Code" />
+                            <p>Secret Key: {{ secretKey }}</p>
+                        </div>
+
+                    } @else if(!loading && !qrCodeUrl){
+                        <div>
+                            <p>No QR code available. Please try again.</p>
+                        </div>
+                    }
+                </div>
+
+                <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+                    <div class="formSubmit form-group" fxFlex="1 1 100%">
+                        <button mat-flat-button color="primary" type="submit">{{'Submit' }}</button>
+    
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

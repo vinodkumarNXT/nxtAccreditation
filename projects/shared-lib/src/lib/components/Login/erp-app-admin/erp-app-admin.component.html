@@ -1,0 +1,100 @@
+<div class="accre-forms-container card-1">
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
+      <div fxFlex="80">
+        <h3 class="acc-form-title card-title">Domian Users</h3>
+      </div>
+      <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
+      
+      </div>
+    </div>
+  
+    
+  
+    <div fxLayout="row" fxLayoutAlign="end end" class="filterBlockContainer">
+      <div class="filterBlock" fxFlex="30">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search Here...." #input>
+      </mat-form-field>
+      </div>
+      <div class="addCountBlock" fxFlex="7"   fxLayout="row" fxLayoutAlign="space-between center" flexlayouGap="10px">
+        <!-- <div class="globalTableCount">
+          Count: <span class="countNumber">{{ listData.length  }}</span></div> -->
+        <button mat-raised-button color="warn" (click)="openAddDialog()">
+          <mat-icon>add</mat-icon>
+          <span class="content">ADD</span>
+        </button>
+      </div>
+  
+  
+    </div>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 nxtAccTable">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+      
+        <!-- Domain User Column -->
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef>Domain User</th>
+          <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+        </ng-container>
+      
+        <!-- Domain Column -->
+        <ng-container matColumnDef="domain">
+          <th mat-header-cell *matHeaderCellDef>Domain</th>
+          <td mat-cell *matCellDef="let element">{{ element.domain }}</td>
+        </ng-container>
+      
+        <!-- Branch Column -->
+        <ng-container matColumnDef="branch">
+          <th mat-header-cell *matHeaderCellDef>Branch</th>
+          <td mat-cell *matCellDef="let element">{{ element.branch }}</td>
+        </ng-container>
+      
+        <!-- Hosting Column -->
+        <ng-container matColumnDef="hosting">
+          <th mat-header-cell *matHeaderCellDef>Hosting</th>
+          <td mat-cell *matCellDef="let element">{{ element.hosting }}</td>
+        </ng-container>
+      
+        <!-- Affiliation Column -->
+        <ng-container matColumnDef="affiliation">
+          <th mat-header-cell *matHeaderCellDef>Affiliation</th>
+          <td mat-cell *matCellDef="let element">{{ element.affiliation }}</td>
+        </ng-container>
+      
+        <!-- Contact Number Column -->
+        <ng-container matColumnDef="contactNumber">
+          <th mat-header-cell *matHeaderCellDef>Contact Number</th>
+          <td mat-cell *matCellDef="let element">{{ element.contact_number }}</td>
+        </ng-container>
+      
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="globalTableTheadAction">Actions</th>
+          <td mat-cell *matCellDef="let element" class="globalTableTDcellAction globalTableTheadAction">
+            <button mat-button class="globalTableActionBtn" color="accent" (click)="editElement(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-button class="globalTableActionBtn" color="warn" (click)="deleteElement(element)">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      
+        <!-- Header and Row Definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+  
+    <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Select page of users"></mat-paginator>
+    
+  
+  </div>
+  
+  <!-- Spinner -->
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+  

@@ -1,0 +1,188 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="acc-EditForm-container">
+        <form (ngSubmit)="isEdit ? updateForm () : submitForm()" class="acc-form-container" [formGroup]="form">
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Domain Name</mat-label>
+                        <input matInput formControlName="domainName" placeholder="Enter domain name" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Domain</mat-label>
+                        <input matInput formControlName="domain" placeholder="Enter domain" required>
+                    </mat-form-field>
+                </div>
+
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field appearance="fill">
+                        <mat-label>URL</mat-label>
+                        <input matInput formControlName="url" required placeholder="Enter your website URL">
+                    </mat-form-field>
+                </div>
+
+       
+            
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Hosting Name</mat-label>
+                    <input matInput formControlName="hosting" required placeholder="Enter your hosting name">
+                </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>SSL</mat-label>
+                    <input matInput formControlName="ssh" required placeholder="Enter your SSHL">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field>
+                    <mat-label>Branch</mat-label>
+                    <mat-select formControlname="branch"   (selectionChange)="onSelectionChange($event, 'branch')">
+                        @for (branch of getMetaDataBranch; track branch) {
+                        <mat-option [value]="branch.id">{{branch.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field>
+                    <mat-label>Add Board</mat-label>
+                    <mat-select formControlname="board" multiple  (selectionChange)="onSelectionChange($event, 'board')">
+                        @for (board of boardList; track board) {
+                        <mat-option [value]="board.board_id">{{board.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput formControlName="contactNumber" required type="number" placeholder="Enter your SSHL">
+                </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" required placeholder="Enter your SSHL">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlname="country" (selectionChange)="onSelectionChange($event, 'country')">
+                        @for (country of countryList; track country) {
+                        <mat-option [value]="country.id">{{country.title}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>State</mat-label>
+                    <mat-select formControlname="state" (selectionChange)="onSelectionChange($event, 'state')">
+                        @for (state of filteredStates; track state) {
+                        <mat-option [value]="state.id">{{state.title}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>District</mat-label>
+                    <mat-select formControlname="district" (selectionChange)="onSelectionChange($event, 'district')">
+                        @for (district of filteredDistricts; track district) {
+                        <mat-option [value]="district.id">{{district.title}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city" placeholder="Enter city">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Address Line 1</mat-label>
+                    <input matInput formControlName="line1" placeholder="Enter address line 1">
+                </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Address Line 2</mat-label>
+                    <input matInput formControlName="line2" placeholder="Enter address line 2">
+                </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Area</mat-label>
+                    <input matInput formControlName="area" placeholder="Enter area">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput formControlName="postalCode"  type="number" placeholder="Enter postal code">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form-group" fxFlex="1 1 48%">
+                <mat-form-field appearance="fill">
+                    <mat-label>Landmark</mat-label>
+                    <input matInput formControlName="landmark" placeholder="Enter landmark">
+                </mat-form-field>
+            </div>
+
+
+
+            </div>
+
+            <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+                <div class="formSubmit form-group" fxFlex="1 1 100%">
+                    <button mat-flat-button color="primary" type="submit">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

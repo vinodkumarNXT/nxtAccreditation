@@ -1,0 +1,187 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+  <span fxFlex="75" class="ext-modal-title"> View </span>
+  <span fxFlex="25" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
+    <!-- <button mat-button color="primary"  (click)="editElement(data.id)"  class="ext-modal-close">
+            <mat-icon>create</mat-icon>
+        </button>
+        <button mat-button  color="warn" (click)="deleteElement(data.id)" class="ext-modal-close">
+            <mat-icon>delete_outline</mat-icon>
+        </button> -->
+
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div
+    class="row view-details-block"
+    fxLayout="row wrap"
+    fxLayoutGap="4px"
+    fxLayout.xs="column"
+  >
+    @if(formData?.year.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.year) }"
+          >
+            {{ formData?.year?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.year }}</p>
+          <label>{{ "Program Code" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.qualityEvents.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.qualityEvents) }"
+          >
+            {{ formData?.qualityEvents?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.qualityEvents }}</p>
+          <label>{{ "Quality Events" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.followUp.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.followUp) }"
+          >
+            {{ formData?.followUp?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.followUp }}</p>
+          <label>{{ "AAA Follow-up" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.status.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.status) }"
+          >
+            {{ formData?.status?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.status }}</p>
+          <label>{{ "NIRF Status" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.certification.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.certification) }"
+          >
+            {{ formData?.certification?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.certification }}</p>
+          <label>{{ "ISO Certification" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.nbaCertificate.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.nbaCertificate) }"
+          >
+            {{ formData?.nbaCertificate?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.nbaCertificate }}</p>
+          <label>{{ "NBA/Other Certification" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.initiatives.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.initiatives) }"
+          >
+            {{ formData?.initiatives?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.initiatives }}</p>
+          <label>{{ "Collaborative Initiatives" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.orientation.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.orientation) }"
+          >
+            {{ formData?.orientation?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.orientation }}</p>
+          <label>{{ "Orientation Program" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.documentLinks.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.documentLinks) }"
+          >
+            {{ formData?.documentLinks?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>
+            <a
+              matTooltip="{{ formData?.documentLinks }}"
+              target="new"
+              href="{{ formData?.documentLinks }}"
+            >
+              {{ formData?.documentLinks }}</a
+            >
+          </p>
+          <label>{{ "Upload Link" }}</label>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,295 @@
+
+<div class="accre-forms-container card-1">
+    <!-- Title and Add Button Section -->
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
+      <div fxFlex="80">
+        <h3 class="acc-form-title card-title">{{"Subjects's"}}</h3>
+      </div>
+      <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
+  
+      </div>
+    </div>
+  
+    <div class="nxtPrimeTable">
+        <div class="card">
+          
+
+    
+          <p-table #dt2 [value]="metaTableData" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+            [loading]="loading" [paginator]="true"
+            [globalFilterFields]="['title', 'total_marks', 'credit_hour', 'passing_marks', 'status']"
+            >
+            <!-- Caption with Global Search -->
+            <ng-template pTemplate="caption">
+              <div class="flex">
+    
+                <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                  <input pInputText type="text" [(ngModel)]="searchValue"
+                    (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                  <i class="pi pi-search"></i>
+                </span>
+    
+                <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                  icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+    
+    
+                <p-button class="nxtTableGlobalAdd" label="Add" [outlined]="true" severity="warning" icon="pi pi-plus"
+                (onClick)="openAddDialog('add')"/>
+    
+              </div>
+            </ng-template>
+    
+            <!-- Header with Column Filters -->
+            <ng-template pTemplate="header">
+              <tr>
+                <th>
+                  <div class="flex align-items-center">
+                    {{"ID"}}
+                  </div>
+                </th>
+    
+                <th>
+                  <div class="flex align-items-center">
+                    {{"Name"}}
+                    <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+                  </div>
+                </th>
+    
+                <th>
+                  <div class="flex align-items-center">
+                    {{"total_marks"}}
+                  </div>
+                </th>
+                <th>
+                  <div class="flex align-items-center">
+                    {{"Credit Hour Date"}}
+                  </div>
+                </th>
+    
+                <th>
+                  <div class="flex align-items-center">
+                    {{"Passing  Marks"}}
+                    <p-columnFilter type="text" field="passing_marks" display="menu"></p-columnFilter>
+                  </div>
+                </th>
+    
+                <th>
+                  <div class="flex align-items-center">
+                    {{"Status"}}
+                  </div>
+                </th>
+    
+                <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+              </tr>
+            </ng-template>
+    
+
+    
+            <!-- Body -->
+            <ng-template pTemplate="body" let-element>
+              <tr>
+                <td>{{ element.id }}</td>
+                <td>{{ element.title }}</td>
+                <td>{{ element.total_marks }}</td>
+                <td>{{ element.credit_hour }}</td>
+                <td>{{ element.passing_marks }}</td>
+                <td>
+                    <i class="pi" 
+                    [ngClass]="element.status === 'active' ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                    [style.color]="element.status === 'active' ? 'green' : 'red'"
+                    [pTooltip]="element.status === 'active' ? 'Active' : 'Inactive'"
+                    tooltipPosition="bottom">
+                  </i>
+                  
+                </td>
+    
+                <td class="nxtPrimeTableAction">
+    
+                  
+                  <!-- <button pButton icon="pi pi-eye" class="p-button-rounded p-button-text p-button-help"
+                    (click)="viewElement(element)">
+                  </button>
+                  <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-success"
+                    (click)="openEditDialog(element)">
+                  </button>
+                  <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
+                    (click)="deleteElement(element)">
+                  </button> -->
+    
+    
+                  <p-splitButton
+                  [model]="actionItems"
+                  icon="pi pi-ellipsis-h"
+                  outlined
+                  severity="secondary"
+                  class="nxtPrimeTableAction"
+                  (click)="onButtonClick(element)">
+                </p-splitButton>
+                
+                
+    
+                </td>
+              </tr>
+            </ng-template>
+    
+            <!-- Empty Message -->
+            <ng-template pTemplate="emptymessage">
+              @if(dt2.columns){
+              <tr>
+                <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                  No data found.
+                </td>
+              </tr>
+              }
+            </ng-template>
+          </p-table>
+        </div>
+    
+      </div>
+  
+  </div>
+  
+
+
+<!-- Loading Spinner with Logo -->
+<ngx-loading [show]="loading" [config]="{ 
+    backdropBorderRadius: '3px', 
+    primaryColour: 'transparent', 
+    secondaryColour: 'transparent', 
+    tertiaryColour: 'transparent', 
+    size: 'large', 
+    type: 'circle' 
+  }">
+</ngx-loading>
+
+<!-- Custom loading image overlay -->
+<ng-container *ngIf="loading">
+  <div class="loading-image-overlay">
+    <div class="loader-wrapper">
+      <img src="../../../../assets/images/books.png" alt="Loading Image" class="loading-logo" />
+      <div class="spinner"></div>
+
+    </div>
+  </div>
+</ng-container>
+
+<div class="card">
+    <p-dialog
+        [header]="isAddForm ? 'Add Record' : 'Edit Record'" 
+        [(visible)]="visible"
+        styleClass="nxtGlobalTableHeader"
+        [breakpoints]="{'1199px': '75vw', '575px': '90vw'}"
+        [modal]="true"
+        [closable]="true"
+        [maximizable]="true"
+        [baseZIndex]="10000"
+        [style]="{'width': '50vw', 'height': 'auto'}"
+       
+    >
+        <div class="nxtPrimeFormContainer">
+            <form (ngSubmit)="submitForm()" [formGroup]="form">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="nxtPrimeFormBlock">
+  
+                              <!-- Select Board -->
+              <div class="form-group" fxFlex="1 1 48%">
+                <p-dropdown class="full-width-dropdown" [options]="boardList" optionLabel="name"
+                  placeholder="Select Board" emptyMessage="No Data Found" 
+                  (onChange)="onBoardSelection($event.value)" >
+                </p-dropdown>
+              </div>
+  
+  
+                    <!-- Event Name -->
+                    <div fxFlex="0 0 48%">
+                        <div fxLayout="column" class="form-group">
+                            <label>Subject Name</label>
+                            <input pInputText formControlName="subjectName" type="text" />
+                        </div>
+                    </div>
+
+  
+                    <!-- Event Type -->
+                    <div fxFlex="0 0 48%">
+                        <div fxLayout="column" class="form-group">
+                            <label>{{"Year"}}</label>
+                            <p-calendar 
+                            formControlName="year" 
+                            dateFormat="yy" 
+                            [view]="'year'" 
+                            [yearNavigator]="true" 
+                            [yearRange]="'1900:2050'" 
+                            showIcon="true">
+                          </p-calendar>
+
+                        </div>
+                    </div>
+  
+                    <!-- Start Date -->
+                    <div fxFlex="0 0 48%">
+                        <div fxLayout="column" class="form-group">
+                            <label>{{'Credit Hour'}}</label>
+                            <input pInputText formControlName="creditHour"   type="number" 
+                            />
+                    </div>
+                    </div>
+  
+                    <!-- End Date -->
+                    <div fxFlex="0 0 48%">
+                        <div fxLayout="column" class="form-group">
+                            <label>{{"Total Marks"}}</label>
+                            <input pInputText formControlName="totalMarks" type="number" />
+
+                        </div>
+                    </div>
+  
+                    <!-- Duration -->
+                    <div fxFlex="0 0 48%">
+                        <div fxLayout="column" class="form-group">
+                            <label>{{"Passing Marks"}}</label>
+                            <input pInputText formControlName="passingMarks" placeholder="Min Marks"  type="number"  />
+                        </div>
+                    </div>
+  
+
+
+                    <div fxFlex="0 0 48%">
+                        <div fxLayout="column" class="form-group">
+                            <label>{{"Regulation ID's"}}</label>
+                            <input pInputText formControlName="regulationIds" placeholder="Min Marks"  type="number"  />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" fxFlex="1 1 48%">
+                        <p-dropdown class="full-width-dropdown" [options]="statusMetaData" optionLabel="key"
+                          placeholder="Select Board" emptyMessage="No Data Found" 
+                          (onChange)="metaStatus($event.value)" >
+                        </p-dropdown>
+                      </div>
+
+
+
+  
+  
+                    <!-- Description -->
+                    <div fxFlex="0 0 98%">
+                        <div fxLayout="column" class="form-group">
+                            <label>{{"Event Description"}}</label>
+                            <textarea  
+                             rows="5"
+                             cols="30" pInputTextarea formControlName="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Form Footer -->
+                <div class="p-dialog-footer nxtPrimeFormAction">
+                    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end center">
+                        <p-button type="submit" [label]="isAddForm ? 'Submit' : 'Update'" severity="success" [rounded]="true" size="small" icon="pi pi-check" [disabled]="!form.valid"></p-button>
+                        <p-button label="Cancel" severity="warning" [rounded]="true" icon="pi pi-times" size="small" (click)="visible = false"></p-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </p-dialog>
+  </div>

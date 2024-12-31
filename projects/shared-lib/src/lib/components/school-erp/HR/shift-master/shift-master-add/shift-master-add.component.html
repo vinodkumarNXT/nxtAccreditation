@@ -1,0 +1,125 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="acc-EditForm-container">
+        <form (ngSubmit)="isEdit ? updateForm () : submitForm()" class="acc-form-container" [formGroup]="form">
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+  
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Shift Name"}}</mat-label>
+                        <input matInput formControlName="shiftName" required />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Shift Short Name"}}</mat-label>
+                        <input matInput formControlName="shiftShortName" required />
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Shift Start Time"}}</mat-label>
+                        <input matInput formControlName="shiftStartTime" required />
+                    </mat-form-field>
+                </div>
+
+                <!-- branchID:this.sessionService.getbranchID(),
+                shiftName: this.form.get("shiftName")?.value,
+                shiftShortName: this.form.get("shiftShortName")?.value,
+                shiftStartTime: this.form.get("shiftStartTime")?.value,
+                shiftEndTime:this.form.get("shiftEndTime")?.value,
+                graceInTime: this.form.get("graceInTime")?.value,
+                graceOutTime: this.form.get("graceOutTime")?.value,
+                lunchBreakInTime: this.form.get("lunchBreakInTime")?.value,
+                lunchBreakOutTime: this.form.get("lunchBreakOutTime")?.value,
+                <input [ngxMatTimepicker]="picker">
+<ngx-mat-timepicker #picker></ngx-mat-timepicker>  
+                halfDayGraceTime: this.form.get("halfDayGraceTime")?.value, -->
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>JAi BALAYYA</mat-label>
+                      <input matInput [ngxMatTimepicker]="picker" placeholder="Select time">
+                      <ngx-mat-timepicker-toggle matSuffix [for]="picker"></ngx-mat-timepicker-toggle>
+                      <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+                    </mat-form-field>
+                  </div>
+                  
+                  
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Shift End Time"}}</mat-label>
+                        <input matInput formControlName="shiftEndTime" required />
+                    </mat-form-field>
+                </div>
+
+
+
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Grace In Time"}}</mat-label>
+                        <input matInput formControlName="graceInTime" required />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Grace Out Time"}}</mat-label>
+                        <input matInput formControlName="graceOutTime" required />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Lunch Break In Time"}}</mat-label>
+                        <input matInput formControlName="lunchBreakInTime" required />
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Lunch Break Out Time"}}</mat-label>
+                        <input matInput formControlName="lunchBreakOutTime" required />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Half Day Grace Time"}}</mat-label>
+                        <input matInput formControlName="halfDayGraceTime" required />
+                    </mat-form-field>
+                </div>
+
+
+            </div>
+
+            <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+                <div class="formSubmit form-group" fxFlex="1 1 100%">
+                    <button mat-flat-button color="primary" type="submit">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

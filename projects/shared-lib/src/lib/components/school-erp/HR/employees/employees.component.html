@@ -1,0 +1,328 @@
+<div class="accre-forms-container card-1">
+  <!-- Title and Add Button Section -->
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
+    <div fxFlex="80">
+      <h3 class="acc-form-title card-title">{{"Employee's List"}}</h3>
+    </div>
+    <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
+
+    </div>
+  </div>
+
+  <!-- Data Table Section -->
+  <div class="nxtPrimeTable">
+    <div class="card">
+
+      <div class="formFilterContainer">
+
+        <form class="example-form" (ngSubmit)="submitForm()" [formGroup]="form">
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="4px">
+
+         <!-- Select Board -->
+<div class="form-group" fxFlex="1 1 24%">
+  <p-dropdown
+    class="full-width-dropdown"
+    [options]="boardList"              
+    optionLabel="name"           
+    placeholder="Select Board"          
+    emptyMessage="No Data Found"       
+    (onChange)="onBoardSelection($event.value)" 
+  >
+  </p-dropdown>
+</div>
+
+<!-- Select Year -->
+<div class="form-group" fxFlex="1 1 24%">
+  <p-dropdown
+    class="full-width-dropdown"
+    [options]="rolesMetaData"           
+    optionLabel="role_name"       
+    placeholder="Select Role"          
+    emptyMessage="No Data Found"       
+    (onChange)="onRoleSelection($event.value)" 
+  >
+  </p-dropdown>
+</div>
+
+        
+
+
+          </div>
+
+        </form>
+
+      </div>
+  
+
+
+      <p-table #dt2 [value]="metaTableData" [rows]="10" [rowsPerPageOptions]="[5, 10, 15, 25, 50]"
+      [loading]="loading" [paginator]="true"
+      [globalFilterFields]="['fullName', 'branchName', 'boardName', 'departmentName', 'designationName', 'joiningDate', 'status']">
+      
+<!-- Caption with Global Search -->
+<ng-template pTemplate="caption">
+ <div class="flex">
+   <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+     <input pInputText type="text" [(ngModel)]="searchValue"
+            (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+     <i class="pi pi-search"></i>
+   </span>
+   <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+             icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+   <p-button class="nxtTableGlobalAdd" label="Add" [outlined]="true" severity="warning"
+             icon="pi pi-plus" (onClick)="openAddDialog()" />
+ </div>
+</ng-template>
+
+<!-- Header with Column Filters -->
+<ng-template pTemplate="header">
+ <tr>
+   <th>
+     <div class="flex align-items-center">
+       Name
+       <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th>
+     <div class="flex align-items-center">
+       Branch
+       <p-columnFilter type="text" field="branchName" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th>
+     <div class="flex align-items-center">
+       Board
+       <p-columnFilter type="text" field="boardName" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th>
+     <div class="flex align-items-center">
+       Department
+       <p-columnFilter type="text" field="departmentName" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th>
+     <div class="flex align-items-center">
+       Designation
+       <p-columnFilter type="text" field="designationName" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th>
+     <div class="flex align-items-center">
+       Joining Date
+       <p-columnFilter type="date" field="joiningDate" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th>
+     <div class="flex align-items-center">
+       Status
+       <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+     </div>
+   </th>
+   <th class="nxtPrimeTableAction">Actions</th>
+ </tr>
+</ng-template>
+
+<!-- Body -->
+<ng-template pTemplate="body" let-element>
+ <tr>
+   <td>{{ element.full_name }}</td>
+   <td>{{ element.branch_code }}</td>
+   <td>{{ element.board }}</td>
+   <td>{{ element.department_id }}</td>
+   <td>{{ element.designation_id }}</td>
+   <td>{{ element.joining_date | date: 'dd-MM-yyyy' }}</td>
+   <td>
+     <i class="pi" 
+        [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+        [style.color]="element.status === 1 ? 'green' : 'red'"
+        [pTooltip]="element.status === 1 ? 'Active' : 'Inactive'"
+        tooltipPosition="bottom">
+     </i>
+   </td>
+   <td class="nxtPrimeTableAction">
+     <p-splitButton
+       [model]="tableActionItems(element)"
+       icon="pi pi-ellipsis-h"
+       outlined
+       severity="secondary"
+       class="nxtPrimeTableAction">
+     </p-splitButton>
+   </td>
+ </tr>
+</ng-template>
+
+<!-- Empty Message -->
+<ng-template pTemplate="emptymessage">
+ <tr>
+   <td [attr.colspan]="8" class="nxtPrimeTableNoDataFound">
+     No data found.
+   </td>
+ </tr>
+</ng-template>
+</p-table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Loading Spinner with Logo -->
+<ngx-loading [show]="loading" [config]="{ 
+    backdropBorderRadius: '3px', 
+    primaryColour: 'transparent', 
+    secondaryColour: 'transparent', 
+    tertiaryColour: 'transparent', 
+    size: 'large', 
+    type: 'circle' 
+  }">
+</ngx-loading>
+
+<!-- Custom loading image overlay -->
+<ng-container *ngIf="loading">
+  <div class="loading-image-overlay">
+    <div class="loader-wrapper">
+      <img src="../../../../assets/images/books.png" alt="Loading Image" class="loading-logo" />
+      <div class="spinner"></div>
+
+    </div>
+  </div>
+</ng-container>
+
+
+<div class="card">
+  <p-dialog header="Add Record" 
+  styleClass="nxtGlobalTableHeader"
+  [(visible)]="visible"
+  [breakpoints]="{'1199px': '75vw', '575px': '90vw'}"
+  [modal]="true"
+  [closable]="true"
+  [maximizable]="true"
+  [baseZIndex]="10000"
+  width="50rem"  
+  height="auto"
+  [style]="{'max-width': '700px'}"   
+  (onShow)="openAddDialog()"
+    >
+    <div class="nxtPrimeFormContainer">
+      <form (ngSubmit)="submitForm()" [formGroup]="form">
+       <div fxLayout="row wrap"   fxLayoutAlign="space-between center" fxLayoutGap="10px" class="nxtPrimeFormBlock">
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column"  class="form-group">
+                 <label >{{"First Name"}}</label>
+                 <input pInputText formControlName="firstName"/>
+             </div>
+         </div>
+ 
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Middle Name"}}</label>
+                 <input pInputText formControlName="middleName"/>
+             </div>
+         </div>
+ 
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Last Name"}}</label>
+                 <input pInputText formControlName="lastName"/>
+             </div>
+         </div>
+ 
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Father Name"}}</label>
+                 <input pInputText formControlName="fatherName"/>
+             </div>
+         </div>
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Mother Name"}}</label>
+                 <input pInputText formControlName="motherName"/>
+             </div>
+         </div>
+ 
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Email"}}</label>
+                 <input pInputText formControlName="email"/>
+             </div>
+         </div>
+ 
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Mobile"}}</label>
+                 <input pInputText formControlName="mobile"/>
+             </div>
+         </div>
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+               <label for="dateOfBirth">{{ "Date of Birth" }}</label>
+               <p-calendar formControlName="dateOfBirth"  
+               inputId="dob"placeholder="Select Date of Birth"
+               dateFormat="dd/mm/yy"showIcon="true" 
+                 appendTo="body"
+                 variant="filled">
+               </p-calendar>
+             </div>
+         </div>
+ 
+<!--  
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+               <label for="dateOfBirth">{{ "Select Gender" }}</label>
+               <p-dropdown class="full-width-dropdown" [options]="genderMetaData" optionLabel="value"
+               placeholder="Select Gender" emptyMessage="No Data Found" (onChange)="onGenderClick($event.value)">
+             </p-dropdown>
+             </div>
+         </div> -->
+ 
+         <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+                 <label >{{"Emergency  Contact"}}</label>
+                 <input pInputText formControlName="mobile"/>
+             </div>
+         </div>
+ 
+ 
+         <div fxFlex="0 0 100%">
+             <div fxLayout="column" class="form-group">
+                 <h5> {{"Address"}}</h5>
+             </div>
+         </div>
+ 
+         <!-- <div fxFlex="0 0 48%">
+             <div fxLayout="column" class="form-group">
+               <label for="dateOfBirth">{{ "Select Gender" }}</label>
+               <p-dropdown class="full-width-dropdown" [options]="countryList" optionLabel="name"
+               placeholder="Select Gender" emptyMessage="No Data Found" (onChange)="onGenderClick($event.value)">
+             </p-dropdown>
+             </div>
+         </div> -->
+ 
+      
+ 
+     </div>
+ 
+ 
+       <div class="p-dialog-footer nxtPrimeFormAction">
+         <div  class  fxLayout="row wrap"   fxLayoutGap="10px" fxLayoutAlign="end center" >
+           <p-button  type="submit" label="Submit" severity="success" [rounded]="true" size="small" icon="pi pi-check" (click)="submitForm()"/>
+           <p-button  label="Cancel" severity="warning" [rounded]="true"   icon="pi pi-times"  size="small" />
+         </div>
+     </div>
+     
+     </form>
+ </div>
+ 
+  </p-dialog>
+</div>

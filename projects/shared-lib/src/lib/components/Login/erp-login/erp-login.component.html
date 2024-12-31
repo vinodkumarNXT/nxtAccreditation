@@ -1,0 +1,61 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="loginContainer nxtPrimeSchoolAdminLogin" fxLayoutGap="15px">
+
+  <div fxFlex="100" class="schoolLoginContainer">
+    <div class="nxtPrimeFormContainer">
+
+      
+      <form (ngSubmit)="submitForm()" [formGroup]="form">
+        <div fxLayout="column" fxLayoutGap="10px" class="nxtPrimeFormBlock">
+
+          <div fxFlex="0 0 90%">
+            <div fxLayout="column"  fxLayoutAlign="center center" class="form-group">
+             <img  class="brandLogo" src="assets/educate-trans-logo.png" alt="" srcset="">
+            </div>
+          </div>
+
+          <!-- Event Name -->
+          <div fxFlex="0 0 90%">
+            <div fxLayout="column" class="form-group">
+              <label>User Name</label>
+              <input pInputText formControlName="email" type="text" />
+            </div>
+          </div>
+
+          <!-- Event Type -->
+          <div fxFlex="0 0 90%">
+            <div fxLayout="column" class="form-group">
+              <div class="password-container" style="position: relative; width: 100%;">
+              <label>Password</label>
+                <input  pInputText type="{{ showPassword ? 'text' : 'password' }}" placeholder="Please Enter Password"
+                  formControlName="password" class="form-control" style="width: 100%;" />
+                <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'"
+                  style="position: absolute; right: 10px; top: 50%; transform: translateY(-8%); cursor: pointer;"
+                  (click)="togglePasswordVisibility()"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" fxFlex="1 1 90%">
+            <label>Branch</label>
+            <p-dropdown class="full-width-dropdown" [options]="getMetaData" optionLabel="name"
+              placeholder="Select Branch" emptyMessage="No Data Found" formControlName="branchID">
+            </p-dropdown>
+          </div>
+        </div>
+
+        <!-- Form Footer -->
+        <div class="p-dialog-footer nxtPrimeFormAction">
+          <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end center">
+            <p-button type="submit" [label]="'Submit'" severity="success" [rounded]="true" size="small"
+              icon="pi pi-check" [disabled]="!form.valid"></p-button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+
+

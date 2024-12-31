@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./", // Set the base URL to the root of your project
+    "paths": {
+      "@shared-lib/*": ["shared-lib/src/public-api/*"]
+    }
+  }
+}

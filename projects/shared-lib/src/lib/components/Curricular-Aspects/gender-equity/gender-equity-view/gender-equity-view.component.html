@@ -1,0 +1,68 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+  <span fxFlex="75" class="ext-modal-title"> View </span>
+  <span fxFlex="25" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
+    <!-- <button mat-button color="primary"  (click)="editElement(data.id)"  class="ext-modal-close">
+            <mat-icon>create</mat-icon>
+        </button>
+        <button mat-button  color="warn" (click)="deleteElement(data.id)" class="ext-modal-close">
+            <mat-icon>delete_outline</mat-icon>
+        </button> -->
+
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div
+    class="row view-details-block"
+    fxLayout="row wrap"
+    fxLayoutGap="4px"
+    fxLayout.xs="column"
+  >
+    @if(formData?.GenderEquity.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.GenderEquity) }"
+          >
+            {{ formData?.GenderEquity?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.GenderEquity }}</p>
+          <label>{{ "Gender Equity & Sensitization" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.document_links.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.document_links) }"
+          >
+            {{ formData?.document_links?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>
+            <a
+              matTooltip="{{ formData?.document_links }}"
+              target="new"
+              href="{{ formData?.document_links }}"
+            >
+              {{ formData?.document_links }}</a
+            >
+          </p>
+          <label>{{ "Document Link" }}</label>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</mat-dialog-content>

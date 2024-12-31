@@ -1,0 +1,238 @@
+<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px" class="nxtSchoolDashboard">
+  <!-- Left Section -->
+  <div fxFlex.sm="100" fxFlex="28" class="nxtSchoolDashboardLeft">
+
+
+    <div class="nxtDashProfileContainer">
+      
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px"  class="nxtDashProfileContent">
+            <div class="imageContainer"  fxFlex="25">
+              <img   class="profileImg" src="https://media.licdn.com/dms/image/v2/D5603AQESf82cfauMhA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1688036308886?e=2147483647&v=beta&t=4-kepGDZeSrVL_m8tQdUTJjq5lIn6eeWvkUlud1CTD4" alt="" srcset="">
+            </div>
+            <div class="profileDetailsBlock"  fxFlex="75">
+
+              <h4 class="welcome">{{ greetingMessage }}</h4>
+              <h5 class="name">{{"Shalini Chakelam"}}</h5>
+              <h6 class="role">{{" Physics Teacher"}}</h6>
+              <h6 class="desgination">{{" Phd.in Electromagnetism"}}</h6>
+            </div>
+          </div>
+    </div>
+
+
+    <div
+    class="nxtDashLargeCardBlock"
+    fxLayout="row wrap"
+    fxLayoutAlign="start start"
+  >
+    <a
+      *ngFor="let item of dashboardItems; index as i"
+      routerLink="#"
+      class="nxtDashLargeCard"
+      fxFlex="23%"
+      fxLayout="column"
+      fxLayoutAlign="start center"
+      fxLayoutGap="1px"
+      [style.backgroundColor]="getCardBackgroundColor(i)"
+    >
+      <div class="nxtDashLargeCardLeft">
+        <img
+          [src]="'../../../assets/svg/' + item.image"
+          [alt]="item.alt"
+          class="dashboardIcon"
+        />
+      </div>
+      <div class="nxtDashLargeCardRight">
+        <p>{{ item.label }}</p>
+      </div>
+    </a>
+  </div>
+  
+
+
+    <div class="nxtschoolAdminDashboard">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center"  fxLayoutGap="6px">
+                
+                <div  fxFlex="100" class="chartContainer">
+                  <h3 class="chartTitle">{{"Montly Attendance"}}</h3>
+                     <canvas id="lineChart"></canvas>
+                </div>
+
+            </div>
+        </div>
+
+  </div>
+
+
+
+  <!-- Right Section -->
+  <div fxFlex.sm="100" fxFlex="36" class="nxtSchoolDashboardRight">
+    <div class="nxtContentBlogContainer">
+      @for (post of contentList; track $index) {
+      <p-fieldset>
+        <!-- Header Section -->
+        <ng-template pTemplate="header">
+          <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="6px" class="postMainHeader">
+      
+                <p class="blagHeaderTitle">{{ post.title }}</p>
+            
+
+          </div>
+        </ng-template>
+
+        <p class="blogTitle">{{ post.title }}</p>
+
+        
+        @if(post.image.length>1){
+            <div class="image-gallery" fxLayout="row"
+            [fxLayoutAlign]="post.image.length === 1 ? 'center center' : 'center center'" 
+            fxLayoutAlign="center center"  fxLayoutWrap fxLayoutGap="10px">
+         
+            <div [fxFlex]="post.image.length % 2 !== 0 && post.image === post.image.length - 1 ? '100%' : '50%'" >
+              @if (post.image.length>1) {
+                <p-image 
+                class="blogImg" [src]="post.image" 
+                alt="Image" 
+                width="250" 
+                [preview]="true" />
+              }
+            </div>
+          </div>
+            } @else {
+              
+            }
+          
+        
+
+          <p><span class="font-bold">Sub content:</span> {{ post.sub_content }}</p>
+
+        <p><span class="font-bold">Content:</span> {{ post.content }}</p>
+
+
+        <div class="author"  fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+          <!-- Posted By -->
+          <div fxFlex="50">
+            <p>
+              <span class="font-bold">
+                <span class="pi pi-users"></span>:
+              </span>
+              {{ post.postedBy }}
+            </p>
+          </div>
+        
+          <!-- Created At -->
+          <div fxFlex="50">
+            <p>
+              <span class="font-bold">
+                <span class="pi pi-calendar"></span>:
+              </span>
+              {{ post.created_at | date: 'longDate' }}
+            </p>
+          </div>
+        </div>
+        
+
+        <!-- Footer -->
+        <div class="blogFooter">
+          <div class="footer-actions flex gap-3">
+            <a href="#" class="pi pi-comment">
+              Comment
+              <span class="badge">{{ post.comments_count }}</span>
+          </a>
+          <a href="#" class="pi pi-thumbs-up">
+              Like
+              <span class="badge">{{ post.likes_count }}</span>
+          </a>
+          <a href="#" class="pi pi-share-alt">Share 
+
+            <span class="badge" text-color="">{{ post.sharedCount }}</span>
+
+          </a>
+          <a href="#" class="pi pi-bookmark">Save
+
+            <span class="badge">{{ post.savedCount }}</span>
+
+          </a>
+          </div>
+        </div>
+
+
+      </p-fieldset>
+      }
+    </div>
+
+  </div>
+
+
+
+  <div fxFlex.sm="100" fxFlex="32" class="nxtFuturePostsBlock">
+
+    <h3 class="upcomingEventHeader"> Upcoming Events</h3>
+
+    <p-timeline [value]="timelinePosts" styleClass="customized-timeline" align="left">
+      <!-- Marker Template (Date/Marker) -->
+      <ng-template pTemplate="marker" let-event>
+        <span class="flex w-2rem h-2rem align-items-center justify-content-center text-white border-circle z-1 shadow-1"
+          [style]="{ 'background-color': event.color }">
+          <i class="pi pi-calendar mr-2"></i>
+          {{ event.date }}
+        </span>
+      </ng-template>
+
+      <!-- Content Template -->
+      <ng-template pTemplate="content" let-event>
+        <p-card [header]="event.status" [subheader]="event.date">
+          <!-- Display image if available -->
+          <!-- <img *ngIf="event.image" [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + event.image"
+            [alt]="event.status" width="200" class="shadow-2 mb-3" /> -->
+
+            <img *ngIf="event.image" [src]="'https://i0.wp.com/defendernetwork.com/wp-content/uploads/2022/08/GettyImages-1160223416-scaled.jpg?fit=2560%2C1707&ssl=1'"
+            [alt]="event.status" width="200" class="shadow-2 mb-3" />
+          <p>{{ event.content }}</p>
+
+          <!-- TimeTable Section -->
+          <div *ngIf="event.TimeTable">
+            <div class="classTimeTable">
+              <!-- Single header for the entire day's schedule -->
+              <h3>Today's Time Schedule: {{ event.TimeTable.Day }}</h3>
+              <!-- Loop through the schedule and display each subject and time -->
+              <p-panel header="Class Schedules" [toggleable]="true" [collapsed]="true">
+                <p-table [value]="event.TimeTable.schedule" styleClass="p-datatable-striped p-datatable-hover">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>Time</th>
+                      <th>Subject</th>
+                      <th>Room</th>
+                      <th>Faculty</th>
+                    </tr>
+                  </ng-template>
+
+                  <ng-template pTemplate="body" let-item let-i="rowIndex">
+                    <tr [ngClass]="{
+                          'break-time': item.subject === 'Lunch Break' || item.subject === 'Break',
+                          'monday': event.TimeTable.Day === 'Monday',
+                          'tuesday': event.TimeTable.Day === 'Tuesday',
+                          'wednesday': event.TimeTable.Day === 'Wednesday',
+                          'thursday': event.TimeTable.Day === 'Thursday',
+                          'friday': event.TimeTable.Day === 'Friday'
+                        }">
+                      <td>{{ item.time }}</td>
+                      <td>{{ item.subject }}</td>
+                      <td>{{ item.room || 'N/A' }}</td>
+                      <td>{{ item.FacultyBy || 'N/A' }}</td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </p-panel>
+            </div>
+          </div>
+        </p-card>
+      </ng-template>
+    </p-timeline>
+
+
+
+
+
+  </div>
+</div>

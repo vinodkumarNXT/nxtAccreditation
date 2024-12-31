@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import 'ngx-toastr/toastr';
+
+@import url("/node_modules/primeicons/primeicons.css");
+@import url("/node_modules/primeng/resources/themes/lara-dark-indigo/theme.css");
+@import url("/node_modules/primeng/resources/primeng.min.css");
+
+
+::ng-deep :root {
+    /* Theme Primary Colors START */
+    --nxtIndigo: #393186;
+    --nxtOrange: #ee7f1b;
+    --nxtSkyBlue: #0cafff;
+    --nxtGreen: #83cf43;
+    --nxtToolBarBG: #b6bbc4;
+    --nxtSideMenuBg: #fff;
+  
+    /* Theme Primary Colors END */
+  
+    /* Dashboard Cards Color for Admin START */
+    --nxtDashCardDanger: #fd3550;
+    --nxtDashCardPrimary: #0dcaf0;
+    --nxtDashCardSuccess: #15ca20;
+    --nxtDashCardWarn: #ffc107;
+  
+    --nxtDashTextDanger: #dc3545;
+    --nxtDashTextPrimary: #17a2b8;
+    --nxtDashTextSuccess: #28a745;
+    --nxtDashTextWarn: #ffc107;
+    /* Dashboard Cards Color for Admin END */
+  
+    /* Theme Optional Colors START */
+    --nxtGrey: #ebedec;
+    --nxtWhite: #fff;
+    --nxtDarkGrey: #606060;
+    --nxtBlack: #000;
+    --nxtTableTDColor: #222831;
+    --nxtLightGrey: #848484;
+    --nxtGreyBGcolor: #f4f4f4;
+    --nxtGreySecondary: #6c757d;
+    --nxtDashBgColor: #f7f7ff;
+    /* Theme Optional Colors END */
+  
+    /* Dashboard Chart Colors START */
+    --nxtDashChart1: #ff9705;
+    --nxtDashChart2: #062a74;
+    --nxtDashChart3: #034be4;
+    --nxtDashChart4: #428bf9;
+    --nxtDashChart5: #b6cdff;
+    --nxtDashChart6: #fad1d4;
+    --nxtDashSemanticPos: #3dd29d;
+    --nxtDashSemanticNeg: #ff5005;
+    --nxtDashTitleBGColor: #e0eaff;
+    /* Dashboard Chart Colors END */
+  
+    /* New Revised Button Colors START */
+    --nxtPrimaryBtn: #f5883c;
+    --nxtPrimaryBtnHover: #ef741e !important;
+  
+    --nxtSecondaryBtn: #dcdcdc;
+    --nxtSecondaryBtnHover: #ddd !important;
+  
+    --nxtSuccessBtn: #28a745;
+    --nxtSuccessBtnHover: #159c35;
+  
+    --nxtDangerBtn: #e32636;
+    --nxtDangerBtnHover: #d41121;
+  
+    --nxtDarkBtn: #595959;
+    --nxtDarkBtnHover: rgb(23, 32, 32);
+  
+    --nxtInfoBtn: #0cafff;
+    --nxtInfoBtnHover: #0497e0;
+    /* New Revised Button Colors END */
+  
+    /* Table Header Color START */
+    --nxtTableThBgColor: #ff9c59; /* Comment out previous colors if not in use */
+    /* Table Header Color END */
+  }
+  
+  /* Root  style and Color Picker Ends Here */
+  
+  .nxtIndigo {
+    color: var(--nxtIndigo);
+  }
+  
+  .nxtGreyBGcolor {
+    background-color: var(--nxtGreyBGcolor);
+  }
+  
+  .nxtOrange {
+    color: var(--nxtOrange);
+  }
+  
+  .nxtSkyBlue {
+    color: var(--nxtSkyBlue);
+  }
+  
+  .nxtGrey {
+    color: var(--nxtGrey);
+  }
+  
+  .nxtGreen {
+    color: var(--nxtGreen);
+  }
+  
+  .fontAlegreya {
+    font-family: "Alegreya";
+  }
+  
+  .fontPoppins {
+    font-family: "Poppins";
+  }
+  
+  .fontRaleway {
+    font-family: "Raleway";
+  }
+  
+  .fontNoto {
+    font-family: "Noto Sans Mono";
+  }
+  
+  /* New Css Global Root Selection Css ENDS Here */
+  
+  /* Global Center CSS Starts Here */
+  .nxtTextcenter {
+    text-align: center !important;
+  }
+
+
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }

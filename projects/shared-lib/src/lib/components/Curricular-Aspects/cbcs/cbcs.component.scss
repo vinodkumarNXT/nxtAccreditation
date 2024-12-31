@@ -1,0 +1,40 @@
+@media print {
+    /* Reset colors for print */
+    #print-section {
+      color: black;
+    }
+  
+    mat-icon {
+      color: black !important;
+    }
+  
+    button {
+      background-color: transparent !important;
+      color: black !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  
+    .globalTableTheadAction,
+    .globalTableTDcellAction {
+      background-color: transparent !important;
+    }
+  
+    /* Hide action buttons in print */
+    .globalTableActionBtn {
+      display: none !important;
+    }
+  
+    /* Specific styling for print */
+    th,
+    td {
+      border-color: black !important;
+    }
+  
+    /* Adjust print color behavior */
+    body * {
+      -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
+      print-color-adjust: exact !important; /* Firefox */
+    }
+  }
+  

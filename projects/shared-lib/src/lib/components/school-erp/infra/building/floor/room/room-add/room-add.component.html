@@ -1,0 +1,96 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="acc-EditForm-container">
+        <form (ngSubmit)="isEdit ? updateForm () : submitForm()" class="acc-form-container" [formGroup]="form">
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field>
+                        <mat-label>{{" Select Building"}}</mat-label>
+                        <!-- Dynamically populate mat-select options based on data type -->
+                        <mat-select formControlName="buildingID" (selectionChange)="updateFloors($event.value)">
+                            @for (item of buildingList; track item) {
+                            @if (item.status==='active') {
+                                <mat-option [value]="item.id">
+                                    {{ item.name }}
+                                </mat-option>
+                            }
+                            } @empty {
+                            {{"There are no Buildings..."}}
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field>
+                        <mat-label>{{" Select Floor"}}</mat-label>
+                        <!-- Dynamically populate mat-select options based on data type -->
+                        <mat-select formControlName="floorID" (selectionChange)="updateRooms($event.value)">
+                            @for (item of filteredFloors; track item) {
+                                @if (item.status==='active') {
+                                    <mat-option [value]="item.id">
+                                        {{ item.name }}
+                                    </mat-option>
+                                }
+                            } @empty {
+                            {{"There are no Floors..."}}
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Room Name"}}</mat-label>
+                        <input matInput formControlName="roomName" required />
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%" *ngFor="let data of getMetaData">
+                    <mat-form-field>
+                        <mat-label>{{"Status"}}</mat-label>
+
+                        <!-- Dynamically populate mat-select options based on data type -->
+                        <mat-select formControlName="status">
+                            <mat-option *ngFor="let option of getOptions(data)" [value]="option.key">
+                                {{ option.value }}
+                            </mat-option>
+                        </mat-select>
+                        <!-- Error messages -->
+                        <mat-error *ngIf="form.get('status').hasError('required')">
+                            You must make a selection
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form-group" fxFlex="1 1 48%">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{"Capacity"}}</mat-label>
+                        <input matInput formControlName="capacity" type="number" required />
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+                <div class="formSubmit form-group" fxFlex="1 1 100%">
+                    <button mat-flat-button color="primary" type="submit">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

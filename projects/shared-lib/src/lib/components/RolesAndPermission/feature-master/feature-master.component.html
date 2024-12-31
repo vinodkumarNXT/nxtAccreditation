@@ -1,0 +1,144 @@
+
+
+
+<div class="accre-forms-container card-1">
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
+    <div fxFlex="80">
+      <h3 class="acc-form-title card-title">{{"Features"}}</h3>
+    </div>
+    <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
+    
+    </div>
+  </div>
+
+  
+
+  <div fxLayout="row" fxLayoutAlign="end end" class="filterBlockContainer">
+    <div class="filterBlock" fxFlex="30">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search Here...." #input>
+    </mat-form-field>
+    </div>
+    <div class="addCountBlock" fxFlex="7"   fxLayout="row" fxLayoutAlign="space-between center" flexlayouGap="10px">
+      <!-- <div class="globalTableCount">
+        Count: <span class="countNumber">{{ listData.length  }}</span></div> -->
+      <button mat-raised-button color="warn" (click)="openAddDialog()">
+        <mat-icon>add</mat-icon>
+        <span class="content">ADD</span>
+      </button>
+    </div>
+
+
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 nxtAccTable">
+    <ng-container matColumnDef="ID">
+      <th mat-header-cell *matHeaderCellDef>{{"S.NO"}}</th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        {{ i + 1 + (paginator.pageIndex * paginator.pageSize) }}
+      </td>
+
+    </ng-container>
+
+    <ng-container matColumnDef="RoleName">
+      <th mat-header-cell *matHeaderCellDef>Role Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.role_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="FeatureName">
+      <th mat-header-cell *matHeaderCellDef>Feature Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.feature_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Create">
+      <th mat-header-cell *matHeaderCellDef>Create</th>
+      <td mat-cell *matCellDef="let element">
+        <span 
+        [ngClass]="{
+          'create-allowed': element.feature_create == 1,
+          'create-denied': element.feature_create == 0
+        }">
+        <mat-icon *ngIf="element.feature_create == 1">check</mat-icon>
+        <mat-icon *ngIf="element.feature_create == 0">close</mat-icon>
+      </span>
+        
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="View">
+      <th mat-header-cell *matHeaderCellDef>View</th>
+      <td mat-cell *matCellDef="let element">
+
+        <span 
+        [ngClass]="{
+          'create-allowed': element.feature_view == 1,
+          'create-denied': element.feature_view == 0
+        }">
+        <mat-icon *ngIf="element.feature_view == 1">check</mat-icon>
+        <mat-icon *ngIf="element.feature_view == 0">close</mat-icon>
+      </span>
+        
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Edit">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let element">
+        <span 
+        [ngClass]="{
+          'create-allowed': element.feature_edit == 1,
+          'create-denied': element.feature_edit == 0
+        }">
+        <mat-icon *ngIf="element.feature_edit == 1">check</mat-icon>
+        <mat-icon *ngIf="element.feature_edit == 0">close</mat-icon>
+      </span>
+        
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let element">
+        <span 
+        [ngClass]="{
+          'create-allowed': element.feature_delete == 1,
+          'create-denied': element.feature_delete == 0
+        }">
+        <mat-icon *ngIf="element.feature_delete == 1">check</mat-icon>
+        <mat-icon *ngIf="element.feature_delete == 0">close</mat-icon>
+      </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef class="globalTableTheadAction">Actions</th>
+      <td mat-cell *matCellDef="let element" class="globalTableTDcellAction globalTableTheadAction">
+        <!-- <button mat-button class="globalTableActionBtn" color="accent" (click)="editElement(element)">
+          <mat-icon>edit</mat-icon>
+        </button> -->
+        <button mat-button class="globalTableActionBtn" color="warn" (click)="deleteElement(element)">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+ 
+    <!-- <tr mat-header-row *matHeaderRowDef="['ID', 'RoleName', 'FeatureName', 'Create', 'View', 'Edit', 'Delete', 'Actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['ID', 'RoleName', 'FeatureName', 'Create', 'View', 'Edit', 'Delete', 'Actions'];"></tr> -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+  <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Select page of users"></mat-paginator>
+
+  
+  
+
+</div>
+
+<!-- Spinner -->
+<div class="spinner-container" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>

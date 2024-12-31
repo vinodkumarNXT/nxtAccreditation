@@ -1,0 +1,91 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+  <span fxFlex="75" class="ext-modal-title"> View </span>
+  <span fxFlex="25" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
+    <!-- <button mat-button color="primary"  (click)="editElement(data.id)"  class="ext-modal-close">
+            <mat-icon>create</mat-icon>
+        </button>
+        <button mat-button  color="warn" (click)="deleteElement(data.id)" class="ext-modal-close">
+            <mat-icon>delete_outline</mat-icon>
+        </button> -->
+
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div
+    class="row view-details-block"
+    fxLayout="row wrap"
+    fxLayoutGap="4px"
+    fxLayout.xs="column"
+  >
+  <div class="form-group" fxFlex="48">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="20" class="view-icon">
+        <span class="program-label-icon" [ngStyle]="{ color: getColorForItem('LCD') }">
+          {{ formData?.lcdCount }}
+        </span>
+      </div>
+      <div fxFlex="80">
+        <p>{{ formData?.lcdCount || '0' }}</p>
+        <label>Number of classrooms with LCD facilities</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" fxFlex="48">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="20" class="view-icon">
+        <span class="program-label-icon" [ngStyle]="{ color: getColorForItem('Wi-Fi') }">
+          {{ formData?.wifiCount }}
+        </span>
+      </div>
+      <div fxFlex="80">
+        <p>{{ formData?.wifiCount || '0' }}</p>
+        <label>No. of classrooms with Wi-Fi/LAN facilities</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" fxFlex="48">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="20" class="view-icon">
+        <span class="program-label-icon" [ngStyle]="{ color: getColorForItem('Wi-Fi') }">
+          {{ formData?.seminarHallCount }}
+        </span>
+      </div>
+      <div fxFlex="80">
+        <p>{{ formData?.seminarHallCount || '0' }}</p>
+        <label>No. of seminar halls with ICT facilities</label>
+      </div>
+    </div>
+  </div>
+   
+    @if(formData?.documentLinks.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.documentLinks) }"
+          >
+            {{ formData?.documentLinks?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>
+            <a
+              matTooltip="{{ formData?.documentLinks }}"
+              target="new"
+              href="{{ formData?.documentLinks }}"
+            >
+              {{ formData?.documentLinks }}</a
+            >
+          </p>
+          <label>{{ "Upload Link" }}</label>
+        </div>
+      </div>
+    </div>
+    } -->
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,58 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title"> View Details</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="row view-details-block" fxLayout="row wrap"  fxLayoutGap="4px" fxLayout.xs="column">
+        <div class="form-group"  fxFlex="48">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxFlex="20" class="view-icon">
+                    <mat-icon>code</mat-icon>
+                </div>
+                <div fxFlex="80">
+                    <p>{{ formData?.description }}</p>
+                    <label>Program Code</label>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group" fxFlex="48">
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <div fxFlex="20" class="view-icon">
+                <mat-icon>link</mat-icon>
+              </div>
+              <div fxFlex="80">
+                <p>
+                  <a href="javascript:void(0)" (click)="openLightbox(formData.upload_documents)">
+                    <mat-icon matTooltip="{{formData.upload_documents}}">image</mat-icon>
+                  </a>
+                </p>
+                <label>View File</label>
+              </div>
+            </div>
+          </div>
+          
+
+       
+        <div class="form-group"  fxFlex="48">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div fxFlex="20" class="view-icon">
+                    <mat-icon>link</mat-icon>
+                </div>
+                <div fxFlex="80">
+                    <p><a    matTooltip="{{ formData?.upload_links }}" target="new" href="{{ formData?.upload_links }}"> {{ formData?.upload_links }}</a></p>
+                    <label>Document Link</label>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</mat-dialog-content>

@@ -1,0 +1,198 @@
+<ng-container *ngIf="!isLoginPage">
+	<div class="nxtMainRouteOutlet  nxtPrimeRouter">
+	  <div class="nxtHeaderAndContent">
+		<div class="nxtPrimeHeader">
+			<!-- Toolbar -->
+			<p-toolbar>
+			  <!-- Left Section -->
+			  <div class="p-toolbar-group-left">
+				<!-- <h2 class="brandHeader">Swifterz</h2> -->
+				<!-- <img src="../assets/eduNxt.png" alt="logo"  class="brandLogo" /> -->
+				<div class="logoBlock" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3px">
+					<!-- Image section -->
+					<div fxFlex="15" class="logoContainer">
+						<img
+							src="https://png.pngtree.com/png-vector/20230415/ourmid/pngtree-school-logo-design-template-vector-png-image_6705854.png"
+							alt="Oasis Logo"
+							class="brandLogo"
+						/>
+					</div>
+				
+					<!-- Text section -->
+					<div fxFlex="80" class="textContainer">
+						<p class="brandName">Oakridge International School </p>
+					</div>
+				</div>
+				
+
+				
+				<!-- <button pButton type="button" icon="pi pi-bars" class="p-button-text d-none" (click)="toggleSidebar()"></button> -->
+			  </div>
+		  
+			  <!-- Center Section -->
+			  <div class="p-toolbar-group-center">
+				<div class="nxtPrimeMegaMenu">
+				  <p-megaMenu [model]="menuItems">
+					<ng-template pTemplate="item" let-item>
+					  <ng-container *ngIf="item.routerLink; else elseBlock">
+						<a [routerLink]="item.routerLink" class="p-menuitem-link">
+						  <!-- Check for svgicon first, fallback to PrimeNG icon -->
+						  <ng-container *ngIf="item.svgicon; else iconBlock">
+							<img class="megaMenuSvg" [src]="item.svgicon" alt="{{ item.label }}" />
+						  </ng-container>
+						  <ng-template #iconBlock>
+							<i [class]="item.icon"></i>
+						  </ng-template>
+						  <span class="ml-2">{{ item.label }}</span>
+						</a>
+					  </ng-container>
+					  <ng-template #elseBlock>
+						<a [href]="item.url" class="p-menuitem-link">
+						  <!-- Check for svgicon first, fallback to PrimeNG icon -->
+						  <ng-container *ngIf="item.svgicon; else iconBlock2">
+							<img class="megaMenuSvg" [src]="item.svgicon" alt="{{ item.label }}" />
+						  </ng-container>
+						  <ng-template #iconBlock2>
+							<i [class]="item.icon"></i>
+						  </ng-template>
+						  <span class="ml-2">{{ item.label }}</span>
+						</a>
+					  </ng-template>
+					</ng-template>
+				  </p-megaMenu>
+				</div>
+			  </div>
+			  
+		  
+			  <!-- Right Section -->
+			  <div class="p-toolbar-group-right">
+				<!-- <div class="nxtPrimeGlobalSearch">
+				  <p-autoComplete
+					placeholder="Search Here..."
+					[style]="{ width: '100%' }"
+					inputStyleClass="autocomplete-input">
+				  </p-autoComplete>
+				  <i class="pi pi-search search-icon"></i>
+				</div> -->
+
+				<div class="nxtPrimeGlobalSearch">
+					<p-autoComplete
+					  placeholder="Search Here..."
+					  [style]="{ width: '100%' }"
+					  inputStyleClass="autocomplete-input"
+					  [suggestions]="searchResults"
+					  (completeMethod)="searchRoutes($event)"
+					  (onSelect)="onSelectRoute($event)">
+					</p-autoComplete>
+					<i class="pi pi-search search-icon"></i>
+				  </div>
+				  
+
+
+
+				<button
+				  pButton
+				  [rounded]="true"
+				  [outlined]="true"
+				  label="Log Out"
+				  icon="pi pi-sign-out"
+				  class="p-button-danger"
+				  (click)="logout()">
+				</button>
+			  </div>
+
+			  <!-- Breadcrumb -->
+			  <div class="nxtPrimeBreadCom">
+				  <p-breadcrumb class="max-w-full" [model]="breadcrumbs">
+					  <ng-template pTemplate="item" let-item>
+						<ng-container *ngIf="item.route; else elseBlock">
+						  <a [routerLink]="item.route" class="p-menuitem-link" [ngClass]="item.colorClass">
+							<span class="breadComIcon" [ngClass]="[item.icon ? item.icon : '', 'text-color']"></span>
+							<span class="text-primary font-semibold">{{ item.label }}</span>
+						  </a>
+						</ng-container>
+						<ng-template #elseBlock>
+						  <a [href]="item.url" [ngClass]="item.colorClass">
+							<span class="text-color">{{ item.label }}</span>
+						  </a>
+						</ng-template>
+					  </ng-template>
+					</p-breadcrumb>
+					
+					
+					
+					
+			  </div>
+
+			  
+			</p-toolbar>
+		  
+		  </div>
+		  
+  
+<!-- Sidebar Menu -->
+				<div class="nxtPrimeSideMenu">
+					<p-sidebar [(visible)]="isSidebarVisible" position="left" [baseZIndex]="10000">
+						<p-menu [model]="menuItems">
+
+						</p-menu>
+					  </p-sidebar>
+					
+				</div>
+  
+		<!-- Main Content -->
+		<div class="nxtApp-sidenav-content">
+		  <router-outlet></router-outlet>
+		</div>
+	  </div>
+  
+	  <!-- Footer -->
+	  <footer class="nxt-footerSection row m-0">
+		<div class="nxt-footerContent col-md-4 col-sm-12">
+		  <div class="nxtPoweredBy">
+			<p>Powered By - </p>
+			<img src="../assets/eduNxt.png" alt="logo" />
+		  </div>
+		</div>
+  
+		<div class="nxt-footerContent col-md-4 col-sm-12">
+		  <p class="nxtCopyRights">
+			<span><i class="pi pi-copyright"></i></span>
+			<span id="currentYear" style="font-weight: 500; font-size: 13px">{{ currentYear }}</span>
+			<span style="font-weight: 700; font-size: 13px"></span>
+			<span style="font-weight: 600; font-size: 13px; color: #1776d4">Edu</span>
+			<span style="font-weight: 700; font-size: 13px">N</span>
+			<span style="color: #F57F17; font-weight: 700; font-size: 13px">X</span>
+			<span style="font-weight: 700; font-size: 13px">T</span> All Rights Reserved
+		  </p>
+		</div>
+  
+		<div class="nxt-footerContent nxt-social-MainStrip col-md-4 col-sm-12">
+		  <ul class="nxt-social-Icons">
+			<li>
+			  <a href="https://www.educatenxt.co" target="_blank" class="footerSocialIcon">
+				<img src="../assets/connections.svg" alt="logo" />
+			  </a>
+			</li>
+			<li>
+			  <a href="https://www.instagram.com/educate_nxt/?hl=en" target="_blank" class="footerSocialIcon">
+				<img src="../assets/instagram.svg" alt="logo" />
+			  </a>
+			</li>
+			<li>
+			  <a href="https://in.linkedin.com/company/erpeducatenxt" target="_blank" class="footerSocialIcon">
+				<img src="../assets/facebook.svg" alt="logo" />
+			  </a>
+			</li>
+		  </ul>
+		</div>
+	  </footer>
+	</div>
+  </ng-container>
+  
+  <ng-container *ngIf="isLoginPage">
+	<div class="globalRouter">
+		<router-outlet></router-outlet>
+	</div>
+  </ng-container>
+  

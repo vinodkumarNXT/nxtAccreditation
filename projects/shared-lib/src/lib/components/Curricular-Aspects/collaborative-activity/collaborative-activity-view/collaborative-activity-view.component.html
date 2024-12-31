@@ -1,0 +1,155 @@
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+  <span fxFlex="75" class="ext-modal-title"> View </span>
+  <span fxFlex="25" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="2px">
+    <!-- <button mat-button color="primary"  (click)="editElement(data.id)"  class="ext-modal-close">
+            <mat-icon>create</mat-icon>
+        </button>
+        <button mat-button  color="warn" (click)="deleteElement(data.id)" class="ext-modal-close">
+            <mat-icon>delete_outline</mat-icon>
+        </button> -->
+
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div
+    class="row view-details-block"
+    fxLayout="row wrap"
+    fxLayoutGap="4px"
+    fxLayout.xs="column"
+  >
+    @if(formData?.activityTitle.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.activityTitle) }"
+          >
+            {{ formData?.activityTitle?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.activityTitle }}</p>
+          <label>{{ "Activity Title" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.collaboratingAgency.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{
+              color: getColorForItem(formData?.collaboratingAgency)
+            }"
+          >
+            {{ formData?.collaboratingAgency?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.collaboratingAgency }}</p>
+          <label>{{ "Collaborating Agency" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.participantName.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.participantName) }"
+          >
+            {{ formData?.participantName?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.participantName }}</p>
+          <label>{{ "Participant Name" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.collabarationYear.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.collabarationYear) }"
+          >
+            {{ formData?.collabarationYear?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.collabarationYear }}</p>
+          <label>{{ "Collaboration Year" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.duration.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.duration) }"
+          >
+            {{ formData?.duration?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.duration }}</p>
+          <label>{{ "Duration" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.activityType.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.activityType) }"
+          >
+            {{ formData?.activityType?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>{{ formData?.activityType }}</p>
+          <label>{{ "Activity Type" }}</label>
+        </div>
+      </div>
+    </div>
+    } @if(formData?.documentLinks.length>0){
+    <div class="form-group" fxFlex="48">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="20" class="view-icon">
+          <span
+            class="program-label-icon"
+            [ngStyle]="{ color: getColorForItem(formData?.documentLinks) }"
+          >
+            {{ formData?.documentLinks?.slice(0, 2) }}
+          </span>
+        </div>
+        <div fxFlex="80">
+          <p>
+            <a
+              matTooltip="{{ formData?.documentLinks }}"
+              target="new"
+              href="{{ formData?.documentLinks }}"
+            >
+              {{ formData?.documentLinks }}</a
+            >
+          </p>
+          <label>{{ "Upload Link" }}</label>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</mat-dialog-content>

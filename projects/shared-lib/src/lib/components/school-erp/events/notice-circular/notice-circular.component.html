@@ -1,0 +1,141 @@
+<div class="accre-forms-container card-1">
+    <!-- Title and Add Button Section -->
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
+      <div fxFlex="80">
+        <h3 class="acc-form-title card-title">{{"Notice &  Circular"}}</h3>
+      </div>
+      <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
+  
+      </div>
+    </div>
+  
+    <!-- Data Table Section -->
+    <div class="nxtPrimeTable">
+      <div class="card">
+      
+  
+  
+        <p-table #dt2 [value]="tableMetaDataList" [rows]="10" [rowsPerPageOptions]="[5, 10, 15, 25, 50]"
+        [loading]="loading" [paginator]="true" [globalFilterFields]="['title', 'description', 'target_audience', 'created_at']">
+      
+        <!-- Caption with Global Search -->
+        <ng-template pTemplate="caption">
+          <div class="flex">
+            <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+              <input pInputText type="text" [(ngModel)]="searchValue" (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+              <i class="pi pi-search"></i>
+            </span>
+            <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary" icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+          </div>
+        </ng-template>
+      
+        <!-- Header with Column Filters -->
+        <ng-template pTemplate="header">
+          <tr>
+            
+            <th>
+              <div class="flex align-items-center">
+                {{ "Notice ID" }}
+                <p-columnFilter type="text" field="notice_id" display="menu"></p-columnFilter>
+              </div>
+            </th>
+            <th>
+              <div class="flex align-items-center">
+                {{ "Title" }}
+                <p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+              </div>
+            </th>
+            <th>
+              <div class="flex align-items-center">
+                {{ "Description" }}
+                <p-columnFilter type="text" field="description" display="menu"></p-columnFilter>
+              </div>
+            </th>
+            <th>
+              <div class="flex align-items-center">
+                {{ "Target Audience" }}
+                <p-columnFilter type="text" field="target_audience" display="menu"></p-columnFilter>
+              </div>
+            </th>
+            <th>
+              <div class="flex align-items-center">
+                {{ "Expiry Date" }}
+                <p-columnFilter type="date" field="expiry_date" display="menu"></p-columnFilter>
+              </div>
+            </th>
+            <th>
+              <div class="flex align-items-center">
+                {{ "Issued By" }}
+                <p-columnFilter type="text" field="issued_by" display="menu"></p-columnFilter>
+              </div>
+            </th>
+            <th>
+              <div class="flex align-items-center">
+                {{ "Date of Issue" }}
+                <p-columnFilter type="date" field="date_of_issue" display="menu"></p-columnFilter>
+              </div>
+            </th>
+       
+            <th class="nxtPrimeTableAction">{{ "Actions" }}</th>
+          </tr>
+        </ng-template>
+      
+        <!-- Body -->
+        <ng-template pTemplate="body" let-element>
+          <tr>
+            <td>{{ element.notice_id }}</td>
+            <td>{{ element.title }}</td>
+            <td>{{ element.description }}</td>
+            <td>{{ element.target_audience }}</td>
+            <td>{{ element.expiry_date | date: 'longDate' }}</td>
+            <td>{{ element.date_of_issue | date: 'longDate' }}</td>
+            <td>{{ element.issued_by }}</td>
+           
+            <td class="nxtPrimeTableAction">
+              <p-splitButton [model]="tableActionItems(element)" icon="pi pi-ellipsis-h" outlined severity="secondary" class="nxtPrimeTableAction"></p-splitButton>
+            </td>
+          </tr>
+        </ng-template>
+      
+        <!-- Empty Message -->
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="11" class="nxtPrimeTableNoDataFound">No data found.</td>
+          </tr>
+        </ng-template>
+      </p-table>
+      
+      
+          
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  
+  <!-- Loading Spinner with Logo -->
+  <ngx-loading [show]="loading" [config]="{ 
+      backdropBorderRadius: '3px', 
+      primaryColour: 'transparent', 
+      secondaryColour: 'transparent', 
+      tertiaryColour: 'transparent', 
+      size: 'large', 
+      type: 'circle' 
+    }">
+  </ngx-loading>
+  
+  <!-- Custom loading image overlay -->
+   @if(loading){
+     <ng-container>
+       <div class="loading-image-overlay">
+         <div class="loader-wrapper">
+           <img src="https://png.pngtree.com/png-vector/20230415/ourmid/pngtree-school-logo-design-template-vector-png-image_6705854.png"  alt="Loading Image" class="loading-logo" />
+           <div class="spinner"></div>
+     
+         </div>
+       </div>
+     </ng-container>
+  
+   }
+  

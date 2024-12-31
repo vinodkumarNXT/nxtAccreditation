@@ -1,0 +1,95 @@
+
+<div fxLayout="row" fxLayoutAlign="space-between center" class="loginContainer" fxLayoutGap="15px">
+    <div fxFlex="50" class="loginContainerLeft">
+     
+   <img class="loginContainerLeftImg" src="https://clipart-library.com/images_k/reading-tree-silhouette/reading-tree-silhouette-4.png" >
+    </div>
+    <div fxFlex="50" class="loginContainerRight">
+      <form class="acc-form-container" (ngSubmit)="submitForm()"   [formGroup]="form">
+        <div class="row" fxLayout="row" fxLayout.xs="column">
+
+      <div class="loginFormBlock"  fxLayout="column" fxLayoutAlign="space-between center">
+        <div class="form-group" fxFlex="100">
+          <mat-form-field appearance="outline">
+            <mat-label>User ID</mat-label>
+            <input matInput placeholder="Please Enter ID"  formControlName="email" class="form-control">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+
+          <small *ngIf="submitted && form.controls['email'].invalid" class="error">
+            Email is required and must be valid.
+          </small>
+
+        </div>
+
+
+
+        <div class="form-group" fxFlex="100">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input 
+              matInput 
+              placeholder="Please Enter Password" 
+              [type]="showPassword ? 'text' : 'password'" 
+              formControlName="password" 
+              class="form-control"
+            >
+            <mat-icon 
+              matSuffix 
+              (click)="togglePasswordVisibility()"
+            >
+              {{ showPassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </mat-form-field>
+
+          <div *ngIf="submitted && form.controls['password'].invalid" class="error">
+            Password is required and must be at least 6 characters long.
+          </div>
+        </div>
+
+
+
+        
+        <div class="form-group" fxFlex="100">
+                  
+          <div class="row" fxLayout="column" fxLayoutAlign="space-between center">
+
+            <button mat-flat-button color="accent" >Login</button>
+
+            <a [routerLink]="'forgot-password'" class="forgotPassword">
+              Forgot Password?
+            </a>
+
+          </div>
+          
+
+          
+          
+        </div>
+
+      </div>
+        </div>
+        </form>        
+
+    </div>
+  </div>
+
+
+
+  <div class="area" >
+    <ul class="circles">
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+    </ul>
+</div >
+  

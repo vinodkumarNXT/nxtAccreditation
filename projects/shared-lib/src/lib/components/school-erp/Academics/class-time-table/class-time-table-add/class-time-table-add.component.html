@@ -1,0 +1,129 @@
+<div class="accre-forms-container card-1">
+  <!-- Title and Add Button Section -->
+  <div fxLayout="row" fxLayoutAlign="space-between center"
+    class="form-title-container">
+    <div fxFlex="80">
+      <h3 class="acc-form-title card-title">{{"Class Time Table"}}</h3>
+    </div>
+    <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">  </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div fxLayout="row wrap" fxLayoutGap="4px">
+      <div class="form-group" fxFlex="1 1 48%">
+        <mat-form-field>
+          <mat-label>Board</mat-label>
+          <mat-select formControlName="boardID"
+            (selectionChange)="onSelectionChange($event, 'board')">
+            <mat-option *ngFor="let board of boardList" [value]="board.id">{{
+              board.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group" fxFlex="1 1 48%">
+        <mat-form-field>
+          <mat-label>Year</mat-label>
+          <mat-select formControlName="yearID"
+            (selectionChange)="onSelectionChange($event, 'year')">
+            <mat-option *ngFor="let year of yearList" [value]="year.id">{{
+              year.current_year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" fxFlex="1 1 48%">
+        <mat-form-field>
+          <mat-label>Class</mat-label>
+          <mat-select formControlName="classID"
+            (selectionChange)="onSelectionChange($event, 'class')">
+            <mat-option *ngFor="let classItem of classList"
+              [value]="classItem.id">{{ classItem.class_name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group" fxFlex="1 1 48%">
+        <mat-form-field>
+          <mat-label>Section</mat-label>
+          <mat-select formControlName="sectionID"
+            (selectionChange)="onSelectionChange($event, 'section')">
+            <mat-option *ngFor="let section of sectionList"
+              [value]="section.id">{{ section.section_name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="dyanamicDaysContent">
+
+        <mat-tab-group animationDuration="1000ms">
+          <mat-tab *ngFor="let item of dayOfWeekList" [label]="item.day_name">
+            <div formArrayName="periods">
+              <div fxLayout="row wrap" 
+                *ngFor="let period of item.controls; let periodIndex = index"
+                [formGroupName]="periodIndex">
+                
+                <div class="form-group" fxFlex="1 1 48%">
+                  <mat-form-field>
+                    <mat-label>Subject</mat-label>
+                    <mat-select formControlName="subjectID">
+                      <mat-option *ngFor="let subject of subjectList" [value]="subject.id">
+                        {{ subject.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+        
+                <div class="form-group" fxFlex="1 1 48%">
+                  <mat-form-field>
+                    <mat-label>User</mat-label>
+                    <mat-select formControlName="userID">
+                      <mat-option *ngFor="let user of userList" [value]="user.id">
+                        {{ user.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+        
+                <div class="form-group" fxFlex="1 1 48%">
+                  <mat-form-field>
+                    <mat-label>Room</mat-label>
+                    <mat-select formControlName="roomID">
+                      <mat-option *ngFor="let room of roomList" [value]="room.id">
+                        {{ room.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+        
+                <div class="form-group" fxFlex="1 1 48%">
+                  <mat-form-field>
+                    <mat-label>Start Time</mat-label>
+                    <input matInput type="time" formControlName="startTime" />
+                  </mat-form-field>
+                </div>
+        
+                <div class="form-group" fxFlex="1 1 48%">
+                  <mat-form-field>
+                    <mat-label>End Time</mat-label>
+                    <input matInput type="time" formControlName="endTime" />
+                  </mat-form-field>
+                </div>
+                
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+        
+
+      </div>
+
+
+
+
+    </div>
+    <!-- <button mat-raised-button color="primary" type="submit">Submit</button> -->
+  </form>
+
+</div>
+
+<!-- Spinner -->
