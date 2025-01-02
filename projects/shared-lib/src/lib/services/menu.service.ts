@@ -13,7 +13,8 @@ export class MenuService {
       {
        "label": "Dashboard",
         "icon": "home",
-        "route": "/dashboard"
+        "route": "/dashboard",
+        "menuOf":"accrediation"
         
       },
       {
@@ -29,17 +30,23 @@ export class MenuService {
               {
                 "label": "Curricular Developed",
                 "icon": "minimize",
-                "route": "/curricular-developed"
+                "route": "/curricular-developed",
+                 "menuOf":"accrediation"
+
               },
               {
                 "label": "Percentage of Programmes",
                 "icon": "minimize",
-                "route": "/percentage-programmes"
+                "route": "/percentage-programmes",
+        "menuOf":"accrediation"
+                
               },
               {
                 "label": "Average Percentage",
                 "icon": "minimize",
-                "route": "/average-percentage"
+                "route": "/average-percentage",
+        "menuOf":"accrediation"
+
               }
             ]
           },
@@ -51,17 +58,23 @@ export class MenuService {
               {
                 "label": "Percentage of New Courses",
                 "icon": "minimize",
-                "route": "/percentageCourses"
+                "route": "/percentageCourses",
+               "menuOf":"accrediation"
+
               },
               {
                 "label": "CBCS",
                 "icon": "minimize",
-                "route": "/cbcs"
+                "route": "/cbcs",
+                "menuOf":"accrediation"
+
               }
             ]
           },
           {
             "label": "Curriculum Enrichment",
+          "menuOf":"accrediation",
+
             "icon": "expand_more",
             "route": "",
             "subMenu": [
@@ -88,6 +101,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Feedback System",
             "icon": "expand_more",
             "route": "",
@@ -107,6 +122,8 @@ export class MenuService {
         ]
       },
       {
+        "menuOf":"accrediation",
+
         "label": "Teaching-Learning and Evaluation",
         "icon": "school",
         "route": "",
@@ -129,6 +146,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Catering to Student Diversity",
             "icon": "expand_more",
             "route": "",
@@ -146,6 +165,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Teaching - Learning Process",
             "icon": "expand_more",
             "route": "",
@@ -168,6 +189,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Teacher Profile and Quality",
             "icon": "expand_more",
             "route": "",
@@ -190,6 +213,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Evaluation Process and Reforms",
             "icon": "expand_more",
             "route": "",
@@ -255,6 +280,8 @@ export class MenuService {
         ]
       },
       {
+        "menuOf":"accrediation",
+
         "label": "Research, Innovations and Extension",
         "icon": "search",
         "route": "",
@@ -297,6 +324,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Resource Mobilization for Research",
             "icon": "expand_more",
             "route": "",
@@ -319,6 +348,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Innovation Ecosystem",
             "icon": "expand_more",
             "route": "",
@@ -341,6 +372,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Research Publications and Awards",
             "icon": "expand_more",
             "route": "",
@@ -393,6 +426,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Consultancy",
             "icon": "expand_more",
             "route": "",
@@ -410,6 +445,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Extension Activities",
             "icon": "expand_more",
             "route": "",
@@ -437,6 +474,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Collaboration",
             "icon": "expand_more",
             "route": "",
@@ -461,6 +500,8 @@ export class MenuService {
         ]
       },
       {
+        "menuOf":"accrediation",
+
         "label": "Infrastructure and Learning Resources",
         "icon": "desktop_windows",
         "route": "",
@@ -493,6 +534,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Library as a Learning Resource",
             "icon": "expand_more",
             "route": "",
@@ -520,6 +563,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "IT Infrastructure",
             "icon": "expand_more",
             "route": "",
@@ -552,6 +597,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Maintenance of Campus Infrastructure",
             "icon": "build",
             "route": "",
@@ -572,11 +619,15 @@ export class MenuService {
       },
 
       {
+        "menuOf":"accrediation",
+
         "label": "Student Support and Progression",
         "icon": "support",
         "route": "",
         "subMenu": [
           {
+        "menuOf":"accrediation",
+
             "label": "Student Support",
             "icon": "expand_more",
             "route": "",
@@ -606,6 +657,8 @@ export class MenuService {
 
 
           {
+        "menuOf":"accrediation",
+
             "label": "Student Progression",
             "icon": "expand_more",
             "route": "",
@@ -628,6 +681,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Participation and Activities",
             "icon": "expand_more",
             "route": "",
@@ -650,6 +705,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Alumni Engagement",
             "icon": "expand_more",
             "route": "",
@@ -669,11 +726,15 @@ export class MenuService {
         ]
       },
       {
+        "menuOf":"accrediation",
+
         "label": "Governance, Leadership and Management",
         "icon": "account_balance",
         "route": "",
         "subMenu": [
           {
+        "menuOf":"accrediation",
+
             "label": "Vision and Leadership",
             "icon": "expand_more",
             "route": "",
@@ -691,6 +752,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Strategy Development and Deployment",
             "icon": "expand_more",
             "route": "",
@@ -713,6 +776,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Faculty Empowerment Strategies",
             "icon": "expand_more",
             "route": "",
@@ -740,6 +805,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Financial Management",
             "icon": "expand_more",
             "route": "",
@@ -767,6 +834,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Internal Quality Assurance System",
             "icon": "expand_more",
             "route": "",
@@ -791,6 +860,8 @@ export class MenuService {
         ]
       },
       {
+        "menuOf":"accrediation",
+
         "label": "Institutional Values and Best Practices",
         "icon": "people",
         "route": "",
@@ -858,6 +929,8 @@ export class MenuService {
             ]
           },
           {
+        "menuOf":"accrediation",
+
             "label": "Best Practices",
             "icon": "expand_more",
             "route": "",
@@ -877,6 +950,8 @@ export class MenuService {
         ]
       },
       {
+        "menuOf":"accrediation",
+
         "label": "Roles and Permission",
         "icon": "build",
         "subMenu": [

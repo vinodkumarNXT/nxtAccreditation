@@ -2,6 +2,7 @@ export interface MenuItem {
   label: string;
   icon: string;
   route?: string;
+  menuOf?: string;
   subMenu?: MenuItem[];
   module?: string;  // Module can be a string like "active" or "inactive"
   permissions?: {

@@ -851,9 +851,9 @@ button:active {
 ::ng-deep .nxtAccDashTable {
 
     .mat-mdc-card-title{
-        color: var(--nxtOrange);
+        color: var(--nxtDangerBtnHover);
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 600;
         padding: 7px 0 7px 0;
     }
   .mat-mdc-table {

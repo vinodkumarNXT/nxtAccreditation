@@ -3,7 +3,7 @@
 	<div class="nxtMainRouteOutlet">
 		<div class="nxtHeaderAndContent">
 			<mat-toolbar color="primary" class="nxtApp-toolbar">
-				<h2 class="brandHeader">  <img  class="brandImg" src="../assets/EduNXT-Tranparent.png">  {{"Accreditation"}}</h2>
+				<h2 class="brandHeader">  <img  class="brandImg" src="../assets/EduNXT-Tranparent.png"></h2>
 				<!-- <img src="../assets/educate-trans-logo.png" alt="" srcset="" class="brandLogo"> -->
 				<button mat-icon-button (click)="toggleSidebar()">
 					<mat-icon>menu</mat-icon>
@@ -44,6 +44,8 @@
 						<mat-icon class="menu-button" [ngClass]="{'rotated': showSubmenu[item.label]}"
 						  *ngIf="isExpanded || isShowing">expand_more</mat-icon>
 					  </mat-list-item>
+
+					  
 					  <div class="submenu" [ngClass]="{'expanded': showSubmenu[item.label], 'SubMenuActive': activeSubmenu[item.label]}"
 						*ngIf="isShowing || isExpanded">
 						<ng-container *ngFor="let subItem of item.subMenu">
