@@ -55,6 +55,15 @@
     
               <tr mat-header-row *matHeaderRowDef="accreditationColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: accreditationColumns;"></tr>
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" [attr.colspan]="accreditationColumns.length">
+                  <p class="NoFilterMatchFound">  
+                    No data found
+                  </p>
+                </td>
+              </tr>
+  
             </table>
           </mat-card-content>
         </mat-card>
@@ -78,6 +87,17 @@
     
               <tr mat-header-row *matHeaderRowDef="studentColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: studentColumns;"></tr>
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" [attr.colspan]="studentColumns.length">
+                  <p class="NoFilterMatchFound">  
+                    No data found
+                  </p>
+                </td>
+              </tr>
+
+              
+
             </table>
           </mat-card-content>
         </mat-card>
@@ -102,6 +122,17 @@
               <tr mat-header-row *matHeaderRowDef="facultyColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: facultyColumns;"></tr>
             </table>
+
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" [attr.colspan]="facultyColumns.length">
+                <p class="NoFilterMatchFound">  
+                  No data found
+                </p>
+              </td>
+            </tr>
+
+
           </mat-card-content>
         </mat-card>
     
@@ -138,6 +169,17 @@
     
               <tr mat-header-row *matHeaderRowDef="departmentColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: departmentColumns;"></tr>
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" [attr.colspan]="departmentColumns.length">
+                  <p class="NoFilterMatchFound">  
+                    No data found
+                  </p>
+                </td>
+              </tr>
+  
+
+
             </table>
           </mat-card-content>
         </mat-card>
@@ -170,6 +212,17 @@
     
               <tr mat-header-row *matHeaderRowDef="sportsColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: sportsColumns;"></tr>
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" [attr.colspan]="sportsColumns.length">
+                  <p class="NoFilterMatchFound">  
+                    No data found
+                  </p>
+                </td>
+              </tr>
+
+              
+
             </table>
           </mat-card-content>
         </mat-card>
@@ -193,6 +246,19 @@
     
               <tr mat-header-row *matHeaderRowDef="expenditureColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: expenditureColumns;"></tr>
+
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" [attr.colspan]="facultyColumns.length">
+                  <p class="NoFilterMatchFound">  
+                    No data found
+                  </p>
+                </td>
+              </tr>
+
+              
+
+
             </table>
           </mat-card-content>
         </mat-card>
@@ -225,6 +291,19 @@
     
               <tr mat-header-row *matHeaderRowDef="researchColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: researchColumns;"></tr>
+
+
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" [attr.colspan]="researchColumns.length">
+                  <p class="NoFilterMatchFound">  
+                    No data found
+                  </p>
+                </td>
+              </tr>
+
+              
+
             </table>
           </mat-card-content>
         </mat-card>

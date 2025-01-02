@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'lib-adopted-quality',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './adopted-quality.component.html',
   styleUrl: './adopted-quality.component.css'

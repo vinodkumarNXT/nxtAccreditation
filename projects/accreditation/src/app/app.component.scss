@@ -509,7 +509,7 @@ button:active {
 }
 
 ::ng-deep .nxtApp-toolbar {
-  background-color: #004c61 !important;
+  background-color: var(--nxtIndigo) !important;
   color: #fff !important;
   height: 50px !important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -521,13 +521,16 @@ button:active {
     font-size: 27px;
     font-weight: 600;
     padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
   }
 
-  .brandLogo {
-    height: 100%;
+  .brandImg {
+    height: 40px;
     width: 220px;
     object-fit: contain;
-    background-color: #ffffff;
     padding: 0 5px;
   }
 
@@ -630,23 +633,24 @@ button:active {
       width: 6px;
       background-color: #f5f5f5;
     }
-
+    
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background-image: -webkit-gradient(
         linear,
         left bottom,
         left top,
-        color-stop(0.2, #aaf1d2),
-        color-stop(0.44, rgb(175, 223, 216)),
-        color-stop(0.72, rgb(177, 238, 230)),
-        color-stop(0.86, rgb(156, 223, 192))
+        color-stop(0.2, #b0a3e6),  // Light lavender
+        color-stop(0.44, #9b8ce1),  // Soft purple
+        color-stop(0.72, #8c76d5),  // Light medium purple
+        color-stop(0.86, #6f56c1)   // Lightened version of #393186
       );
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
     }
+    
   }
 }
 
@@ -765,7 +769,7 @@ button:active {
 }
 
 ::ng-deep .mat-mdc-list-item-interactive.active {
-  background-color: #0fa3b1 !important;
+  background-color: var(--nxtIndigo) !important;
   border-radius: 0px !important;
 
   .mdc-list-item__primary-text {
@@ -847,7 +851,7 @@ button:active {
 ::ng-deep .nxtAccDashTable {
 
     .mat-mdc-card-title{
-        color: var(--nxtDashTextPrimary);
+        color: var(--nxtOrange);
         font-size: 18px;
         font-weight: 500;
         padding: 7px 0 7px 0;
@@ -859,14 +863,15 @@ button:active {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     .mat-sort-header-content {
-      color: var(--nxtBlack);
+      color: var(--nxtWhite);
       font-weight: 500;
     }
 
     .mat-mdc-header-cell {
-      background-color: #0fa3b1 !important;
+      background-color: var(--nxtIndigo) !important;
       font-size: 14px !important;
       font-weight: 600 !important;
+      color: var(--nxtWhite);
   }
 
 
@@ -882,9 +887,10 @@ button:active {
   .mat-mdc-table {
 
     .mat-mdc-header-cell {
-      background-color: #0fa3b1 !important;
+      background-color: var(--nxtIndigo) !important;
       font-size: 14px !important;
       font-weight: 600 !important;
+      color: var(--nxtWhite) !important;
 
       &:first-child {
         border-top-left-radius: 7px; 
