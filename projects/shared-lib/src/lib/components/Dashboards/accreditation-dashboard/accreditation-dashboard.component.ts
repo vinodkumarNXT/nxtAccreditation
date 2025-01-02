@@ -44,56 +44,56 @@ cards = [
     imageSrc: '../../../assets/images/thesis.png',
     title: 'Excellence in Education, Endorsed by Accreditation.',
     description: 'Thesis :',
-    count: 30,
+    count: 124,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/trophy.png',
     title: 'Empowering Minds through Accredited Excellence',
     description: 'Awards',
-    count: 30,
+    count: 436,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/workshop.png',
     title: 'Accredited Workshops: Empowering Minds, Elevating Standards.',
     description: 'Workshops:',
-    count: 30,
+    count: 3324,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/books.png',
     title: 'Accredited Knowledge, Boundless Horizons',
     description: 'Books :',
-    count: 40,
+    count: 4234,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/h-index.png',
     title: 'Accredited Excellence, Measured by H-Index Impact',
     description: 'H-index :',
-    count: 12,
+    count: 123142,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/citations.png',
     title: 'Accredited Quality, Recognized by Citations',
     description: 'Citations :',
-    count: 20,
+    count: 1232,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/grant.png',
     title: 'Accredited Innovation, Fueled by Grants',
     description: 'Grants :',
-    count: 400000,
+    count: 12312312,
     backgroundColor: this.getRandomLightColor()
   },
   {
     imageSrc: '../../../assets/images/trust.png',
     title: 'Accredited Partnerships, Strengthened by MOUs.',
     description: 'MOUs',
-    count: 43,
+    count: 12313,
     backgroundColor: this.getRandomLightColor()
   }
 ];
