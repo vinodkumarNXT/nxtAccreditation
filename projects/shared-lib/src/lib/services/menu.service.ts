@@ -28,6 +28,7 @@ export class MenuService {
           'accounts'
         ],
       },
+
       {
         "label": "Curricular Aspects",
         "icon": "widgets",
@@ -46,12 +47,12 @@ export class MenuService {
          'accounts'
        ],
 
-        "subMenu": [
+        "items": [
           {
             "label": "Design and Development",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "label": "Curricular Developed",
                 "icon": "minimize",
@@ -115,7 +116,7 @@ export class MenuService {
             "label": "Academic Flexibility",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "label": "Percentage of New Courses",
                 "icon": "minimize",
@@ -174,7 +175,7 @@ export class MenuService {
 
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "label": "Institution Integrates",
                 "icon": "minimize",
@@ -268,7 +269,7 @@ export class MenuService {
             "label": "Feedback System",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "label": "Design and Review",
                 "icon": "minimize",
@@ -309,6 +310,7 @@ export class MenuService {
           }
         ]
       },
+     
       {
         "accessBy": [
           'admin',
@@ -327,7 +329,7 @@ export class MenuService {
         "label": "Teaching-Learning and Evaluation",
         "icon": "school",
         "route": "",
-        "subMenu": [
+        "items": [
           {
             "label": "Student Enrolment and Profile",
             "icon": "expand_more",
@@ -345,7 +347,7 @@ export class MenuService {
             ],
           "menuOf":["accreditation"],
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "label": "Demand Ratio",
                 "icon": "minimize",
@@ -404,7 +406,7 @@ export class MenuService {
             "icon": "expand_more",
             
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -461,7 +463,7 @@ export class MenuService {
             "label": "Teaching - Learning Process",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -536,7 +538,7 @@ export class MenuService {
             "label": "Teacher Profile and Quality",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -611,7 +613,7 @@ export class MenuService {
             "label": "Evaluation Process and Reforms",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -706,7 +708,7 @@ export class MenuService {
             "label": "Student Performance and Learning",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -780,7 +782,7 @@ export class MenuService {
             "label": "Student Satisfaction Survey",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -821,7 +823,7 @@ export class MenuService {
         "label": "Research, Innovations and Extension",
         "icon": "search",
         "route": "",
-        "subMenu": [
+        "items": [
           {
             "accessBy": [
               'admin',
@@ -840,7 +842,7 @@ export class MenuService {
             "label": "Research and Facilities",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -969,7 +971,7 @@ export class MenuService {
             "label": "Resource Mobilization for Research",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1044,7 +1046,7 @@ export class MenuService {
             "label": "Innovation Ecosystem",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1119,7 +1121,7 @@ export class MenuService {
             "label": "Research Publications and Awards",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               
               {
                 "accessBy": [
@@ -1305,7 +1307,7 @@ export class MenuService {
             "label": "Consultancy",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1364,7 +1366,7 @@ export class MenuService {
             "label": "Extension Activities",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1458,7 +1460,7 @@ export class MenuService {
             "label": "Collaboration",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1538,7 +1540,7 @@ export class MenuService {
         "label": "Infrastructure and Learning Resources",
         "icon": "desktop_windows",
         "route": "",
-        "subMenu": [
+        "items": [
           {
             "accessBy": [
               'admin',
@@ -1557,7 +1559,7 @@ export class MenuService {
             "label": "Physical Facilities",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1653,7 +1655,7 @@ export class MenuService {
             "label": "Library as a Learning Resource",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1750,7 +1752,7 @@ export class MenuService {
             "label": "IT Infrastructure",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1865,7 +1867,7 @@ export class MenuService {
             "label": "Maintenance of Campus Infrastructure",
             "icon": "build",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -1927,7 +1929,7 @@ export class MenuService {
         "label": "Student Support and Progression",
         "icon": "support",
         "route": "",
-        "subMenu": [
+        "items": [
           {
             "accessBy": [
               'admin',
@@ -1946,7 +1948,7 @@ export class MenuService {
             "label": "Student Support",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2045,7 +2047,7 @@ export class MenuService {
             "label": "Student Progression",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2109,7 +2111,7 @@ export class MenuService {
             "label": "Participation and Activities",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2187,7 +2189,7 @@ export class MenuService {
             "label": "Alumni Engagement",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2249,7 +2251,7 @@ export class MenuService {
         "label": "Governance, Leadership and Management",
         "icon": "account_balance",
         "route": "",
-        "subMenu": [
+        "items": [
           {
             "accessBy": [
               'admin',
@@ -2268,7 +2270,7 @@ export class MenuService {
             "label": "Vision and Leadership",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2327,7 +2329,7 @@ export class MenuService {
             "label": "Strategy Development and Deployment",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2405,7 +2407,7 @@ export class MenuService {
             "label": "Faculty Empowerment Strategies",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2502,7 +2504,7 @@ export class MenuService {
             "label": "Financial Management",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2585,7 +2587,7 @@ export class MenuService {
             "label": "Internal Quality Assurance System",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2664,12 +2666,12 @@ export class MenuService {
         "label": "Institutional Values and Best Practices",
         "icon": "people",
         "route": "",
-        "subMenu": [
+        "items": [
           {
             "label": "Values and Social Responsibilities",
             "icon": " expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2899,7 +2901,7 @@ export class MenuService {
             "label": "Best Practices",
             "icon": "expand_more",
             "route": "",
-            "subMenu": [
+            "items": [
               {
                 "accessBy": [
                   'admin',
@@ -2959,7 +2961,7 @@ export class MenuService {
 
         "label": "Roles and Permission",
         "icon": "build",
-        "subMenu": [
+        "items": [
           {
             "accessBy": [
               'admin',
@@ -3038,7 +3040,7 @@ export class MenuService {
 
         "label": "Roles and Permission",
         "icon": "build",
-        "subMenu": [
+        "items": [
           {
             "accessBy": [
               'admin',

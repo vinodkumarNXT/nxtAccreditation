@@ -4,7 +4,7 @@ export interface MenuItem {
   route?: string;
   menuOf?: string[];
   accessBy?: string[]; // Update this to accept an array of strings
-  subMenu?: MenuItem[];
+  items?: MenuItem[];
   module?: string;  // Module can be a string like "active" or "inactive"
   permissions?: {
     page: string;  // Page status can be "active" or "inactive"

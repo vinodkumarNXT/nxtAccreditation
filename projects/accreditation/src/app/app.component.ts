@@ -29,9 +29,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public availableActions: string[] = [];
 
   currentRole: any = 'admin'; // Replace this with the actual current role of the user from your authentication service
-  menuOf: any = 'accreditation'; // Replace this with the actual current role of the user from your authentication service
 
-  selectedMenu: 'naac' | 'nirf' | 'accreditation' = 'accreditation'; // Default value
+  selectMenu:string = 'accreditation'; // Default value
 
 
   private idleTimer$: Subscription = new Subscription();
@@ -52,11 +51,11 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
 
-   // Subscribe to the service to get updates to the selected menu
-   this.formsService.selectedMenu$.subscribe(menu => {
-    this.selectedMenu = menu; // Update the local variable
-    console.log('Updated Selected Menu:', this.selectedMenu); // Debugging log
-  });
+  //  // Subscribe to the service to get updates to the selected menu
+  //  this.formsService.selectedMenu$.subscribe(menu => {
+  //   this.selectedMenu = menu; // Update the local variable
+  //   console.log('Updated Selected Menu:', this.selectedMenu); // Debugging log
+  // });
 
     this.menuItems = this.menuService.getMenuItems();
     this.setupMenuForUserType('admin'); // Change user type here
@@ -164,12 +163,17 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
 
-  selectMenu(menu: 'naac' | 'nirf' | 'accreditation') {
-    this.formsService.updateSelectedMenu(menu); // Update the value in the service
-    this.selectedMenu = menu; // Update the local component variable
-    console.log('Menu item selected:', menu); // Debugging log
+  // selectMenu(menu: 'naac' | 'nirf' | 'accreditation'):void {
+  //   this.formsService.updateSelectedMenu(menu); // Update the value in the service
+  //   this.selectedMenu = menu; // Update the local component variable
+  //   console.log('Menu item selected:', menu); // Debugging log
 
-  }
+  // }
+
+
+  // isMenuForSelected(menuItem: any): boolean {
+  //   return menuItem.menuOf?.includes(this.selectedMenu) && menuItem.accessBy?.includes(this.currentRole);
+  // }
 
  
 }

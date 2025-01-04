@@ -51,7 +51,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ImageModule } from 'primeng/image';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TabMenuModule } from 'primeng/tabmenu';
-
+import {PanelMenuModule} from 'primeng/panelmenu';
+import {MenuItem} from 'primeng/api';
 
 @NgModule({
   declarations: [],
@@ -101,10 +102,12 @@ import { TabMenuModule } from 'primeng/tabmenu';
     TimelineModule,
     PanelModule,
     BreadcrumbModule,
-    PasswordModule
+    PasswordModule,
+    PanelMenuModule,
 
   ],
   exports: [
+    PanelMenuModule,
     TabMenuModule,
     FileUploadModule,
     ImageModule,
