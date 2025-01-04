@@ -822,5 +822,8 @@ export * from './lib/components/Curricular-Aspects/institutional-performance/ins
 export * from './lib/components/Dashboards/naac-dashboard/naac-dashboard.component';
 export * from './lib/components/Dashboards/nirf-dashboard/nirf-dashboard.component';
 
+export * from './lib/components/nirf/';
+
+
 
 // End of File
