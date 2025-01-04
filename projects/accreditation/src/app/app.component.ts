@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
-import { AuthService, AutoLogoutService, MenuItem, MenuService, SharableModule, SwalService } from 'shared-lib';
+import { AuthService, AutoLogoutService, MenuItem, MenuService, SharableModule, SwalService, FormsService } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
@@ -28,20 +28,36 @@ export class AppComponent implements OnInit, OnDestroy {
   public userMenu: any[] = [];
   public availableActions: string[] = [];
 
+  currentRole: any = 'admin'; // Replace this with the actual current role of the user from your authentication service
+  menuOf: any = 'accreditation'; // Replace this with the actual current role of the user from your authentication service
+
+  selectedMenu: 'naac' | 'nirf' | 'accreditation' = 'accreditation'; // Default value
+
+
   private idleTimer$: Subscription = new Subscription();
 
   constructor(
+    private cdr: ChangeDetectorRef,
     private autoLogoutService: AutoLogoutService,
     private swalService: SwalService,
     private authService: AuthService,
     private router: Router,
-    private menuService: MenuService
+    private menuService: MenuService,
+    private formsService:FormsService
   ) {
     this.currentYear = new Date().getFullYear();
 
   }
 
   ngOnInit() {
+
+
+   // Subscribe to the service to get updates to the selected menu
+   this.formsService.selectedMenu$.subscribe(menu => {
+    this.selectedMenu = menu; // Update the local variable
+    console.log('Updated Selected Menu:', this.selectedMenu); // Debugging log
+  });
+
     this.menuItems = this.menuService.getMenuItems();
     this.setupMenuForUserType('admin'); // Change user type here
 
@@ -62,8 +78,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.idleTimer$ = this.autoLogoutService.logout$.subscribe(() => {
       this.autoLogoutService.triggerLogoutAlert();
     });
+
+
+
+    // Filter menu items based on both user's roles and menuOf property
+
   }
   
+ 
 
   ngOnDestroy() {
     this.idleTimer$.unsubscribe(); // Clean up subscriptions
@@ -82,6 +104,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.showNestedSubmenu[label] = !this.showNestedSubmenu[label];
     this.activeNestedSubmenu[label] = this.showNestedSubmenu[label];
   }
+
+  hasAccess(accessBy: string[] | string, userRoles: string[]): boolean {
+    if (typeof accessBy === 'string') {
+      accessBy = accessBy.split(',');
+    }
+    return accessBy.some(role => userRoles.includes(role.trim()));
+  }
+
 
   setupMenuForUserType(userType: string) {
     switch (userType) {
@@ -132,4 +162,14 @@ export class AppComponent implements OnInit, OnDestroy {
       this.router.navigate([route]);
     }
   }
+
+
+  selectMenu(menu: 'naac' | 'nirf' | 'accreditation') {
+    this.formsService.updateSelectedMenu(menu); // Update the value in the service
+    this.selectedMenu = menu; // Update the local component variable
+    console.log('Menu item selected:', menu); // Debugging log
+
+  }
+
+ 
 }

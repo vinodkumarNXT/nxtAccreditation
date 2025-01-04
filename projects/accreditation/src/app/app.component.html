@@ -30,20 +30,42 @@
 						<mat-list-item *ngIf="item.label === 'Dashboard'" [routerLink]="item.route" routerLinkActive="active">
 							<mat-icon mat-list-icon>{{ item.icon }}</mat-icon> {{ item.label }}
 						</mat-list-item>
-						  
 
-					  <mat-list-item 
-					  	*ngIf="item.label !== 'Dashboard'"
-						(click)="toggleSubmenu(item.label)" 
-						class="parent" 
-						[ngClass]="{'ParentActive': activeSubmenu[item.label]}">
-						<span class="full-width" *ngIf="isExpanded || isShowing">
-						  <mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
-						  {{ item.label }}
-						</span>
-						<mat-icon class="menu-button" [ngClass]="{'rotated': showSubmenu[item.label]}"
-						  *ngIf="isExpanded || isShowing">expand_more</mat-icon>
-					  </mat-list-item>
+
+							<!-- Menu Item for Accreditation -->
+							<mat-list-item 
+							*ngIf="selectedMenu === 'accreditation' && item.label !== 'Dashboard' && item.accessBy?.includes(currentRole) && item.menuOf?.includes('accreditation')" 
+							(click)="toggleSubmenu(item.label)" 
+							class="parent"
+							[ngClass]="{'ParentActive': activeSubmenu[item.label]}">
+
+							<span class="full-width" *ngIf="isExpanded || isShowing">
+								<mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
+								{{ item.label }}
+							</span>
+
+							<mat-icon class="menu-button" [ngClass]="{'rotated': showSubmenu[item.label]}"
+										*ngIf="isExpanded || isShowing">expand_more</mat-icon>
+							</mat-list-item>
+							<!-- <p>Selected Menu: {{ selectedMenu }}</p> -->
+
+							<!-- Menu Item for NAAC -->
+							<mat-list-item 
+							*ngIf="selectedMenu === 'naac' && item.label !== 'Dashboard' && item.accessBy?.includes(currentRole) && item.menuOf?.includes('naac')" 
+							(click)="toggleSubmenu(item.label)" 
+							class="parent"
+							[ngClass]="{'ParentActive': activeSubmenu[item.label]}">
+
+							<span class="full-width" *ngIf="isExpanded || isShowing">
+								<mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
+								{{ item.label }}
+							</span>
+
+							<mat-icon class="menu-button" [ngClass]="{'rotated': showSubmenu[item.label]}"
+										*ngIf="isExpanded || isShowing">expand_more</mat-icon>
+							</mat-list-item>
+
+		 
 
 					  
 					  <div class="submenu" [ngClass]="{'expanded': showSubmenu[item.label], 'SubMenuActive': activeSubmenu[item.label]}"
@@ -55,7 +77,7 @@
 							</a>
 						  </ng-container>
 			  
-						  <ng-container *ngIf="subItem.subMenu">
+						  <ng-container *ngIf="subItem.subMenu && currentRole">
 							<mat-list-item 
 							  (click)="toggleNestedSubmenu(subItem.label)" 
 							  class="nested-parent" 

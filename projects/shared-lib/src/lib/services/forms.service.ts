@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { environment } from '../../../../accreditation/src/environments/environment';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -174,5 +175,11 @@ async updateDataQuery(params: any, endpoint: string) {
 
 
 
+  private selectedMenuSubject = new BehaviorSubject<'naac' | 'nirf' | 'accreditation'>('accreditation'); // Default value
+  selectedMenu$ = this.selectedMenuSubject.asObservable();
+
+  updateSelectedMenu(menu: 'naac' | 'nirf' | 'accreditation') {
+    this.selectedMenuSubject.next(menu);
+  }
 
 }

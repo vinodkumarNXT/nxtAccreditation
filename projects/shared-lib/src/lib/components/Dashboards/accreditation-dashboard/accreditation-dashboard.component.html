@@ -3,7 +3,19 @@
 
 <section class="nxtAccDashBoard">
 
+  <div class="naacAndNirfSelector">
+    <div class="example-button-row">
+      <button mat-stroked-button [class.active]="selectedMenu === 'nirf'" (click)="selectMenu('nirf')">NIRF</button>
+      <button mat-stroked-button [class.active]="selectedMenu === 'naac'" (click)="selectMenu('naac')">NAAC</button>
+      <button mat-stroked-button [class.active]="selectedMenu === 'accreditation'" (click)="selectMenu('accreditation')">Accreditation</button>
+    </div>
+  </div>
+  
+  
+
+
     <div  class="nxtAccDashBoardBlock">
+
 
       
       <div fxFlex="100" class="nxtAccDashBoardBlock-Cards" fxLayout="row wrap" fxLayoutGap="7px">

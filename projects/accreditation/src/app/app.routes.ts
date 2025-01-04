@@ -117,7 +117,9 @@ ResearchFellowsComponent,
   BestPracticesComponent,
   InstitutionalPerformanceComponent,
   FeatureMasterComponent,
-  AuthGuard
+  AuthGuard,
+  NaacDashboardComponent,
+  NirfDashboardComponent
 } from 'shared-lib';
 
 
@@ -255,6 +257,10 @@ export const routes: Routes = [
       { path: 'institutional-celebrates', component: InstitutionalCelebratesComponent},
       { path: 'best-practices', component: BestPracticesComponent},
       { path: 'institutional-performance', component: InstitutionalPerformanceComponent},
+
+      { path: 'naac-dashboard', component: NaacDashboardComponent},
+      { path: 'nirf-dashboard', component: NirfDashboardComponent},
+
 
 
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

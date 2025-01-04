@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit, EventEmitter, Output } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormsService, SharableModule, SnackbarService } from 'shared-lib';
 import { environment } from 'projects/shell/environments/environment';
 import { endpoints } from 'projects/shell/environments/endpoint';
+import { Router } from '@angular/router';
 
 
 // Interface to define the shape of each card
@@ -27,7 +28,9 @@ interface Card {
   styleUrls: ['./accreditation-dashboard.component.scss']
 })
 export class AccreditationDashboardComponent implements OnInit, AfterViewInit {
+  @Output() menuSelected = new EventEmitter<'naac' | 'nirf' | 'accreditation'>();
 
+  selectedMenu: 'naac' | 'nirf' | 'accreditation' = 'accreditation'; // Default value
 
 
 
@@ -129,7 +132,10 @@ cards = [
 
   sharedImagePath = environment.assetsUrl;
 
-  constructor(private formsService: FormsService, private snackbarService: SnackbarService) {}
+  constructor(
+    private router: Router,
+    private formsService: FormsService,
+    private snackbarService: SnackbarService) {}
 
   ngOnInit(): void {
     this.loadFormData();
@@ -242,4 +248,33 @@ cards = [
     const randomIndex = Math.floor(Math.random() * this.lightColors.length);
     return this.lightColors[randomIndex];
   }
+
+
+
+
+
+  selectMenu(menu: 'naac' | 'nirf' | 'accreditation') {
+    this.formsService.updateSelectedMenu(menu); // Update the shared menu value
+  
+    let url = '';
+    switch (menu) {
+      case 'naac':
+        url = this.router.serializeUrl(this.router.createUrlTree(['/naac-dashboard'])); // Serialize the URL for naac
+        break;
+      case 'nirf':
+        url = this.router.serializeUrl(this.router.createUrlTree(['/nirf-dashboard'])); // Serialize the URL for nirf
+        break;
+      default:
+        break;
+    }
+  
+    if (url) {
+      const fullUrl = `${window.location.origin}${url}`; // Construct the full absolute URL
+      window.open(fullUrl, '_blank'); // Open the URL in a new browser tab
+    }
+  }
+  
+
+  
+
 }

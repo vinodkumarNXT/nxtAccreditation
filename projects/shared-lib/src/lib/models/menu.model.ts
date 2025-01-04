@@ -2,7 +2,8 @@ export interface MenuItem {
   label: string;
   icon: string;
   route?: string;
-  menuOf?: string;
+  menuOf?: string[];
+  accessBy?: string[]; // Update this to accept an array of strings
   subMenu?: MenuItem[];
   module?: string;  // Module can be a string like "active" or "inactive"
   permissions?: {
