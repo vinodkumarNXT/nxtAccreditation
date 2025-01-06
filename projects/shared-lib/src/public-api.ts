@@ -822,8 +822,67 @@ export * from './lib/components/Curricular-Aspects/institutional-performance/ins
 export * from './lib/components/Dashboards/naac-dashboard/naac-dashboard.component';
 export * from './lib/components/Dashboards/nirf-dashboard/nirf-dashboard.component';
 
-export * from './lib/components/nirf/';
+export * from './lib/components/nirf/consultancy-project-details/consultancy-project-details.component';
+export * from './lib/components/nirf/consultancy-project-details/consultancy-project-add/consultancy-project-add.component';
+export * from './lib/components/nirf/consultancy-project-details/consultancy-project-edit/consultancy-project-edit.component';
+export * from './lib/components/nirf/consultancy-project-details/consultancy-project-view/consultancy-project-view.component';
 
+
+
+export * from './lib/components/nirf/faculty-details/faculty-details.component';
+export * from './lib/components/nirf/faculty-details/faculty-details-add/faculty-details-add.component';
+export * from './lib/components/nirf/faculty-details/faculty-details-edit/faculty-details-edit.component';
+export * from './lib/components/nirf/faculty-details/faculty-details-view/faculty-details-view.component';
+
+export * from './lib/components/nirf/financial-resources/financial-resources.component';
+export * from './lib/components/nirf/financial-resources/financial-resources-add/financial-resources-add.component';
+export * from './lib/components/nirf/financial-resources/financial-resources-edit/financial-resources-edit.component';
+export * from './lib/components/nirf/financial-resources/financial-resources-view/financial-resources-view.component';
+
+
+
+export * from './lib/components/nirf/ipr/ipr.component';
+export * from './lib/components/nirf/ipr/ipr-add/ipr-add.component';
+export * from './lib/components/nirf/ipr/ipr-view/ipr-view.component';
+export * from './lib/components/nirf/ipr/ipr-edit/ipr-edit.component';
+
+
+export * from './lib/components/nirf/pcs-facilities/pcs-facilities.component';
+export * from './lib/components/nirf/pcs-facilities/pcs-facilities-add/pcs-facilities-add.component';
+export * from './lib/components/nirf/pcs-facilities/pcs-facilities-edit/pcs-facilities-edit.component';
+export * from './lib/components/nirf/pcs-facilities/pcs-facilities-view/pcs-facilities-view.component';
+
+
+
+export * from './lib/components/nirf/phdstudent-details/phdstudent-details.component';
+export * from './lib/components/nirf/phdstudent-details/phdstudent-details-add/phdstudent-details-add.component';
+export * from './lib/components/nirf/phdstudent-details/phdstudent-details-view/phdstudent-details-view.component';
+export * from './lib/components/nirf/phdstudent-details/phdstudent-details-edit/phdstudent-details-edit.component';
+
+
+
+export * from './lib/components/nirf/placement-higher-studies/placement-higher-studies.component';
+export * from './lib/components/nirf/placement-higher-studies/placement-higher-studies-add/placement-higher-studies-add.component';
+export * from './lib/components/nirf/placement-higher-studies/placement-higher-studies-view/placement-higher-studies-view.component';
+export * from './lib/components/nirf/placement-higher-studies/placement-higher-studies-edit/placement-higher-studies-edit.component';
+
+
+export * from './lib/components/nirf/sanctioned-intake/sanctioned-intake.component';
+export * from './lib/components/nirf/sanctioned-intake/sanctioned-intake-add/sanctioned-intake-add.component';
+export * from './lib/components/nirf/sanctioned-intake/sanctioned-intake-edit/sanctioned-intake-edit.component';
+export * from './lib/components/nirf/sanctioned-intake/sanctioned-intake-view/sanctioned-intake-view.component';
+
+
+export * from './lib/components/nirf/sponsored-research-details/sponsored-research-details.component';
+export * from './lib/components/nirf/sponsored-research-details/sponsored-research-details-add/sponsored-research-details-add.component';
+export * from './lib/components/nirf/sponsored-research-details/sponsored-research-details-edit/sponsored-research-details-edit.component';
+export * from './lib/components/nirf/sponsored-research-details/sponsored-research-details-view/sponsored-research-details-view.component';
+
+
+export * from './lib/components/nirf/student-strength/student-strength.component';
+export * from './lib/components/nirf/student-strength/student-strength-add/student-strength-add.component';
+export * from './lib/components/nirf/student-strength/student-strength-edit/student-strength-edit.component';
+export * from './lib/components/nirf/student-strength/student-strength-view/student-strength-view.component';
 
 
 // End of File

@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
   templateUrl: './Institution-integrates.component.html',
   styleUrls: ['./Institution-integrates.component.scss'],
   standalone:true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, provideNativeDateAdapter()],
 })
 export class InstitutionIntegratesComponent implements OnInit , AfterViewInit  {

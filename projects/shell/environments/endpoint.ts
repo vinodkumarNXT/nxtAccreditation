@@ -159,5 +159,18 @@ InstitutionalCelebrates:'api/institutional-celebrates',
 BestPractices:'api/best-practices',
 InstitutionalPerformance:'api/institutional-performance',
 
+NIRFconsultancyProjectDetails:'api/institutional-performance',
+NIRFfacultyDetails:'api/institutional-performance',
+NIRFfinancialResources:'api/institutional-performance',
+NIRFIPR:'api/institutional-performance',
+NIRFpcsFacilities:'api/institutional-performance',
+NIRFphdstudentDetails:'api/institutional-performance',
+NIRFplacementHigherStudies:'api/institutional-performance',
+NIRFsanctionedIntake:'api/institutional-performance',
+NIRFsponsoredResearchDetails:'api/institutional-performance',
+NIRFstudentStrength:'api/institutional-performance',
+
+
+
   }
   
