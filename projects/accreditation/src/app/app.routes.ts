@@ -271,6 +271,8 @@ export const routes: Routes = [
       { path: 'naac-dashboard', component: NaacDashboardComponent},
       { path: 'nirf-dashboard', component: NirfDashboardComponent},
 
+      { path: 'sanctioned-intake', component: SanctionedIntakeComponent},
+      { path: 'student-strength', component: StudentStrengthComponent},
       { path: 'consultancy-project-details', component: ConsultancyProjectDetailsComponent},
       { path: 'faculty-details', component: FacultyDetailsComponent},
       { path: 'financial-resource', component: FinancialResourcesComponent},
@@ -278,9 +280,7 @@ export const routes: Routes = [
       { path: 'pcs-facility', component: PcsFacilitiesComponent},
       { path: 'phd-student-details', component: PhdstudentDetailsComponent},
       { path: 'placement-higher-studies', component: PlacementHigherStudiesComponent},
-      { path: 'sanctioned-intake', component: SanctionedIntakeComponent},
       { path: 'sponsored-research-details', component: SponsoredResearchDetailsComponent},
-      { path: 'student-strength', component: StudentStrengthComponent},
 
 
 

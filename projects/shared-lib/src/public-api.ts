@@ -885,4 +885,10 @@ export * from './lib/components/nirf/student-strength/student-strength-edit/stud
 export * from './lib/components/nirf/student-strength/student-strength-view/student-strength-view.component';
 
 
+export * from './lib/validators/yearRangeValidator';
+
+export * from './lib/Directive/year-mask.directive';
+
+
+
 // End of File

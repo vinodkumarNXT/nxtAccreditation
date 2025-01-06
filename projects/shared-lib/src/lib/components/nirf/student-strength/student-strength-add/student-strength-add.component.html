@@ -1,1 +1,53 @@
-<p>student-strength-add works!</p>
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+<div class="acc-EditForm-container ">
+      
+              
+        <form (ngSubmit)="submitForm('UG')" class="acc-form-container" [formGroup]="ugStudentForm">
+            <h4 class="multiformTitle">{{" UG Student"}}</h4>
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+              <div *ngFor="let field of formFields[formType]" class="form-group" fxFlex="1 1 48%">
+                <mat-form-field>
+                  <mat-label >{{ field.label }}</mat-label>
+                  <input matInput id="{{ field.name }}" formControlName="{{ field.name }}" type="number">
+                </mat-form-field>
+              </div>
+            </div>
+          
+           
+          </form>
+          
+          
+
+          <form (ngSubmit)="submitForm('PG')" class="acc-form-container" [formGroup]="pgStudentForm">
+              <h4 class="multiformTitle">{{" PG Student"}}</h4>
+            <div fxLayout="row wrap" fxLayoutGap="4px">
+              <div *ngFor="let field of formFields[formType]" class="form-group" fxFlex="1 1 48%">
+                <mat-form-field>
+                  <mat-label >{{ field.label }}</mat-label>
+                  <input matInput id="{{ field.name }}" formControlName="{{ field.name }}" type="number">
+                </mat-form-field>
+              </div>
+            </div>
+
+           
+          
+            <div class="form-actions">
+                <button mat-flat-button color="warn" type="submit" [disabled]="!isFormValid()">Submit All Forms</button>
+            </div>
+          </form>
+          
+
+  
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>

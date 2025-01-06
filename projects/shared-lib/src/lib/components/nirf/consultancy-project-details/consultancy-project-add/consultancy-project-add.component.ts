@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Output } from
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
-import { schoolErpEndpoint } from 'projects/shell/environments/school-erp-endpoint';
+import { endpoints } from 'projects/shell/environments/endpoint';
 import { MaterialModule, SharableModule, FormsService, SwalService } from 'school-erp-public';
-import {  FileUploadService } from 'shared-lib';
+import {  FileUploadService, YearMaskDirective, yearRangeValidator } from 'shared-lib';
 
 
 const today = new Date();
@@ -90,7 +90,7 @@ export class ConsultancyProjectAddComponent {
   // Add a new set of fields for a year
   addYearSet(): void {
     const yearGroup = this.fb.group({
-      year: ['', Validators.required],
+      year: ['', [Validators.required]],  // Apply the custom validator
       ugIntake: ['', Validators.required],
       ugEnrolled: ['', Validators.required],
       pgIntake: ['', Validators.required],
@@ -101,39 +101,36 @@ export class ConsultancyProjectAddComponent {
 
     this.dynamicYears.push(yearGroup);
 
-      // Set enteredYear to the first year (default)
-      this.enteredYear = yearGroup.get('year')?.value;
-
   }
 
-  // Remove a specific year set
-  removeYearSet(index: number): void {
-    this.dynamicYears.removeAt(index);
-  }
 
-   // Update enteredYear when a specific year's input changes
-   onYearChange(index: number): void {
-    this.enteredYear = this.dynamicYears.at(index).get('year')?.value;
-  }
 
   
     
       async submitForm() {
         this.submitted = true;
+
     
         if (this.form.valid) {
-    
-          const postData = {
-            code: this.form.get("code")?.value,
-            name: this.form.get("name")?.value,
-            contactInfo: this.form.get("contactInfo")?.value,
-            status: this.form.get("status")?.value,
-            location: this.form.get("location")?.value,
-            
-          };
+
+          // Prepare the post data
+          const postData = this.dynamicYears.controls.map((yearGroup) => ({
+            year: yearGroup.get('year')?.value,
+            data: {
+              ugIntake: yearGroup.get('ugIntake')?.value,
+              ugEnrolled: yearGroup.get('ugEnrolled')?.value,
+              pgIntake: yearGroup.get('pgIntake')?.value,
+              pgEnrolled: yearGroup.get('pgEnrolled')?.value,
+              phdIntake: yearGroup.get('phdIntake')?.value,
+              phdEnrolled: yearGroup.get('phdEnrolled')?.value,
+            }
+          }));
+
+          console.log("Before Submit Data", postData);
+
     
           try {
-            const response = await this.formsService.onFormSubmit(postData, schoolErpEndpoint.SchoolBranch);
+            const response = await this.formsService.onFormSubmit(postData, endpoints.NIRFconsultancyProjectDetails);
     
             // Show success toast notification
             this.swalService.addSuccess()
@@ -179,6 +176,17 @@ export class ConsultancyProjectAddComponent {
         }
       }
     
+
+              // Remove a specific year set but ensure at least one remains
+        removeYearSet(index: number): void {
+          if (this.dynamicYears.length > 1) {
+            this.dynamicYears.removeAt(index);
+          } else {
+            console.warn('At least one year set must remain.');
+          }
+        }
+
+
       /**
        * Resets the form to its initial state, clearing all form fields, errors, and submission status.
        */
@@ -219,7 +227,7 @@ export class ConsultancyProjectAddComponent {
         try {
           // Fetch the list data from the server using the forms service.
           // The specific endpoint for this data is provided as an argument.
-          const listData = await this.formsService.getListData(schoolErpEndpoint.SchoolBranch);
+          const listData = await this.formsService.getListData(endpoints.NIRFconsultancyProjectDetails);
   
           // Store the fetched data in the component's `listData` property.
           this.listData = listData.data;
@@ -237,7 +245,7 @@ export class ConsultancyProjectAddComponent {
       async loadMetaData() {
         try {
           // Fetch the metadata from the server
-          const metaData = await this.formsService.getListData(schoolErpEndpoint.SchoolMetaData);
+          const metaData = await this.formsService.getListData(endpoints.NIRFconsultancyProjectDetails);
     
           // Filter to only include objects that have 'statusValues'
           this.getMetaData = metaData.filter((data: any) => data.statusValues);
