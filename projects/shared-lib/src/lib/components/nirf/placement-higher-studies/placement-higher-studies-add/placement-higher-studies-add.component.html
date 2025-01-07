@@ -1,1 +1,216 @@
-<p>placement-higher-studies-add works!</p>
+<h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
+    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+    <span fxFlex="6">
+        <button mat-button mat-dialog-close class="ext-modal-close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </span>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+    <div class="acc-EditForm-container ">
+
+        <form (ngSubmit)="submitForm('UG')" class="acc-form-container" [formGroup]="form">
+            <div formArrayName="dynamicYears">
+
+
+                <div *ngFor="let yearGroup of dynamicYears.controls; let i = index" [formGroupName]="i"
+                    class="nirfDyanmicFormsContainer">
+                    <h3 class="enterTitle">
+                        <span *ngIf="enteredYear">{{ "Entering Details for  " }}</span>
+                         UG Year {{ enteredYear }}
+
+                    </h3>
+                    <div fxLayout="row wrap" fxLayoutGap="7px">
+
+                        <!-- Academic Year -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Academic Year</mat-label>
+                                <input matInput formControlName="academicYear" placeholder="Enter Academic Year">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- First-Year Students Intake -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of First-Year Students Intake</mat-label>
+                                <input matInput type="number" formControlName="firstYearIntake">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- First-Year Students Admitted -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of First-Year Students Admitted</mat-label>
+                                <input matInput type="number" formControlName="firstYearAdmitted">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Lateral Entry Students -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Admitted through Lateral Entry</mat-label>
+                                <input matInput type="number" formControlName="lateralEntryAdmitted">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Students Graduating in Minimum Time -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Graduating in Minimum Stipulated Time</mat-label>
+                                <input matInput type="number" formControlName="graduatingInTime">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Students Placed -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Placed</mat-label>
+                                <input matInput type="number" formControlName="studentsPlaced">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Median Salary -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Median Salary of Placed Graduates (Amount in Rs.)</mat-label>
+                                <input matInput type="number" formControlName="medianSalary">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Students Selected for Higher Studies -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Selected for Higher Studies</mat-label>
+                                <input matInput type="number" formControlName="higherStudies">
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="form-group" fxFlex="1 1 98%" fxLayout="row wrap" fxLayoutGap="4px">
+                            <button mat-flat-button color="primary" type="button" (click)="addYearSet()"
+                                aria-label="Remove this year set">  Add  UG Year</button>
+
+                            @if (dynamicYears.length > 1 && i > 0) {
+                            <button mat-flat-button color="warn" type="button" (click)="removeYearSet(i)"
+                                aria-label="Remove this year set">Remove UG Year </button>
+                            }
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+    
+        </form>
+
+
+        <form (ngSubmit)="submitForm('PG')" class="acc-form-container" [formGroup]="pgForm">
+            <div formArrayName="dynamicYears">
+
+
+                <div *ngFor="let yearGroup of dynamicYears.controls; let i = index" [formGroupName]="i"
+                    class="nirfDyanmicFormsContainer">
+                    <h3 class="enterTitle">
+                        <span *ngIf="enteredYear">{{ "Entering Details for  " }}</span>
+                         PG Year {{ enteredYear }}
+
+                    </h3>
+                    <div fxLayout="row wrap" fxLayoutGap="7px">
+
+                        <!-- Academic Year -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Academic Year</mat-label>
+                                <input matInput formControlName="academicYear" placeholder="Enter Academic Year">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- First-Year Students Intake -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of First-Year Students Intake</mat-label>
+                                <input matInput type="number" formControlName="firstYearIntake">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- First-Year Students Admitted -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of First-Year Students Admitted</mat-label>
+                                <input matInput type="number" formControlName="firstYearAdmitted">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Lateral Entry Students -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Admitted through Lateral Entry</mat-label>
+                                <input matInput type="number" formControlName="lateralEntryAdmitted">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Students Graduating in Minimum Time -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Graduating in Minimum Stipulated Time</mat-label>
+                                <input matInput type="number" formControlName="graduatingInTime">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Students Placed -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Placed</mat-label>
+                                <input matInput type="number" formControlName="studentsPlaced">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Median Salary -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Median Salary of Placed Graduates (Amount in Rs.)</mat-label>
+                                <input matInput type="number" formControlName="medianSalary">
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Students Selected for Higher Studies -->
+                        <div fxFlex="45" class="form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>No. of Students Selected for Higher Studies</mat-label>
+                                <input matInput type="number" formControlName="higherStudies">
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="form-group" fxFlex="1 1 98%" fxLayout="row wrap" fxLayoutGap="4px">
+                            <button mat-flat-button color="primary" type="button" (click)="addYearSet()"
+                                aria-label="Remove this year set">Add  PG Year</button>
+
+                            @if (dynamicYears.length > 1 && i > 0) {
+                            <button mat-flat-button color="warn" type="button" (click)="removeYearSet(i)"
+                                aria-label="Remove this year set">Remove  PG Year</button>
+                            }
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+                <div class="formSubmit form-group" fxFlex="1 1 100%">
+                    <button mat-flat-button color="primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+</mat-dialog-content>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
