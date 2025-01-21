@@ -24,7 +24,7 @@ export class ConsultancyProjectDetailsComponent {
  
   pageSizeOptions: number[] = [];
 
-  displayedColumns = ["id", "description", "actions"];
+  displayedColumns = ["id", "year","consultancyProjects","clientOrganization","totalRxAmount", "actions"];
 
 
 

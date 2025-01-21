@@ -1,107 +1,93 @@
 <h2 mat-dialog-title fxLayout="row" class="ext-modal-header">
-    <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
-    <span fxFlex="6">
-        <button mat-button mat-dialog-close class="ext-modal-close">
-            <mat-icon>close</mat-icon>
-        </button>
-    </span>
+  <span fxFlex="94" class="ext-modal-title">{{isEdit ? 'Edit' : 'Add'}}</span>
+  <span fxFlex="6">
+    <button mat-button mat-dialog-close class="ext-modal-close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </span>
 </h2>
 
 <mat-dialog-content class="mat-typography">
-<div class="acc-EditForm-container ">
+  <div class="acc-EditForm-container ">
 
-        <form (ngSubmit)="submitForm()" class="acc-form-container" [formGroup]="form">
-            <div  formArrayName="dynamicYears">
+    <form (ngSubmit)="submitForm()" class="acc-form-container" [formGroup]="form">
+      <div formArrayName="dynamicYears">
 
-            
-            <div *ngFor="let yearGroup of dynamicYears.controls; let i = index" [formGroupName]="i" class="nirfDyanmicFormsContainer">
-                <h3 class="enterTitle">
-                    <span *ngIf="enteredYear">{{ "Entering Details for " }}</span>
-                    Year {{ enteredYear }}
-                    
-                  </h3>
-                                  <div fxLayout="row wrap" fxLayoutGap="4px">
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>Year</mat-label>
-                        <input matInput formControlName="year" [(ngModel)]="enteredYear"  libYearMask  placeholder="Enter Year" required  type="number"/>
-                        <mat-error *ngIf="yearGroup.get('year')?.hasError('invalidYearRange')">
-                            Invalid Year Range (e.g., 2023-2024)
-                          </mat-error>
-                    
-                      </mat-form-field>
-                    </div>
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>UG Intake</mat-label>
-                        <input matInput formControlName="ugIntake" placeholder="Enter UG Intake" required />
-                      </mat-form-field>
-                    </div>
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>UG Enrolled</mat-label>
-                        <input matInput formControlName="ugEnrolled" placeholder="Enter UG Enrolled" required />
-                      </mat-form-field>
-                    </div>
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>PG Intake</mat-label>
-                        <input matInput formControlName="pgIntake" placeholder="Enter PG Intake" required />
-                      </mat-form-field>
-                    </div>
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>PG Enrolled</mat-label>
-                        <input matInput formControlName="pgEnrolled" placeholder="Enter PG Enrolled" required />
-                      </mat-form-field>
-                    </div>
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>PhD Intake</mat-label>
-                        <input matInput formControlName="phdIntake" placeholder="Enter PhD Intake" required />
-                      </mat-form-field>
-                    </div>
-              
-                    <div class="form-group" fxFlex="1 1 48%">
-                      <mat-form-field>
-                        <mat-label>PhD Enrolled</mat-label>
-                        <input matInput formControlName="phdEnrolled" placeholder="Enter PhD Enrolled" required />
-                      </mat-form-field>
-                    </div>
+        <div *ngFor="let yearGroup of dynamicYears.controls; let i = index" [formGroupName]="i"
+          class="nirfDyanmicFormsContainer">
+          <h3 class="enterTitle">
+            <span *ngIf="enteredYear">{{ "Entering Details for " }}</span>
+            Year {{ enteredYear }}
 
-                    <div class="form-group" fxFlex="1 1 98%" fxLayout="row wrap" fxLayoutGap="4px">
-                        <button  mat-flat-button color="primary"  type="button" (click)="addYearSet()" aria-label="Remove this year set">Add Year</button>
-                       
-                        @if (dynamicYears.length > 1 && i > 0) {
-                            <button  mat-flat-button color="warn" type="button" (click)="removeYearSet(i)" aria-label="Remove this year set">Remove Year Set</button>
-                        }
-                       
-                    </div>
+          </h3>
+          <div fxLayout="row wrap" fxLayoutGap="4px">
 
-              
-                  </div>
+            <div class="form-group" fxFlex="1 1 48%">
+              <mat-form-field>
+                <mat-label>Year</mat-label>
+                <input matInput formControlName="year" [(ngModel)]="enteredYear" libYearMask placeholder="Enter Year"
+                  required type="number" />
+                <mat-error *ngIf="yearGroup.get('year')?.hasError('invalidYearRange')">
+                  Invalid Year Range (e.g., 2023-2024)
+                </mat-error>
 
-
-
+              </mat-form-field>
             </div>
 
-            <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
-                <div class="formSubmit form-group" fxFlex="1 1 100%">
-                    <button mat-flat-button color="primary" type="submit">Submit</button>
-                </div>
+            <div class="form-group" fxFlex="1 1 48%">
+              <mat-form-field>
+                <mat-label>{{"Total No.of Consulatncy Projects"}}</mat-label>
+                <input matInput formControlName="consulatncyProjects" placeholder=" Enter Consultancy Projects" required />
+              </mat-form-field>
             </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+              <mat-form-field>
+                <mat-label>{{"Total No.of Client Oraganiztion "}}</mat-label>
+                <input matInput formControlName="clientOraganiztion" placeholder="Enter Client Oraganiztion" required />
+              </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+              <mat-form-field>
+                <mat-label>{{"Total  Amount Received(Amount In Rupees)"}}</mat-label>
+                <input matInput formControlName="amountinRupee" placeholder="Enter Amount In Rupees" required />
+              </mat-form-field>
+            </div>
+
+            <div class="form-group" fxFlex="1 1 48%">
+              <mat-form-field>
+                <mat-label>{{"Amount in Received(Words)"}}</mat-label>
+                <input matInput formControlName="pgEnrolled" placeholder="Enter Amount in Words" required />
+              </mat-form-field>
+            </div>
+
+ 
+            <div class="form-group" fxFlex="1 1 98%" fxLayout="row wrap" fxLayoutGap="4px">
+              <button mat-flat-button color="primary" type="button" (click)="addYearSet()"
+                aria-label="Remove this year set">Add Year</button>
+
+              @if (dynamicYears.length > 1 && i > 0) {
+              <button mat-flat-button color="warn" type="button" (click)="removeYearSet(i)"
+                aria-label="Remove this year set">Remove Year Set</button>
+              }
+
+            </div>
+          </div>
+
         </div>
-        </form>
+
+        <div class="acc-form-submit" fxLayout="row" fxLayoutGap="10px">
+          <div class="formSubmit form-group" fxFlex="1 1 100%">
+            <button mat-flat-button color="primary" type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
 
 
-  
-    </div>
+
+  </div>
 </mat-dialog-content>
 
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
