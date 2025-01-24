@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter, Subscription } from 'rxjs';
-import { AuthService, AutoLogoutService, MenuItem, MenuService, SharableModule, SwalService, FormsService } from 'shared-lib';
+import { TieredMenu } from 'primeng/tieredmenu';
+import { filter } from 'rxjs';
+import { SharableModule, NirfMenuService, NaacMenuService } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
@@ -12,168 +13,98 @@ import { AuthService, AutoLogoutService, MenuItem, MenuService, SharableModule, 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
-  menuItems: MenuItem[] = [];
-  public isExpanded = true;
-  public isShowing = false;
-  public showSubmenu: { [key: string]: boolean } = {};
-  public showNestedSubmenu: { [key: string]: boolean } = {};
-  public showLayout = true;
-  public isLoginPage: boolean = false;
-  public currentYear: number;
+export class AppComponent {
+  currentUserRole = 'admin';
+  @ViewChild('menu') menu: TieredMenu; // Reference the menu using ViewChild
 
-  public activeSubmenu: { [key: string]: boolean } = {};
-  public activeNestedSubmenu: { [key: string]: boolean } = {};
+  nirfMenu: boolean = false;
+  naacMenu: boolean = false;
+  nbaMenu: boolean = false;
 
-  public userMenu: any[] = [];
-  public availableActions: string[] = [];
-
-  currentRole: any = 'admin'; // Replace this with the actual current role of the user from your authentication service
-
-  selectMenu:string = 'accreditation'; // Default value
-
-
-  private idleTimer$: Subscription = new Subscription();
+  nirfMenuItems: any[] = []; // Your Nirf menu items
+  naacMenuItems: any[] = []; // Your Naac menu items
+  nbaMenuItems: any[] = []; // Your NBA menu items
 
   constructor(
-    private cdr: ChangeDetectorRef,
-    private autoLogoutService: AutoLogoutService,
-    private swalService: SwalService,
-    private authService: AuthService,
     private router: Router,
-    private menuService: MenuService,
-    private formsService:FormsService
-  ) {
-    this.currentYear = new Date().getFullYear();
+    private menuService: NaacMenuService,
+    private nirfmenuService: NirfMenuService,
+  ) { }
+
+  menuCardItem = [
+    {
+      title: 'NAAC',
+      subtitle: 'CLICK HERE',
+      image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      route: '/naac' // Define the route for NAAC
+    },
+    {
+      title: 'NBA',
+      subtitle: 'CLICK HERE',
+      image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      route: '/nba' // Define the route for NBA
+    },
+    {
+      title: 'NIRF',
+      subtitle: 'CLICK HERE',
+      image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      route: '/nirf' // Define the route for NIRF
+    }
+  ];
+
+  ngOnInit(): void {
+
+    this.getMenuList();
+    this.updateMenu();
+
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+      this.updateMenu();
+    });
 
   }
 
-  ngOnInit() {
 
+  getMenuList() {
+    this.nirfMenuItems = this.mapMenuItems(this.nirfmenuService.getMenuItems());
+    this.naacMenuItems = this.menuService.getMenuItems();
+    console.log('NAAC Menu Items:', this.naacMenuItems);
+  }
 
-  //  // Subscribe to the service to get updates to the selected menu
-  //  this.formsService.selectedMenu$.subscribe(menu => {
-  //   this.selectedMenu = menu; // Update the local variable
-  //   console.log('Updated Selected Menu:', this.selectedMenu); // Debugging log
-  // });
-
-    this.menuItems = this.menuService.getMenuItems();
-    this.setupMenuForUserType('admin'); // Change user type here
-
-    // Check for current route to toggle layout visibility
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.showLayout = !event.url.includes('/login'); // Hide layout for login page
-      });
-
-    // Listen for route changes and check if the current route is the login page
-    this.router.events.subscribe(() => {
-      this.isLoginPage = this.router.url.includes('login');
-    });
-
-    // Initialize the auto logout logic
-    this.autoLogoutService.startListeningForUserActivity();
-    this.idleTimer$ = this.autoLogoutService.logout$.subscribe(() => {
-      this.autoLogoutService.triggerLogoutAlert();
-    });
-
-
-
-    // Filter menu items based on both user's roles and menuOf property
-
+  private mapMenuItems(items: any[], primaryRouteKey: string = 'routerLink', fallbackRouteKey: string = 'route') {
+    return items.map(item => ({
+      label: item.label,
+      icon: item.icon,
+      routerLink: item[primaryRouteKey] || item[fallbackRouteKey] // Use fallback if primary key is unavailable
+    }));
   }
   
- 
 
-  ngOnDestroy() {
-    this.idleTimer$.unsubscribe(); // Clean up subscriptions
-  }
+  updateMenu() {
+    // Hide all menus
+    this.nirfMenu = false;
+    this.naacMenu = false;
+    this.nbaMenu = false;
 
-  toggleSidebar() {
-    this.isExpanded = !this.isExpanded;
-  }
+    // Check the current route and set the appropriate menu flag to true
+    const currentRoute = this.router.url;
 
-  toggleSubmenu(label: string): void {
-    this.showSubmenu[label] = !this.showSubmenu[label];
-    this.activeSubmenu[label] = this.showSubmenu[label];
-  }
-
-  toggleNestedSubmenu(label: string): void {
-    this.showNestedSubmenu[label] = !this.showNestedSubmenu[label];
-    this.activeNestedSubmenu[label] = this.showNestedSubmenu[label];
-  }
-
-  hasAccess(accessBy: string[] | string, userRoles: string[]): boolean {
-    if (typeof accessBy === 'string') {
-      accessBy = accessBy.split(',');
-    }
-    return accessBy.some(role => userRoles.includes(role.trim()));
-  }
-
-
-  setupMenuForUserType(userType: string) {
-    switch (userType) {
-      case 'admin':
-        this.userMenu = [
-          { label: 'Profile', icon: 'settings', disabled: false, route: "/profile" },
-          { label: 'Log Out', icon: 'power_settings_new', disabled: false, route: "/logOut" },
-        ];
-        this.availableActions = ['Access to Admin dashboard', 'Manage All Users', 'Modify Settings', 'View Reports'];
-        break;
-      case 'principal':
-        this.userMenu = [
-          { label: 'Home', icon: 'home', disabled: false, route: "/dashboard" },
-          { label: 'Profile', icon: 'person', disabled: false, route: "/dashboard" },
-          { label: 'Settings', icon: 'settings', disabled: false, route: "/dashboard" },
-          { label: 'Reports', icon: 'bar_chart', disabled: true, route: "/dashboard" },
-          { label: 'Log Out', icon: 'power_settings_new', disabled: false, route: "/logOut" },
-        ];
-        this.availableActions = ['Access Home', 'View/Edit Profile', 'Modify Personal Settings'];
-        break;
-      case 'guest':
-        this.userMenu = [
-          { label: 'Home', icon: 'home', disabled: false, route: "/dashboard" },
-          { label: 'Sign In', icon: 'login', disabled: false, route: "/dashboard" },
-          { label: 'Help', icon: 'help', disabled: false, route: "/dashboard" },
-          { label: 'Log Out', icon: 'power_settings_new', disabled: false, route: "/logOut" },
-        ];
-        this.availableActions = ['Access Home', 'Sign In', 'View Help'];
-        break;
-      default:
-        this.userMenu = [];
-        this.availableActions = [];
-    }
-  }
-
-  handleMenuAction(route: string) {
-    if (route === '/logOut') {
-      this.authService.logout().subscribe({
-        next: () => {
-          this.swalService.successNotification('You have been logged out successfully');
-        },
-        error: (err) => {
-          console.error('Logout error:', err);
-          this.swalService.errorNotification('Logout failed. Please try again.');
-        }
-      });
-    } else {
-      this.router.navigate([route]);
+    if (currentRoute.includes('nirf')) {
+      this.nirfMenu = true;
+    } else if (currentRoute.includes('naac')) {
+      this.naacMenu = true;
+    } else if (currentRoute.includes('nba')) {
+      this.nbaMenu = true;
     }
   }
 
 
-  // selectMenu(menu: 'naac' | 'nirf' | 'accreditation'):void {
-  //   this.formsService.updateSelectedMenu(menu); // Update the value in the service
-  //   this.selectedMenu = menu; // Update the local component variable
-  //   console.log('Menu item selected:', menu); // Debugging log
+  getCurrentRole() {
+    const filterByRole = (items: any[]) =>
+      items.filter(item => item.accessBy.includes(this.currentUserRole));
 
-  // }
+    this.nirfMenuItems = filterByRole(this.nirfmenuService.getMenuItems());
+    this.naacMenuItems = filterByRole(this.menuService.getMenuItems());
+  }
 
 
-  // isMenuForSelected(menuItem: any): boolean {
-  //   return menuItem.menuOf?.includes(this.selectedMenu) && menuItem.accessBy?.includes(this.currentRole);
-  // }
-
- 
 }

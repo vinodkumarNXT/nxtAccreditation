@@ -166,7 +166,7 @@ NIRFIPR:'api/institutional-performance',
 NIRFpcsFacilities:'api/institutional-performance',
 NIRFphdstudentDetails:'api/institutional-performance',
 NIRFplacementHigherStudies:'api/institutional-performance',
-NIRFsanctionedIntake:'api/institutional-performance',
+NIRFsanctionedIntake:'api/sanctioned-intake',
 NIRFsponsoredResearchDetails:'api/institutional-performance',
 NIRFstudentStrength:'api/institutional-performance',
 

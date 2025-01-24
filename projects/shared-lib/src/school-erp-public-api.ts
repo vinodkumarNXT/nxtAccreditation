@@ -9,7 +9,7 @@ export * from './lib/services/streams.service';
 export * from './lib/services/auto-logout.service';
 export * from './lib/services/erp-menu.service';
 export * from './lib/services/swal.service'
-export * from './lib/services/menu.service'
+export * from './lib/services/naac-menu.service'
 export * from './lib/models/menu.model'
 export * from './lib/services/image.service'
 export * from './lib/services/global-api-endpoint.service'
@@ -17,6 +17,8 @@ export * from './lib/services/random-color.service';
 export * from './lib/services/lightbox.service';
 export * from './lib/services/upload-and-replace-files.service';
 export * from './lib/services/scool-role-master.service';
+export * from './lib/services/nirf-menu.service'
+export * from './lib/services/nba-menu.service'
 
 
 
@@ -253,6 +255,9 @@ export * from './lib/components/school-erp/events/notice-circular/notice-circula
 
 
 export * from './lib/interfaces/school-fileipload';
+
+
+
 
 
 

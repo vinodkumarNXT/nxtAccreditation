@@ -1,0 +1,1768 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+/* Import fonts via CSS */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lobster&family=Pacifico&family=Sevillana&display=swap");
+/* /* New Css Global Root Selection Css Starts Here */
+::ng-deep :root {
+  /* Theme Primary Colors START */
+  --nxtIndigo: #393186;
+  --nxtOrange: #ee7f1b;
+  --nxtSkyBlue: #0cafff;
+  --nxtGreen: #83cf43;
+  --nxtToolBarBG: #b6bbc4;
+  --nxtSideMenuBg: #fff;
+  /* Theme Primary Colors END */
+  /* Dashboard Cards Color for Admin START */
+  --nxtDashCardDanger: #fd3550;
+  --nxtDashCardPrimary: #0dcaf0;
+  --nxtDashCardSuccess: #15ca20;
+  --nxtDashCardWarn: #ffc107;
+  --nxtDashTextDanger: #dc3545;
+  --nxtDashTextPrimary: #17a2b8;
+  --nxtDashTextSuccess: #28a745;
+  --nxtDashTextWarn: #ffc107;
+  /* Dashboard Cards Color for Admin END */
+  /* Theme Optional Colors START */
+  --nxtGrey: #ebedec;
+  --nxtWhite: #fff;
+  --nxtDarkGrey: #606060;
+  --nxtBlack: #000;
+  --nxtTableTDColor: #222831;
+  --nxtLightGrey: #848484;
+  --nxtGreyBGcolor: #f4f4f4;
+  --nxtGreySecondary: #6c757d;
+  --nxtDashBgColor: #f7f7ff;
+  /* Theme Optional Colors END */
+  /* Dashboard Chart Colors START */
+  --nxtDashChart1: #ff9705;
+  --nxtDashChart2: #062a74;
+  --nxtDashChart3: #034be4;
+  --nxtDashChart4: #428bf9;
+  --nxtDashChart5: #b6cdff;
+  --nxtDashChart6: #fad1d4;
+  --nxtDashSemanticPos: #3dd29d;
+  --nxtDashSemanticNeg: #ff5005;
+  --nxtDashTitleBGColor: #e0eaff;
+  /* Dashboard Chart Colors END */
+  /* New Revised Button Colors START */
+  --nxtPrimaryBtn: #f5883c;
+  --nxtPrimaryBtnHover: #ef741e !important;
+  --nxtSecondaryBtn: #dcdcdc;
+  --nxtSecondaryBtnHover: #ddd !important;
+  --nxtSuccessBtn: #28a745;
+  --nxtSuccessBtnHover: #159c35;
+  --nxtDangerBtn: #e32636;
+  --nxtDangerBtnHover: #d41121;
+  --nxtDarkBtn: #595959;
+  --nxtDarkBtnHover: rgb(23, 32, 32);
+  --nxtInfoBtn: #0cafff;
+  --nxtInfoBtnHover: #0497e0;
+  /* New Revised Button Colors END */
+  /* Table Header Color START */
+  --nxtTableThBgColor: #ff9c59;
+  /* Comment out previous colors if not in use */
+  /* Table Header Color END */
+  --nxtDashBgColor-1: #f8f9fa; /* Light Gray */
+  --nxtDashBgColor-2: #fff4e6; /* Light Peach */
+  --nxtDashBgColor-3: #e7f5ff; /* Light Blue */
+  --nxtDashBgColor-4: #f3f0ff; /* Light Lavender */
+  --nxtDashBgColor-5: #ebfbee; /* Light Green */
+  --nxtDashBgColor-6: #fff9db; /* Light Yellow */
+  --nxtDashBgColor-7: #ffe8e8; /* Light Pink */
+  --nxtDashBgColor-8: #e6fcf5; /* Light Aqua */
+  --nxtDashBgColor-9: #ffeefc; /* Light Rose */
+  --nxtDashBgColor-10: #f4fce3; /* Light Lime */
+  --nxtDashBgColor-11: #eef2ff; /* Light Indigo */
+  --nxtDashBgColor-12: #f8f0e3; /* Light Sand */
+}
+
+.nxtDashLargeCard:nth-child(1) {
+  background-color: var(--nxtDashBgColor-1);
+}
+
+.nxtDashLargeCard:nth-child(2) {
+  background-color: var(--nxtDashBgColor-2);
+}
+
+.nxtDashLargeCard:nth-child(3) {
+  background-color: var(--nxtDashBgColor-3);
+}
+
+.nxtDashLargeCard:nth-child(4) {
+  background-color: var(--nxtDashBgColor-4);
+}
+
+.nxtDashLargeCard:nth-child(5) {
+  background-color: var(--nxtDashBgColor-5);
+}
+
+.nxtDashLargeCard:nth-child(6) {
+  background-color: var(--nxtDashBgColor-6);
+}
+
+.nxtDashLargeCard:nth-child(7) {
+  background-color: var(--nxtDashBgColor-7);
+}
+
+.nxtDashLargeCard:nth-child(8) {
+  background-color: var(--nxtDashBgColor-8);
+}
+
+.nxtDashLargeCard:nth-child(9) {
+  background-color: var(--nxtDashBgColor-9);
+}
+
+.nxtDashLargeCard:nth-child(10) {
+  background-color: var(--nxtDashBgColor-10);
+}
+
+.nxtDashLargeCard:nth-child(11) {
+  background-color: var(--nxtDashBgColor-11);
+}
+
+.nxtDashLargeCard:nth-child(12) {
+  background-color: var(--nxtDashBgColor-12);
+}
+
+/* Root  style and Color Picker Ends Here */
+.nxtIndigo {
+  color: var(--nxtIndigo);
+}
+
+.nxtGreyBGcolor {
+  background-color: var(--nxtGreyBGcolor);
+}
+
+.nxtOrange {
+  color: var(--nxtOrange);
+}
+
+.nxtSkyBlue {
+  color: var(--nxtSkyBlue);
+}
+
+.nxtGrey {
+  color: var(--nxtGrey);
+}
+
+.nxtGreen {
+  color: var(--nxtGreen);
+}
+
+.fontAlegreya {
+  font-family: "Alegreya";
+}
+
+.fontPoppins {
+  font-family: "Poppins";
+}
+
+.fontRaleway {
+  font-family: "Raleway";
+}
+
+.fontNoto {
+  font-family: "Noto Sans Mono";
+}
+
+/* New Css Global Root Selection Css ENDS Here */
+/* Global Center CSS Starts Here */
+.nxtTextcenter {
+  text-align: center !important;
+}
+
+/* Global Center CSS Starts Here */
+/* =====    Custom css start    =====================  **/
+body {
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+  background: #f4f7fa;
+  overflow-y: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+*:focus {
+  outline: none;
+}
+
+a,
+a:hover {
+  color: #666;
+  outline: none;
+  text-decoration: none;
+}
+
+button,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+::ng-deep body {
+  font-family: "Lato", sans-serif;
+}
+
+::ng-deep .example-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep .nxt-global-side-menu {
+  background-color: #eefaf6;
+  height: 100%;
+}
+
+::ng-deep .commom-layout {
+  background-color: #fff;
+}
+
+::ng-deep .important {
+  color: #ff0000 !important;
+  font-size: 14px !important;
+}
+
+::ng-deep .accre-forms-conatiner.card {
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+::ng-deep .accre-forms-conatiner.card .accre-forms-conatiner.card .card-title {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 7px 0;
+  color: #0839aa;
+}
+
+::ng-deep .acc-form-container .acc-form-submit {
+  text-align: end;
+  padding: 20px;
+}
+
+::ng-deep .main-header {
+  height: 60px;
+  align-items: center;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0px 5px 21px -5px #cdd1e1;
+}
+::ng-deep .main-header .mat-toolbar {
+  background-color: #fff !important;
+  box-shadow: 0px 5px 21px -5px #cdd1e1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  height: 60px;
+}
+::ng-deep .main-header .header-client-logo img {
+  width: 160px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+}
+
+::ng-deep .global-sideMenu {
+  padding: 15px 10px;
+}
+::ng-deep .global-sideMenu .nav {
+  background-color: #fff;
+}
+::ng-deep .global-sideMenu .navbar-expand-lg .navbar-nav {
+  flex-direction: column;
+}
+
+::ng-deep .main-layout {
+  height: 100vh;
+}
+::ng-deep .main-layout .main-layout-right {
+  margin: 20px;
+}
+
+.menu {
+  transition: width 300ms ease-in-out;
+  color: white;
+  height: 100%;
+}
+
+.global-sideMenu {
+  height: 100%;
+  overflow: hidden;
+}
+
+.navbar-toggler {
+  margin-bottom: 1rem;
+}
+
+.navbar-collapse {
+  transition: width 300ms ease-in-out;
+}
+
+/* Ensure the menu occupies full screen on tablets and below */
+@media screen and (max-width: 768px) {
+  .main-layout {
+    position: relative;
+  }
+  .main-layout-left {
+    position: absolute;
+    top: -4px;
+    left: -12px;
+    width: 230px;
+    height: 100vh;
+    background-color: #f9fafb;
+    z-index: 1;
+  }
+}
+::ng-deep .form-title-container {
+  border-bottom: 1px solid var(--nxtOrange);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+::ng-deep .form-title-container .acc-form-title {
+  color: var(--nxtOrange);
+  font-size: 18px;
+  margin: 0;
+  padding: 5px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+::ng-deep .form-title-container .edit-form-btn button {
+  height: 35px;
+  padding: 10px;
+  margin: 0 10px;
+}
+::ng-deep .form-title-container .edit-form-btn button .mat-icon {
+  margin: 0;
+  font-size: 16px;
+}
+::ng-deep .form-title-container .edit-form-btn button .content {
+  font-size: 13px;
+}
+::ng-deep .form-title-container .edit-form-btn .content {
+  font-size: 15px;
+}
+
+::ng-deep mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important;
+  border: 1px solid #dfdfdf;
+}
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mat-mdc-floating-label.mdc-floating-label {
+  font-size: 14px;
+}
+
+/* In your component's CSS file or global styles file */
+::ng-deep .mat-form-field {
+  box-shadow: none !important;
+}
+
+.rotating-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+::ng-deep .mat-mdc-dialog-panel {
+  max-width: 60vw !important;
+  min-width: 60vw !important;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title {
+  color: var(--mdc-dialog-subhead-color, rgba(0, 0, 0, 0.87));
+  background-color: #dfdfdf;
+  padding: 10px;
+  align-items: center;
+  height: 50px;
+  color: #000;
+  font-size: 19px;
+  font-weight: 500;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title .mat-mdc-button .mat-mdc-button-persistent-ripple {
+  background: transparent;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title .mat-mdc-button .mat-mdc-button-persistent-ripple:hover {
+  background: transparent;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title .mat-mdc-button .mat-mdc-button-persistent-ripple:active {
+  background: transparent;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title .ext-modal-header .ext-modal-title {
+  font-size: 18px;
+  margin: 0;
+  padding-left: 10px;
+  font-weight: 500;
+  color: #01579b !important;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__title .ext-modal-header .ext-modal-close {
+  color: rgba(0, 0, 0, 0) !important;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content {
+  padding: 20px !important;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content .view-details-block .form-group {
+  padding-bottom: 15px;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content .view-details-block .form-group .view-icon {
+  background-color: #f5f7f9;
+  border-radius: 50%;
+  height: 45px !important;
+  max-width: 45px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content .view-details-block .form-group .view-icon .mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content .view-details-block .form-group p {
+  color: #0288d1;
+  margin: 0 !important;
+  font-size: 17px;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__content .view-details-block .form-group small {
+  color: #b0bec5;
+  font-size: 13px;
+}
+
+::ng-deep .nxtAccTable .globalTableTheadAction {
+  text-align: center !important;
+}
+::ng-deep .nxtAccTable .globalTableTDcellAction .mat-mdc-button {
+  margin: 0 3px;
+}
+::ng-deep .nxtAccTable .globalTableTDcellAction .mat-mdc-button .mat-icon {
+  font-size: 23px !important;
+  height: 30px !important;
+  width: 30px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .globalTableCount {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  font-family: "Lato", sans-serif;
+  text-transform: capitalize;
+}
+::ng-deep .globalTableCount .countNumber {
+  color: indigo;
+}
+
+::ng-deep .close-icon {
+  cursor: pointer;
+  color: red;
+  /* or any other color */
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+::ng-deep .filterBlockContainer {
+  margin-bottom: 5px;
+}
+::ng-deep .filterBlockContainer .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+::ng-deep .filterBlockContainer .mat-mdc-text-field-wrapper {
+  height: 40px !important;
+}
+::ng-deep .filterBlockContainer .mat-mdc-text-field-wrapper .mdc-text-field__input {
+  height: 40px !important;
+  position: relative !important;
+  top: -18px !important;
+  font-size: 14px;
+}
+::ng-deep .filterBlockContainer .filterBlock {
+  margin: 0 5px;
+}
+::ng-deep .filterBlockContainer .addCountBlock {
+  padding-bottom: 5px;
+  margin: 0px 5px;
+}
+::ng-deep .filterBlockContainer .addCountBlock .mat-icon {
+  height: 20px !important;
+  width: 47px !important;
+  font-size: 18px !important;
+  margin: 0;
+  overflow: inherit;
+}
+
+::ng-deep .nxtApp-toolbar {
+  background-color: var(--nxtToolBarBG) !important;
+  color: var(--nxtBlack) !important;
+  height: 50px !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 0 0 5px 0 !important;
+}
+::ng-deep .nxtApp-toolbar h2.brandHeader {
+  color: var(--nxtBlack);
+  margin: 0;
+  font-size: 27px;
+  font-weight: 600;
+  padding: 0px 10px;
+}
+::ng-deep .nxtApp-toolbar .brandLogo {
+  height: 100%;
+  width: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #ffffff;
+  padding: 0 5px;
+}
+::ng-deep .nxtApp-toolbar .menuBtnList {
+  width: 30px;
+  background-color: #fff;
+  color: #000 !important;
+  min-width: 30px;
+  max-width: 30px;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+::ng-deep .nxtApp-toolbar .menuBtnList .mat-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 !important;
+}
+
+::ng-deep .NoFilterMatchFound {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  color: #605e5e;
+}
+::ng-deep .NoFilterMatchFound .filterValue {
+  color: var(--nxtDangerBtn);
+}
+
+::ng-deep .mat-mdc-paginator-container {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+::ng-deep .mainHeading {
+  color: #010101 !important;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 0px 5px 20px !important;
+}
+
+::ng-deep .submenu {
+  display: none;
+}
+
+::ng-deep .submenu.expanded {
+  display: block;
+  background-color: #fff !important;
+}
+
+::ng-deep .submenu.expanded.nestedSubMenu {
+  background-color: #fff !important;
+}
+
+::ng-deep .submenu.expanded.nestedSubMenu .mdc-list-item.parent {
+  background-color: #fff !important;
+}
+
+::ng-deep .rotated {
+  transform: rotate(180deg);
+}
+
+::ng-deep .nxtApp-sidenav {
+  z-index: 0 !important;
+}
+::ng-deep .nxtApp-sidenav .mat-mdc-list-item {
+  font-size: 14px;
+}
+::ng-deep .nxtApp-sidenav .mat-mdc-list-item .mdc-list-item__content .mdc-list-item__primary-text {
+  font-size: 13px !important;
+  color: #1a1a1a;
+}
+::ng-deep .nxtApp-sidenav .mat-mdc-list-item .mat-icon {
+  font-size: 18px;
+  height: 20px;
+  width: 21px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3px;
+}
+::ng-deep .nxtApp-sidenav .mat-drawer-inner-container {
+  background-color: var(--nxtSideMenuBg);
+  width: 230px !important;
+}
+::ng-deep .nxtApp-sidenav .mat-drawer-inner-container::-webkit-scrollbar {
+  width: 6px;
+  background-color: #f5f5f5;
+}
+::ng-deep .nxtApp-sidenav .mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.2, #aaf1d2), color-stop(0.44, rgb(175, 223, 216)), color-stop(0.72, rgb(177, 238, 230)), color-stop(0.86, rgb(156, 223, 192)));
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+::ng-deep .nxtApp-sidenav-content {
+  padding: 120px 15px 75px 15px;
+}
+::ng-deep .nxtApp-sidenav-content .nxtAccTable .mat-mdc-header-cell {
+  background-color: #ececec !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+::ng-deep .nxtApp-sidenav-content .mat-mdc-table tbody,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-table tfoot,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-table thead,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-cell,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-footer-cell,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-header-row,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-row,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-footer-row,
+::ng-deep .nxtApp-sidenav-content .mat-mdc-table .mat-mdc-header-cell {
+  height: 40px !important;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--mdc-dialog-container-color, white);
+  overflow-x: hidden;
+}
+
+/* SweetAlert2 confirm button - green */
+::ng-deep .swal2-confirm {
+  background-color: var(--nxtSuccessBtn);
+  /* Green color */
+  border-color: var(--nxtSuccessBtnHover);
+  /* Green color */
+}
+
+/* SweetAlert2 cancel button - red */
+::ng-deep .swal2-cancel {
+  background-color: var(--nxtDangerBtn);
+  /* Red color */
+  border-color: var(--nxtDangerBtnHover);
+  /* Red color */
+}
+
+::ng-deep div:where(.swal2-container) h2:where(.swal2-title) {
+  font-size: 18px;
+}
+
+::ng-deep div:where(.swal2-icon) {
+  font-size: 11px;
+  margin: 0.5em auto 0.6em;
+}
+
+::ng-deep div:where(.swal2-container) div:where(.swal2-popup) {
+  width: 22em;
+}
+
+::ng-deep .swal2-success-light-bg {
+  color: var(--nxtDashCardSuccess) !important;
+  /* Dark green text color */
+}
+
+::ng-deep .swal2-warn-light-bg {
+  color: var(--nxtPrimaryBtnHover) !important;
+  /* Dark green text color */
+}
+
+::ng-deep .swal2-danger-light-bg {
+  color: var(--nxtDangerBtnHover) !important;
+  /* Dark green text color */
+}
+
+/* In your component's SCSS file or global styles */
+/* Custom style for success alerts */
+::ng-deep .swalAlertSuccess {
+  color: var(--nxtWhite) !important;
+  /* Light green background */
+  background-color: var(--nxtSuccessBtn) !important;
+  /* Dark green text color */
+}
+
+/* Custom style for confirmation alerts */
+::ng-deep .swalAlertConfirm {
+  color: var(--nxtWhite) !important;
+  /* Light green background */
+  background-color: var(--nxtDangerBtnHover) !important;
+  /* Dark green text color */
+}
+
+::ng-deep .progressBarUploaderBlock {
+  background-color: rgb(213, 253, 213);
+  border-radius: 10px;
+  margin: 5px 0;
+  padding: 0 10px;
+}
+::ng-deep .progressBarUploaderBlock .progressBarUploader {
+  align-items: end;
+}
+::ng-deep .progressBarUploaderBlock .uploadFileName {
+  color: #000;
+  font-size: 11px;
+  line-height: 10px;
+}
+
+::ng-deep .nxtPrimary {
+  color: var(--nxtPrimaryBtn) !important;
+}
+::ng-deep .nxtPrimary:hover {
+  background-color: rgb(255, 253, 248) !important;
+}
+
+::ng-deep .mat-mdc-list-item-interactive.active {
+  background-color: #ff7900 !important;
+  border-radius: 0px !important;
+}
+::ng-deep .mat-mdc-list-item-interactive.active .mdc-list-item__primary-text {
+  color: #ffffff !important;
+}
+
+::ng-deep .nxtAccDashBoardBlock {
+  justify-content: center;
+}
+
+::ng-deep .nxtAccDashBoardBlock-Cards .card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 10px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background-color: var(--nxtWhite);
+  height: 115px;
+  border-left: 3px solid #cfcfcf;
+}
+::ng-deep .nxtAccDashBoardBlock-Cards .card-left img {
+  width: 45px;
+  height: 45px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+::ng-deep .nxtAccDashBoardBlock-Cards .card-right h6 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--nxtDarkGrey);
+  padding-bottom: 8px;
+}
+::ng-deep .nxtAccDashBoardBlock-Cards .card-right p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #dc2f02;
+  padding-bottom: 8px;
+}
+
+::ng-deep .nxtAccDashTable .mat-mdc-card-title {
+  color: var(--nxtDashTextPrimary);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 7px 0 7px 0;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-sort-header-content {
+  color: var(--nxtBlack);
+  font-weight: 500;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-header-cell {
+  background-color: #0fa3b1 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-cell {
+  color: var(--nxtDarkBtn);
+  font-weight: 400;
+}
+
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-header-cell {
+  background-color: #0fa3b1 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-header-cell:first-child {
+  border-top-left-radius: 7px;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-header-cell:last-child {
+  border-top-right-radius: 7px;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table tbody .mat-mdc-row:first-child .mat-mdc-cell:first-child {
+  border-top-left-radius: 7px;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table tbody .mat-mdc-row:first-child .mat-mdc-cell:last-child {
+  border-top-right-radius: 7px;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table tbody .mat-mdc-row:last-child .mat-mdc-cell:first-child {
+  border-bottom-left-radius: 7px;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table tbody .mat-mdc-row:last-child .mat-mdc-cell:last-child {
+  border-bottom-right-radius: 7px;
+}
+
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-row:nth-child(odd) .mat-mdc-cell {
+  background-color: #fff !important;
+}
+::ng-deep .nxtAccDashTable .mat-mdc-table .mat-mdc-row:nth-child(even) .mat-mdc-cell {
+  background-color: #f8feff !important;
+}
+
+.stdFooter .nxt-footerSection {
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+}
+
+.nxt-footerSection {
+  padding: 0 20px;
+}
+
+.nxt-footerSection .nxtPoweredBy,
+.nxt-footerSection .footerTermsAndCondtions,
+.nxt-footerSection .nxt-social-Icons {
+  display: flex;
+}
+
+.nxt-footerSection .nxtPoweredBy img {
+  height: 20px;
+}
+
+.nxt-footerSection {
+  background-color: #eeefef;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #dfdfdf;
+}
+
+.pcoded-navbar.navbar-collapsed:hover .nxt-footerSection {
+  padding-left: 0;
+}
+
+.footerSection .poweredBy p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.nxt-footerContent .nxt-social-Icons {
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 8px;
+}
+
+.nxt-social-Icons .footerSocialIcon > img {
+  height: 25px;
+  width: 25px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.nxt-social-Icons .footerSocialIcon > i {
+  font-size: 25px;
+}
+
+p.nxtCopyRights {
+  display: flex;
+  align-items: center;
+}
+p.nxtCopyRights .mat-icon {
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+}
+
+.nxt-social-MainStrip {
+  text-align: center;
+}
+
+#currentYear {
+  padding: 0 10px 0 5px;
+}
+
+.nxtCopyRights span#currentYear {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.nxt-footerContent p {
+  margin: 0;
+  font-size: 13px !important;
+  color: var(--nxtIndigo);
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.submenu {
+  border-left: 0;
+}
+
+.SubMenuActive.expanded {
+  border-left: 2px solid #004c61;
+}
+
+.SubMenuActive.expanded.nestedSubMenu {
+  border-left: 0px solid transparent;
+}
+
+.parent {
+  border-left: 0;
+}
+
+::ng-deep .nxtMainRouteOutlet .mat-drawer-container {
+  height: calc(100vh - 50px);
+}
+::ng-deep .nxtMainRouteOutlet .nxt-footerSection {
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+::ng-deep .uploadImgViewBlock .uploadImgeView {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+::ng-deep .viewContainerBlock a {
+  font-size: 15px;
+  margin: 0px 10px;
+}
+
+::ng-deep .UploadedFilesBlock ul {
+  list-style: none !important;
+}
+::ng-deep .UploadedFilesBlock ul li {
+  font-size: 14px;
+  color: var(--nxtDarkBtn);
+}
+
+::ng-deep .nxtBulkUpload .cardTitle {
+  color: var(--nxtDashChart1);
+  padding: 10px 0;
+}
+::ng-deep .nxtBulkUpload .uploadSection {
+  padding: 30px;
+  border: 1px solid var(--nxtDarkBtn);
+  background-color: var(--nxtDashBgColor);
+  border-radius: 10px;
+  text-align: center;
+}
+::ng-deep .nxtBulkUpload .uploadSection .fileInput {
+  width: 200px;
+  padding-bottom: 10px;
+}
+::ng-deep .nxtBulkUpload .sampleDataDownload {
+  padding: 10px 20px;
+}
+::ng-deep .nxtBulkUpload .titleNote {
+  color: var(--nxtDashTextSuccess);
+  font-size: 18px;
+  font-family: "Sevillana", cursive;
+}
+::ng-deep .nxtBulkUpload .allowedTypeOnly {
+  color: var(--nxtDashCardDanger);
+  font-size: 13px;
+  font-family: "Sevillana", cursive;
+  padding: 0 20px;
+}
+::ng-deep .nxtBulkUpload .uploadRequireFileds ul {
+  list-style: decimal;
+}
+::ng-deep .nxtBulkUpload .uploadRequireFileds ul li {
+  font-size: 13px;
+  color: var(--nxtDarkGrey);
+  line-height: 24px;
+  font-family: "Sevillana", cursive;
+}
+
+::ng-deep .form-group .p-dropdown {
+  width: 100%;
+}
+
+::ng-deep .nxtPrimeTable .card {
+  background-color: var(--nxtWhite) !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 2px;
+}
+::ng-deep .nxtPrimeTable .card .formFilterContainer {
+  padding: 20px 15px;
+}
+::ng-deep .nxtPrimeTable .p-datatable .p-datatable-header {
+  padding: 15px 15px;
+  text-align: end;
+  background-color: var(--nxtWhite) !important;
+}
+::ng-deep .nxtPrimeTable .p-datatable .p-datatable-tbody > tr > td {
+  padding: 5px 7px;
+  font-size: 13px;
+  color: var(--nxtTableTDColor);
+}
+::ng-deep .nxtPrimeTable .p-datatable .p-datatable-thead > tr > th {
+  padding: 5px 7px;
+  color: #495057;
+  font-size: 14px;
+  font-weight: 600;
+}
+::ng-deep .nxtPrimeTable .p-datatable .nxtTableGlobalSearch {
+  margin: 0 4px;
+}
+::ng-deep .nxtPrimeTable .p-datatable .nxtTableGlobalClear {
+  margin: 0px 4px;
+}
+::ng-deep .nxtPrimeTable .p-datatable .nxtTableGlobalAdd {
+  margin: 0px 4px;
+}
+::ng-deep .nxtPrimeTable .p-datatable .nxtPrimeTableNoDataFound {
+  height: 40px;
+  text-align: center;
+  color: var(--nxtDangerBtnHover);
+}
+::ng-deep .nxtPrimeTable .p-datatable .nxtPrimeTableAction {
+  text-align: center;
+}
+
+::ng-deep .nxtPrimeTableAction .p-button-view {
+  color: #0177f7;
+}
+::ng-deep .nxtPrimeTableAction .p-button-view:hover {
+  color: #0057cc;
+}
+::ng-deep .nxtPrimeTableAction .p-button-edit {
+  color: #28a745;
+  /* Success color */
+}
+::ng-deep .nxtPrimeTableAction .p-button-edit:hover {
+  color: #218838;
+}
+::ng-deep .nxtPrimeTableAction .p-button-delete {
+  color: #dc3545;
+  /* Warn color */
+  color: white;
+}
+::ng-deep .nxtPrimeTableAction .p-button-delete:hover {
+  color: #c82333;
+}
+
+::ng-deep .nxtGlobalTableHeader .p-dialog-header {
+  border-bottom: 0 none;
+  background: #ebebeb;
+  color: #495057;
+  padding: 10px 5px 6px 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom: 1px solid #b7b7b7;
+}
+::ng-deep .nxtGlobalTableHeader .p-dialog-header .p-dialog-title {
+  font-weight: 500;
+  font-size: 17px;
+}
+::ng-deep .nxtGlobalTableHeader .p-dialog-content {
+  padding: 15px 20px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .p-calendar {
+  min-width: 100%;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .p-calendar .p-inputtext {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .p-calendar .p-inputtext::-moz-placeholder {
+  font-size: 12px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .p-calendar .p-inputtext::placeholder {
+  font-size: 12px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group {
+  margin-bottom: 5px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group label {
+  font-size: 14px;
+  padding: 10px 0px 3px 5px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group .p-inputtext {
+  border-radius: 15px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group .p-inputtext::-moz-placeholder {
+  font-size: 12px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group .p-inputtext::placeholder {
+  font-size: 12px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group .p-dropdown .p-placeholder {
+  font-size: 12px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group p-inputnumber .p-inputnumber {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormBlock .form-group p-inputnumber .p-inputnumber .p-inputnumber-input {
+  width: 100%;
+  min-width: 100%;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormAction {
+  padding: 0;
+  height: 70px;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormAction .p-button {
+  margin: 0 3px;
+}
+::ng-deep .nxtGlobalTableHeader .nxtPrimeFormContainer .nxtPrimeFormAction .p-button .p-button-label {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+::ng-deep .nxtPrimeFormBlock .brandLogo {
+  height: 70px;
+  width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+::ng-deep .nxtPrimeFormBlock .p-calendar {
+  border-radius: 12px !important;
+}
+::ng-deep .nxtPrimeFormBlock .p-inputtext {
+  border-radius: 12px !important;
+}
+::ng-deep .nxtPrimeFormBlock .p-dropdown {
+  border-radius: 12px !important;
+}
+
+::ng-deep .nxtPrimeRouter .p-dialog-maximized {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent {
+  position: relative;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  padding: 5px 15px;
+  width: 100%;
+  z-index: 1;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar .brandHeader {
+  margin: 0;
+  color: var(--nxtIndigo);
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar .brandLogo {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar .logoBlock .logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar .logoBlock .logoContainer .brandLogo {
+  max-width: 100%;
+  height: auto;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar .logoBlock .textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .p-toolbar .logoBlock .textContainer .brandName {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--nxtIndigo);
+  padding: 0 0 0 5px;
+  margin: 0;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom {
+  position: fixed;
+  top: 61px;
+  left: 0;
+  width: 100%;
+  border: none !important;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom .breadComIcon {
+  padding-right: 3px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom .p-breadcrumb.p-component {
+  padding: 6px 30px;
+  font-size: 14px;
+  color: var(--nxtDarkBtn);
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom .p-breadcrumb.p-component:hover {
+  color: var(--nxtBlack);
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom .nxtPrimeHeader {
+  display: flex;
+  flex-direction: column;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom .nxtPrimeHeader .nxtPrimeBreadCom {
+  margin-top: 8px;
+  padding: 0 16px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeHeader .nxtPrimeBreadCom .nxtPrimeHeader .nxtPrimeBreadCom p-breadcrumb {
+  display: flex;
+  align-items: center;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .p-megamenu {
+  padding: 0;
+  color: var(--nxtDashChart2);
+  border: none;
+  border-radius: 0px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .p-megamenu-root-list > .p-menuitem {
+  background-color: #fff !important;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px !important;
+  margin: 0 5px;
+  border-radius: 3px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeGlobalSearch {
+  position: relative;
+  width: 350px;
+  margin-right: 15px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeGlobalSearch .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: var(--nxtBlack);
+  font-size: 16px;
+  cursor: pointer;
+  pointer-events: none;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeGlobalSearch .autocomplete-input {
+  width: 100%;
+  padding: 5px 30px 5px 15px;
+  border-radius: 26px;
+  height: 40px;
+  color: var(--nxtIndigo);
+  font-weight: 600;
+  font-size: 14px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list .p-menuitem .p-menuitem-link {
+  padding: 9px 15px;
+  margin: 0 2px;
+  border-radius: 3px;
+  color: #25138b;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 17px;
+  text-transform: capitalize;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and scale */
+  font-weight: 600;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list .p-menuitem .p-menuitem-link .megaMenuSvg {
+  height: 26px;
+  margin-right: 4px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list .p-menuitem .p-menuitem-link .pi {
+  margin: 0 3px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list .p-menuitem .p-menuitem-link:hover {
+  color: #3d04a7;
+  transform: scale(1.1);
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-panel {
+  top: 41px;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-panel .p-submenu-header {
+  margin: 0;
+  padding: 4px;
+  color: var(--nxtDashSemanticNeg) !important;
+  font-weight: 600;
+  border: none !important;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 6px 11px !important;
+  background-color: #f7f7f7;
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-panel .p-menuitem-link {
+  font-size: 15px !important;
+  margin: 2px 2px !important;
+  border: none !important;
+  border-radius: 3px !important;
+  color: var(--nxtDarkGrey) !important;
+  text-align: start;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and scale */
+}
+::ng-deep .nxtPrimeRouter .nxtHeaderAndContent .nxtPrimeMegaMenu .p-megamenu.p-megamenu-horizontal .p-megamenu-panel .p-menuitem-link:hover {
+  color: var(--nxtBlack) !important;
+  transform: scale(1.1);
+}
+
+::ng-deep .nxtSchoolDashboard {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+::ng-deep .nxtSchoolDashboardLeft {
+  margin: 0;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  margin: 10px 10px 30px 10px;
+  border: 2px solid #e2d6e3;
+  background-color: #ece1ff;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent {
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/018/837/590/small/wave-lines-smooth-flowing-dynamic-green-gradient-isolated-on-transparent-background-png.png");
+  background-size: inherit;
+  background-repeat: round;
+  width: calc(100% - 4px);
+  height: 100%;
+  border: 2px solid #e2d6e3;
+  margin: 2px !important;
+  border-radius: 8px;
+  background-color: #fff;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .imageContainer {
+  position: relative;
+  background-image: url("../assets/svg/profileBg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .imageContainer .profileImg {
+  position: relative;
+  top: 22%;
+  left: 35%;
+  width: 66px;
+  height: 74px;
+  border-radius: 50%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .profileDetailsBlock {
+  padding: 15px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .profileDetailsBlock .welcome {
+  margin: 0;
+  font-family: "Kaushan Script", cursive;
+  font-size: 25px;
+  color: var(--nxtIndigo);
+  padding-bottom: 3px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .profileDetailsBlock .name {
+  margin: 0;
+  font-family: "Kaushan Script", cursive;
+  font-size: 17px;
+  color: var(--nxtDashSemanticNeg);
+  padding-bottom: 6px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .profileDetailsBlock .role {
+  margin: 0;
+  font-family: "Kaushan Script", cursive;
+  font-size: 13px;
+  color: var(--nxtDashChart2);
+  padding-bottom: 3px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashProfileContainer .nxtDashProfileContent .profileDetailsBlock .desgination {
+  margin: 0;
+  font-family: "Kaushan Script", cursive;
+  font-size: 13px;
+  color: var(--nxtDashChart2);
+  padding-bottom: 3px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashLargeCard {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 9px;
+  background-color: var(--nxtDashBgColor);
+  margin: 5px 4px;
+  border: 1px solid #d9d9d9 !important;
+  color: var(--nxtBlack);
+  text-decoration: none !important;
+  transform: scale(1);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashLargeCard:hover {
+  background-color: var(--nxtDashBgColor);
+  color: indigo;
+  transform: scale(1.03);
+  transition: color 0.3s ease, transform 0.3s ease;
+  border: 1px solid #d7c8ff !important;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashLargeCard .nxtDashLargeCardLeft .dashboardIcon {
+  width: 30px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtDashLargeCard .nxtDashLargeCardRight p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtschoolAdminDashboard {
+  width: 100%;
+  margin-top: 60px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtschoolAdminDashboard .chartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtschoolAdminDashboard .chartContainer .chartTitle {
+  font-size: 18px;
+  margin: 0;
+  color: var(--nxtDashChart2);
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtschoolAdminDashboard .chartContainer canvas {
+  max-width: 400px;
+  height: 300px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtschoolAdminDashboard .chartContainer {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+::ng-deep .nxtSchoolDashboardLeft .nxtschoolAdminDashboard .chartContainer p-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+::ng-deep .nxtSchoolDashboardRight {
+  text-align: center;
+  background-color: #f7f7f7;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+}
+::ng-deep .nxtSchoolDashboardRight h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+::ng-deep .nxtContentBlogContainer .p-fieldset {
+  margin-bottom: 15px !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  /* Zoom effect on hover */
+}
+::ng-deep .nxtContentBlogContainer .p-fieldset:hover {
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  transform: scale(1.02); /* Zoom in effect */
+  /* Target the `p` elements inside the `.p-fieldset` on hover */
+}
+::ng-deep .nxtContentBlogContainer .p-fieldset:hover .p-fieldset-content p {
+  color: var(--nxtBlack);
+}
+::ng-deep .nxtContentBlogContainer .p-fieldset .p-fieldset-legend {
+  padding: 5px !important;
+  color: var(--nxtDashChart1) !important;
+  background: #ffffff;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 1px solid #dbd2d2 !important;
+  min-width: 30%;
+  max-width: 90%;
+}
+::ng-deep .nxtContentBlogContainer .p-fieldset .author {
+  padding: 20px 0px 0px 0px;
+  font-size: 14px;
+}
+::ng-deep .nxtContentBlogContainer .p-fieldset .author .pi {
+  margin-right: 5px; /* Adds space between the icon and the text */
+}
+::ng-deep .nxtContentBlogContainer .p-fieldset .blagHeaderTitle {
+  padding: 2px 15px;
+  color: #b10000;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Kaushan Script", cursive;
+}
+::ng-deep .nxtContentBlogContainer .p-element .p-fieldset-content .blogTitle {
+  margin: 0;
+  font-weight: 600;
+  color: var(--nxtIndigo);
+  font-size: 20px;
+  padding-bottom: 9px;
+  font-family: "Kaushan Script", cursive;
+}
+::ng-deep .nxtContentBlogContainer .p-element .p-fieldset-content p {
+  margin: 0;
+  padding-bottom: 9px;
+  color: var(--nxtDarkGrey);
+  font-family: "Kaushan Script", cursive;
+  line-height: 20px;
+}
+::ng-deep .nxtContentBlogContainer .p-element .p-fieldset-content p span {
+  font-weight: 600;
+  color: var(--nxtBlack);
+  padding-right: 3px;
+}
+::ng-deep .nxtContentBlogContainer .p-element .blogImg {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding-bottom: 7px;
+}
+::ng-deep .nxtContentBlogContainer .footer-actions {
+  border-top: 1px solid #c9c9c9;
+  display: flex;
+  align-items: center;
+  padding: 15px 15px 0px 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+::ng-deep .nxtContentBlogContainer .footer-actions a {
+  text-decoration: none;
+  color: var(--nxtDarkGrey);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+  margin: 0 10px;
+}
+::ng-deep .nxtContentBlogContainer .footer-actions a:hover {
+  color: var(--nxtIndigo);
+}
+::ng-deep .nxtContentBlogContainer .footer-actions a .pi {
+  font-size: 1.2rem;
+}
+
+::ng-deep .nxtFuturePostsBlock {
+  /* Style for breaks */
+  /* Colors for each day of the week */
+  /* Ensure that all the td in a break row are centered */
+}
+::ng-deep .nxtFuturePostsBlock .upcomingEventHeader {
+  padding: 20px;
+  color: var(--nxtDashSemanticNeg);
+  font-size: 20px;
+  background-color: var(--nxtDashBgColor);
+  margin: 20px 20px 50px 0px;
+  border-radius: 2px;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline .p-timeline-event {
+  margin-bottom: 2rem;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline .p-timeline-event-separator {
+  width: 30px;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline .p-timeline-event-opposite {
+  display: none;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline .border-circle {
+  padding: 7px !important;
+  border-radius: 30px !important;
+  font-size: 12px !important;
+  width: 130px !important;
+  color: #fff !important;
+  font-family: "Sevillana", cursive;
+  font-weight: 600;
+  position: absolute;
+  top: -32px;
+  left: -8px;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline .p-timeline-event-content {
+  padding: 1rem;
+  border-radius: 8px;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline .p-timeline-event-content .p-card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset !important;
+}
+::ng-deep .nxtFuturePostsBlock .customized-timeline img {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  width: 100%;
+}
+::ng-deep .nxtFuturePostsBlock .break-time {
+  background-color: #f2f2f2;
+  font-style: italic;
+  color: #9e9e9e;
+  font-weight: bold;
+  text-align: center; /* Centers text horizontally */
+  vertical-align: middle; /* Centers text vertically */
+}
+::ng-deep .nxtFuturePostsBlock .monday {
+  background-color: #fdfbea; /* Yellow for Monday */
+}
+::ng-deep .nxtFuturePostsBlock .tuesday {
+  background-color: #eff8e4; /* Green for Tuesday */
+}
+::ng-deep .nxtFuturePostsBlock .wednesday {
+  background-color: #dfeefa; /* Blue for Wednesday */
+}
+::ng-deep .nxtFuturePostsBlock .thursday {
+  background-color: #f8e4de; /* Red for Thursday */
+}
+::ng-deep .nxtFuturePostsBlock .friday {
+  background-color: #f8e0fc; /* Purple for Friday */
+}
+::ng-deep .nxtFuturePostsBlock .break-time td {
+  text-align: center;
+  vertical-align: middle;
+  color: var(--nxtDangerBtnHover);
+}
+
+/* Color Palette for Breadcrumbs */
+.color-1 {
+  color: #eb3d16; /* Example Color 1 (Red) */
+}
+
+.color-2 {
+  color: #01a79e; /* Example Color 2 (Green) */
+}
+
+.color-3 {
+  color: #022ce9; /* Example Color 3 (Blue) */
+}
+
+.color-4 {
+  color: #c0006d; /* Example Color 4 (Pink) */
+}
+
+.color-5 {
+  color: #c55d02; /* Example Color 5 (Orange) */
+}
+
+.color-6 {
+  color: #1b9200; /* Example Color 6 (Lime) */
+}
+
+.color-7 {
+  color: #7daa00; /* Example Color 7 (Turquoise) */
+}
+
+.color-8 {
+  color: #5204b9; /* Example Color 8 (Purple) */
+}
+
+::ng-deep .nxtPrimeSchoolAdminLogin {
+  background-image: url("https://img.freepik.com/free-vector/flat-design-abstract-background-with-colorful-shapes_23-2149110489.jpg?t=st=1732766804~exp=1732770404~hmac=0059e0ea8d28846324a2caaf27cadb2ea882ad30a8421bb8d5ca9fe91ef35105&w=1060");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+::ng-deep .nxtPrimeSchoolAdminLogin .schoolLoginContainer {
+  width: 30vw;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+::ng-deep .nxtPrimeSchoolAdminLogin .schoolLoginContainer .nxtPrimeFormContainer {
+  width: 30vw;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+::ng-deep .nxtPrimeSchoolAdminLogin .schoolLoginContainer .nxtPrimeFormContainer .form-group {
+  margin-bottom: 10px;
+}
+::ng-deep .nxtPrimeSchoolAdminLogin .schoolLoginContainer .nxtPrimeFormContainer .form-group label {
+  padding-bottom: 5px;
+}
+::ng-deep .nxtPrimeSchoolAdminLogin .schoolLoginContainer .nxtPrimeFormAction {
+  padding: 40px 20px 20px;
+}
+
+::ng-deep .globalRouter {
+  z-index: 999;
+}
+
+::ng-deep .nxtPrimaGlobalTabModalTitle .p-dialog-header .p-dialog-title {
+  font-size: 20px !important;
+  color: #FF6500;
+  text-transform: capitalize;
+}
+::ng-deep .nxtPrimaGlobalTabModalTitle .nxtPrimaGlobalTabs .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  padding: 10px 14px;
+  font-size: 15px;
+}
+::ng-deep .nxtPrimaGlobalTabModalTitle .nxtPrimaGlobalTabs .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link i {
+  font-size: 17px !important;
+  margin-right: 4px;
+}
+::ng-deep .nxtPrimaGlobalTabModalTitle .nxtPrimaGlobalTabs .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background: #fff;
+  border-color: var(--nxtIndigo);
+  color: var(--nxtIndigo) !important;
+}
+
+::ng-deep .nxtStdProfileContainer {
+  border-right: 1px solid #dfdfdf;
+  margin: 30px 0;
+}
+::ng-deep .nxtStdProfileContainer .p-image-preview-container > img {
+  border: 1px solid #8d8d8d;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+::ng-deep .nxtStdProfileContainer .studentRollNumber {
+  padding-bottom: 20px;
+}
+::ng-deep .nxtStdProfileContainer .studentRollNumber,
+::ng-deep .nxtStdProfileContainer .studentEmail {
+  margin: 0;
+  padding-bottom: 10px;
+}
+::ng-deep .nxtStdProfileContainer .studentRollNumber i,
+::ng-deep .nxtStdProfileContainer .studentEmail i {
+  margin: 0px 3px;
+  font-size: 15px;
+}
+::ng-deep .nxtStdProfileContainer .p-image-preview-container:hover > .p-image-preview-indicator {
+  border-radius: 50%;
+}/*# sourceMappingURL=app.component.css.map */

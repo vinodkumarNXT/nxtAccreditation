@@ -5,7 +5,7 @@ import { MenuItem } from 'shared-lib'; // Adjust the path as necessary
 @Injectable({
   providedIn: 'root',
 })
-export class MenuService {
+export class NaacMenuService {
   getMenuItems(): MenuItem[] {
     return [
       
@@ -13,8 +13,8 @@ export class MenuService {
       {
        "label": "Dashboard",
         "icon": "home",
-        "route": "/dashboard",
-        "menuOf":["accreditation"],
+        "routerLink": "/naac/dashboard",
+        "menuOf":["NAAC"],
         "accessBy": [
           'admin',
           'superadmin',
@@ -28,12 +28,11 @@ export class MenuService {
           'accounts'
         ],
       },
-
       {
         "label": "Curricular Aspects",
         "icon": "widgets",
-        "route": "",
-        "menuOf":["accreditation"],
+        "routerLink": "/",
+        "menuOf":["NAAC"],
         "accessBy": [
          'admin',
          'superadmin',
@@ -51,13 +50,13 @@ export class MenuService {
           {
             "label": "Design and Development",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "label": "Curricular Developed",
                 "icon": "minimize",
-                "route": "/curricular-developed",
-                 "menuOf":["accreditation"],
+                "routerLink": "/naac/curricular-developed",
+                 "menuOf":["NAAC"],
                  "accessBy": [
                   'admin',
                   'superadmin',
@@ -75,8 +74,8 @@ export class MenuService {
               {
                 "label": "Percentage of Programmes",
                 "icon": "minimize",
-                "route": "/percentage-programmes",
-                "menuOf":["accreditation"],
+                "routerLink": "/naac/percentage-programmes",
+                "menuOf":["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -94,8 +93,8 @@ export class MenuService {
               {
                 "label": "Average Percentage",
                 "icon": "minimize",
-                "route": "/average-percentage",
-                "menuOf":["accreditation"],
+                "routerLink": "/naac/average-percentage",
+                "menuOf":["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -115,13 +114,13 @@ export class MenuService {
           {
             "label": "Academic Flexibility",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "label": "Percentage of New Courses",
                 "icon": "minimize",
-                "route": "/percentageCourses",
-                "menuOf":["accreditation"],
+                "routerLink": "/naac/percentageCourses",
+                "menuOf":["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -139,8 +138,8 @@ export class MenuService {
               {
                 "label": "CBCS",
                 "icon": "minimize",
-                "route": "/cbcs",
-                "menuOf":["accreditation"],
+                "routerLink": "/naac/cbcs",
+                "menuOf":["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -159,7 +158,7 @@ export class MenuService {
           },
           {
             "label": "Curriculum Enrichment",
-           "menuOf":["accreditation"],
+           "menuOf":["NAAC"],
            "accessBy": [
             'admin',
             'superadmin',
@@ -174,12 +173,12 @@ export class MenuService {
           ],
 
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "label": "Institution Integrates",
                 "icon": "minimize",
-                "route": "/institution-integrates",
+                "routerLink": "/naac/institution-integrates",
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -192,13 +191,13 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
               },
               {
                 "label": "Transferable and Life Skills",
                 "icon": "minimize",
-                "route": "/transferable-lifeSkills",
+                "routerLink": "/naac/transferable-lifeSkills",
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -211,7 +210,7 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
               },
               {
                 "label": "Students Enrolled",
@@ -228,8 +227,8 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
-                "route": "/students-enrolled"
+              "menuOf":["NAAC"],
+                "routerLink": "/naac/students-enrolled"
               },
               {
                 "label": "Undertaking Field Projects",
@@ -246,8 +245,8 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
-                "route": "/UndertakingFieldProjects"
+              "menuOf":["NAAC"],
+                "routerLink": "/naac/UndertakingFieldProjects"
               }
             ]
           },
@@ -264,11 +263,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Feedback System",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/naac",
             "items": [
               {
                 "label": "Design and Review",
@@ -285,8 +284,8 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
-                "route": "/design-review"
+              "menuOf":["NAAC"],
+                "routerLink": "/naac/design-review"
               },
               {
                 "label": "Feedback Processes",
@@ -303,14 +302,15 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
-                "route": "/feedback-process"
+              "menuOf":["NAAC"],
+                "routerLink": "/naac/feedback-process"
               }
             ]
           }
         ]
       },
-     
+
+      
       {
         "accessBy": [
           'admin',
@@ -324,11 +324,11 @@ export class MenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["accreditation"],
+      "menuOf":["NAAC"],
 
         "label": "Teaching-Learning and Evaluation",
         "icon": "school",
-        "route": "",
+        "routerLink": "/",
         "items": [
           {
             "label": "Student Enrolment and Profile",
@@ -345,8 +345,8 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
-            "route": "",
+          "menuOf":["NAAC"],
+            "routerLink": "/naac",
             "items": [
               {
                 "label": "Demand Ratio",
@@ -363,8 +363,8 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
-                "route": "/demand-ratio"
+              "menuOf":["NAAC"],
+                "routerLink": "/naac/demand-ratio"
               },
               {
                 "label": "Reserved Categories",
@@ -381,8 +381,8 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
-                "route": "/reserved-category"
+              "menuOf":["NAAC"],
+                "routerLink": "/naac/reserved-category"
               }
             ]
           },
@@ -399,13 +399,13 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Catering to Student Diversity",
             
             "icon": "expand_more",
             
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -420,10 +420,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Special Programmes",
                 "icon": "minimize",
-                "route": "/special-program"
+                "routerLink": "/naac/special-program"
               },
               {
                 "accessBy": [
@@ -438,10 +438,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Full Time Teacher Ratio",
                 "icon": "minimize",
-                "route": "/full-time-teacher-ratio"
+                "routerLink": "/naac/full-time-teacher-ratio"
               }
             ]
           },
@@ -458,11 +458,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Teaching - Learning Process",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -477,10 +477,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Experiential Learning",
                 "icon": "minimize",
-                "route": "/experimental-Learning"
+                "routerLink": "/naac/experimental-Learning"
               },
               {
                 "accessBy": [
@@ -495,10 +495,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Learning Processes",
                 "icon": "minimize",
-                "route": "/learning-processes"
+                "routerLink": "/naac/learning-processes"
               },
               {
                 "accessBy": [
@@ -513,10 +513,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Ratio of Students to Mentor",
                 "icon": "minimize",
-                "route": "/student-mentorRatio"
+                "routerLink": "/naac/student-mentorRatio"
               }
             ]
           },
@@ -533,11 +533,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Teacher Profile and Quality",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -552,10 +552,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Full Time Teachers",
                 "icon": "minimize",
-                "route": "/full-time-teachers"
+                "routerLink": "/naac/full-time-teachers"
               },
               {
                 "accessBy": [
@@ -570,10 +570,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Teachers with Ph.D",
                 "icon": "minimize",
-                "route": "/phd-teachers"
+                "routerLink": "/naac/phd-teachers"
               },
               {
                 "accessBy": [
@@ -588,10 +588,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Teachers Who Received Awards",
                 "icon": "minimize",
-                "route": "/awarded-teachers"
+                "routerLink": "/naac/awarded-teachers"
               }
             ]
           },
@@ -608,11 +608,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Evaluation Process and Reforms",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -627,10 +627,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Semester-end/ Year-end",
                 "icon": "minimize",
-                "route": "/end-semester"
+                "routerLink": "/naac/end-semester"
               },
 
               
@@ -647,10 +647,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Student Complaints/Grievances",
                 "icon": "minimize",
-                "route": "/student-complaints"
+                "routerLink": "/naac/student-complaints"
               },
               {
                 "accessBy": [
@@ -665,10 +665,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Integration & Reforms",
                 "icon": "minimize",
-                "route": "/integration-reforms"
+                "routerLink": "/naac/integration-reforms"
               },
               {
                 "accessBy": [
@@ -683,10 +683,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Automation of Examination",
                 "icon": "minimize",
-                "route": "/automation-examination"
+                "routerLink": "/naac/automation-examination"
               }
             ]
           },
@@ -703,11 +703,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Student Performance and Learning",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -722,10 +722,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Learning Outcomes",
                 "icon": "minimize",
-                "route": "/learning-outcomes"
+                "routerLink": "/naac/learning-outcomes"
               },
               {
                 "accessBy": [
@@ -740,10 +740,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Attainment of Programme Outcomes",
                 "icon": "minimize",
-                "route": "/program-outcomes"
+                "routerLink": "/naac/program-outcomes"
               },
               {
                 "accessBy": [
@@ -758,10 +758,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Pass Percentage of Students",
                 "icon": "minimize",
-                "route": "/student-PassPercentage-survey"
+                "routerLink": "/naac/student-PassPercentage-survey"
               }
             ]
           },
@@ -778,10 +778,10 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
             "label": "Student Satisfaction Survey",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -796,10 +796,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Teaching Learning Process",
                 "icon": "minimize",
-                "route": "/teaching-learning-process"
+                "routerLink": "/naac/teaching-learning-process"
               }
             ]
           }
@@ -818,11 +818,11 @@ export class MenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["accreditation"],
+      "menuOf":["NAAC"],
 
         "label": "Research, Innovations and Extension",
         "icon": "search",
-        "route": "",
+        "routerLink": "/",
         "items": [
           {
             "accessBy": [
@@ -837,11 +837,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Research and Facilities",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -856,10 +856,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Research Facilities",
                 "icon": "minimize",
-                "route": "/research-facility"
+                "routerLink": "/naac/research-facility"
               },
               {
                 "accessBy": [
@@ -874,10 +874,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Teachers for Research",
                 "icon": "minimize",
-                "route": "/teacher-research"
+                "routerLink": "/naac/teacher-research"
               },
               {
                 "accessBy": [
@@ -892,10 +892,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Fellowship",
                 "icon": "minimize",
-                "route": "/research-fellowship"
+                "routerLink": "/naac/research-fellowship"
               },
               {
                 "accessBy": [
@@ -910,10 +910,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Research Fellows",
                 "icon": "minimize",
-                "route": "/research-fellow"
+                "routerLink": "/naac/research-fellow"
               },
               {
                 "accessBy": [
@@ -928,10 +928,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Support Research",
                 "icon": "minimize",
-                "route": "/support-research"
+                "routerLink": "/naac/support-research"
               },
               {
                 "accessBy": [
@@ -946,10 +946,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Recognitions",
                 "icon": "minimize",
-                "route": "/recognition"
+                "routerLink": "/naac/recognition"
               }
             ]
           },
@@ -966,11 +966,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Resource Mobilization for Research",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -985,10 +985,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Funding for Research",
                 "icon": "minimize",
-                "route": "/funding-research"
+                "routerLink": "/naac/funding-research"
               },
               {
                 "accessBy": [
@@ -1003,10 +1003,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Grants for Research Projects",
                 "icon": "minimize",
-                "route": "/project-grant"
+                "routerLink": "/naac/project-grant"
               },
               {
                 "accessBy": [
@@ -1021,10 +1021,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Number of Research Projects",
                 "icon": "minimize",
-                "route": "/research-projects"
+                "routerLink": "/naac/research-projects"
               }
             ]
           },
@@ -1041,11 +1041,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Innovation Ecosystem",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -1060,10 +1060,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Ecosystem for Innovations",
                 "icon": "minimize",
-                "route": "/ecosystem-innovations"
+                "routerLink": "/naac/ecosystem-innovations"
               },
               {
                 "accessBy": [
@@ -1078,10 +1078,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Seminars Conducted",
                 "icon": "minimize",
-                "route": "/seminars-conducted"
+                "routerLink": "/naac/seminars-conducted"
               },
               {
                 "accessBy": [
@@ -1096,10 +1096,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Recognitions Received",
                 "icon": "minimize",
-                "route": "/recognizations-received"
+                "routerLink": "/naac/recognizations-received"
               }
             ]
           },
@@ -1116,11 +1116,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Research Publications and Awards",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               
               {
@@ -1136,10 +1136,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Ethics for Research",
                 "icon": "minimize",
-                "route": "/ethics-research"
+                "routerLink": "/naac/ethics-research"
               },
               {
                 "accessBy": [
@@ -1154,10 +1154,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Incentives to Teachers",
                 "icon": "minimize",
-                "route": "/teachers-incentivies"
+                "routerLink": "/naac/teachers-incentivies"
               },
               {
                 "accessBy": [
@@ -1172,11 +1172,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Patents Published",
                 "icon": "minimize",
-                "route": "/patent-published"
+                "routerLink": "/naac/patent-published"
               },
               {
                 "accessBy": [
@@ -1191,11 +1191,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Ph.Ds Awarded per Teacher",
                 "icon": "minimize",
-                "route": "/phds-awarded-teacher"
+                "routerLink": "/naac/phds-awarded-teacher"
               },
               {
                 "accessBy": [
@@ -1210,10 +1210,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Research Papers per Teacher",
                 "icon": "minimize",
-                "route": "/teacher-research-papers"
+                "routerLink": "/naac/teacher-research-papers"
               },
               {
                 "accessBy": [
@@ -1228,10 +1228,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Edited Volumes Published",
                 "icon": "minimize",
-                "route": "/edited-volumes"
+                "routerLink": "/naac/edited-volumes"
               },
               {
                 "accessBy": [
@@ -1246,10 +1246,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "E-content Developed",
                 "icon": "minimize",
-                "route": "/teacher-econtent"
+                "routerLink": "/naac/teacher-econtent"
               },
               {
                 "accessBy": [
@@ -1264,10 +1264,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Bibliometrics",
                 "icon": "minimize",
-                "route": "/biblio-metrics"
+                "routerLink": "/naac/biblio-metrics"
               },
               {
                 "accessBy": [
@@ -1282,10 +1282,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Citation Index in Scopus",
                 "icon": "minimize",
-                "route": "/citation-index-scopus"
+                "routerLink": "/naac/citation-index-scopus"
               }
             ]
           },
@@ -1302,11 +1302,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Consultancy",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -1321,11 +1321,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "policy on consultancy",
                 "icon": "minimize",
-                "route": "/policy-on-consultancy"
+                "routerLink": "/naac/policy-on-consultancy"
               },
               {
                 "accessBy": [
@@ -1340,11 +1340,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "consultancy revenue",
                 "icon": "minimize",
-                "route": "/consultancy-revenue"
+                "routerLink": "/naac/consultancy-revenue"
               }
             ]
           },
@@ -1361,11 +1361,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Extension Activities",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/naac",
             "items": [
               {
                 "accessBy": [
@@ -1380,11 +1380,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Extension Activities",
                 "icon": "minimize",
-                "route": "/extension-activity"
+                "routerLink": "/naac/extension-activity"
               },
               {
                 "accessBy": [
@@ -1399,10 +1399,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "awards received",
                 "icon": "minimize",
-                "route": "/awards-received"
+                "routerLink": "/naac/awards-received"
               },
               {
                 "accessBy": [
@@ -1417,10 +1417,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "outreach programs",
                 "icon": "minimize",
-                "route": "/outreach-program"
+                "routerLink": "/naac/outreach-program"
               },
               {
                 "accessBy": [
@@ -1435,10 +1435,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "activity percentage",
                 "icon": "minimize",
-                "route": "/activity-percentage"
+                "routerLink": "/naac/activity-percentage"
               }
             ]
           },
@@ -1455,11 +1455,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Collaboration",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -1474,11 +1474,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Collaborative Activities",
                 "icon": "minimize",
-                "route": "/collaborative-activity"
+                "routerLink": "/naac/collaborative-activity"
               },
               {
                 "accessBy": [
@@ -1493,11 +1493,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "functional MoUs",
                 "icon": "minimize",
-                "route": "/functional-mous"
+                "routerLink": "/naac/functional-mous"
               },
               {
                 "accessBy": [
@@ -1512,10 +1512,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "outreach programs",
                 "icon": "minimize",
-                "route": "/outreach-program"
+                "routerLink": "/naac/outreach-program"
               }
             ]
           }
@@ -1534,12 +1534,12 @@ export class MenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["accreditation"],
+      "menuOf":["NAAC"],
 
 
         "label": "Infrastructure and Learning Resources",
         "icon": "desktop_windows",
-        "route": "",
+        "routerLink": "/",
         "items": [
           {
             "accessBy": [
@@ -1554,11 +1554,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Physical Facilities",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/naac",
             "items": [
               {
                 "accessBy": [
@@ -1573,11 +1573,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Facilities for Teaching-Learning",
                 "icon": "minimize",
-                "route": "/facilities-teaching-learning"
+                "routerLink": "/naac/facilities-teaching-learning"
               },
               {
                 "accessBy": [
@@ -1592,11 +1592,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Facilities for Cultural Activities",
                 "icon": "minimize",
-                "route": "/facilities-cultural"
+                "routerLink": "/naac/facilities-cultural"
               },
               {
                 "accessBy": [
@@ -1611,11 +1611,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "General Campus Facilities",
                 "icon": "minimize",
-                "route": "/campus-facilities"
+                "routerLink": "/naac/campus-facilities"
               },
               {
                 "accessBy": [
@@ -1630,10 +1630,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Infrastructure Expenditure",
                 "icon": "minimize",
-                "route": "/infrastructure-expenditure"
+                "routerLink": "/naac/infrastructure-expenditure"
               }
             ]
           },
@@ -1650,11 +1650,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Library as a Learning Resource",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -1669,11 +1669,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Automation of the Library",
                 "icon": "minimize",
-                "route": "/library-automation"
+                "routerLink": "/naac/library-automation"
               },
               {
                 "accessBy": [
@@ -1688,11 +1688,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Library Resources",
                 "icon": "minimize",
-                "route": "/library-resources"
+                "routerLink": "/naac/library-resources"
               },
               {
                 "accessBy": [
@@ -1707,11 +1707,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Library Expenditure",
                 "icon": "minimize",
-                "route": "/library-expenditure"
+                "routerLink": "/naac/library-expenditure"
               },
               {
                 "accessBy": [
@@ -1726,11 +1726,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Library Users",
                 "icon": "minimize",
-                "route": "/library-users"
+                "routerLink": "/naac/library-users"
               }
             ]
           },
@@ -1747,11 +1747,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "IT Infrastructure",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/naac",
             "items": [
               {
                 "accessBy": [
@@ -1766,11 +1766,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "ICT Facilities",
                 "icon": "minimize",
-                "route": "/ict-facilities"
+                "routerLink": "/naac/ict-facilities"
               },
               {
                 "accessBy": [
@@ -1785,11 +1785,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "IT Facilities",
                 "icon": "minimize",
-                "route": "/it-facilities"
+                "routerLink": "/naac/it-facilities"
               },
               {
                 "accessBy": [
@@ -1804,11 +1804,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Student-Computer Ratio",
                 "icon": "minimize",
-                "route": "/student-computer-ratio"
+                "routerLink": "/naac/student-computer-ratio"
               },
               {
                 "accessBy": [
@@ -1823,10 +1823,10 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
                 "label": "Internet Bandwidth",
                 "icon": "minimize",
-                "route": "/internet-bandwidth"
+                "routerLink": "/naac/internet-bandwidth"
               },
               {
                 "accessBy": [
@@ -1841,11 +1841,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Facilities for E-Content",
                 "icon": "minimize",
-                "route": "/facilities-e-content"
+                "routerLink": "/naac/facilities-e-content"
               }
             ]
           },
@@ -1862,11 +1862,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Maintenance of Campus Infrastructure",
             "icon": "build",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -1881,11 +1881,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Maintenance of Physical Facilities",
                 "icon": "minimize",
-                "route": "/maintenance-physical-facilities"
+                "routerLink": "/naac/maintenance-physical-facilities"
               },
               {
                 "accessBy": [
@@ -1900,11 +1900,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Systems and Procedures",
                 "icon": "minimize",
-                "route": "/systems-procedures"
+                "routerLink": "/naac/systems-procedures"
               }
             ]
           }
@@ -1924,11 +1924,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
         "label": "Student Support and Progression",
         "icon": "support",
-        "route": "",
+        "routerLink": "/",
         "items": [
           {
             "accessBy": [
@@ -1943,11 +1943,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Student Support",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -1962,11 +1962,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Scholarship Schemes",
                 "icon": "minimize",
-                "route": "/scholarship-schemes"
+                "routerLink": "/naac/scholarship-schemes"
               },
               {
                 "accessBy": [
@@ -1981,11 +1981,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Career Counseling",
                 "icon": "minimize",
-                "route": "/career-counseling"
+                "routerLink": "/naac/career-counseling"
               },
               {
                 "accessBy": [
@@ -2000,11 +2000,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Capacity Development",
                 "icon": "minimize",
-                "route": "/capacity-development"
+                "routerLink": "/naac/capacity-development"
               },
               {
                 "accessBy": [
@@ -2019,11 +2019,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Student Grievances",
                 "icon": "minimize",
-                "route": "/student-grievances"
+                "routerLink": "/naac/student-grievances"
               }
             ]
           },
@@ -2042,11 +2042,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Student Progression",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2061,11 +2061,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Government Examinations",
                 "icon": "minimize",
-                "route": "/government-examinations"
+                "routerLink": "/naac/government-examinations"
               },
               {
                 "accessBy": [
@@ -2080,16 +2080,16 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Percentage of Placement",
                 "icon": "minimize",
-                "route": "/placement-percentage"
+                "routerLink": "/naac/placement-percentage"
               },
               {
                 "label": "Graduated Students",
                 "icon": "minimize",
-                "route": "/graduated-students"
+                "routerLink": "/naac/graduated-students"
               }
             ]
           },
@@ -2106,11 +2106,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Participation and Activities",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2125,11 +2125,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Student Medals",
                 "icon": "minimize",
-                "route": "/students-medals"
+                "routerLink": "/naac/students-medals"
               },
               {
                 "accessBy": [
@@ -2144,11 +2144,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Student Council",
                 "icon": "minimize",
-                "route": "/student-council"
+                "routerLink": "/naac/student-council"
               },
               {
                 "accessBy": [
@@ -2163,11 +2163,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Competitions Organised",
                 "icon": "minimize",
-                "route": "/competitions-organised"
+                "routerLink": "/naac/competitions-organised"
               }
             ]
           },
@@ -2184,11 +2184,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Alumni Engagement",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2203,11 +2203,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Alumni Association",
                 "icon": "minimize",
-                "route": "/alumni-association"
+                "routerLink": "/naac/alumni-association"
               },
               {
                 "accessBy": [
@@ -2222,11 +2222,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Alumni Contribution",
                 "icon": "minimize",
-                "route": "/alumni-contribution"
+                "routerLink": "/naac/alumni-contribution"
               }
             ]
           }
@@ -2245,12 +2245,12 @@ export class MenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["accreditation"],
+      "menuOf":["NAAC"],
 
 
         "label": "Governance, Leadership and Management",
         "icon": "account_balance",
-        "route": "",
+        "routerLink": "/",
         "items": [
           {
             "accessBy": [
@@ -2265,11 +2265,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Vision and Leadership",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/naac",
             "items": [
               {
                 "accessBy": [
@@ -2284,11 +2284,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Administrative Governance",
                 "icon": "minimize",
-                "route": "/administrative-governance"
+                "routerLink": "/naac/administrative-governance"
               },
               {
                 "accessBy": [
@@ -2303,11 +2303,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Participative Management",
                 "icon": "minimize",
-                "route": "/participative-management"
+                "routerLink": "/naac/participative-management"
               }
             ]
           },
@@ -2324,11 +2324,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Strategy Development and Deployment",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2343,11 +2343,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Institutional Strategic Plan",
                 "icon": "minimize",
-                "route": "/strategic-plan"
+                "routerLink": "/naac/strategic-plan"
               },
               {
                 "accessBy": [
@@ -2362,11 +2362,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Institutional Bodies",
                 "icon": "minimize",
-                "route": "/institutional-bodies"
+                "routerLink": "/naac/institutional-bodies"
               },
               {
                 "accessBy": [
@@ -2381,11 +2381,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Implements E-Governance",
                 "icon": "minimize",
-                "route": "/e-governance"
+                "routerLink": "/naac/e-governance"
               }
             ]
           },
@@ -2402,11 +2402,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Faculty Empowerment Strategies",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2421,11 +2421,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Appraisal System",
                 "icon": "minimize",
-                "route": "/appraisal-system"
+                "routerLink": "/naac/appraisal-system"
               },
               {
                 "accessBy": [
@@ -2440,11 +2440,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Financial Support",
                 "icon": "minimize",
-                "route": "/financial-support"
+                "routerLink": "/naac/financial-support"
               },
               {
                 "accessBy": [
@@ -2459,11 +2459,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Training Programmes Organised",
                 "icon": "minimize",
-                "route": "/training-programmes"
+                "routerLink": "/naac/training-programmes"
               },
               {
                 "accessBy": [
@@ -2478,11 +2478,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Faculty Development Programmes",
                 "icon": "minimize",
-                "route": "/faculty-development"
+                "routerLink": "/naac/faculty-development"
               }
             ]
           },
@@ -2499,11 +2499,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Financial Management",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2518,11 +2518,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Mobilisation of Funds",
                 "icon": "minimize",
-                "route": "/fund-mobilisation"
+                "routerLink": "/naac/fund-mobilisation"
               },
               {
                 "accessBy": [
@@ -2537,11 +2537,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Grants Received from Government",
                 "icon": "minimize",
-                "route": "/government-grants"
+                "routerLink": "/naac/government-grants"
               },
               {
                 "accessBy": [
@@ -2556,16 +2556,16 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Grants Received from Non-Government",
                 "icon": "minimize",
-                "route": "/non-government-grants"
+                "routerLink": "/naac/non-government-grants"
               },
               {
                 "label": "Financial Audits",
                 "icon": "minimize",
-                "route": "/financial-audits"
+                "routerLink": "/naac/financial-audits"
               }
             ]
           },
@@ -2582,11 +2582,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Internal Quality Assurance System",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2601,11 +2601,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Quality Assurance Strategies",
                 "icon": "minimize",
-                "route": "/quality-strategies"
+                "routerLink": "/naac/quality-strategies"
               },
               {
                 "accessBy": [
@@ -2620,11 +2620,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Adopted Quality Assurance",
                 "icon": "minimize",
-                "route": "/adopted-quality"
+                "routerLink": "/naac/adopted-quality"
               },
               {
                 "accessBy": [
@@ -2639,11 +2639,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Incremental Improvements",
                 "icon": "minimize",
-                "route": "/incremental-improvements"
+                "routerLink": "/naac/incremental-improvements"
               }
             ]
           }
@@ -2662,15 +2662,15 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
         "label": "Institutional Values and Best Practices",
         "icon": "people",
-        "route": "",
+        "routerLink": "/",
         "items": [
           {
             "label": "Values and Social Responsibilities",
             "icon": " expand_more",
-            "route": "",
+            "routerLink": "/",
             "items": [
               {
                 "accessBy": [
@@ -2685,11 +2685,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Promotion of Gender Equity",
                 "icon": "minimize",
-                "route": "/gender-equity"
+                "routerLink": "/naac/gender-equity"
               },
               {
                 "accessBy": [
@@ -2704,11 +2704,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Alternate Sources of Energy",
                 "icon": "minimize",
-                "route": "/alternate-energy-source"
+                "routerLink": "/naac/alternate-energy-source"
               },
               {
                 "accessBy": [
@@ -2723,11 +2723,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Degradable and Non-Degradable Waste",
                 "icon": "minimize",
-                "route": "/degradable"
+                "routerLink": "/naac/degradable"
               },
               {
                 "accessBy": [
@@ -2742,11 +2742,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Water Conservation Facilities",
                 "icon": "minimize",
-                "route": "/water-conservation"
+                "routerLink": "/naac/water-conservation"
               },
               {
                 "accessBy": [
@@ -2761,11 +2761,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Green Campus Initiatives",
                 "icon": "minimize",
-                "route": "/green-campus"
+                "routerLink": "/naac/green-campus"
               },
               {
                 "accessBy": [
@@ -2780,11 +2780,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Audits on Environment and Energy",
                 "icon": "minimize",
-                "route": "/environment-audits"
+                "routerLink": "/naac/environment-audits"
               },
               {
                 "accessBy": [
@@ -2799,11 +2799,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Disabled-Friendly, Barrier-Free Environment",
                 "icon": "minimize",
-                "route": "/disabled-friendly"
+                "routerLink": "/naac/disabled-friendly"
               },
               {
                 "accessBy": [
@@ -2818,11 +2818,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Institutional Efforts",
                 "icon": "minimize",
-                "route": "/institutional-efforts"
+                "routerLink": "/naac/institutional-efforts"
               },
               {
                 "accessBy": [
@@ -2837,11 +2837,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Constitutional Obligations",
                 "icon": "minimize",
-                "route": "/constitutional-obligations"
+                "routerLink": "/naac/constitutional-obligations"
               },
               {
                 "accessBy": [
@@ -2856,11 +2856,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Code of Conduct",
                 "icon": "minimize",
-                "route": "/code-of-conduct"
+                "routerLink": "/naac/code-of-conduct"
               },
               {
                 "accessBy": [
@@ -2875,11 +2875,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Institution Celebrates",
                 "icon": "minimize",
-                "route": "/institutional-celebrates"
+                "routerLink": "/naac/institutional-celebrates"
               }
             ]
           },
@@ -2896,11 +2896,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
             "label": "Best Practices",
             "icon": "expand_more",
-            "route": "",
+            "routerLink": "/naac",
             "items": [
               {
                 "accessBy": [
@@ -2915,11 +2915,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Two Best Practices",
                 "icon": "minimize",
-                "route": "/best-practices"
+                "routerLink": "/naac/best-practices"
               },
               {
                 "accessBy": [
@@ -2934,11 +2934,11 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
                 "label": "Performance of the Institution",
                 "icon": "minimize",
-                "route": "/institutional-performance"
+                "routerLink": "/naac/institutional-performance"
               }
             ]
           }
@@ -2957,7 +2957,7 @@ export class MenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["accreditation"],
+              "menuOf":["NAAC"],
 
         "label": "Roles and Permission",
         "icon": "build",
@@ -2975,11 +2975,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Role Master",
             "icon": "minimize",
-            "route": "/role-master"
+            "routerLink": "/naac/role-master"
           },
           {
             "accessBy": [
@@ -2994,11 +2994,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Feature Master",
             "icon": "minimize",
-            "route": "/feature-master"
+            "routerLink": "/naac/feature-master"
           },
           {
             "accessBy": [
@@ -3013,11 +3013,11 @@ export class MenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["accreditation"],
+          "menuOf":["NAAC"],
 
             "label": "Role & Perimissions",
             "icon": "minimize",
-            "route": "/role-permission"
+            "routerLink": "/naac/role-permission"
             
           }
         ]
@@ -3058,7 +3058,7 @@ export class MenuService {
 
             "label": "Role Master",
             "icon": "minimize",
-            "route": "/role-master"
+            "routerLink": "/naac/role-master"
           },
           {
             "accessBy": [
@@ -3077,7 +3077,7 @@ export class MenuService {
 
             "label": "Feature Master",
             "icon": "minimize",
-            "route": "/feature-master"
+            "routerLink": "/naac/feature-master"
           },
           {
             "accessBy": [
@@ -3096,7 +3096,7 @@ export class MenuService {
 
             "label": "Role & Perimissions",
             "icon": "minimize",
-            "route": "/role-permission"
+            "routerLink": "/naac/role-permission"
             
           }
         ]

@@ -1,0 +1,198 @@
+::ng-deep .loginContainer .loginContainerLeft {
+  height: 96%;
+  padding: 70px;
+  border-right: 1px solid #dfdbdb;
+}
+::ng-deep .loginContainer .loginContainerLeft .loginContainerLeftImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+::ng-deep .loginContainer .loginContainerRight .loginFormBlock {
+  z-index: 999;
+  background-color: #fff;
+  width: 400px;
+  margin: 0 auto;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+::ng-deep .loginContainer .loginContainerRight .forgotPassword {
+  text-decoration: none;
+  color: indigo;
+  font-size: 14px;
+  padding: 10 0px;
+}
+
+.loginContainer {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.area {
+  background: #f5f5f5;
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8) !important;
+  width: 100%;
+  height: 97vh;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.circles {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  animation: animate 40s linear infinite; /* Slower base animation */
+  bottom: -150px;
+}
+
+/* Different shapes and random animation delays */
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 0, 0.5); /* Red */
+  animation-delay: 0s;
+  animation-duration: 30s;
+  border-radius: 50%; /* Circle */
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid rgba(0, 255, 0, 0.5); /* Green triangle */
+  animation-delay: 5s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 255, 0.5); /* Blue */
+  animation-delay: 10s;
+  animation-duration: 38s;
+  border-radius: 50%; /* Circle */
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 0, 0.5); /* Yellow */
+  animation-delay: 2s;
+  animation-duration: 45s;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle */
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 255, 255, 0.5); /* Cyan */
+  animation-delay: 8s;
+  animation-duration: 33s;
+  border-radius: 0%; /* Square */
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  background: rgba(255, 0, 255, 0.5); /* Magenta */
+  animation-delay: 3s;
+  animation-duration: 50s;
+  border-radius: 50%; /* Large circle */
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid rgba(128, 0, 128, 0.5); /* Purple large triangle */
+  animation-delay: 6s;
+  animation-duration: 52s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 165, 0, 0.5); /* Orange */
+  animation-delay: 12s;
+  animation-duration: 40s;
+  border-radius: 25%; /* Rounded square */
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 128, 128, 0.5); /* Teal */
+  animation-delay: 15s;
+  animation-duration: 42s;
+  -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Triangle */
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 120px;
+  height: 120px;
+  background: rgba(128, 128, 0, 0.5); /* Olive */
+  animation-delay: 20s;
+  animation-duration: 48s;
+  border-radius: 50%; /* Large circle */
+}
+
+.circles li:nth-child(11) {
+  left: 55%;
+  width: 90px;
+  height: 90px;
+  background: rgba(175, 6, 209, 0.5); /* Violet */
+  animation-delay: 7s;
+  animation-duration: 46s;
+  -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Triangle */
+}
+
+.circles li:nth-child(12) {
+  left: 25%;
+  width: 30px;
+  height: 30px;
+  background: rgba(110, 252, 28, 0.5); /* Light Green */
+  animation-delay: 9s;
+  animation-duration: 50s;
+  border-radius: 15%; /* Rounded square */
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1200px) rotate(1080deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}/*# sourceMappingURL=accreditation-login.component.css.map */

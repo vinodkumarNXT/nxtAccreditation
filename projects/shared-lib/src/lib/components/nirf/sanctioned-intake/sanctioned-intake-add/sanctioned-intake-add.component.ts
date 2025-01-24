@@ -16,8 +16,6 @@ import { FileUploadService } from 'shared-lib';
   styleUrl: './sanctioned-intake-add.component.css'
 })
 export class SanctionedIntakeAddComponent {
-
-
   
   @Output() dataAdded = new EventEmitter<void>();
   public isLoading = false;
@@ -31,9 +29,8 @@ export class SanctionedIntakeAddComponent {
   public isEdit:boolean= false;
   public isUpdate:boolean= false;
   public getMetaData: any;
-
- public  dynamicForm: Object = {};
- public enteredYear:any
+  public  dynamicForm: Object = {};
+  public enteredYear:any
   
   form: FormGroup;
 
@@ -83,13 +80,12 @@ addYearSet(): void {
 
 }
 
-
-
-
   
     async submitForm() {
       this.submitted = true;
 
+      console.log("this.form Dynamic",this.form.value);
+      
   
       if (this.form.valid) {
 
@@ -110,7 +106,7 @@ addYearSet(): void {
 
   
         try {
-          const response = await this.formsService.onFormSubmit(postData, endpoints.NIRFconsultancyProjectDetails);
+          const response = await this.formsService.onFormSubmit(postData, endpoints.NIRFsanctionedIntake);
   
           // Show success toast notification
           this.swalService.addSuccess()
@@ -207,7 +203,7 @@ addYearSet(): void {
       try {
         // Fetch the list data from the server using the forms service.
         // The specific endpoint for this data is provided as an argument.
-        const listData = await this.formsService.getListData(endpoints.NIRFconsultancyProjectDetails);
+        const listData = await this.formsService.getListData(endpoints.NIRFsanctionedIntake);
 
         // Store the fetched data in the component's `listData` property.
         this.listData = listData.data;
@@ -225,7 +221,7 @@ addYearSet(): void {
     async loadMetaData() {
       try {
         // Fetch the metadata from the server
-        const metaData = await this.formsService.getListData(endpoints.NIRFconsultancyProjectDetails);
+        const metaData = await this.formsService.getListData(endpoints.NIRFsanctionedIntake);
   
         // Filter to only include objects that have 'statusValues'
         this.getMetaData = metaData.filter((data: any) => data.statusValues);

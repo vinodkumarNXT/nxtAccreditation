@@ -4,7 +4,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SnackbarService, FeaturemasterAddComponent, FeaturemasterEditComponent, TablePaginationService, FileUploadService, SwalService } from 'shared-lib';
+import { MaterialModule, SharableModule, FormsService, FeaturemasterAddComponent, FeaturemasterEditComponent, TablePaginationService, FileUploadService, SwalService } from 'shared-lib';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'lib-feature-master',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './feature-master.component.html',
   styleUrl: './feature-master.component.scss'

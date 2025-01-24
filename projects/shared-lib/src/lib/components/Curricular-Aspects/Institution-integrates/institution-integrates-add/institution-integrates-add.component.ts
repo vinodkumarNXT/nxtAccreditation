@@ -47,7 +47,7 @@ export class InstitutionIntegratesAddComponent {
     private matDialog: MatDialog
   ) {
     this.form = this.formBuilder.group({
-      description: ['', Validators.required],
+      description: ['', Validators],
       documentLink: [''],
    
     });

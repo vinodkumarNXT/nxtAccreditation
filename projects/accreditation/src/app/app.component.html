@@ -1,151 +1,56 @@
-<!-- Only show the toolbar and sidebar if not on the login page -->
-<ng-container *ngIf="!isLoginPage">
-	<div class="nxtMainRouteOutlet">
-		<div class="nxtHeaderAndContent">
-			<mat-toolbar color="primary" class="nxtApp-toolbar">
-				<h2 class="brandHeader">  <img  class="brandImg" src="../assets/"></h2>
-				<!-- <img src="../assets/educate-trans-logo.png" alt="" srcset="" class="brandLogo"> -->
-				<button mat-icon-button (click)="toggleSidebar()">
-					<mat-icon>menu</mat-icon>
-				</button>
+<div class="layoutMain accreditaion_toolBar">
+  <p-toolbar>
+    <div class="p-toolbar-group-start">
+      <img src="../assets/edunxtnobg.png" alt="" class="brandLogo">
 
-				<span fxFlex></span>
-				<button mat-button [matMenuTriggerFor]="menu" class="menuBtnList">
-					<mat-icon>apps</mat-icon>
-				</button>
-				<mat-menu #menu="matMenu">
-					<button mat-menu-item *ngFor="let item of userMenu" [disabled]="item.disabled"
-						(click)="handleMenuAction(item.route)">
-						<mat-icon>{{ item.icon }}</mat-icon>
-						<span>{{ item.label }}</span>
-					</button>
-				</mat-menu>
-			</mat-toolbar>
+      @if(nirfMenu){
+      <span class="typeModule"> |  NIRF</span>
+      }
+      @if(naacMenu){
+      <span class="typeModule"> |  NAAC</span>
+      }
 
+      @if(nbaMenu){
+      <span class="typeModule"> |  NBA</span>
+      }
 
-			<div *ngIf="selectMenu === 'accreditation'">
+      <!-- <p-button label="Toggle" icon="pi pi-align-right" (onClick)="menu.toggle($event)"></p-button> -->
 
-				<mat-sidenav-container class="nxtApp-container" autosize >
-					<mat-sidenav #sidenav class="nxtApp-sidenav" mode="side" [opened]="isExpanded">
-						<mat-nav-list>
-						  <ng-container *ngFor="let item of menuItems">
-							<!-- Dashboard -->
-							<mat-list-item *ngIf="item.label === 'Dashboard'" [routerLink]="item.route" routerLinkActive="active">
-							  <mat-icon mat-list-icon>{{ item.icon }}</mat-icon> {{ item.label }}
-							</mat-list-item>
-					  
-							<!-- Parent Menu Items -->
-							<mat-list-item 
-							*ngIf="item.label !== 'Dashboard' && item.menuOf?.includes('accreditation')" 
-							(click)="toggleSubmenu(item.label)" 
-							  class="parent"
-							  [ngClass]="{'ParentActive': activeSubmenu[item.label]}">
-							  <span class="full-width" *ngIf="isExpanded || isShowing">
-								<mat-icon mat-list-icon>{{ item.icon }}</mat-icon>
-								{{ item.label }}
-							  </span>
-							  <mat-icon class="menu-button" 
-										[ngClass]="{'rotated': showSubmenu[item.label]}" 
-										*ngIf="isExpanded || isShowing">expand_more</mat-icon>
-							</mat-list-item>
-					  
-							<!-- Submenu -->
-							<div class="submenu" [ngClass]="{'expanded': showSubmenu[item.label], 'SubMenuActive': activeSubmenu[item.label]}" 
-								 *ngIf="isShowing || isExpanded">
-							  <ng-container *ngFor="let subItem of item.items">
-								<ng-container *ngIf="!subItem.items">
-								  <a mat-list-item [routerLink]="subItem.route" routerLinkActive="active">
-									<mat-icon mat-list-icon>{{ subItem.icon }}</mat-icon>{{ subItem.label }}
-								  </a>
-								</ng-container>
-								<ng-container *ngIf="subItem.items">
-								  <!-- Recursive Nested Submenu -->
-								  <mat-list-item (click)="toggleNestedSubmenu(subItem.label)" 
-												 class="nested-parent" 
-												 [ngClass]="{'ParentActive': activeNestedSubmenu[subItem.label]}">
-									<span class="full-width">
-									  <mat-icon mat-list-icon>{{ subItem.icon }}</mat-icon>
-									  {{ subItem.label }}
-									</span>
-									<mat-icon class="menu-button" 
-											  [ngClass]="{'rotated': showNestedSubmenu[subItem.label]}">expand_more</mat-icon>
-								  </mat-list-item>
-								  <div class="submenu nestedSubMenu" 
-									   [ngClass]="{'expanded': showNestedSubmenu[subItem.label], 'SubMenuActive': activeNestedSubmenu[subItem.label]}">
-									<ng-container *ngFor="let nestedItem of subItem.items">
-									  <a mat-list-item [routerLink]="nestedItem.route" routerLinkActive="active">
-										<mat-icon mat-list-icon>{{ nestedItem.icon }}</mat-icon>{{ nestedItem.label }}
-									  </a>
-									</ng-container>
-								  </div>
-								</ng-container>
-							  </ng-container>
-							</div>
-						  </ng-container>
-						</mat-nav-list>
-					  </mat-sidenav>
-					  
-				  
-					<div class="nxtApp-sidenav-content">
-					  <router-outlet></router-outlet>
-					  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-					  </ngx-spinner>
-					</div>
-				</mat-sidenav-container>
-			</div>
-			  
-		</div>
+    </div>
+    <div class="p-toolbar-group-center">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input pInputText placeholder="Search" />
+      </span>
+    </div>
+    <div class="p-toolbar-group-end">
+      <p-button icon="pi pi-power-off" [rounded]="true" [text]="true" severity="danger" />
 
+    </div>
+  </p-toolbar>
 
-		<footer class="nxt-footerSection row  m-0">
+  <div class="layout" fxLayout="row">
+    <aside class="sidebar" fxflex="10">
+      <!-- Dynamic menu based on active route -->
+      @if(nirfMenu){
+      <div class="accreditationSideMenu">
+        <p-tieredMenu [model]="nirfMenuItems"></p-tieredMenu>
+      </div>
+      }
 
-			<div class="nxt-footerContent  col-md-4 col-sm-12">
-				<div class="nxtPoweredBy">
-					<p>Powered By - </p> <img src="../assets/eduNxt.png" alt="logo">
-				</div>
-			</div>
+      @if(naacMenu){
+      <div class="accreditationSideMenu">
+        <p-tieredMenu [model]="naacMenuItems"></p-tieredMenu>
+      </div>
+      }
 
-			<div class="nxt-footerContent    col-md-4 col-sm-12">
-				<p class="nxtCopyRights"> <span> <mat-icon>copyright</mat-icon>
-					</span> <span id="currentYear" style="font-weight:500;font-size:13px">{{currentYear }}</span> <span
-						style="font-weight:700;font-size:13px"></span> <span
-						style="font-weight:600;font-size:13px;color:#1776d4">Edu</span><span
-						style="font-weight:700;font-size:13px">N</span><span
-						style="color: #F57F17;font-weight:700; font-size:13px">X</span><span
-						style="font-weight:700;font-size:13px">T</span>   All Rights Reserved</p>
-			</div>
-
-
-			<div class="nxt-footerContent nxt-social-MainStrip col-md-4 col-sm-12">
-				<ul class="nxt-social-Icons">
-					<li>
-						<a routerLink="https://www.educatenxt.co" target="_blank" class="footerSocialIcon">
-							<img src="../assets/connections.svg" alt="logo">
-						</a>
-					</li>
-
-					<li>
-						<a routerLink="https://www.instagram.com/educate_nxt/?hl=en" target="_blank"
-							class="footerSocialIcon">
-							<img src="../assets/instagram.svg" alt="logo">
-						</a>
-					</li>
-
-					<li>
-						<a routerLink="https://in.linkedin.com/company/erpeducatenxt" target="_blank"
-							class="footerSocialIcon">
-							<img src="../assets/facebook.svg" alt="logo">
-						</a>
-					</li>
-
-				</ul>
-			</div>
-		</footer>
-	</div>
-
-</ng-container>
-
-<!-- Show only the router-outlet for the login page -->
-<ng-container *ngIf="isLoginPage">
-	<router-outlet></router-outlet>
-</ng-container>
+      @if(nbaMenu){
+      <div class="accreditationSideMenu">
+        <p-tieredMenu [model]="nbaMenuItems"></p-tieredMenu>
+      </div>
+      }
+    </aside>
+    <main class="contentOutLet" fxflex="90">
+      <router-outlet></router-outlet>
+    </main>
+  </div>

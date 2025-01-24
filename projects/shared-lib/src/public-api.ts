@@ -17,9 +17,11 @@ export * from './lib/guards/auth.guard';
 export * from './lib/services/swal.service'
 
 
-export * from './lib/services/menu.service'
 export * from './lib/models/menu.model'
 export * from './lib/services/image.service'
+
+export * from './lib/services/naac-menu.service'
+export * from './lib/services/nirf-menu.service'
 
 
 // Modules
@@ -819,7 +821,7 @@ export * from './lib/components/Curricular-Aspects/institutional-performance/ins
 
 
 
-export * from './lib/components/Dashboards/naac-dashboard/naac-dashboard.component';
+export * from './lib/components/Dashboards/nba-dashboard/nba-dashboard.component';
 export * from './lib/components/Dashboards/nirf-dashboard/nirf-dashboard.component';
 
 export * from './lib/components/nirf/consultancy-project-details/consultancy-project-details.component';
@@ -889,6 +891,16 @@ export * from './lib/validators/yearRangeValidator';
 
 export * from './lib/Directive/year-mask.directive';
 
+export * from './lib/modules/naac/naac-routing.module';
+export * from './lib/modules/naac/naac.module';
+
+
+export * from './lib/modules/nirf/nirf-routing.module';
+export * from './lib/modules/nirf/nirf.module';
+
+
+export * from './lib/components/Dashboards/nba-dashboard/nba-dashboard.component';
+export * from './lib/components/Dashboards/naac-dashboard/naac-dashboard.component';
 
 
 // End of File

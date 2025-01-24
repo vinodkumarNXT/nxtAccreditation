@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'lib-end-semester',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './end-semester.component.html',
   styleUrl: './end-semester.component.css'

@@ -1,0 +1,6 @@
+::ng-deep .dyanamicDaysContent {
+  width: 100% !important;
+}
+::ng-deep .dyanamicDaysContent mat-tab-group {
+  width: 100% !important;
+}/*# sourceMappingURL=class-time-table-add.component.css.map */

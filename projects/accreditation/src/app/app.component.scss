@@ -1114,3 +1114,78 @@ button:active {
   font-size: 16px;
   color: var(--nxtOrange);
 }
+
+::ng-deep .p-tieredmenu{
+  .p-menuitem-active>p-tieredmenusub>.p-submenu-list {
+   z-index: 99 !important;
+ }
+   
+
+}
+
+::ng-deep .accreditaion_toolBar{
+  .brandLogo{
+    height: 40px;
+    width: 150px;
+    object-fit: contain;
+  }
+
+  .p-toolbar {
+    background: #ebebeb !important;
+    border: none  !important;
+    padding: 10px;
+    border-radius: 0 !important;
+
+    .p-toolbar-group-start {
+      align-items: end;
+  }
+
+    .typeModule{
+      color: var(--nxtDashChart2);
+      font-size: 31px;
+      font-family:"Lato" ;
+      font-weight: 500;
+    }
+}
+
+.p-tieredmenu {
+  background: transparent;
+  color: #495057;
+  border: none;
+  border-radius: 0px;
+  width: 240px;
+
+    .p-menuitem > .p-menuitem-content {
+      .p-menuitem-link {
+        color: #495057;
+        margin: 2px 0;
+        border-bottom: 2px solid #f1f1f1;
+    }
+    }
+
+    .p-menuitem-link-active {
+      background-color: #eaeff3;
+      color: var(--nxtBlack);
+  }
+
+}
+
+aside.sidebar {
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+
+}
+
+::ng-deep .layoutMain{
+  .contentOutLet{
+    padding: 20px;
+  }
+  
+  main.contentOutLet {
+    width: 100%;
+    padding: 20px;
+}
+
+} 

@@ -28,9 +28,9 @@ interface Card {
   styleUrls: ['./accreditation-dashboard.component.scss']
 })
 export class AccreditationDashboardComponent implements OnInit, AfterViewInit {
-  @Output() menuSelected = new EventEmitter<'naac' | 'nirf' | 'accreditation'>();
+  @Output() menuSelected = new EventEmitter< | 'nirf' | 'nba'>();
 
-  selectedMenu: 'naac' | 'nirf' | 'accreditation' = 'accreditation'; // Default value
+  selectedMenu: 'naac' | 'nirf' | 'nba' = 'nba'; // Default value
 
 
 
@@ -253,16 +253,20 @@ cards = [
 
 
 
-  selectMenu(menu: 'naac' | 'nirf' | 'accreditation') {
+  selectMenu(menu: 'naac'|'nirf' | 'nba') {
     this.formsService.updateSelectedMenu(menu); // Update the shared menu value
   
     let url = '';
     switch (menu) {
-      case 'naac':
-        url = this.router.serializeUrl(this.router.createUrlTree(['/naac-dashboard'])); // Serialize the URL for naac
+      case 'nba':
+        url = this.router.serializeUrl(this.router.createUrlTree(['/nba'])); // Serialize the URL for naac
+        break;
+
+        case 'naac':
+        url = this.router.serializeUrl(this.router.createUrlTree(['/naac'])); // Serialize the URL for naac
         break;
       case 'nirf':
-        url = this.router.serializeUrl(this.router.createUrlTree(['/nirf-dashboard'])); // Serialize the URL for nirf
+        url = this.router.serializeUrl(this.router.createUrlTree(['/nirf'])); // Serialize the URL for nirf
         break;
       default:
         break;

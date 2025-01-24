@@ -1,1 +1,287 @@
-<p>naac-dashboard works!</p>
+<section>
+
+    <div class="nxtAccDashBoardBlock">
+        <div fxFlex="100" class="nxtAccDashBoardBlock-Cards" fxLayout="row wrap" fxLayoutGap="7px">
+            <div *ngFor="let card of cards" class="card" fxFlex="23" fxLayout="row" fxLayoutAlign="space-between center"
+                [style.backgroundColor]="card.backgroundColor" [style.backgroundSize]="'cover'"
+                [style.backgroundPosition]="'center'">
+
+                <div class="card-left" fxFlex="25">
+                    <img [src]="card.imageSrc" alt="" />
+                </div>
+                <div class="card-right" fxFlex="75">
+                    <h6>{{ card.title }}</h6>
+                    <p>{{ card.description }} <span>{{ card.count }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="nxtAccDashTable">
+        <div class="container">
+            <!-- Accreditation Details -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Accreditation Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="accreditationData" matSort>
+                        <ng-container matColumnDef="accreditationYear">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Accreditation Year</th>
+                            <td mat-cell *matCellDef="let element">{{element.accreditationYear}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="accreditationBody">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Accreditation Body</th>
+                            <td mat-cell *matCellDef="let element">{{element.accreditationBody}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+                            <td mat-cell *matCellDef="let element">{{element.status}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="accreditationColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: accreditationColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" [attr.colspan]="accreditationColumns.length">
+                                <p class="NoFilterMatchFound">
+                                    No data found
+                                </p>
+                            </td>
+                        </tr>
+
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Student Details -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Student Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="studentData" matSort>
+                        <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="count">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Count</th>
+                            <td mat-cell *matCellDef="let element">{{element.count}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="studentColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: studentColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" [attr.colspan]="studentColumns.length">
+                                <p class="NoFilterMatchFound">
+                                    No data found
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Faculty Details -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Faculty Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="facultyData" matSort>
+                        <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="count">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Count</th>
+                            <td mat-cell *matCellDef="let element">{{element.count}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="facultyColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: facultyColumns;"></tr>
+                    </table>
+
+
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" [attr.colspan]="facultyColumns.length">
+                            <p class="NoFilterMatchFound">
+                                No data found
+                            </p>
+                        </td>
+                    </tr>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Department Details -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Department Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="departmentData" matSort>
+                        <ng-container matColumnDef="departmentName">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Department Name</th>
+                            <td mat-cell *matCellDef="let element">{{element.departmentName}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="totalStudents">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Students</th>
+                            <td mat-cell *matCellDef="let element">{{element.totalStudents}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="totalFaculty">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Faculty</th>
+                            <td mat-cell *matCellDef="let element">{{element.totalFaculty}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="programsOffered">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Programs Offered</th>
+                            <td mat-cell *matCellDef="let element">
+                                <ul>
+                                    <li *ngFor="let program of element.programsOffered">{{program}}</li>
+                                </ul>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="departmentColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: departmentColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" [attr.colspan]="departmentColumns.length">
+                                <p class="NoFilterMatchFound">
+                                    No data found
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Sports Facilities -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Sports Facilities</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="sportsData" matSort>
+                        <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="count">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Count</th>
+                            <td mat-cell *matCellDef="let element">{{element.count}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="achievements">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Achievements</th>
+                            <td mat-cell *matCellDef="let element">
+                                <ul>
+                                    <li *ngFor="let achievement of element.achievements">{{achievement}}</li>
+                                </ul>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="sportsColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: sportsColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" [attr.colspan]="sportsColumns.length">
+                                <p class="NoFilterMatchFound">
+                                    No data found
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Expenditure Details -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Expenditure Details</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="expenditureData" matSort>
+                        <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="amount">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+                            <td mat-cell *matCellDef="let element">{{element.amount}}</td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="expenditureColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: expenditureColumns;"></tr>
+
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" [attr.colspan]="facultyColumns.length">
+                                <p class="NoFilterMatchFound">
+                                    No data found
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+            <!-- Research and Development -->
+            <mat-card class="detail-card">
+                <mat-card-header>
+                    <mat-card-title>Research and Development</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <table mat-table [dataSource]="researchData" matSort>
+                        <ng-container matColumnDef="type">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="amount">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+                            <td mat-cell *matCellDef="let element">{{element.amount}}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="projects">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Projects</th>
+                            <td mat-cell *matCellDef="let element">
+                                <ul>
+                                    <li *ngFor="let project of element.projects">{{project}}</li>
+                                </ul>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="researchColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: researchColumns;"></tr>
+
+                        <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" [attr.colspan]="researchColumns.length">
+                                <p class="NoFilterMatchFound">
+                                    No data found
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+
+</section>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+</ngx-spinner>

@@ -7,7 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import { MaterialModule, SharableModule, FormsService, SwalService } from 'school-erp-public';
-import { ConsultancyProjectAddComponent, ConsultancyProjectEditComponent, ConsultancyProjectViewComponent, TablePaginationService } from 'shared-lib';
+import { SanctionedIntakeAddComponent, SanctionedIntakeEditComponent, SanctionedIntakeViewComponent, TablePaginationService } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -22,7 +22,7 @@ import Swal from 'sweetalert2';
 export class SanctionedIntakeComponent {
 
   pageSizeOptions: number[] = [];
-  displayedColumns = ["id", "description", "actions"];
+  displayedColumns = ["id", "year","UGProgram","PGProgram", "actions"];
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -50,7 +50,7 @@ export class SanctionedIntakeComponent {
 
   async loadFormData() {
     try {
-      const listData = await this.formsService.getListData(endpoints.NIRFconsultancyProjectDetails);
+      const listData = await this.formsService.getListData(endpoints.NIRFsanctionedIntake);
       this.listData = listData?.data || [];
 
       if (this.listData.length > 0) {
@@ -76,7 +76,7 @@ export class SanctionedIntakeComponent {
 
 openAddDialog(): void {
   // Open the dialog 
-  const dialogRef = this.dialog.open(ConsultancyProjectAddComponent, {});
+  const dialogRef = this.dialog.open(SanctionedIntakeAddComponent, {});
   
   // Subscribe to the dialog's afterClosed event to refresh the form data once the dialog is closed
   dialogRef.afterClosed().subscribe(result => {
@@ -88,7 +88,7 @@ openAddDialog(): void {
 
 viewElement(val: any): void {
   // Open the dialog with the Component
-  const dialogRef = this.dialog.open(ConsultancyProjectViewComponent, {
+  const dialogRef = this.dialog.open(SanctionedIntakeViewComponent, {
     // Pass the element's id as data to the dialog
     data: { id: val.id }
   });
@@ -103,7 +103,7 @@ async editElement(val: any): Promise<void> {
   this.loading = true; // Start the loading spinner to indicate that a process is ongoing
 
   // Open the dialog with the InstitutionIntegratesEditComponent
-  const dialogRef = this.dialog.open(ConsultancyProjectEditComponent, {
+  const dialogRef = this.dialog.open(SanctionedIntakeEditComponent, {
     // Pass the element's id as data to the dialog
     data: { id: val.id }
   });
@@ -123,7 +123,7 @@ async editElement(val: any): Promise<void> {
   
 async deleteElement(val: any): Promise<void> {
   const id = val.id;
-  const endpoint = endpoints.NIRFconsultancyProjectDetails;
+  const endpoint = endpoints.NIRFsanctionedIntake;
   this.loading = true; // Start the loading spinner
 
   // Show confirmation dialog

@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'lib-role-permission',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './role-permission.component.html',
   styleUrl: './role-permission.component.css'

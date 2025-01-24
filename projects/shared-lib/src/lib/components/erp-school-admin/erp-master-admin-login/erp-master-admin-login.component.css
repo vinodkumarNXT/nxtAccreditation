@@ -1,0 +1,20 @@
+::ng-deep .erp-masterAdmin-login {
+  background-image: url("https://as2.ftcdn.net/v2/jpg/05/22/81/93/1000_F_522819346_4EvcAWpyOXSjEWbiBJPDP9sIg9VR3uKu.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+::ng-deep .erp-masterAdmin-login .erp-cardLogin {
+  padding: 20px;
+  background-color: #e7e7e7 !important;
+  width: 400px; /* Explicitly set the width */
+  margin: 0 auto; /* Center the card if needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+::ng-deep .erp-masterAdmin-login .erp-cardLogin .mat-mdc-text-field-wrapper {
+  background-color: #fff !important;
+}/*# sourceMappingURL=erp-master-admin-login.component.css.map */

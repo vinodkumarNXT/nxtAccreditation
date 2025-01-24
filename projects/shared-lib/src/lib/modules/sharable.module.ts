@@ -37,9 +37,6 @@ import { MenuModule } from 'primeng/menu';
 import { ChartModule } from 'primeng/chart';
 import { FieldsetModule } from 'primeng/fieldset';
 
-// Angular Calendar Modules
-import { CalendarModule as AngularCalendarModule } from 'angular-calendar'; // Angular Calendar
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'; // Date adapter for Angular Calendar
 
 import { TimelineModule } from 'primeng/timeline';
 import { PanelModule } from 'primeng/panel';
@@ -53,10 +50,13 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { TabMenuModule } from 'primeng/tabmenu';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {MenuItem} from 'primeng/api';
+import { TieredMenuModule } from 'primeng/tieredmenu';  // Import TieredMenuModule
+
 
 @NgModule({
   declarations: [],
   imports: [
+  TieredMenuModule,
     TabMenuModule,
     FileUploadModule,
     ImageModule,
@@ -107,6 +107,7 @@ import {MenuItem} from 'primeng/api';
 
   ],
   exports: [
+    TieredMenuModule,
     PanelMenuModule,
     TabMenuModule,
     FileUploadModule,

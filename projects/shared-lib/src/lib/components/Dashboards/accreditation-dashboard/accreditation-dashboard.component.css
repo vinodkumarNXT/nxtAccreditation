@@ -1,0 +1,82 @@
+::ng-deep .nxtApp-container, .nxtAccDashBoard {
+  overflow-y: hidden;
+}
+
+::ng-deep .nxtAccDashBoardBlock-Cards {
+  justify-content: center !important;
+}
+
+.example-card {
+  margin-bottom: 20px;
+}
+
+.detail-card {
+  margin: 20px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+.mat-card-title {
+  font-size: 1.2em;
+}
+
+::ng-deep .accreditationWelcomeBlock {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card {
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-header {
+  background: linear-gradient(45deg, #1976d2, #2196f3);
+  color: #ffffff;
+  text-align: center;
+  padding: 16px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-header mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-content {
+  padding: 16px;
+  color: #424242;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-content p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-content ul li {
+  font-size: 14px;
+  margin: 8px 0;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+::ng-deep .accreditationWelcomeBlock .welcome-card mat-card-actions button {
+  margin-left: 10px;
+}/*# sourceMappingURL=accreditation-dashboard.component.css.map */

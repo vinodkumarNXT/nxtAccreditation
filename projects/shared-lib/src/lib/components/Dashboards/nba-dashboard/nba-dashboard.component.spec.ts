@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NaacDahboardComponent } from './naac-dahboard.component';
+import { NbaDashboardComponent } from './nba-dashboard.component';
 
-describe('NaacDahboardComponent', () => {
-  let component: NaacDahboardComponent;
-  let fixture: ComponentFixture<NaacDahboardComponent>;
+describe('NbaDashboardComponent', () => {
+  let component: NbaDashboardComponent;
+  let fixture: ComponentFixture<NbaDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NaacDahboardComponent]
+      imports: [NbaDashboardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NaacDahboardComponent);
+    fixture = TestBed.createComponent(NbaDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

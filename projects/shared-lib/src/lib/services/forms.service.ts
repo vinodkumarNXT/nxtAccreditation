@@ -175,10 +175,10 @@ async updateDataQuery(params: any, endpoint: string) {
 
 
 
-  private selectedMenuSubject = new BehaviorSubject<'naac' | 'nirf' | 'accreditation'>('accreditation'); // Default value
+  private selectedMenuSubject = new BehaviorSubject<'naac' | 'nirf' | 'nba'>('nba'); // Default value
   selectedMenu$ = this.selectedMenuSubject.asObservable();
 
-  updateSelectedMenu(menu: 'naac' | 'nirf' | 'accreditation') {
+  updateSelectedMenu(menu: 'naac' | 'nirf' | 'nba') {
     this.selectedMenuSubject.next(menu);
   }
 

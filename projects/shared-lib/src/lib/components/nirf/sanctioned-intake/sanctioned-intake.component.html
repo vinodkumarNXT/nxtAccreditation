@@ -36,10 +36,23 @@
       </ng-container>
     
       <!-- Ordinate Year Column -->
-      <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef>Description</th>
-        <td mat-cell *matCellDef="let element">{{ element.description}}</td>
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef>{{"Year"}}</th>
+        <td mat-cell *matCellDef="let element">{{ element.year}}</td>
       </ng-container>
+
+      <ng-container matColumnDef="UGProgram">
+        <th mat-header-cell *matHeaderCellDef>{{"UG Program"}}</th>
+        <td mat-cell *matCellDef="let element">{{ element.UGProgram}}</td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="PGProgram">
+        <th mat-header-cell *matHeaderCellDef>{{"PG Program"}}</th>
+        <td mat-cell *matCellDef="let element">{{ element.PGProgram}}</td>
+      </ng-container>
+
+
     
   
   

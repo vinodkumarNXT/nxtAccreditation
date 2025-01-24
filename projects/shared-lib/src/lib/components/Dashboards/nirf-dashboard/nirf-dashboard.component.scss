@@ -1,0 +1,1132 @@
+@import "ngx-toastr/toastr";
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* /* New Css Global Root Selection Css Starts Here */
+
+::ng-deep :root {
+  /* Theme Primary Colors START */
+  --nxtIndigo: #393186;
+  --nxtOrange: #ee7f1b;
+  --nxtSkyBlue: #0cafff;
+  --nxtGreen: #83cf43;
+  /* Theme Primary Colors END */
+
+  /* Dashboard Cards Color for Admin START */
+  --nxtDashCardDanger: #fd3550;
+  --nxtDashCardPrimary: #0dcaf0;
+  --nxtDashCardSuccess: #15ca20;
+  --nxtDashCardWarn: #ffc107;
+
+  --nxtDashTextDanger: #dc3545;
+  --nxtDashTextPrimary: #17a2b8;
+  --nxtDashTextSuccess: #28a745;
+  --nxtDashTextWarn: #ffc107;
+  /* Dashboard Cards Color for Admin END */
+
+  /* Theme Optional Colors START */
+  --nxtGrey: #ebedec;
+  --nxtWhite: #fff;
+  --nxtDarkGrey: #606060;
+  --nxtBlack: #000;
+  --nxtLightGrey: #848484;
+  --nxtGreyBGcolor: #f4f4f4;
+  --nxtGreySecondary: #6c757d;
+  --nxtDashBgColor: #f7f7ff;
+  /* Theme Optional Colors END */
+
+  /* Dashboard Chart Colors START */
+  --nxtDashChart1: #ff9705;
+  --nxtDashChart2: #062a74;
+  --nxtDashChart3: #034be4;
+  --nxtDashChart4: #428bf9;
+  --nxtDashChart5: #b6cdff;
+  --nxtDashChart6: #fad1d4;
+  --nxtDashSemanticPos: #3dd29d;
+  --nxtDashSemanticNeg: #ff5005;
+  --nxtDashTitleBGColor: #e0eaff;
+  /* Dashboard Chart Colors END */
+
+  /* New Revised Button Colors START */
+  --nxtPrimaryBtn: #f5883c;
+  --nxtPrimaryBtnHover: #ef741e !important;
+
+  --nxtSecondaryBtn: #dcdcdc;
+  --nxtSecondaryBtnHover: #ddd !important;
+
+  --nxtSuccessBtn: #28a745;
+  --nxtSuccessBtnHover: #159c35;
+
+  --nxtDangerBtn: #e32636;
+  --nxtDangerBtnHover: #d41121;
+
+  --nxtDarkBtn: #595959;
+  --nxtDarkBtnHover: rgb(23, 32, 32);
+
+  --nxtInfoBtn: #0cafff;
+  --nxtInfoBtnHover: #0497e0;
+  /* New Revised Button Colors END */
+
+  /* Table Header Color START */
+  --nxtTableThBgColor: #ff9c59; /* Comment out previous colors if not in use */
+  /* Table Header Color END */
+}
+
+/* Root  style and Color Picker Ends Here */
+
+.nxtIndigo {
+  color: var(--nxtIndigo);
+}
+
+.nxtGreyBGcolor {
+  background-color: var(--nxtGreyBGcolor);
+}
+
+.nxtOrange {
+  color: var(--nxtOrange);
+}
+
+.nxtSkyBlue {
+  color: var(--nxtSkyBlue);
+}
+
+.nxtGrey {
+  color: var(--nxtGrey);
+}
+
+.nxtGreen {
+  color: var(--nxtGreen);
+}
+
+.fontAlegreya {
+  font-family: "Alegreya";
+}
+
+.fontPoppins {
+  font-family: "Poppins";
+}
+
+.fontRaleway {
+  font-family: "Raleway";
+}
+
+.fontNoto {
+  font-family: "Noto Sans Mono";
+}
+
+/* New Css Global Root Selection Css ENDS Here */
+
+/* Global Center CSS Starts Here */
+.nxtTextcenter {
+  text-align: center !important;
+}
+
+/* Global Center CSS Starts Here */
+
+/* =====    Custom css start    =====================  **/
+body {
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+  background: #f4f7fa;
+  overflow-y: hidden !important ;
+}
+
+*:focus {
+  outline: none;
+}
+
+a,
+a:hover {
+  color: #666;
+  outline: none;
+  text-decoration: none;
+}
+
+button,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+::ng-deep body {
+  font-family: "Lato", sans-serif;
+}
+
+::ng-deep .example-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep .nxt-global-side-menu {
+  background-color: #eefaf6;
+  height: 100%;
+}
+
+::ng-deep .commom-layout {
+  background-color: #fff;
+}
+
+::ng-deep .important {
+  color: #ff0000 !important;
+  font-size: 14px !important;
+}
+
+::ng-deep .accre-forms-conatiner.card {
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+
+  .accre-forms-conatiner.card .card-title {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 7px 0;
+    color: #0839aa;
+  }
+
+}
+
+::ng-deep .acc-form-container {
+  .acc-form-submit {
+    text-align: end;
+    padding: 20px;
+  }
+}
+
+// Note Below Header Client Logo CSS Start Below
+
+::ng-deep .main-header {
+  height: 60px;
+  align-items: center;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0px 5px 21px -5px #cdd1e1;
+
+  .mat-toolbar {
+    background-color: #fff !important;
+    box-shadow: 0px 5px 21px -5px #cdd1e1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    height: 60px;
+  }
+
+  .header-client-logo {
+    img {
+      width: 160px;
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+}
+
+// :vertical Menu Css Starts Here
+
+::ng-deep .global-sideMenu {
+  padding: 15px 10px;
+
+  .nav {
+    background-color: #fff;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+  }
+}
+
+::ng-deep .main-layout {
+  height: 100vh;
+
+  .main-layout-right {
+    margin: 20px;
+  }
+}
+
+.menu {
+  transition: width 300ms ease-in-out;
+  color: white;
+  height: 100%;
+}
+
+.global-sideMenu {
+  height: 100%;
+  overflow: hidden;
+}
+
+.navbar-toggler {
+  margin-bottom: 1rem;
+}
+
+.navbar-collapse {
+  transition: width 300ms ease-in-out;
+}
+
+/* Ensure the menu occupies full screen on tablets and below */
+@media screen and (max-width: 768px) {
+  .main-layout {
+    position: relative;
+  }
+
+  .main-layout-left {
+    position: absolute;
+    top: -4px;
+    left: -12px;
+    width: 230px;
+    height: 100vh;
+    background-color: #f9fafb;
+    z-index: 1;
+  }
+}
+
+::ng-deep .form-title-container {
+  border-bottom: 1px solid var(--nxtOrange);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+
+  .acc-form-title {
+    color: var(--nxtOrange);
+    font-size: 18px;
+    margin: 0;
+    padding: 5px;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+  }
+
+  .edit-form-btn {
+    button {
+      height: 35px;
+      padding: 10px;
+      margin: 0 10px;
+
+      .mat-icon {
+        margin: 0;
+        font-size: 16px;
+      }
+      .content {
+        font-size: 13px;
+      }
+    }
+
+    .content {
+      font-size: 15px;
+    }
+  }
+}
+
+::ng-deep mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important ;
+  border: 1px solid #dfdfdf;
+
+  .mat-mdc-floating-label.mdc-floating-label {
+    font-size: 14px;
+  }
+}
+
+/* In your component's CSS file or global styles file */
+::ng-deep .mat-form-field {
+  box-shadow: none !important;
+}
+
+.rotating-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+::ng-deep .mat-mdc-dialog-panel {
+  max-width: 60vw !important;
+  min-width: 60vw !important;
+}
+
+::ng-deep .mat-mdc-dialog-container {
+  .mdc-dialog__title {
+    color: var(--mdc-dialog-subhead-color, rgba(0, 0, 0, 0.87));
+    background-color: #dfdfdf;
+    padding: 10px;
+    align-items: center;
+    height: 50px;
+    color: #000;
+    font-size: 19px;
+    font-weight: 500;
+
+    .mat-mdc-button {
+      .mat-mdc-button-persistent-ripple {
+        background: transparent;
+
+        &:hover {
+          background: transparent;
+        }
+        &:active {
+          background: transparent;
+        }
+      }
+    }
+
+    .ext-modal-header {
+      .ext-modal-title {
+        font-size: 18px;
+        margin: 0;
+        padding-left: 10px;
+        font-weight: 500;
+        color: #01579b !important;
+      }
+
+      .ext-modal-close {
+        color: #0000 !important;
+      }
+    }
+  }
+
+  .mdc-dialog__content {
+    padding: 20px !important;
+
+    .view-details-block {
+      .form-group {
+        padding-bottom: 15px;
+
+        .view-icon {
+          background-color: #f5f7f9;
+          border-radius: 50%;
+          height: 45px !important;
+          max-width: 45px !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 8px;
+
+          .mat-icon {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        p {
+          color: #0a8fd7;
+          margin: 0 !important;
+          font-size: 17px;
+        }
+
+        small {
+          color: #b0bec5;
+          font-size: 13px;
+        }
+
+        label {
+          font-size: 13px;
+          line-height: 13px;
+      }
+      }
+    }
+  }
+}
+
+::ng-deep .nxtAccTable {
+  .globalTableTheadAction {
+    text-align: center !important;
+  }
+
+  .globalTableTDcellAction {
+    .mat-mdc-button {
+      margin: 0 3px;
+      .mat-icon {
+        font-size: 23px !important;
+        height: 30px !important;
+        width: 30px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+::ng-deep .globalTableCount {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  font-family: "Lato", sans-serif;
+  text-transform: capitalize;
+
+  .countNumber {
+    color: indigo;
+  }
+}
+
+::ng-deep .close-icon {
+  cursor: pointer;
+  color: red; /* or any other color */
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+::ng-deep .filterBlockContainer {
+  margin-bottom: 5px;
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    height: 40px !important;
+
+    .mdc-text-field__input {
+      height: 40px !important;
+      position: relative !important;
+      top: -18px !important;
+      font-size: 14px;
+    }
+  }
+
+  .filterBlock {
+    margin: 0 5px;
+  }
+
+  .addCountBlock {
+    padding-bottom: 5px;
+    margin: 0px 5px;
+
+    .mat-icon {
+      height: 20px !important;
+      width: 47px !important;
+      font-size: 18px !important;
+      margin: 0;
+      overflow: inherit;
+    }
+  }
+}
+
+::ng-deep .nxtApp-toolbar {
+  background-color: #004c61 !important;
+  color: #fff !important;
+  height: 50px !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 0 0 5px 0 !important;
+
+  h2.brandHeader {
+    color: var(--nxtWhite);
+    margin: 0;
+    font-size: 27px;
+    font-weight: 600;
+    padding: 0px 10px;
+  }
+
+  .brandLogo {
+    height: 100%;
+    width: 220px;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 0 5px;
+  }
+
+  .menuBtnList {
+    width: 30px;
+    background-color: #fff;
+    color: #000 !important;
+    min-width: 30px;
+    max-width: 30px;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    .mat-icon {
+      width: 20px;
+      height: 20px;
+      margin: 0 !important;
+    }
+  }
+}
+
+::ng-deep .NoFilterMatchFound {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  color: #605e5e;
+
+  .filterValue {
+    color: var(--nxtDangerBtn);
+  }
+}
+
+::ng-deep .mat-mdc-paginator-container {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+::ng-deep .mainHeading {
+  color: #010101 !important;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 0px 5px 20px !important;
+}
+
+::ng-deep .submenu {
+  display: none;
+}
+
+::ng-deep .submenu.expanded {
+  display: block;
+  background-color: #fff !important;
+}
+
+::ng-deep .submenu.expanded.nestedSubMenu{
+  background-color: #fff !important;
+
+}
+
+::ng-deep .submenu.expanded.nestedSubMenu .mdc-list-item.parent {
+  background-color: #fff !important;
+}
+
+
+
+::ng-deep .rotated {
+  transform: rotate(180deg);
+}
+
+::ng-deep .nxtApp-sidenav {
+
+  .mat-mdc-list-item {
+    font-size: 14px;
+
+    .mdc-list-item__content {
+      .mdc-list-item__primary-text {
+        font-size: 13px !important;
+        color: #1a1a1a;
+      }
+    }
+
+    .mat-icon {
+      font-size: 18px;
+      height: 20px;
+      width: 21px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 3px;
+    }
+  }
+
+  .mat-drawer-inner-container {
+    background-color: #eaeff1;
+    width: 230px !important;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.2, #aaf1d2),
+        color-stop(0.44, rgb(175, 223, 216)),
+        color-stop(0.72, rgb(177, 238, 230)),
+        color-stop(0.86, rgb(156, 223, 192))
+      );
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
+}
+
+::ng-deep .nxtApp-sidenav-content {
+  padding: 15px;
+
+  .nxtAccTable {
+    .mat-mdc-header-cell {
+      background-color: #ececec !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+    }
+  }
+
+  .mat-mdc-table tbody,
+  .mat-mdc-table tfoot,
+  .mat-mdc-table thead,
+  .mat-mdc-cell,
+  .mat-mdc-footer-cell,
+  .mat-mdc-header-row,
+  .mat-mdc-row,
+  .mat-mdc-footer-row,
+  .mat-mdc-table .mat-mdc-header-cell {
+    height: 40px !important;
+  }
+}
+
+
+
+::ng-deep .mat-mdc-dialog-container {
+  .mdc-dialog__surface {
+    background-color: var(--mdc-dialog-container-color, white);
+    overflow-x: hidden;
+  }
+}
+
+/* SweetAlert2 confirm button - green */
+::ng-deep .swal2-confirm {
+  background-color: var(--nxtSuccessBtn); /* Green color */
+  border-color: var(--nxtSuccessBtnHover); /* Green color */
+}
+
+/* SweetAlert2 cancel button - red */
+::ng-deep .swal2-cancel {
+  background-color: var(--nxtDangerBtn); /* Red color */
+  border-color: var(--nxtDangerBtnHover); /* Red color */
+}
+
+::ng-deep div:where(.swal2-container) h2:where(.swal2-title) {
+  font-size: 18px;
+}
+
+::ng-deep div:where(.swal2-icon) {
+  font-size: 11px;
+  margin: 0.5em auto 0.6em;
+}
+
+::ng-deep div:where(.swal2-container) div:where(.swal2-popup) {
+  width: 22em;
+}
+
+::ng-deep .swal2-success-light-bg {
+  // background-color: #d4edda !important; /* Light green background */
+  color: var(--nxtDashCardSuccess) !important; /* Dark green text color */
+}
+
+::ng-deep .swal2-warn-light-bg {
+  // background-color: #eaedd4 !important; /* Light green background */
+  color: var(--nxtPrimaryBtnHover) !important; /* Dark green text color */
+}
+
+::ng-deep .swal2-danger-light-bg {
+  // background-color: #f3cbcb !important; /* Light green background */
+  color: var(--nxtDangerBtnHover) !important; /* Dark green text color */
+}
+
+/* In your component's SCSS file or global styles */
+
+/* Custom style for success alerts */
+::ng-deep .swalAlertSuccess {
+  color: var(--nxtWhite) !important; /* Light green background */
+  background-color: var(--nxtSuccessBtn) !important; /* Dark green text color */
+}
+
+/* Custom style for confirmation alerts */
+::ng-deep .swalAlertConfirm {
+  color: var(--nxtWhite) !important; /* Light green background */
+  background-color: var(
+    --nxtDangerBtnHover
+  ) !important; /* Dark green text color */
+}
+
+::ng-deep .progressBarUploaderBlock {
+  background-color: rgb(213, 253, 213);
+  border-radius: 10px;
+  margin: 5px 0;
+  padding: 0 10px;
+
+  .progressBarUploader {
+    align-items: end;
+  }
+
+  .uploadFileName {
+    color: #000;
+    font-size: 11px;
+    line-height: 10px;
+  }
+}
+
+::ng-deep .nxtPrimary {
+  color: var(--nxtPrimaryBtn) !important;
+
+  &:hover {
+    background-color: rgb(255, 253, 248) !important;
+  }
+}
+
+::ng-deep .mat-mdc-list-item-interactive.active {
+  background-color: #0fa3b1 !important;
+  border-radius: 0px !important;
+
+  .mdc-list-item__primary-text {
+    color: #ffffff !important;
+  }
+}
+
+::ng-deep .nxtAccDashBoardBlock{
+    justify-content: center;
+}
+
+::ng-deep .nxtAccDashBoardBlock-Cards {
+  .card {
+
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 10px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: var(--nxtWhite); /* Card background color */
+    height: 115px;
+    border: 2px solid #e5e5e5;
+    position: relative; /* Make sure pseudo-elements are positioned correctly */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* Prevents content from overflowing */
+    z-index: 1; /* Keeps content above the background image */
+
+    &::after {
+        content: "";
+        position: absolute; /* Position absolutely inside the card */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // background-image: url('https://img.freepik.com/premium-vector/transparent-wavy-blue-lines-wave-blue-smoke-abstract-blue-wave-background_206325-3284.jpg');
+        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210115/pngtree-luxury-white-wave-atmospheric-banner-background-image_519929.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.7; /* Slight transparency for the background image */
+        z-index: -1; /* Ensure the image is behind the content */
+        border: 2px solid #e9e8e8;
+        margin: 2px;
+        border-radius: 2px;
+
+    }
+
+  .card-left {
+    img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+    text-align: center;
+  }
+
+  .card-right {
+    h6 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--nxtDarkGrey);
+      padding-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #dc2f02;
+      padding-bottom: 8px;
+    }
+  }
+
+}
+}
+
+::ng-deep .nxtAccDashTable {
+
+    .mat-mdc-card-title{
+        color: var(--nxtDashTextPrimary);
+        font-size: 18px;
+        font-weight: 500;
+        padding: 7px 0 7px 0;
+    }
+  .mat-mdc-table {
+    background-color: #fff;
+    // border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    .mat-sort-header-content {
+      color: var(--nxtBlack);
+      font-weight: 500;
+    }
+
+    .mat-mdc-header-cell {
+      background-color: #0fa3b1 !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+  }
+
+
+
+    .mat-mdc-cell {
+      color: var(--nxtDarkBtn);
+      font-weight: 400;
+    }
+  }
+}
+
+::ng-deep  .nxtAccDashTable {
+  .mat-mdc-table {
+
+    .mat-mdc-header-cell {
+      background-color: #0fa3b1 !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+
+      &:first-child {
+        border-top-left-radius: 7px; 
+      }
+      &:last-child {
+        border-top-right-radius: 7px; 
+      }
+    }
+
+    tbody {
+      .mat-mdc-row:first-child {
+        .mat-mdc-cell:first-child {
+          border-top-left-radius: 7px; 
+        }
+        .mat-mdc-cell:last-child {
+          border-top-right-radius: 7px; 
+        }
+      }
+
+      .mat-mdc-row:last-child {
+        .mat-mdc-cell:first-child {
+          border-bottom-left-radius: 7px; 
+        }
+        .mat-mdc-cell:last-child {
+          border-bottom-right-radius: 7px; // Bottom-right corner
+        }
+      }
+    }
+  }
+}
+
+
+
+
+::ng-deep  .nxtAccDashTable {
+  .mat-mdc-table {
+    .mat-mdc-row {
+      // Odd rows
+      &:nth-child(odd) {
+        .mat-mdc-cell {
+          background-color: #fff !important; // Light grey for odd rows
+        }
+      }
+      
+      // Even rows
+      &:nth-child(even) {
+        .mat-mdc-cell {
+          background-color: #f8feff !important; // White for even rows
+        }
+      }
+    }
+  }
+}
+
+.stdFooter .nxt-footerSection{
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+
+}
+
+.nxt-footerSection{
+  padding: 0  20px;
+}
+
+
+.nxt-footerSection  .nxtPoweredBy,  
+.nxt-footerSection .footerTermsAndCondtions,
+.nxt-footerSection .nxt-social-Icons {
+  display: flex;
+}
+
+.nxt-footerSection  .nxtPoweredBy img{
+  height: 20px;
+}
+
+
+ .nxt-footerSection {
+  background-color: #eeefef;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #dfdfdf;
+}
+
+.pcoded-navbar.navbar-collapsed:hover  .nxt-footerSection{
+  padding-left: 0;
+}
+
+.footerSection .poweredBy p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+
+}
+
+.nxt-footerContent .nxt-social-Icons {
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 8px;
+}
+.nxt-social-Icons .footerSocialIcon>img{
+ height: 25px;
+ width: 25px;
+ object-fit: contain;
+}
+
+.nxt-social-Icons .footerSocialIcon>i{
+  font-size: 25px;
+
+ }
+
+ p.nxtCopyRights {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+}
+}
+
+
+.nxt-social-MainStrip{
+  text-align: center;
+}
+
+
+
+#currentYear{
+  padding: 0  10px 0  5px;
+}
+
+ .nxtCopyRights span#currentYear {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.nxt-footerContent  p {
+  margin: 0;
+  font-size: 13px !important;
+  color: var(--nxtIndigo);
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+.submenu {
+  border-left: 0; // Reset any border-left to avoid double borders
+}
+
+.SubMenuActive.expanded  {
+  border-left: 2px solid #004c61; // Single border-left for active submenu
+}
+
+.SubMenuActive.expanded.nestedSubMenu   {
+  border-left: 0px solid transparent; // Single border-left for active submenu
+}
+
+.parent {
+  border-left: 0; // Ensure parent items do not have a border-left
+}
+
+
+::ng-deep .nxtMainRouteOutlet {
+
+  .mat-drawer-container{
+      height: calc(100vh - 10vh);
+  }
+
+  .nxt-footerSection{
+    height: 10vh;
+  }
+
+}
+
+::ng-deep .uploadImgViewBlock {
+  .uploadImgeView{
+    width: 70px;
+    height: 70px;
+    object-fit: scale-down;
+
+  }
+}
+
+::ng-deep .UploadedFilesBlock {
+  ul {
+    list-style: none !important;
+    li {
+      font-size: 14px;
+      color: var(--nxtDarkBtn);
+    }
+  }
+}
+
+
+::ng-deep .submenu {
+    display: none;
+    &.expanded {
+      display: block;
+    }
+  }
+  
+  .menu-button {
+    transition: transform 0.3s ease;
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .ParentActive {
+    background-color: #e0f7fa;
+  }
+  
+  .SubMenuActive {
+    background-color: #e3f2fd;
+  }
+  
+
+  .accreditationSideMenu {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+  }
+  
+  .body {
+    height: calc(100vh - 64px); // Adjust height based on toolbar
+  }
+  
+  .p-toolbar {
+    margin-bottom: 10px;
+  }
+  
+  .p-toolbar-group-center {
+    flex: 1;
+    text-align: center;
+  }
+  

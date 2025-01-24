@@ -12,7 +12,7 @@ import { FormsService, MaterialModule, RolemasterAddComponent, RolemasterEditCom
 @Component({
   selector: 'lib-role-master',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, SnackbarService, provideNativeDateAdapter()],
   templateUrl: './role-master.component.html',
   styleUrl: './role-master.component.css'

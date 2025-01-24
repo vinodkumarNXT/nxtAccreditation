@@ -1,0 +1,18 @@
+<section>
+    <div class="nxtAccDashBoardBlock">
+        <div fxFlex="100" class="nxtAccDashBoardBlock-Cards" fxLayout="row wrap" fxLayoutGap="7px">
+            <div *ngFor="let card of cards" class="card" fxFlex="23" fxLayout="row" fxLayoutAlign="space-between center"
+                [style.backgroundColor]="card.backgroundColor" [style.backgroundSize]="'cover'"
+                [style.backgroundPosition]="'center'">
+
+                <div class="card-left" fxFlex="25">
+                    <img [src]="card.imageSrc" alt="" />
+                </div>
+                <div class="card-right" fxFlex="75">
+                    <h6>{{ card.title }}</h6>
+                    <p>{{ card.description }} <span>{{ card.count }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
