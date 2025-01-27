@@ -6,11 +6,11 @@ import { AuthService } from 'shared-lib';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(): boolean {
     console.log('AuthGuard: Checking if user is logged in');
-    if (this.authService.isLoggedIn()) {
+    if (this.authService.isLoggedInAccreditation()) {
       console.log('User is authenticated');
       return true; // User is authenticated, allow access
     } else {
@@ -19,5 +19,5 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
-  
+
 }

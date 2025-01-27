@@ -5,14 +5,15 @@ import { MatDialog } from '@angular/material/dialog';
 import { AuthService, FormsService, MaterialModule, SharableModule, SnackbarService, SwalService } from 'shared-lib';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import { Router } from '@angular/router';
+// import { Store } from '@ngrx/store';
 
 
 
 @Component({
   selector: 'lib-accreditation-login',
   standalone: true,
-  imports: [SharableModule,MaterialModule],
-  providers:[FormsService, SnackbarService, provideNativeDateAdapter()],
+  imports: [SharableModule, MaterialModule],
+  providers: [FormsService, SnackbarService, provideNativeDateAdapter()],
   templateUrl: './accreditation-login.component.html',
   styleUrl: './accreditation-login.component.scss'
 })
@@ -22,17 +23,19 @@ export class AccreditationLoginComponent {
   public submitted = false;
   public fetchedData: any;
   public selectedValue: any;
-  public setLocalToken:any
-  public showPassword = false; 
-
+  public setLocalToken: any
+  public showPassword = false;
+  public isLogggedIn: boolean = false;
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder,
-    private router:Router,
+  constructor(
+    // private store: Store,
+    private fb: FormBuilder,
+    private router: Router,
     public dialog: MatDialog,
     private swalService: SwalService,
-    private authService:AuthService,
+    private authService: AuthService,
     private formsService: FormsService) {
 
 
@@ -45,34 +48,37 @@ export class AccreditationLoginComponent {
 
   async submitForm() {
     this.submitted = true;
-  
+
     console.log("Before Form Values", this.form.value);
-  
+
     if (this.form.valid) {
       console.log("this.form", this.form.value);
-  
+
       const postData = {
         email: this.form.get('email')?.value,
         password: this.form.get('password')?.value,
       };
-  
+
       try {
         const response = await this.authService.login(postData, endpoints.AccreditationLogin);
-  
+
+
         await this.swalService.successNotification('Logged in successfully');
-        
         // Ensure token is saved in localStorage
-        localStorage.setItem('token', response.token); // Example, adjust as needed
-  
-        // Redirect to dashboard
         this.router.navigate(['/dashboard']);
-        this.resetForm();
+        localStorage.setItem('token', response.token); // Example, adjust as needed
         console.log("Final response", response);
-  
+
+        // Redirect to dashboard
+        this.resetForm();
+        // this.isLogggedIn = true;
+        // this.store.dispatch(setLoginStatus({ status: true }));
+
+
       } catch (error) {
         console.error('Form submission failed:', error);
         await this.swalService.warningNotification('Invalid Form', 'Please check the fields and try again.');
-  
+
         this.resetForm();
       }
     } else {
@@ -81,11 +87,11 @@ export class AccreditationLoginComponent {
       this.resetForm();
     }
   }
-  
-  
 
-  
-  
+
+
+
+
 
   resetForm() {
     this.form.reset();
@@ -106,5 +112,5 @@ export class AccreditationLoginComponent {
     this.showPassword = !this.showPassword;
   }
 
- 
+
 }

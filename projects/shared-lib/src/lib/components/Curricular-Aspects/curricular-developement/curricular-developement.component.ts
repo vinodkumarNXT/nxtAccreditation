@@ -15,16 +15,17 @@ import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe
 @Component({
   selector: 'lib-developement-relevance',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule],
   providers: [FormsService, SnackbarService, provideNativeDateAdapter()],
   templateUrl: './curricular-developement.component.html',
-  styleUrl: './curricular-developement.component.css'
+  styleUrl: './curricular-developement.component.scss'
 })
-export class CurricularDevelopementComponent implements OnInit , AfterViewInit  {
-  
+export class CurricularDevelopementComponent implements OnInit, AfterViewInit {
+  viewMode: 'normal' | 'grid' | 'list' = 'normal';
+
   pageSizeOptions: number[] = [];
-  
-  displayedColumns = ["id", "description","uploadFiles", "actions"];
+
+  displayedColumns = ["id", "description", "uploadFiles", "actions"];
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -73,8 +74,8 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
 
 
         // this.dataSource = new MatTableDataSource(this.listData);
-      this.dataSource = this.tablePaginationService.loadTableData(this.listData);
-      this.tablePaginationService.initializePaginator(this.dataSource, this.paginator, this.sort);
+        this.dataSource = this.tablePaginationService.loadTableData(this.listData);
+        this.tablePaginationService.initializePaginator(this.dataSource, this.paginator, this.sort);
 
         // Generate page size options using the TableService
         this.tablePaginationService.generatePageSizeOptions(this.listData.length);
@@ -83,7 +84,7 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
         this.dataSource.sort = this.sort;
       } else {
         console.log("No data available.");
-        
+
       }
     } catch (error) {
       console.log("Failed to load data");
@@ -104,15 +105,15 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
     });
   }
 
-  
+
 
   async editElement(val: any) {
     this.isLoading = true; // Start the loading spinner
-  
+
     const dialogRef = this.dialog.open(CurricularDevelopementEditComponent, {
       data: { id: val.id }
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       this.loadFormData(); // Refresh the data
       setTimeout(() => {
@@ -120,12 +121,12 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
       }, 1000);
     });
   }
-  
+
 
   async deleteElement(val: any) {
     const id = val.id;
     const endpoint = endpoints.CirDesignAndDevelopment;
-    
+
     // this.confirmationDialogService.open('Are you sure you want to Delete ?', 'Delete', 'Delete', 'Cancel').subscribe(async result => {
     //   if (result) {
     //     try {
@@ -145,7 +146,7 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
     //   }
     // });
   }
-  
+
 
 
 
@@ -157,7 +158,7 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -175,40 +176,40 @@ export class CurricularDevelopementComponent implements OnInit , AfterViewInit  
   //   this.albums = [album]; // Set the albums array with the image
   //   this._lightbox.open(this.albums, 0); // Open the lightbox with the image
   // }
-  
+
   // closeLightbox(): void {
   //   this._lightbox.close(); // Close the lightbox
   // }
-  
 
-    // Function to check if the file is an image
-    isImage(fileName: string): boolean {
-      const imageExtensions = ['png', 'jpg', 'jpeg', 'gif'];
-      const extension = fileName.split('.').pop()?.toLowerCase();
-      return imageExtensions.includes(extension || '');
-    }
-  
-    getFileUrl(fileName: string): string {
-      return `${fileName}`;
-    }
 
-  
-    openLightbox(fileName: string): void {
-      const imageUrl = `${fileName}`;
-      this.imageService.getImageAsBase64(imageUrl).then(base64Image => {
+  // Function to check if the file is an image
+  isImage(fileName: string): boolean {
+    const imageExtensions = ['png', 'jpg', 'jpeg', 'gif'];
+    const extension = fileName.split('.').pop()?.toLowerCase();
+    return imageExtensions.includes(extension || '');
+  }
 
-        const images = [
-          {
-            src: base64Image,
-            caption: 'Document Image',
-            thumb: base64Image
-          }
-        ];
-  
-  
-        this.lightbox.open(images, 0); // 0 is the index of the image to display
-      }).catch(error => console.error('Failed to open lightbox', error));
-    }
+  getFileUrl(fileName: string): string {
+    return `${fileName}`;
+  }
+
+
+  openLightbox(fileName: string): void {
+    const imageUrl = `${fileName}`;
+    this.imageService.getImageAsBase64(imageUrl).then(base64Image => {
+
+      const images = [
+        {
+          src: base64Image,
+          caption: 'Document Image',
+          thumb: base64Image
+        }
+      ];
+
+
+      this.lightbox.open(images, 0); // 0 is the index of the image to display
+    }).catch(error => console.error('Failed to open lightbox', error));
+  }
 
 
 }

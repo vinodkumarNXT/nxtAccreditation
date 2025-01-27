@@ -8,13 +8,13 @@ import { MenuItem } from 'shared-lib'; // Adjust the path as necessary
 export class NaacMenuService {
   getMenuItems(): MenuItem[] {
     return [
-      
+
 
       {
-       "label": "Dashboard",
+        "label": "Dashboard",
         "icon": "home",
         "routerLink": "/naac/dashboard",
-        "menuOf":["NAAC"],
+        "menuOf": ["NAAC"],
         "accessBy": [
           'admin',
           'superadmin',
@@ -32,19 +32,19 @@ export class NaacMenuService {
         "label": "Curricular Aspects",
         "icon": "widgets",
         "routerLink": "/",
-        "menuOf":["NAAC"],
+        "menuOf": ["NAAC"],
         "accessBy": [
-         'admin',
-         'superadmin',
-         'principal',
-         'hod',
-         'coordinator',
-         'alumni',
-         'dean',
-         'director',
-         'boardMember',
-         'accounts'
-       ],
+          'admin',
+          'superadmin',
+          'principal',
+          'hod',
+          'coordinator',
+          'alumni',
+          'dean',
+          'director',
+          'boardMember',
+          'accounts'
+        ],
 
         "items": [
           {
@@ -56,8 +56,8 @@ export class NaacMenuService {
                 "label": "Curricular Developed",
                 "icon": "minimize",
                 "routerLink": "/naac/curricular-developed",
-                 "menuOf":["NAAC"],
-                 "accessBy": [
+                "menuOf": ["NAAC"],
+                "accessBy": [
                   'admin',
                   'superadmin',
                   'principal',
@@ -75,7 +75,7 @@ export class NaacMenuService {
                 "label": "Percentage of Programmes",
                 "icon": "minimize",
                 "routerLink": "/naac/percentage-programmes",
-                "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -88,13 +88,13 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-                
+
               },
               {
                 "label": "Average Percentage",
                 "icon": "minimize",
                 "routerLink": "/naac/average-percentage",
-                "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -120,7 +120,7 @@ export class NaacMenuService {
                 "label": "Percentage of New Courses",
                 "icon": "minimize",
                 "routerLink": "/naac/percentageCourses",
-                "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -139,7 +139,7 @@ export class NaacMenuService {
                 "label": "CBCS",
                 "icon": "minimize",
                 "routerLink": "/naac/cbcs",
-                "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "accessBy": [
                   'admin',
                   'superadmin',
@@ -158,19 +158,19 @@ export class NaacMenuService {
           },
           {
             "label": "Curriculum Enrichment",
-           "menuOf":["NAAC"],
-           "accessBy": [
-            'admin',
-            'superadmin',
-            'principal',
-            'hod',
-            'coordinator',
-            'alumni',
-            'dean',
-            'director',
-            'boardMember',
-            'accounts'
-          ],
+            "menuOf": ["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
 
             "icon": "expand_more",
             "routerLink": "/",
@@ -191,7 +191,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
               },
               {
@@ -210,7 +210,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
               },
               {
                 "label": "Students Enrolled",
@@ -227,7 +227,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "routerLink": "/naac/students-enrolled"
               },
               {
@@ -245,7 +245,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "routerLink": "/naac/UndertakingFieldProjects"
               }
             ]
@@ -263,7 +263,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Feedback System",
             "icon": "expand_more",
@@ -284,7 +284,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "routerLink": "/naac/design-review"
               },
               {
@@ -302,7 +302,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "routerLink": "/naac/feedback-process"
               }
             ]
@@ -310,7 +310,7 @@ export class NaacMenuService {
         ]
       },
 
-      
+
       {
         "accessBy": [
           'admin',
@@ -324,7 +324,7 @@ export class NaacMenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["NAAC"],
+        "menuOf": ["NAAC"],
 
         "label": "Teaching-Learning and Evaluation",
         "icon": "school",
@@ -345,7 +345,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
             "routerLink": "/naac",
             "items": [
               {
@@ -363,7 +363,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "routerLink": "/naac/demand-ratio"
               },
               {
@@ -381,7 +381,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "routerLink": "/naac/reserved-category"
               }
             ]
@@ -399,12 +399,12 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Catering to Student Diversity",
-            
+
             "icon": "expand_more",
-            
+
             "routerLink": "/",
             "items": [
               {
@@ -420,7 +420,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Special Programmes",
                 "icon": "minimize",
                 "routerLink": "/naac/special-program"
@@ -438,7 +438,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Full Time Teacher Ratio",
                 "icon": "minimize",
                 "routerLink": "/naac/full-time-teacher-ratio"
@@ -458,7 +458,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Teaching - Learning Process",
             "icon": "expand_more",
@@ -477,7 +477,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Experiential Learning",
                 "icon": "minimize",
                 "routerLink": "/naac/experimental-Learning"
@@ -495,7 +495,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Learning Processes",
                 "icon": "minimize",
                 "routerLink": "/naac/learning-processes"
@@ -513,7 +513,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Ratio of Students to Mentor",
                 "icon": "minimize",
                 "routerLink": "/naac/student-mentorRatio"
@@ -533,7 +533,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Teacher Profile and Quality",
             "icon": "expand_more",
@@ -552,7 +552,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Full Time Teachers",
                 "icon": "minimize",
                 "routerLink": "/naac/full-time-teachers"
@@ -570,7 +570,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Teachers with Ph.D",
                 "icon": "minimize",
                 "routerLink": "/naac/phd-teachers"
@@ -588,7 +588,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Teachers Who Received Awards",
                 "icon": "minimize",
                 "routerLink": "/naac/awarded-teachers"
@@ -608,7 +608,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Evaluation Process and Reforms",
             "icon": "expand_more",
@@ -627,13 +627,13 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Semester-end/ Year-end",
                 "icon": "minimize",
                 "routerLink": "/naac/end-semester"
               },
 
-              
+
               {
                 "accessBy": [
                   'admin',
@@ -647,7 +647,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Student Complaints/Grievances",
                 "icon": "minimize",
                 "routerLink": "/naac/student-complaints"
@@ -665,7 +665,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Integration & Reforms",
                 "icon": "minimize",
                 "routerLink": "/naac/integration-reforms"
@@ -683,7 +683,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Automation of Examination",
                 "icon": "minimize",
                 "routerLink": "/naac/automation-examination"
@@ -703,7 +703,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Student Performance and Learning",
             "icon": "expand_more",
@@ -722,7 +722,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Learning Outcomes",
                 "icon": "minimize",
                 "routerLink": "/naac/learning-outcomes"
@@ -740,7 +740,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Attainment of Programme Outcomes",
                 "icon": "minimize",
                 "routerLink": "/naac/program-outcomes"
@@ -758,7 +758,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Pass Percentage of Students",
                 "icon": "minimize",
                 "routerLink": "/naac/student-PassPercentage-survey"
@@ -778,7 +778,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
             "label": "Student Satisfaction Survey",
             "icon": "expand_more",
             "routerLink": "/",
@@ -796,7 +796,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Teaching Learning Process",
                 "icon": "minimize",
                 "routerLink": "/naac/teaching-learning-process"
@@ -818,7 +818,7 @@ export class NaacMenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["NAAC"],
+        "menuOf": ["NAAC"],
 
         "label": "Research, Innovations and Extension",
         "icon": "search",
@@ -837,7 +837,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Research and Facilities",
             "icon": "expand_more",
@@ -856,7 +856,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Research Facilities",
                 "icon": "minimize",
                 "routerLink": "/naac/research-facility"
@@ -874,7 +874,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Teachers for Research",
                 "icon": "minimize",
                 "routerLink": "/naac/teacher-research"
@@ -892,7 +892,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Fellowship",
                 "icon": "minimize",
                 "routerLink": "/naac/research-fellowship"
@@ -910,7 +910,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Research Fellows",
                 "icon": "minimize",
                 "routerLink": "/naac/research-fellow"
@@ -928,7 +928,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Support Research",
                 "icon": "minimize",
                 "routerLink": "/naac/support-research"
@@ -946,7 +946,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Recognitions",
                 "icon": "minimize",
                 "routerLink": "/naac/recognition"
@@ -966,7 +966,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Resource Mobilization for Research",
             "icon": "expand_more",
@@ -985,7 +985,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Funding for Research",
                 "icon": "minimize",
                 "routerLink": "/naac/funding-research"
@@ -1003,7 +1003,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Grants for Research Projects",
                 "icon": "minimize",
                 "routerLink": "/naac/project-grant"
@@ -1021,7 +1021,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Number of Research Projects",
                 "icon": "minimize",
                 "routerLink": "/naac/research-projects"
@@ -1041,7 +1041,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Innovation Ecosystem",
             "icon": "expand_more",
@@ -1060,7 +1060,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Ecosystem for Innovations",
                 "icon": "minimize",
                 "routerLink": "/naac/ecosystem-innovations"
@@ -1078,7 +1078,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Seminars Conducted",
                 "icon": "minimize",
                 "routerLink": "/naac/seminars-conducted"
@@ -1096,7 +1096,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Recognitions Received",
                 "icon": "minimize",
                 "routerLink": "/naac/recognizations-received"
@@ -1116,13 +1116,13 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Research Publications and Awards",
             "icon": "expand_more",
             "routerLink": "/",
             "items": [
-              
+
               {
                 "accessBy": [
                   'admin',
@@ -1136,7 +1136,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Ethics for Research",
                 "icon": "minimize",
                 "routerLink": "/naac/ethics-research"
@@ -1154,7 +1154,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Incentives to Teachers",
                 "icon": "minimize",
                 "routerLink": "/naac/teachers-incentivies"
@@ -1172,7 +1172,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Patents Published",
                 "icon": "minimize",
@@ -1191,7 +1191,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Ph.Ds Awarded per Teacher",
                 "icon": "minimize",
@@ -1210,7 +1210,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Research Papers per Teacher",
                 "icon": "minimize",
                 "routerLink": "/naac/teacher-research-papers"
@@ -1228,7 +1228,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Edited Volumes Published",
                 "icon": "minimize",
                 "routerLink": "/naac/edited-volumes"
@@ -1246,7 +1246,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "E-content Developed",
                 "icon": "minimize",
                 "routerLink": "/naac/teacher-econtent"
@@ -1264,7 +1264,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Bibliometrics",
                 "icon": "minimize",
                 "routerLink": "/naac/biblio-metrics"
@@ -1282,7 +1282,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Citation Index in Scopus",
                 "icon": "minimize",
                 "routerLink": "/naac/citation-index-scopus"
@@ -1302,7 +1302,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Consultancy",
             "icon": "expand_more",
@@ -1321,7 +1321,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "policy on consultancy",
                 "icon": "minimize",
@@ -1340,7 +1340,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "consultancy revenue",
                 "icon": "minimize",
@@ -1349,19 +1349,19 @@ export class NaacMenuService {
             ]
           },
           {
-   "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Extension Activities",
             "icon": "expand_more",
@@ -1380,7 +1380,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Extension Activities",
                 "icon": "minimize",
@@ -1399,7 +1399,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "awards received",
                 "icon": "minimize",
                 "routerLink": "/naac/awards-received"
@@ -1417,7 +1417,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "outreach programs",
                 "icon": "minimize",
                 "routerLink": "/naac/outreach-program"
@@ -1435,7 +1435,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "activity percentage",
                 "icon": "minimize",
                 "routerLink": "/naac/activity-percentage"
@@ -1455,7 +1455,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Collaboration",
             "icon": "expand_more",
@@ -1474,7 +1474,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Collaborative Activities",
                 "icon": "minimize",
@@ -1493,7 +1493,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "functional MoUs",
                 "icon": "minimize",
@@ -1512,7 +1512,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "outreach programs",
                 "icon": "minimize",
                 "routerLink": "/naac/outreach-program"
@@ -1534,7 +1534,7 @@ export class NaacMenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["NAAC"],
+        "menuOf": ["NAAC"],
 
 
         "label": "Infrastructure and Learning Resources",
@@ -1554,7 +1554,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Physical Facilities",
             "icon": "expand_more",
@@ -1573,7 +1573,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Facilities for Teaching-Learning",
                 "icon": "minimize",
@@ -1592,7 +1592,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Facilities for Cultural Activities",
                 "icon": "minimize",
@@ -1611,7 +1611,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "General Campus Facilities",
                 "icon": "minimize",
@@ -1630,7 +1630,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Infrastructure Expenditure",
                 "icon": "minimize",
                 "routerLink": "/naac/infrastructure-expenditure"
@@ -1650,7 +1650,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Library as a Learning Resource",
             "icon": "expand_more",
@@ -1669,7 +1669,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Automation of the Library",
                 "icon": "minimize",
@@ -1688,7 +1688,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Library Resources",
                 "icon": "minimize",
@@ -1707,7 +1707,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Library Expenditure",
                 "icon": "minimize",
@@ -1726,7 +1726,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Library Users",
                 "icon": "minimize",
@@ -1735,19 +1735,19 @@ export class NaacMenuService {
             ]
           },
           {
-          "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "IT Infrastructure",
             "icon": "expand_more",
@@ -1766,7 +1766,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "ICT Facilities",
                 "icon": "minimize",
@@ -1785,7 +1785,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "IT Facilities",
                 "icon": "minimize",
@@ -1804,7 +1804,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Student-Computer Ratio",
                 "icon": "minimize",
@@ -1823,7 +1823,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
                 "label": "Internet Bandwidth",
                 "icon": "minimize",
                 "routerLink": "/naac/internet-bandwidth"
@@ -1841,7 +1841,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Facilities for E-Content",
                 "icon": "minimize",
@@ -1850,19 +1850,19 @@ export class NaacMenuService {
             ]
           },
           {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Maintenance of Campus Infrastructure",
             "icon": "build",
@@ -1881,7 +1881,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Maintenance of Physical Facilities",
                 "icon": "minimize",
@@ -1900,7 +1900,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Systems and Procedures",
                 "icon": "minimize",
@@ -1913,18 +1913,18 @@ export class NaacMenuService {
 
       {
         "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+          'admin',
+          'superadmin',
+          'principal',
+          'hod',
+          'coordinator',
+          'alumni',
+          'dean',
+          'director',
+          'boardMember',
+          'accounts'
+        ],
+        "menuOf": ["NAAC"],
 
         "label": "Student Support and Progression",
         "icon": "support",
@@ -1943,7 +1943,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Student Support",
             "icon": "expand_more",
@@ -1962,7 +1962,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Scholarship Schemes",
                 "icon": "minimize",
@@ -1981,7 +1981,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Career Counseling",
                 "icon": "minimize",
@@ -2000,7 +2000,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Capacity Development",
                 "icon": "minimize",
@@ -2019,7 +2019,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Student Grievances",
                 "icon": "minimize",
@@ -2030,19 +2030,19 @@ export class NaacMenuService {
 
 
           {
-        "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Student Progression",
             "icon": "expand_more",
@@ -2061,7 +2061,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Government Examinations",
                 "icon": "minimize",
@@ -2080,7 +2080,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Percentage of Placement",
                 "icon": "minimize",
@@ -2094,19 +2094,19 @@ export class NaacMenuService {
             ]
           },
           {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Participation and Activities",
             "icon": "expand_more",
@@ -2125,7 +2125,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Student Medals",
                 "icon": "minimize",
@@ -2144,7 +2144,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Student Council",
                 "icon": "minimize",
@@ -2163,7 +2163,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Competitions Organised",
                 "icon": "minimize",
@@ -2173,18 +2173,18 @@ export class NaacMenuService {
           },
           {
             "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Alumni Engagement",
             "icon": "expand_more",
@@ -2203,7 +2203,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Alumni Association",
                 "icon": "minimize",
@@ -2222,7 +2222,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Alumni Contribution",
                 "icon": "minimize",
@@ -2245,7 +2245,7 @@ export class NaacMenuService {
           'boardMember',
           'accounts'
         ],
-      "menuOf":["NAAC"],
+        "menuOf": ["NAAC"],
 
 
         "label": "Governance, Leadership and Management",
@@ -2265,7 +2265,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Vision and Leadership",
             "icon": "expand_more",
@@ -2284,7 +2284,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Administrative Governance",
                 "icon": "minimize",
@@ -2303,7 +2303,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Participative Management",
                 "icon": "minimize",
@@ -2312,19 +2312,19 @@ export class NaacMenuService {
             ]
           },
           {
-      "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Strategy Development and Deployment",
             "icon": "expand_more",
@@ -2343,7 +2343,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Institutional Strategic Plan",
                 "icon": "minimize",
@@ -2362,7 +2362,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Institutional Bodies",
                 "icon": "minimize",
@@ -2381,7 +2381,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Implements E-Governance",
                 "icon": "minimize",
@@ -2390,19 +2390,19 @@ export class NaacMenuService {
             ]
           },
           {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Faculty Empowerment Strategies",
             "icon": "expand_more",
@@ -2421,7 +2421,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Appraisal System",
                 "icon": "minimize",
@@ -2440,7 +2440,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Financial Support",
                 "icon": "minimize",
@@ -2459,7 +2459,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Training Programmes Organised",
                 "icon": "minimize",
@@ -2478,7 +2478,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Faculty Development Programmes",
                 "icon": "minimize",
@@ -2488,18 +2488,18 @@ export class NaacMenuService {
           },
           {
             "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Financial Management",
             "icon": "expand_more",
@@ -2518,7 +2518,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Mobilisation of Funds",
                 "icon": "minimize",
@@ -2537,7 +2537,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Grants Received from Government",
                 "icon": "minimize",
@@ -2556,7 +2556,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Grants Received from Non-Government",
                 "icon": "minimize",
@@ -2570,19 +2570,19 @@ export class NaacMenuService {
             ]
           },
           {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Internal Quality Assurance System",
             "icon": "expand_more",
@@ -2601,7 +2601,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Quality Assurance Strategies",
                 "icon": "minimize",
@@ -2620,7 +2620,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Adopted Quality Assurance",
                 "icon": "minimize",
@@ -2639,7 +2639,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Incremental Improvements",
                 "icon": "minimize",
@@ -2650,19 +2650,19 @@ export class NaacMenuService {
         ]
       },
       {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+        "accessBy": [
+          'admin',
+          'superadmin',
+          'principal',
+          'hod',
+          'coordinator',
+          'alumni',
+          'dean',
+          'director',
+          'boardMember',
+          'accounts'
+        ],
+        "menuOf": ["NAAC"],
         "label": "Institutional Values and Best Practices",
         "icon": "people",
         "routerLink": "/",
@@ -2685,7 +2685,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Promotion of Gender Equity",
                 "icon": "minimize",
@@ -2704,7 +2704,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Alternate Sources of Energy",
                 "icon": "minimize",
@@ -2723,7 +2723,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Degradable and Non-Degradable Waste",
                 "icon": "minimize",
@@ -2742,7 +2742,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Water Conservation Facilities",
                 "icon": "minimize",
@@ -2761,7 +2761,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Green Campus Initiatives",
                 "icon": "minimize",
@@ -2780,7 +2780,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Audits on Environment and Energy",
                 "icon": "minimize",
@@ -2799,7 +2799,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Disabled-Friendly, Barrier-Free Environment",
                 "icon": "minimize",
@@ -2818,7 +2818,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Institutional Efforts",
                 "icon": "minimize",
@@ -2837,7 +2837,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Constitutional Obligations",
                 "icon": "minimize",
@@ -2856,7 +2856,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Code of Conduct",
                 "icon": "minimize",
@@ -2875,7 +2875,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Institution Celebrates",
                 "icon": "minimize",
@@ -2884,19 +2884,19 @@ export class NaacMenuService {
             ]
           },
           {
-         "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+            "accessBy": [
+              'admin',
+              'superadmin',
+              'principal',
+              'hod',
+              'coordinator',
+              'alumni',
+              'dean',
+              'director',
+              'boardMember',
+              'accounts'
+            ],
+            "menuOf": ["NAAC"],
 
             "label": "Best Practices",
             "icon": "expand_more",
@@ -2915,7 +2915,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Two Best Practices",
                 "icon": "minimize",
@@ -2934,7 +2934,7 @@ export class NaacMenuService {
                   'boardMember',
                   'accounts'
                 ],
-              "menuOf":["NAAC"],
+                "menuOf": ["NAAC"],
 
                 "label": "Performance of the Institution",
                 "icon": "minimize",
@@ -2945,19 +2945,19 @@ export class NaacMenuService {
         ]
       },
       {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["NAAC"],
+        "accessBy": [
+          'admin',
+          'superadmin',
+          'principal',
+          'hod',
+          'coordinator',
+          'alumni',
+          'dean',
+          'director',
+          'boardMember',
+          'accounts'
+        ],
+        "menuOf": ["NAAC"],
 
         "label": "Roles and Permission",
         "icon": "build",
@@ -2975,7 +2975,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Role Master",
             "icon": "minimize",
@@ -2994,7 +2994,7 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Feature Master",
             "icon": "minimize",
@@ -3013,94 +3013,17 @@ export class NaacMenuService {
               'boardMember',
               'accounts'
             ],
-          "menuOf":["NAAC"],
+            "menuOf": ["NAAC"],
 
             "label": "Role & Perimissions",
             "icon": "minimize",
             "routerLink": "/naac/role-permission"
-            
+
           }
         ]
       },
 
-      {
-           "accessBy": [
-                  'admin',
-                  'superadmin',
-                  'principal',
-                  'hod',
-                  'coordinator',
-                  'alumni',
-                  'dean',
-                  'director',
-                  'boardMember',
-                  'accounts'
-                ],
-              "menuOf":["naac"],
 
-        "label": "Roles and Permission",
-        "icon": "build",
-        "items": [
-          {
-            "accessBy": [
-              'admin',
-              'superadmin',
-              'principal',
-              'hod',
-              'coordinator',
-              'alumni',
-              'dean',
-              'director',
-              'boardMember',
-              'accounts'
-            ],
-          "menuOf":["naac"],
-
-            "label": "Role Master",
-            "icon": "minimize",
-            "routerLink": "/naac/role-master"
-          },
-          {
-            "accessBy": [
-              'admin',
-              'superadmin',
-              'principal',
-              'hod',
-              'coordinator',
-              'alumni',
-              'dean',
-              'director',
-              'boardMember',
-              'accounts'
-            ],
-          "menuOf":["naac"],
-
-            "label": "Feature Master",
-            "icon": "minimize",
-            "routerLink": "/naac/feature-master"
-          },
-          {
-            "accessBy": [
-              'admin',
-              'superadmin',
-              'principal',
-              'hod',
-              'coordinator',
-              'alumni',
-              'dean',
-              'director',
-              'boardMember',
-              'accounts'
-            ],
-          "menuOf":["naac"],
-
-            "label": "Role & Perimissions",
-            "icon": "minimize",
-            "routerLink": "/naac/role-permission"
-            
-          }
-        ]
-      }
     ]
   }
 }

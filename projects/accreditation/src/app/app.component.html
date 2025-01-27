@@ -1,17 +1,21 @@
 <div class="layoutMain accreditaion_toolBar">
+
+
+  @if(isLoggedIn){
+
   <p-toolbar>
     <div class="p-toolbar-group-start">
       <img src="../assets/edunxtnobg.png" alt="" class="brandLogo">
 
       @if(nirfMenu){
-      <span class="typeModule"> |  NIRF</span>
+      <span class="typeModule"> | NIRF</span>
       }
       @if(naacMenu){
-      <span class="typeModule"> |  NAAC</span>
+      <span class="typeModule"> | NAAC</span>
       }
 
       @if(nbaMenu){
-      <span class="typeModule"> |  NBA</span>
+      <span class="typeModule"> | NBA</span>
       }
 
       <!-- <p-button label="Toggle" icon="pi pi-align-right" (onClick)="menu.toggle($event)"></p-button> -->
@@ -28,6 +32,8 @@
 
     </div>
   </p-toolbar>
+  }
+
 
   <div class="layout" fxLayout="row">
     <aside class="sidebar" fxflex="10">

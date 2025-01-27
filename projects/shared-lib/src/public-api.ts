@@ -899,6 +899,12 @@ export * from './lib/modules/nirf/nirf-routing.module';
 export * from './lib/modules/nirf/nirf.module';
 
 
+// Exporting actions, reducers, and selectors from the store directory
+
+export * from './lib/store/auth.actions';
+export * from './lib/store/auth.reducer';
+export * from './lib/store/auth.selectors';
+
 export * from './lib/components/Dashboards/nba-dashboard/nba-dashboard.component';
 export * from './lib/components/Dashboards/naac-dashboard/naac-dashboard.component';
 
