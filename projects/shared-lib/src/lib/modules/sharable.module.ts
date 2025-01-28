@@ -48,15 +48,17 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ImageModule } from 'primeng/image';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TabMenuModule } from 'primeng/tabmenu';
-import {PanelMenuModule} from 'primeng/panelmenu';
-import {MenuItem} from 'primeng/api';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { MenuItem } from 'primeng/api';
 import { TieredMenuModule } from 'primeng/tieredmenu';  // Import TieredMenuModule
+// Angular Chart Component
+import { AgCharts } from 'ag-charts-angular';
 
 
 @NgModule({
   declarations: [],
   imports: [
-  TieredMenuModule,
+    TieredMenuModule,
     TabMenuModule,
     FileUploadModule,
     ImageModule,

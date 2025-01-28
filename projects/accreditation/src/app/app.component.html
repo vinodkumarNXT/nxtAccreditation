@@ -1,7 +1,7 @@
 <div class="layoutMain accreditaion_toolBar">
 
 
-  @if(isLoggedIn){
+  <!-- @if(isLoggedIn){ -->
 
   <p-toolbar>
     <div class="p-toolbar-group-start">
@@ -21,18 +21,18 @@
       <!-- <p-button label="Toggle" icon="pi pi-align-right" (onClick)="menu.toggle($event)"></p-button> -->
 
     </div>
-    <div class="p-toolbar-group-center">
+    <!-- <div class="p-toolbar-group-center">
       <span class="p-input-icon-left">
         <i class="pi pi-search"></i>
         <input pInputText placeholder="Search" />
       </span>
-    </div>
+    </div> -->
     <div class="p-toolbar-group-end">
-      <p-button icon="pi pi-power-off" [rounded]="true" [text]="true" severity="danger" />
+      <p-button icon="pi pi-power-off" [rounded]="true" [text]="true" severity="danger" click="logOut()" />
 
     </div>
   </p-toolbar>
-  }
+  <!-- } -->
 
 
   <div class="layout" fxLayout="row">

@@ -905,6 +905,9 @@ export * from './lib/store/auth.actions';
 export * from './lib/store/auth.reducer';
 export * from './lib/store/auth.selectors';
 
+
+export * from './lib/services/ai-content-genarator.service';
+
 export * from './lib/components/Dashboards/nba-dashboard/nba-dashboard.component';
 export * from './lib/components/Dashboards/naac-dashboard/naac-dashboard.component';
 

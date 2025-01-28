@@ -1,19 +1,52 @@
-<section>
+<div class="nxtAccDashBoardBlock" fxLayout="column">
+    <div fxFlex="100" class="nxtAccDashBoardBlock-Cards" fxLayout="row wrap" fxLayoutGap="7px">
+        <div *ngFor="let card of cards" class="card" fxFlex="23" fxLayoutAlign="space-between center"
+            [ngClass]="'card-custom-style'" [style.backgroundColor]="card.backgroundColor">
+            <!-- Card Left Section -->
+            <div class="card-left" fxFlex="25">
+                <img [src]="card.imageSrc" [alt]="card.title || 'Dashboard Image'" />
+            </div>
 
-    <div class="nxtAccDashBoardBlock">
-        <div fxFlex="100" class="nxtAccDashBoardBlock-Cards" fxLayout="row wrap" fxLayoutGap="7px">
-            <div *ngFor="let card of cards" class="card" fxFlex="23" fxLayout="row" fxLayoutAlign="space-between center"
-                [style.backgroundColor]="card.backgroundColor" [style.backgroundSize]="'cover'"
-                [style.backgroundPosition]="'center'">
-
-                <div class="card-left" fxFlex="25">
-                    <img [src]="card.imageSrc" alt="" />
-                </div>
-                <div class="card-right" fxFlex="75">
-                    <h6>{{ card.title }}</h6>
-                    <p>{{ card.description }} <span>{{ card.count }}</span></p>
-                </div>
+            <!-- Card Right Section -->
+            <div class="card-right" fxFlex="75">
+                <h6>{{ card.title }}</h6>
+                <p>
+                    {{ card.description }}
+                    <span>{{ card.count }}</span>
+                </p>
             </div>
         </div>
     </div>
-</section>
+    <div class="chartsContainer" fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="7px">
+        <div class="chartBlock" fxFlex="60">
+            <div class="card">
+                <canvas #myCanvas id="canvas"></canvas>
+            </div>
+        </div>
+
+
+
+        <div class="nirfSpeedBoard" fxFlex="35">
+            <div class="card">
+                <div class="speedometer">
+                    <!-- Institute Features Section -->
+                    <div class="scrolling-text">
+                        <marquee>State-of-the-art Infrastructure | Highly Qualified Faculty | Strong Industry
+                            Partnerships |
+                            Top NIRF
+                            Rankings | Research & Innovation Centers</marquee>
+                    </div>
+
+                    <!-- Survey and Rank Information -->
+                    <h4 class="upComingSurvey">Upcoming: NIRF Survey In - <span class="leftINDays">10 Days </span> </h4>
+                    <div class="surveyRank">
+                        <img class="awardImage"
+                            src="https://static.vecteezy.com/system/resources/thumbnails/022/636/840/small_2x/award-label-or-sign-on-transparent-background-png.png"
+                            alt="Rank" />
+                        <h4 class="currentRank"> Current Institute Rank: <span class="rankNumber">22</span> </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

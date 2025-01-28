@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
 import { SharableModule, FormsService, SnackbarService, AuthService, AutoLogoutService, MenuItem, SwalService, NirfMenuService } from 'school-erp-public';
+import { Chart, ChartData } from 'chart.js';
+
+
 
 @Component({
   selector: 'lib-nirf-dashboard',
@@ -13,6 +16,21 @@ import { SharableModule, FormsService, SnackbarService, AuthService, AutoLogoutS
   styleUrl: './nirf-dashboard.component.scss'
 })
 export class NirfDashboardComponent {
+  @ViewChild('myCanvas') myCanvas!: ElementRef<HTMLCanvasElement>;
+  private context!: CanvasRenderingContext2D;
+  public chart!: Chart;
+
+  nirfData = [
+    { month: 'January', dataset1Score: 50, dataset2Score: 30, dataset3Score: 40 },
+    { month: 'February', dataset1Score: 25, dataset2Score: 45, dataset3Score: 35 },
+    { month: 'March', dataset1Score: 17, dataset2Score: 2, dataset3Score: 20 },
+    { month: 'April', dataset1Score: 22, dataset2Score: 11, dataset3Score: 30 },
+    { month: 'May', dataset1Score: 31, dataset2Score: 19, dataset3Score: 40 },
+    { month: 'June', dataset1Score: 47, dataset2Score: 40, dataset3Score: 30 },
+    { month: 'July', dataset1Score: 2, dataset2Score: 32, dataset3Score: 20 },
+  ];
+
+
   menuItems: MenuItem[] = [];
   public isExpanded = true;
   public isShowing = false;
@@ -46,8 +64,8 @@ export class NirfDashboardComponent {
     '#E6E6FA', '#FFF8E8', '#FAFAD2', '#F5FFFA', '#E0FFFF',
     '#F8F8FF', '#FDF5E6', '#FFEBE8', '#F0E68C', '#EDEDED'
   ];
-  
-  
+
+
   // Array of card data with random background colors
   cards = [
     {
@@ -107,7 +125,7 @@ export class NirfDashboardComponent {
       backgroundColor: this.getRandomLightColor()
     }
   ];
-  
+
   ngOnInit() {
     this.menuItems = this.menuService.getMenuItems();
     this.setupMenuForUserType('admin'); // Change user type here
@@ -129,8 +147,65 @@ export class NirfDashboardComponent {
     this.idleTimer$ = this.autoLogoutService.logout$.subscribe(() => {
       this.autoLogoutService.triggerLogoutAlert();
     });
+
+    this.loadChrats();
   }
-  
+
+
+  ngAfterViewInit() {
+    const chartData: ChartData = {
+      labels: this.nirfData.map((data) => data.month),
+      datasets: [
+        {
+          label: 'NIRF CYCLE -I',
+          backgroundColor: '#FF9D23', // Green with 50% opacity
+          borderColor: '#FF9D23',
+          borderWidth: 1,
+          data: this.nirfData.map((data) => data.dataset1Score),
+        },
+        {
+          label: 'NIRF CYCLE -II',
+          backgroundColor: '#024CAA', // Blue with 50% opacity
+          borderColor: '#024CAA',
+          borderWidth: 1,
+          data: this.nirfData.map((data) => data.dataset2Score),
+        },
+
+        {
+          label: 'NIRF CYCLE -III',
+          backgroundColor: '#15B392', // Blue with 50% opacity
+          borderColor: '#15B392',
+          borderWidth: 1,
+          data: this.nirfData.map((data) => data.dataset3Score),
+        },
+      ],
+    };
+
+    // Create the chart
+    if (this.myCanvas?.nativeElement) {
+      const canvasElement = this.myCanvas.nativeElement as HTMLCanvasElement;
+      this.context = canvasElement.getContext('2d') as CanvasRenderingContext2D;
+
+      this.chart = new Chart(this.context, {
+        type: 'bar',
+        data: chartData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: 'top' },
+            title: { display: true, text: 'NIRF Data Bar Chart' },
+          },
+        },
+      });
+    }
+  }
+
+
+
+  loadChrats() {
+
+  }
+
 
   ngOnDestroy() {
     this.idleTimer$.unsubscribe(); // Clean up subscriptions
@@ -140,13 +215,13 @@ export class NirfDashboardComponent {
     this.isExpanded = !this.isExpanded;
   }
 
- 
+
 
   toggleSubmenu(label: string) {
     this.showSubmenu[label] = !this.showSubmenu[label];
     this.activeSubmenu[label] = this.showSubmenu[label];
   }
-  
+
   toggleNestedSubmenu(label: string) {
     this.showNestedSubmenu[label] = !this.showNestedSubmenu[label];
     this.activeNestedSubmenu[label] = this.showNestedSubmenu[label];
@@ -202,9 +277,9 @@ export class NirfDashboardComponent {
     }
   }
 
-  
-   // Function to get a random light color from the array
-   getRandomLightColor() {
+
+  // Function to get a random light color from the array
+  getRandomLightColor() {
     const randomIndex = Math.floor(Math.random() * this.lightColors.length);
     return this.lightColors[randomIndex];
   }

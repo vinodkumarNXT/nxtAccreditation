@@ -137,4 +137,8 @@ export class AppComponent {
     }
   }
 
+  logOut() {
+    this.authService.logout();
+  }
+
 }

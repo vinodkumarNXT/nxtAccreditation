@@ -16,6 +16,7 @@ export const environment = {
     appURL: 'http://192.168.21.102:8000/',
     apiBaseURL: 'http://192.168.21.102:8000/',
     assetsUrl: `http://192.168.21.102:8000/5001/projects/accreditation/src/assets/images/`,
+    openAIKey:''
 
   };
   
