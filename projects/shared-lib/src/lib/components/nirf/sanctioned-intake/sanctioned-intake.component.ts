@@ -22,9 +22,9 @@ import Swal from 'sweetalert2';
 export class SanctionedIntakeComponent {
 
 
-  question: string = '';
-  answer: string = '';
-  ailoading: boolean = false;
+  public question: string = '';
+  public answer: any = '';
+  public ailoading: boolean = false;
 
 
   pageSizeOptions: number[] = [];
@@ -49,30 +49,9 @@ export class SanctionedIntakeComponent {
   ) {
   }
 
-
-
   ngOnInit(): void {
     this.loadFormData();
   }
-  async getAnswer() {
-    if (!this.question.trim()) {
-      alert('Please enter a question.');
-      return;
-    }
-
-    this.ailoading = true;
-    this.answer = '';
-
-    try {
-      this.answer = await this.aiContentGenarator.askQuestion(this.question);
-    } catch (error) {
-      this.answer = 'Sorry, I could not fetch the answer. Please try again later.';
-    } finally {
-      this.ailoading = false;
-    }
-  }
-
-  
 
   async loadFormData() {
     try {

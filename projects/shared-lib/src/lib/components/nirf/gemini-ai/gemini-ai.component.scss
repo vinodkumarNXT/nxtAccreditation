@@ -1,0 +1,242 @@
+@import "ngx-toastr/toastr";
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Liter&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* /* New Css Global Root Selection Css Starts Here */
+
+::ng-deep :root {
+        /* Theme Primary Colors START */
+        --nxtIndigo: #393186;
+        --nxtOrange: #ee7f1b;
+        --nxtSkyBlue: #0cafff;
+        --nxtGreen: #83cf43;
+        /* Theme Primary Colors END */
+
+        /* Dashboard Cards Color for Admin START */
+        --nxtDashCardDanger: #fd3550;
+        --nxtDashCardPrimary: #0dcaf0;
+        --nxtDashCardSuccess: #15ca20;
+        --nxtDashCardWarn: #ffc107;
+
+        --nxtDashTextDanger: #dc3545;
+        --nxtDashTextPrimary: #17a2b8;
+        --nxtDashTextSuccess: #28a745;
+        --nxtDashTextWarn: #ffc107;
+        /* Dashboard Cards Color for Admin END */
+
+        /* Theme Optional Colors START */
+        --nxtGrey: #ebedec;
+        --nxtWhite: #fff;
+        --nxtDarkGrey: #606060;
+        --nxtBlack: #000;
+        --nxtLightGrey: #848484;
+        --nxtGreyBGcolor: #f4f4f4;
+        --nxtGreySecondary: #6c757d;
+        --nxtDashBgColor: #f7f7ff;
+        /* Theme Optional Colors END */
+
+        /* Dashboard Chart Colors START */
+        --nxtDashChart1: #ff9705;
+        --nxtDashChart2: #062a74;
+        --nxtDashChart3: #034be4;
+        --nxtDashChart4: #428bf9;
+        --nxtDashChart5: #b6cdff;
+        --nxtDashChart6: #fad1d4;
+        --nxtDashSemanticPos: #3dd29d;
+        --nxtDashSemanticNeg: #ff5005;
+        --nxtDashTitleBGColor: #e0eaff;
+        /* Dashboard Chart Colors END */
+
+        /* New Revised Button Colors START */
+        --nxtPrimaryBtn: #f5883c;
+        --nxtPrimaryBtnHover: #ef741e !important;
+
+        --nxtSecondaryBtn: #dcdcdc;
+        --nxtSecondaryBtnHover: #ddd !important;
+
+        --nxtSuccessBtn: #28a745;
+        --nxtSuccessBtnHover: #159c35;
+
+        --nxtDangerBtn: #e32636;
+        --nxtDangerBtnHover: #d41121;
+
+        --nxtDarkBtn: #595959;
+        --nxtDarkBtnHover: rgb(23, 32, 32);
+
+        --nxtInfoBtn: #0cafff;
+        --nxtInfoBtnHover: #0497e0;
+        /* New Revised Button Colors END */
+
+        /* Table Header Color START */
+        --nxtTableThBgColor: #ff9c59;
+        /* Comment out previous colors if not in use */
+        /* Table Header Color END */
+}
+
+/* Root  style and Color Picker Ends Here */
+
+.nxtIndigo {
+        color: var(--nxtIndigo);
+}
+
+.nxtGreyBGcolor {
+        background-color: var(--nxtGreyBGcolor);
+}
+
+.nxtOrange {
+        color: var(--nxtOrange);
+}
+
+.nxtSkyBlue {
+        color: var(--nxtSkyBlue);
+}
+
+.nxtGrey {
+        color: var(--nxtGrey);
+}
+
+.nxtGreen {
+        color: var(--nxtGreen);
+}
+
+.fontAlegreya {
+        font-family: "Alegreya";
+}
+
+.fontPoppins {
+        font-family: "Poppins";
+}
+
+.fontRaleway {
+        font-family: "Raleway";
+}
+
+.fontNoto {
+        font-family: "Noto Sans Mono";
+}
+
+/* New Css Global Root Selection Css ENDS Here */
+
+/* Global Center CSS Starts Here */
+.nxtTextcenter {
+        text-align: center !important;
+}
+
+/* Global Center CSS Starts Here */
+
+body {
+        font-family: sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+}
+
+.chat-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        background-color: #f5f5f5;
+        padding: 20px;
+        height: 90vh;
+}
+
+.chat-header {
+        text-align: center;
+}
+
+.chat-history {
+        flex-grow: 1;
+        overflow-y: overlay;
+        padding: 10px;
+}
+
+.chat-message {
+        margin-bottom: 10px;
+        display: flex;
+}
+
+.chat-message.sent {
+        justify-content: flex-end;
+        align-items: flex-start;
+}
+
+.chat-message.received {
+        justify-content: flex-end;
+        align-items: flex-end;
+}
+
+.chat-message p {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chat-message.sent p {
+        background-color: #e0e0e0;
+}
+
+.chat-input {
+        display: flex;
+}
+
+#message-input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+}
+
+#qb-toolbar-container{
+        display: none;
+}
+
+#send-button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.responses {
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 20px;
+}
+
+.messages {
+        padding-bottom: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1098039216);
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 2;
+        margin-bottom: 10px;
+}
+
+.sendQuery {
+        color: var(--nxtIndigo);
+        background: var(--nxtDashBgColor);
+        margin-right: 20%;
+        font-weight: 500;
+        padding: 20px;
+}
+
+.rxResponse {
+        color: var(--nxtPrimaryBtnHover);
+        background: var(--nxtWhite);
+        margin-left: 20%;
+        font-size: 15px;
+        font-weight: 500;
+        white-space: break-spaces;
+        padding: 20px;
+}
+
+#send-button{
+margin: 0 10px;
+}
+#send-button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+}

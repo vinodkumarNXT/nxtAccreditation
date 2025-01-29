@@ -1,0 +1,5 @@
+<div class="chat-container">
+        <textarea [(ngModel)]="userMessage" placeholder="Type your message..."></textarea>
+        <button (click)="sendMessage()">Send</button>
+        <p><strong>Claude AI:</strong> {{ aiResponse }}</p>
+</div>

@@ -1,0 +1,30 @@
+<div class="chat-container">
+        <header class="chat-header">
+                <h4>EDUNXT-BOT</h4>
+        </header>
+        <main class="chat-history">
+                <ng-container *ngFor="let item of chatHistory$ | async">
+                        <div class="messages"
+                                [ngClass]="{'sendQuery': item.from === 'user', 'rxResponse': item.from === 'bot'}">
+                                <mat-icon *ngIf="item.from === 'user'">account_circle</mat-icon>
+                                <mat-icon *ngIf="item.from === 'bot'">android</mat-icon>
+
+                                <span class="responses" [innerHTML]="formatText(item.message)"></span>
+                        </div>
+                </ng-container>
+                <ng-container *ngIf="loading">
+                        <lib-skelton></lib-skelton>
+                </ng-container>
+        </main>
+        <footer class="chat-input">
+                <textarea type="text" id="message-input" (keyup.enter)="sendData()" placeholder="Type your message..."
+                        [(ngModel)]="prompt" [disabled]="loading" autocomplete="off"></textarea>
+                <button mat-raised-button color="primary" id="send-button" (click)="sendData()" [disabled]="loading">
+                        <mat-icon>send</mat-icon> Send
+                </button>
+
+                <button mat-raised-button id="clear-button" color="danger" (click)="clearData()" [disabled]="loading">
+                        <mat-icon>delete_outline</mat-icon> Clear
+                </button>
+        </footer>
+</div>

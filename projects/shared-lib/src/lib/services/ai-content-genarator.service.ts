@@ -1,50 +1,43 @@
 import { Injectable } from '@angular/core';
-import axios from 'axios';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { Store } from '@ngrx/store';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { addMessage, clearChatHistory } from 'shared-lib';
+import { ChatState } from 'shared-lib';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AiContentGeneratorService {
+  
+  private generativeAI: GoogleGenerativeAI;
+  private messageHistory: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);  // Initialize as empty array
 
-  constructor() {}
-
-  // OpenAI API endpoint
-  private apiUrl = 'https://api.openai.com/v1/chat/completions';
-
-  // Securely handle API key (e.g., load it from environment variables or a configuration file)
-  private apiKey = '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'; 
-
-  /**
-   * Function to send a question to OpenAI API and fetch the response.
-   * @param question - The user's question to send to the AI.
-   * @returns A promise that resolves to the AI's response as a string.
-   */
-  async askQuestion(question: string): Promise<string> {
-    try {
-      const response = await axios.post(
-        this.apiUrl,
-        {
-          model: 'gpt-4', // Use a supported model like gpt-4 or gpt-3.5-turbo
-          messages: [
-            { role: 'system', content: 'You are a helpful assistant.' },
-            { role: 'user', content: question }
-          ],
-          max_tokens: 200, // Adjust token limit as needed
-          temperature: 0.7 // Controls randomness of the response
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${this.apiKey}`,
-          },
-        }
-      );
-
-      // Return the AI's response text
-      return response.data.choices[0].message.content.trim();
-    } catch (error) {
-      console.error('Error fetching AI response:', error);
-      throw new Error('Failed to fetch AI response');
-    }
+  constructor() {
+    this.generativeAI = new GoogleGenerativeAI('AIzaSyB22PauIvUIzY1ZD0uhFX5fKw0SHEHIHKI');
   }
-}
+
+  // Method to generate text and update message history
+  async generateText(prompt: string): Promise<void> {
+    const model = this.generativeAI.getGenerativeModel({ model: 'gemini-pro' });
+    this.messageHistory.next([...this.messageHistory.value, { from: 'user', message: prompt }]);
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    console.log(text);
+
+    // Update chat history with bot response
+    this.messageHistory.next([...this.messageHistory.value, { from: 'bot', message: text }]);
+  }
+
+  // Method to get the message history as observable
+  public getMessageHistory(): Observable<any[]> {
+    return this.messageHistory.asObservable();
+  }
+
+  // Method to clear chat history if needed
+  public clearHistory(): void {
+    this.messageHistory.next([]);  // Clears the chat history
+  }
+} 

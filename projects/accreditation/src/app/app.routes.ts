@@ -8,6 +8,8 @@ import {
   RolePermissionComponent,
   FeatureMasterComponent,
   AuthGuard,
+  GeminiAiComponent,
+  ClaudeAiComponent,
 } from 'shared-lib';
 
 export const routes: Routes = [
@@ -18,7 +20,7 @@ export const routes: Routes = [
   // Protected Routes (Require authentication)
   {
     path: '',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       // Default Route (when no path is specified)
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -41,6 +43,8 @@ export const routes: Routes = [
             (m) => m.NirfRoutingModule
           ),
       },
+      { path: 'chat-bot', component: GeminiAiComponent },
+      { path: 'claude-bot', component: ClaudeAiComponent },
 
       // Roles and Permissions
       { path: 'role-master', component: RoleMasterComponent },

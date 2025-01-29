@@ -139,7 +139,6 @@
 					"builder": "ngx-build-plus:browser",
 					"options": {
 						"outputPath": "dist/accreditation",
-						
 						"index": "projects/accreditation/src/index.html",
 						"polyfills": [
 							"zone.js"

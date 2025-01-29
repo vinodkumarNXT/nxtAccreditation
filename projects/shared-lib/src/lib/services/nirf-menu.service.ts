@@ -14,7 +14,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/dashboard",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ],
       },
@@ -24,7 +24,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/sanctioned-intake",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -34,7 +34,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/student-strength",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -44,7 +44,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/consultancy-project-details",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -54,7 +54,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/faculty-details",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -64,7 +64,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/financial-resource",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -74,7 +74,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/ipr",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -84,7 +84,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/pcs-facility",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -94,7 +94,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/phd-student-details",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -104,7 +104,7 @@ export class NirfMenuService {
         "routerLink": "/nirf/placement-higher-studies",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       },
@@ -114,7 +114,17 @@ export class NirfMenuService {
         "routerLink": "/nirf/sponsored-research-details",
         "menuOf": ["nirf"],
         "accessBy": [
-          'admin', 'superadmin', 'principal', 'hod', 'coordinator', 
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
+          'alumni', 'dean', 'director', 'boardMember', 'accounts'
+        ]
+      },
+      {
+        "label": "Chat Bot",
+        "icon": "biotech",
+        "routerLink": "/nirf/chat-bot",
+        "menuOf": ["nirf"],
+        "accessBy": [
+          'admin', 'superadmin', 'principal', 'hod', 'coordinator',
           'alumni', 'dean', 'director', 'boardMember', 'accounts'
         ]
       }

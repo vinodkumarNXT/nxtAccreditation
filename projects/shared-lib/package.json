@@ -6,7 +6,9 @@
     "@angular/core": "^17.3.0"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "angular-sweetalert": "^1.1.2",
+    "ngx-highlightjs": "^14.0.0",
     "openai": "^4.80.1",
     "sweetalert2": "^11.12.4",
     "tslib": "^2.3.0"
