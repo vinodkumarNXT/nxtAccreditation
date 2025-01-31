@@ -7,7 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { schoolErpEndpoint } from 'projects/shell/environments/school-erp-endpoint';
 import { MaterialModule, SharableModule, FormsService, SwalService } from 'school-erp-public';
-import { UnderscoreToSpacePipe, YearMonthDayPipe, FileUploadService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureEditComponent, InfrastractureExpenditureViewComponent, TablePaginationService } from 'shared-lib';
+import {  YearMonthDayPipe, FileUploadService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureEditComponent, InfrastractureExpenditureViewComponent, TablePaginationService } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({

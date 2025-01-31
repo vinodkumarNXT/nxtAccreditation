@@ -4,12 +4,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { FileUploadService, SwalService, FormsService, MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FileUploadService, SwalService, FormsService, MaterialModule, SharableModule,  YearMonthDayPipe } from 'shared-lib';
 
 @Component({
   selector: 'lib-outreach-program-add',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './outreach-program-add.component.html',
   styleUrl: './outreach-program-add.component.css'

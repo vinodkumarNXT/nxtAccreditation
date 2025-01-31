@@ -4,12 +4,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService } from 'shared-lib';
 
 @Component({
   selector: 'lib-graduated-students-add',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './graduated-students-add.component.html',
   styleUrl: './graduated-students-add.component.css'

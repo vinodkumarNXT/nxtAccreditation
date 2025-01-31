@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { FileUploadService, FormsService, MaterialModule, SharableModule, StudentmentorRatioAddComponent, StudentmentorRatioEditComponent, StudentmentorRatioViewComponent, SwalService, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FileUploadService, FormsService, MaterialModule, SharableModule, StudentmentorRatioAddComponent, StudentmentorRatioEditComponent, StudentmentorRatioViewComponent, SwalService, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-studentmentor-ratio',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './studentmentor-ratio.component.html',
   styleUrl: './studentmentor-ratio.component.css'

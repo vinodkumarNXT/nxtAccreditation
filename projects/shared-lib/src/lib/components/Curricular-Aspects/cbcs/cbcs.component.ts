@@ -8,7 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, CbcsAddComponent, CbcsViewComponent, CbcsEditComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, CbcsAddComponent, CbcsViewComponent, CbcsEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 import { NgxPrintModule } from 'ngx-print';
 
@@ -17,7 +17,7 @@ import { NgxPrintModule } from 'ngx-print';
   templateUrl: './cbcs.component.html',
   styleUrls: ['./cbcs.component.scss'],
   standalone:true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort, NgxPrintModule],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort, NgxPrintModule],
   providers: [FormsService, SnackbarService, provideNativeDateAdapter()],
 })
 export class CbcsComponent implements OnInit , AfterViewInit  {

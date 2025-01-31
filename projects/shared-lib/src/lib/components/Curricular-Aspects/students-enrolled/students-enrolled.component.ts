@@ -9,13 +9,13 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { NgxLoadingService } from 'ngx-loading';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SwalService, TablePaginationService, StudentsEnrolledAddComponent, StudentsEnrolledViewComponent, StudentsEnrolledEditComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SwalService, TablePaginationService, StudentsEnrolledAddComponent, StudentsEnrolledViewComponent, StudentsEnrolledEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-students-enrolled',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './students-enrolled.component.html',
   styleUrl: './students-enrolled.component.css'

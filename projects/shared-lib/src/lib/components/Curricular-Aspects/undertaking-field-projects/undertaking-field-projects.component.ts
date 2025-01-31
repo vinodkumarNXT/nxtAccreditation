@@ -9,13 +9,13 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { NgxLoadingService } from 'ngx-loading';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SwalService, TablePaginationService, UndertakingFieldProjectsEditComponent, UndertakingFieldProjectsAddComponent, UndertakingFieldProjectsViewComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SwalService, TablePaginationService, UndertakingFieldProjectsEditComponent, UndertakingFieldProjectsAddComponent, UndertakingFieldProjectsViewComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-undertaking-field-projects',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
 
   templateUrl: './undertaking-field-projects.component.html',

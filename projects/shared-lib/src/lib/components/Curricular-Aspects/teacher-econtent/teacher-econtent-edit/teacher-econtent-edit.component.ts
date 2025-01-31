@@ -4,12 +4,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { FormsService, FileUploadService, SwalService, MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FormsService, FileUploadService, SwalService, MaterialModule, SharableModule,  YearMonthDayPipe } from 'shared-lib';
 
 @Component({
   selector: 'lib-teacher-econtent-edit',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './teacher-econtent-edit.component.html',
   styleUrl: './teacher-econtent-edit.component.css'

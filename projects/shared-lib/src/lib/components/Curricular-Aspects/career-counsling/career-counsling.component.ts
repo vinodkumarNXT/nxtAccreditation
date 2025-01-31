@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { CareerCounslingAddComponent, CareerCounslingEditComponent, CareerCounslingViewComponent, FileUploadService, FormsService, MaterialModule, SharableModule, SwalService, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { CareerCounslingAddComponent, CareerCounslingEditComponent, CareerCounslingViewComponent, FileUploadService, FormsService, MaterialModule, SharableModule, SwalService, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-career-counsling',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './career-counsling.component.html',
   styleUrl: './career-counsling.component.css'

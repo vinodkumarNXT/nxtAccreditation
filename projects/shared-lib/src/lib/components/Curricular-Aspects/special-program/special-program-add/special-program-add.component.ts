@@ -5,12 +5,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService } from 'shared-lib';
 
 @Component({
   selector: 'lib-special-program-add',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './special-program-add.component.html',
   styleUrl: './special-program-add.component.css'

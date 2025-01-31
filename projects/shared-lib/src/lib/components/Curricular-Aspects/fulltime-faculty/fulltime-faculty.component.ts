@@ -7,13 +7,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { FileUploadService, FormsService, FulltimeFacultyAddComponent, FulltimeFacultyEditComponent, FullTimeTeachersAddComponent, MaterialModule, SharableModule, SwalService, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FileUploadService, FormsService, FulltimeFacultyAddComponent, FulltimeFacultyEditComponent, FullTimeTeachersAddComponent, MaterialModule, SharableModule, SwalService, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-fulltime-faculty',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './fulltime-faculty.component.html',
   styleUrl: './fulltime-faculty.component.css'

@@ -7,13 +7,13 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import { schoolErpEndpoint } from 'projects/shell/environments/school-erp-endpoint';
-import { EnvironmentAuditAddComponent, EnvironmentAuditEditComponent, EnvironmentAuditViewComponent, FileUploadService, FormsService, MaterialModule, SharableModule, SwalService, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { EnvironmentAuditAddComponent, EnvironmentAuditEditComponent, EnvironmentAuditViewComponent, FileUploadService, FormsService, MaterialModule, SharableModule, SwalService, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-environment-audit',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './environment-audit.component.html',
   styleUrl: './environment-audit.component.css'

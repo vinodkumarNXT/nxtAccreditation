@@ -4,12 +4,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService } from 'shared-lib';
 
 @Component({
   selector: 'lib-internet-bandwidth-add',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './internet-bandwidth-add.component.html',
   styleUrl: './internet-bandwidth-add.component.css'

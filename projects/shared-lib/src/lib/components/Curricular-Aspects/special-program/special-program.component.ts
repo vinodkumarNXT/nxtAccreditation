@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { SwalService, TablePaginationService, FormsService, FileUploadService, SpecialProgramAddComponent, SpecialProgramEditComponent, MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, SpecialProgramViewComponent, } from 'shared-lib';
+import { SwalService, TablePaginationService, FormsService, FileUploadService, SpecialProgramAddComponent, SpecialProgramEditComponent, MaterialModule, SharableModule,  YearMonthDayPipe, SpecialProgramViewComponent, } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-special-program',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './special-program.component.html',
   styleUrl: './special-program.component.css'

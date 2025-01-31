@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, AwardsReceivedViewComponent, AwardsReceivedAddComponent, AwardsReceivedEditComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, AwardsReceivedViewComponent, AwardsReceivedAddComponent, AwardsReceivedEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-awards-received',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './awards-received.component.html',
   styleUrl: './awards-received.component.css'

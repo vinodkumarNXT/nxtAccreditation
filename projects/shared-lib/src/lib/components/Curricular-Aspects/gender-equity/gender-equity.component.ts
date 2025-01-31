@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureViewComponent, InfrastractureExpenditureEditComponent, GenderEquityAddComponent, GenderEquityViewComponent, GenderEquityEditComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureViewComponent, InfrastractureExpenditureEditComponent, GenderEquityAddComponent, GenderEquityViewComponent, GenderEquityEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-gender-equity',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './gender-equity.component.html',
   styleUrl: './gender-equity.component.css'

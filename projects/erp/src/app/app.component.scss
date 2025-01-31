@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
@@ -82,7 +81,6 @@
   /* Comment out previous colors if not in use */
   /* Table Header Color END */
 
-
   --nxtDashBgColor-1: #f8f9fa; /* Light Gray */
   --nxtDashBgColor-2: #fff4e6; /* Light Peach */
   --nxtDashBgColor-3: #e7f5ff; /* Light Blue */
@@ -133,7 +131,6 @@
 .nxtDashLargeCard:nth-child(12) {
   background-color: var(--nxtDashBgColor-12);
 }
-
 
 /* Root  style and Color Picker Ends Here */
 
@@ -287,10 +284,6 @@ button:active {
       height: 100%;
     }
   }
-
-
-
-  
 }
 
 // :vertical Menu Css Starts Here
@@ -579,7 +572,9 @@ button:active {
   background-color: var(--nxtToolBarBG) !important;
   color: var(--nxtBlack) !important;
   height: 50px !important;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 0 0 5px 0 !important;
 
   h2.brandHeader {
@@ -633,7 +628,9 @@ button:active {
 }
 
 ::ng-deep .mat-mdc-paginator-container {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 ::ng-deep .mainHeading {
@@ -1290,7 +1287,6 @@ p.nxtCopyRights {
   }
 
   .nxtPrimeFormContainer {
-
     .nxtPrimeFormBlock {
       .p-calendar {
         min-width: 100%;
@@ -1321,23 +1317,21 @@ p.nxtCopyRights {
         }
 
         .p-dropdown {
-
-          .p-placeholder{
+          .p-placeholder {
             font-size: 12px;
           }
         }
 
-        p-inputnumber{
-         .p-inputnumber {
-           width: 100% !important;
-           min-width: 100%  !important ;
-           .p-inputnumber-input{
-             width: 100%;
-             min-width: 100%          
-           }
+        p-inputnumber {
+          .p-inputnumber {
+            width: 100% !important;
+            min-width: 100% !important ;
+            .p-inputnumber-input {
+              width: 100%;
+              min-width: 100%;
+            }
           }
-      }
-        
+        }
       }
     }
 
@@ -1361,12 +1355,11 @@ p.nxtCopyRights {
 }
 
 ::ng-deep .nxtPrimeFormBlock {
-
- .brandLogo {
+  .brandLogo {
     height: 70px;
     width: 150px;
     object-fit: contain;
-}
+  }
   .p-calendar {
     border-radius: 12px !important;
   }
@@ -1375,7 +1368,7 @@ p.nxtCopyRights {
     border-radius: 12px !important;
   }
 
-  .p-dropdown{
+  .p-dropdown {
     border-radius: 12px !important;
   }
 }
@@ -1412,40 +1405,36 @@ p.nxtCopyRights {
           width: 50px;
           height: 50px;
           object-fit: scale-down;
-      }
+        }
 
+        .logoBlock {
+          // width: 400px;
 
-      .logoBlock {
-        // width: 400px;
-      
-        .logoContainer {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      
-          .brandLogo {
-            max-width: 100%; // Ensures image does not overflow
-            height: auto;    // Maintains aspect ratio
+          .logoContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .brandLogo {
+              max-width: 100%; // Ensures image does not overflow
+              height: auto; // Maintains aspect ratio
+            }
+          }
+
+          .textContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .brandName {
+              font-size: 22px; // Adjust text size
+              font-weight: bold; // Make it stand out
+              color: var(--nxtIndigo); // Darker text color
+              padding: 0 0 0 5px;
+              margin: 0;
+            }
           }
         }
-      
-        .textContainer {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      
-          .brandName {
-            font-size: 22px; // Adjust text size
-            font-weight: bold; // Make it stand out
-            color: var(--nxtIndigo);    // Darker text color
-            padding: 0 0 0 5px;
-            margin: 0;
-          }
-        }
-      }
-
-
-
       }
 
       .nxtPrimeBreadCom {
@@ -1494,13 +1483,14 @@ p.nxtCopyRights {
       border-radius: 0px;
     }
 
-    .p-megamenu-root-list>.p-menuitem{
+    .p-megamenu-root-list > .p-menuitem {
       background-color: #fff !important;
-      box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px !important;
+      box-shadow:
+        rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+        rgba(9, 30, 66, 0.08) 0px 0px 0px 1px !important;
       margin: 0 5px;
       border-radius: 3px;
     }
-
 
     .nxtPrimeGlobalSearch {
       position: relative;
@@ -1541,10 +1531,12 @@ p.nxtCopyRights {
               font-family: "Alegreya Sans SC", sans-serif;
               font-size: 17px;
               text-transform: capitalize;
-              transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and scale */
+              transition:
+                color 0.3s ease,
+                transform 0.3s ease; /* Transition for color and scale */
               font-weight: 600;
 
-              .megaMenuSvg{
+              .megaMenuSvg {
                 height: 26px;
                 margin-right: 4px;
               }
@@ -1562,8 +1554,8 @@ p.nxtCopyRights {
         }
 
         .p-megamenu-panel {
-          top: 41px ;
-          
+          top: 41px;
+
           .p-submenu-header {
             margin: 0;
             padding: 4px;
@@ -1572,7 +1564,7 @@ p.nxtCopyRights {
             border: none !important;
             font-size: 16px;
             text-transform: capitalize;
-            padding: 6px  11px !important;
+            padding: 6px 11px !important;
             background-color: #f7f7f7;
           }
 
@@ -1583,7 +1575,9 @@ p.nxtCopyRights {
             border-radius: 3px !important;
             color: var(--nxtDarkGrey) !important;
             text-align: start;
-            transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and scale */
+            transition:
+              color 0.3s ease,
+              transform 0.3s ease; /* Transition for color and scale */
 
             &:hover {
               color: var(--nxtBlack) !important;
@@ -1607,16 +1601,14 @@ p.nxtCopyRights {
   &Left {
     margin: 0;
 
-
-    .nxtDashProfileContainer{
+    .nxtDashProfileContainer {
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       border-radius: 10px;
       margin: 10px 10px 30px 10px;
       border: 2px solid #e2d6e3;
       background-color: #ece1ff;
-      
-      
-      .nxtDashProfileContent{
+
+      .nxtDashProfileContent {
         background-image: url("https://static.vecteezy.com/system/resources/thumbnails/018/837/590/small/wave-lines-smooth-flowing-dynamic-green-gradient-isolated-on-transparent-background-png.png"); // Ensure correct path and quotes
         background-size: inherit;
         background-repeat: round;
@@ -1626,8 +1618,7 @@ p.nxtCopyRights {
         margin: 2px !important;
         border-radius: 8px;
         background-color: #fff;
-    
-        
+
         .imageContainer {
           position: relative;
           background-image: url("../assets/svg/profileBg.svg"); // Ensure correct path and quotes
@@ -1636,7 +1627,7 @@ p.nxtCopyRights {
           width: 150px;
           height: 150px;
           border-radius: 10px;
-        
+
           .profileImg {
             position: relative;
             top: 22%;
@@ -1648,17 +1639,17 @@ p.nxtCopyRights {
           }
         }
 
-        .profileDetailsBlock{
-            padding: 15px;
+        .profileDetailsBlock {
+          padding: 15px;
 
-          .welcome{
+          .welcome {
             margin: 0;
             font-family: "Kaushan Script", cursive;
             font-size: 25px;
             color: var(--nxtIndigo);
             padding-bottom: 3px;
           }
-          .name{
+          .name {
             margin: 0;
             font-family: "Kaushan Script", cursive;
             font-size: 17px;
@@ -1666,7 +1657,7 @@ p.nxtCopyRights {
             padding-bottom: 6px;
           }
 
-          .role{
+          .role {
             margin: 0;
             font-family: "Kaushan Script", cursive;
             font-size: 13px;
@@ -1674,7 +1665,7 @@ p.nxtCopyRights {
             padding-bottom: 3px;
           }
 
-          .desgination{
+          .desgination {
             margin: 0;
             font-family: "Kaushan Script", cursive;
             font-size: 13px;
@@ -1682,52 +1673,50 @@ p.nxtCopyRights {
             padding-bottom: 3px;
           }
         }
-
       }
     }
 
-    .nxtDashLargeCard{
+    .nxtDashLargeCard {
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       border-radius: 3px;
       padding: 9px;
       background-color: var(--nxtDashBgColor);
-      margin:  5px 4px  ;
+      margin: 5px 4px;
       border: 1px solid #d9d9d9 !important;
       color: var(--nxtBlack);
       text-decoration: none !important;
       transform: scale(1);
-      transition: color 0.3s ease, transform 0.3s ease;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 
       &:hover {
         background-color: var(--nxtDashBgColor);
         color: indigo;
         transform: scale(1.03);
-        transition: color 0.3s ease, transform 0.3s ease;
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
         border: 1px solid #d7c8ff !important;
-
       }
-      
 
-      .nxtDashLargeCardLeft{
+      .nxtDashLargeCardLeft {
         // width: 50px;
         // padding: 5px;
 
-
-        .dashboardIcon{
+        .dashboardIcon {
           width: 30px;
         }
       }
 
-      .nxtDashLargeCardRight{
-        p{
+      .nxtDashLargeCardRight {
+        p {
           padding: 0;
           margin: 0;
           font-size: 14px;
           font-weight: 600;
         }
       }
-
-
     }
 
     .nxtschoolAdminDashboard {
@@ -1741,7 +1730,7 @@ p.nxtCopyRights {
         justify-content: center;
         gap: 10px;
 
-        .chartTitle{
+        .chartTitle {
           font-size: 18px;
           margin: 0;
           color: var(--nxtDashChart2);
@@ -1760,7 +1749,8 @@ p.nxtCopyRights {
         border-radius: 8px;
         background-color: #ffffff;
         margin-bottom: 30px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
           rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
         // PrimeNG Chart Styling Overrides (if needed)
@@ -1792,7 +1782,8 @@ p.nxtCopyRights {
 ::ng-deep .nxtContentBlogContainer {
   .p-fieldset {
     margin-bottom: 15px !important;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
     /* Zoom effect on hover */
@@ -1818,69 +1809,62 @@ p.nxtCopyRights {
       min-width: 30%;
       max-width: 90%;
     }
-    
-  //   .postMainHeader {
-  //     background-image: url('../assets/svg/legendBg.png');
-  //     background-repeat: no-repeat;
-  //     background-size: cover;
-  //     width: 230px;
-  //     height: 50px;
-  // }
 
-  .author {
-    padding: 20px 0px 0px 0px;
-    font-size: 14px;
-  
-    .pi {
-      margin-right: 5px; /* Adds space between the icon and the text */
-    }
-  }
-  
- 
-    
-      .blagHeaderTitle {
-        padding: 2px 15px;
-        color: #b10000;
-        font-weight: bold;
-        font-size: 17px;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        font-family: "Kaushan Script", cursive;
-       
+    //   .postMainHeader {
+    //     background-image: url('../assets/svg/legendBg.png');
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     width: 230px;
+    //     height: 50px;
+    // }
+
+    .author {
+      padding: 20px 0px 0px 0px;
+      font-size: 14px;
+
+      .pi {
+        margin-right: 5px; /* Adds space between the icon and the text */
       }
-    
-      // .blagHeaderTitle::before,
-      // .blagHeaderTitle::after {
-      //   font-family: 'PrimeIcons'; /* Font for PrimeNG icons */
-      //   font-weight: normal;
-      //   font-size: 24px; /* Adjust size of the arrow */
-      //   color: red; /* Color for arrows */
-      //   padding: 0 10px; /* Space around arrows */
-      // }
-    
-      // .blagHeaderTitle::before {
-      //   content: '\e951'; /* pi-angle-double-left icon */
-      //   margin-right: 10px; /* Space between the arrow and text */
-      // }
-    
-      // /* Using pi-angle-double-right (PrimeNG icon) */
-      // .blagHeaderTitle::after {
-      //   content: '\e952'; /* pi-angle-double-right icon */
-      //   margin-left: 10px; /* Space between the arrow and text */
-      // }
-    
-    
+    }
+
+    .blagHeaderTitle {
+      padding: 2px 15px;
+      color: #b10000;
+      font-weight: bold;
+      font-size: 17px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      font-family: "Kaushan Script", cursive;
+    }
+
+    // .blagHeaderTitle::before,
+    // .blagHeaderTitle::after {
+    //   font-family: 'PrimeIcons'; /* Font for PrimeNG icons */
+    //   font-weight: normal;
+    //   font-size: 24px; /* Adjust size of the arrow */
+    //   color: red; /* Color for arrows */
+    //   padding: 0 10px; /* Space around arrows */
+    // }
+
+    // .blagHeaderTitle::before {
+    //   content: '\e951'; /* pi-angle-double-left icon */
+    //   margin-right: 10px; /* Space between the arrow and text */
+    // }
+
+    // /* Using pi-angle-double-right (PrimeNG icon) */
+    // .blagHeaderTitle::after {
+    //   content: '\e952'; /* pi-angle-double-right icon */
+    //   margin-left: 10px; /* Space between the arrow and text */
+    // }
   }
 
-  
-  
   .p-element {
     .p-fieldset-content {
-      .blogTitle{
+      .blogTitle {
         margin: 0;
         font-weight: 600;
         color: var(--nxtIndigo);
@@ -1888,7 +1872,6 @@ p.nxtCopyRights {
         padding-bottom: 9px;
         font-family: "Kaushan Script", cursive;
       }
-
 
       p {
         span {
@@ -1959,9 +1942,9 @@ p.nxtCopyRights {
 
     .p-timeline-event-separator {
       width: 30px;
-  }
+    }
 
-    .p-timeline-event-opposite{
+    .p-timeline-event-opposite {
       display: none;
     }
 
@@ -1978,13 +1961,13 @@ p.nxtCopyRights {
       left: -8px;
     }
 
-
     .p-timeline-event-content {
       padding: 1rem;
       border-radius: 8px;
 
       .p-card {
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        box-shadow:
+          rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
           rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
           rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset !important;
       }
@@ -2071,8 +2054,6 @@ p.nxtCopyRights {
 }
 
 ::ng-deep .nxtPrimeSchoolAdminLogin {
-
-
   // background-image: url("https://img.freepik.com/free-vector/flat-design-abstract-background-with-colorful-shapes_23-2149110496.jpg?t=st=1732767798~exp=1732771398~hmac=e7ae788f2e53740e75b69a0e9e423692e185188167d62ec03871a9d04b12aa6a&w=1060");
   background-image: url("https://img.freepik.com/free-vector/flat-design-abstract-background-with-colorful-shapes_23-2149110489.jpg?t=st=1732766804~exp=1732770404~hmac=0059e0ea8d28846324a2caaf27cadb2ea882ad30a8421bb8d5ca9fe91ef35105&w=1060");
   width: 100%;
@@ -2111,30 +2092,26 @@ p.nxtCopyRights {
   }
 }
 
-
-::ng-deep  .globalRouter{
+::ng-deep .globalRouter {
   z-index: 999;
 }
 
-
-::ng-deep  .nxtPrimaGlobalTabModalTitle{
-
+::ng-deep .nxtPrimaGlobalTabModalTitle {
   .p-dialog-header {
-    .p-dialog-title{
+    .p-dialog-title {
       font-size: 20px !important;
-      color: #FF6500;
-      text-transform: capitalize;;
-
+      color: #ff6500;
+      text-transform: capitalize;
     }
   }
-  .nxtPrimaGlobalTabs{
+  .nxtPrimaGlobalTabs {
     .p-tabmenu {
       .p-tabmenu-nav {
         .p-tabmenuitem {
-          .p-menuitem-link{
+          .p-menuitem-link {
             padding: 10px 14px;
             font-size: 15px;
-            i{
+            i {
               font-size: 17px !important;
               margin-right: 4px;
             }
@@ -2145,49 +2122,207 @@ p.nxtCopyRights {
               background: #fff;
               border-color: var(--nxtIndigo);
               color: var(--nxtIndigo) !important;
+            }
           }
-          }
-
         }
       }
     }
   }
-} 
+}
 
-
-::ng-deep   .nxtStdProfileContainer {
+::ng-deep .nxtStdProfileContainer {
   border-right: 1px solid #dfdfdf;
   margin: 30px 0;
 
-  .p-image-preview-container>img {
+  .profilerBlock {
+    text-align: center;
+  }
+
+  .p-image-preview-container > img {
     border: 1px solid #8d8d8d;
     border-radius: 50%;
     object-fit: contain;
-}
-
-.studentRollNumber{
-  padding-bottom: 20px;
-
-}
-
-.studentRollNumber,
-.studentEmail{
-  margin: 0;
-  padding-bottom: 10px;
-
-  i{
-    margin: 0px 3px;
-    font-size: 15px;
-
   }
 
+  .studentRollNumber,
+  .studentEmail {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--nxtIndigo);
+    font-family: "Lato";
+
+    i {
+      margin: 0px 5px;
+      font-size: 15px;
+      color: var(--nxtDarkGrey);
+    }
+  }
+
+  .studentRollNumber {
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--nxtOrange);
+    text-align: center;
+  }
+
+  .p-image-preview-container:hover > .p-image-preview-indicator {
+    border-radius: 50%;
+  }
 }
 
-.p-image-preview-container:hover>.p-image-preview-indicator{
-  border-radius: 50%;
+::ng-deep .nxtStdProfileContainerDetails,
+.nxtStdProfileBlockLeft,
+.nxtStdProfileBlockRight {
+  .section,
+  .address,
+  .attendance,
+  .transport {
+    h3 {
+      color: var(--nxtOrange);
+      font-size: 25px;
+      font-weight: 600;
+      margin: 0;
+      padding: 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        color: var(--nxtIndigo);
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0 5px;
+
+        strong {
+          padding: 0 5px;
+        }
+
+        i {
+          color: var(--nxtDarkGrey);
+          font-size: 18px;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
 }
 
+::ng-deep .particularAttendance {
+  border: 2px dashed var(--nxtDarkGrey);
+  padding: 30px 60px;
+  margin-top: 50px;
 
+  .attendanceBlock {
+    border: 4px solid;
+    transform: skewx(-23deg);
+    padding: 10px;
+    position: relative;
+
+    .imgLogo {
+      width: 50px;
+      height: 50px;
+      object-fit: scale-down;
+      margin-left: 10%;
+      transform: skewx(20deg);
+    }
+
+    .attendanceBlockValue {
+      position: absolute;
+      right: -31px;
+      background-color: #fff;
+      width: 60px;
+      text-align: center;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h4 {
+        margin: 0;
+        font-size: 25px;
+        font-weight: 600;
+        padding-bottom: 5px;
+      }
+
+      p.nameofAttendance {
+        margin: 0;
+        font-size: 15px;
+        padding-bottom: 5px;
+        color: var(--nxtDarkGrey);
+      }
+    }
+  }
+
+  .attendanceSkyBlue {
+    color: var(--nxtSkyBlue);
+    border-color: var(--nxtSkyBlue);
+  }
+
+  .attendancePrimary {
+    color: var(--nxtDarkBtn);
+    border-color: var(--nxtDarkBtn);
+  }
+
+  .attendanceOrange {
+    color: var(--nxtOrange);
+    border-color: var(--nxtOrange);
+  }
+
+  .attendanceGreen {
+    color: var(--nxtSuccessBtn);
+    border-color: var(--nxtSuccessBtn);
+  }
 }
 
+::ng-deep .particularAttGraph {
+  .graphBlock {
+    border: 2px dashed #dfdfdf;
+    padding: 20px;
+    margin: 20px;
+  }
+}
 
+::ng-deep .particularCertificate {
+  h4 {
+    margin: 0;
+  }
+
+  .particularCertificateRight img {
+    width: 40px; // Adjust size as needed
+    height: auto;
+  }
+}
+
+::ng-deep .particularCertificatesBlock {
+  padding: 30px;
+  margin: 30px 0;
+
+  .particularCertificate {
+    border: 1px dashed rgba(221, 221, 221, 0.8666666667);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .appiled {
+    background-color: #fbfbfb;
+  }
+
+  .pending {
+    background-color: #fffcde;
+  }
+
+  .apporved {
+    background-color: #d4ffd4;
+  }
+
+  .rejcetd {
+    background-color: #ffcbcb;
+  }
+}

@@ -4,12 +4,12 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SwalService, FileUploadService } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SwalService, FileUploadService } from 'shared-lib';
 
 @Component({
   selector: 'lib-reserved-category-add',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './reserved-category-add.component.html',
   styleUrl: './reserved-category-add.component.css'

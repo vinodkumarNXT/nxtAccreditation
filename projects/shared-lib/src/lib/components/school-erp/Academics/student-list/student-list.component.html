@@ -582,9 +582,12 @@
                   fxFlex="70">
                   <!-- Left Section -->
                   <div class="nxtStdProfileContainer" fxFlex="20">
-                    <p-image
-                      src="https://img.freepik.com/premium-photo/portrait-documents-passport-photo-young-female-natural-look_100800-10816.jpg"
-                      alt="Image" width="110" height="110" border-radius="50%" z-index="1099" [preview]="true" />
+                    <div class="profilerBlock">
+                      <p-image
+                        src="https://img.freepik.com/premium-photo/portrait-documents-passport-photo-young-female-natural-look_100800-10816.jpg"
+                        alt="Image" width="110" height="110" border-radius="50%" z-index="1099" [preview]="true" />
+
+                    </div>
 
                     <h3 class="studentRollNumber">
                       <i class="pi pi-hashtag"></i>{{ "2432094354" }}
@@ -609,85 +612,161 @@
 
                   <!-- Right Section -->
                   <!-- Right Section -->
-                  <div class="nxtStdProfileContainerDetails" fxFlex="80" fxLayout="row wrap" fxFlexAlign="space-between start" fxLayoutGap="5px">
+                  <div class="nxtStdProfileContainerDetails" fxFlex="80" fxLayout="row wrap"
+                    fxFlexAlign="space-between start" fxLayoutGap="5px">
 
                     <!-- Contact Information -->
                     <div class="section" fxFlex="95">
                       <h3>Contact Information</h3>
-                      <p><strong>Phone:</strong> {{ stdProfileData[0].contact.phone }}</p>
-                      <p><strong>Address:</strong> {{ stdProfileData[0].contact.address }}</p>
+                      <p><strong> <i class="pi pi-phone"></i> Phone:</strong> {{ stdProfileData[0].contact.phone }}</p>
+                      <p><strong> <i class="pi pi-home"></i> Address:</strong> {{ stdProfileData[0].contact.address }}
+                      </p>
                     </div>
-                  
+
                     <!-- Academic Information -->
                     <div class="section" fxFlex="95">
                       <h3>Academic Information</h3>
                       <ul>
-                        <li><strong>Branch ID:</strong> {{ stdProfileData[0].branch_id }}</li>
-                        <li><strong>Board:</strong> {{ stdProfileData[0].board }}</li>
-                        <li><strong>Year:</strong> {{ stdProfileData[0].year }}</li>
-                        <li><strong>Program ID:</strong> {{ stdProfileData[0].program_id }}</li>
-                        <li><strong>Group ID:</strong> {{ stdProfileData[0].group_id }}</li>
-                        <li><strong>Faculty ID:</strong> {{ stdProfileData[0].faculty_id }}</li>
-                        <li><strong>Class ID:</strong> {{ stdProfileData[0].class_id }}</li>
-                        <li><strong>Section ID:</strong> {{ stdProfileData[0].section_id }}</li>
-                        <li><strong>Session ID:</strong> {{ stdProfileData[0].session_id }}</li>
+                        <li><i class="pi pi-id-card"></i> <strong>Branch ID:</strong> {{ stdProfileData[0].branch_id }}
+                        </li>
+                        <li><i class="pi pi-book"></i> <strong>Board:</strong> {{ stdProfileData[0].board }}</li>
+                        <li><i class="pi pi-calendar"></i> <strong>Year:</strong> {{ stdProfileData[0].year }}</li>
+                        <li><i class="pi pi-list"></i> <strong>Program ID:</strong> {{ stdProfileData[0].program_id }}
+                        </li>
+                        <li><i class="pi pi-users"></i> <strong>Group ID:</strong> {{ stdProfileData[0].group_id }}</li>
+                        <li><i class="pi pi-user"></i> <strong>Faculty ID:</strong> {{ stdProfileData[0].faculty_id }}
+                        </li>
+                        <li><i class="pi pi-building"></i> <strong>Class ID:</strong> {{ stdProfileData[0].class_id }}
+                        </li>
+                        <li><i class="pi pi-map"></i> <strong>Section ID:</strong> {{ stdProfileData[0].section_id }}
+                        </li>
+                        <li><i class="pi pi-clock"></i> <strong>Session ID:</strong> {{ stdProfileData[0].session_id }}
+                        </li>
                       </ul>
+
                     </div>
-                  
+
                     <!-- Admission Details -->
                     <div class="section" fxFlex="95">
                       <h3>Admission Details</h3>
                       <ul>
-                        <li><strong>Student ID:</strong> {{ stdProfileData[0].student_id }}</li>
-                        <li><strong>Registration No:</strong> {{ stdProfileData[0].registration_no }}</li>
-                        <li><strong>Admission No:</strong> {{ stdProfileData[0].admission_no }}</li>
-                        <li><strong>Roll No:</strong> {{ stdProfileData[0].roll_no }}</li>
-                        <li><strong>Admission Type ID:</strong> {{ stdProfileData[0].admission_type_id }}</li>
-                        <li><strong>Seat Type ID:</strong> {{ stdProfileData[0].seat_type_id }}</li>
-                        <li><strong>Admission Date:</strong> {{ stdProfileData[0].admission_date | date }}</li>
-                        <li><strong>Joining Date:</strong> {{ stdProfileData[0].joining_date | date }}</li>
-                        <li><strong>Distance from Residence:</strong> {{ stdProfileData[0].distance_from_residence }}</li>
+                        <li><i class="pi pi-id-card"></i> <strong>Student ID:</strong> {{ stdProfileData[0].student_id
+                          }}</li>
+                        <li><i class="pi pi-file"></i> <strong>Registration No:</strong> {{
+                          stdProfileData[0].registration_no }}</li>
+                        <li><i class="pi pi-book"></i> <strong>Admission No:</strong> {{ stdProfileData[0].admission_no
+                          }}</li>
+                        <li><i class="pi pi-user"></i> <strong>Roll No:</strong> {{ stdProfileData[0].roll_no }}</li>
+                        <li><i class="pi pi-list"></i> <strong>Admission Type ID:</strong> {{
+                          stdProfileData[0].admission_type_id }}</li>
+                        <li><i class="pi pi-users"></i> <strong>Seat Type ID:</strong> {{ stdProfileData[0].seat_type_id
+                          }}</li>
+                        <li><i class="pi pi-calendar"></i> <strong>Admission Date:</strong> {{
+                          stdProfileData[0].admission_date | date }}</li>
+                        <li><i class="pi pi-clock"></i> <strong>Joining Date:</strong> {{ stdProfileData[0].joining_date
+                          | date }}</li>
+                        <li><i class="pi pi-map-marker"></i> <strong>Distance from Residence:</strong> {{
+                          stdProfileData[0].distance_from_residence }}</li>
                       </ul>
+
                     </div>
-                  
+
                     <!-- Permanent Address -->
-                    <div class="address" fxFlex="45">
-                      <h5><strong>Permanent Address:</strong></h5>
-                      <p><strong>Country:</strong> {{ stdProfileData[0].permanent_address.country }}</p>
-                      <p><strong>State:</strong> {{ stdProfileData[0].permanent_address.state }}</p>
-                      <p><strong>District:</strong> {{ stdProfileData[0].permanent_address.district }}</p>
-                      <p><strong>Pincode:</strong> {{ stdProfileData[0].permanent_address.pincode }}</p>
-                      <p><strong>Address 1:</strong> {{ stdProfileData[0].permanent_address.address_1 }}</p>
+                    <div class="section address" fxFlex="45">
+                      <h3>Permanent Address:</h3>
+                      <ul>
+                        <li><i class="pi pi-globe"></i> <strong>Country:</strong> {{
+                          stdProfileData[0].present_address.country }}</li>
+                        <li><i class="pi pi-map-marker"></i> <strong>State:</strong> {{
+                          stdProfileData[0].present_address.state }}</li>
+                        <li><i class="pi pi-map-marker"></i> <strong>District:</strong> {{
+                          stdProfileData[0].present_address.district }}</li>
+                        <li><i class="pi pi-hashtag"></i> <strong>Pincode:</strong> {{
+                          stdProfileData[0].present_address.pincode }}</li>
+                        <li><i class="pi pi-home"></i> <strong>Address 1:</strong> {{
+                          stdProfileData[0].present_address.address_1 }}</li>
+
+                      </ul>
+
                     </div>
-                  
+
                     <!-- Present Address -->
-                    <div class="address" fxFlex="45">
-                      <h5><strong>Present Address:</strong></h5>
-                      <p><strong>Country:</strong> {{ stdProfileData[0].present_address.country }}</p>
-                      <p><strong>State:</strong> {{ stdProfileData[0].present_address.state }}</p>
-                      <p><strong>District:</strong> {{ stdProfileData[0].present_address.district }}</p>
-                      <p><strong>Pincode:</strong> {{ stdProfileData[0].present_address.pincode }}</p>
-                      <p><strong>Address 1:</strong> {{ stdProfileData[0].present_address.address_1 }}</p>
+                    <div class="section address" fxFlex="45">
+                      <h3><i class="pi pi-map"></i> Present Address:</h3>
+
+                      <ul>
+                        <li><i class="pi pi-globe"></i> <strong>Country:</strong> {{
+                          stdProfileData[0].present_address.country }}</li>
+                        <li><i class="pi pi-map-marker"></i> <strong>State:</strong> {{
+                          stdProfileData[0].present_address.state }}</li>
+                        <li><i class="pi pi-map-marker"></i> <strong>District:</strong> {{
+                          stdProfileData[0].present_address.district }}</li>
+                        <li><i class="pi pi-hashtag"></i> <strong>Pincode:</strong> {{
+                          stdProfileData[0].present_address.pincode }}</li>
+                        <li><i class="pi pi-home"></i> <strong>Address 1:</strong> {{
+                          stdProfileData[0].present_address.address_1 }}</li>
+
+                      </ul>
+
                     </div>
-                  
+
                   </div>
-                  
+
 
 
 
                 </div>
 
                 <!-- Right Block -->
-                <div class="nxtStdProfileBlockRight" fxFlex="30" fxLayout="row" fxFlexAlign="start center">
-                   <!-- Attendance Information -->
-                          <div class="attendance" fxFlex="95">
-                            <h3>Attendance Information</h3>
-                            <ul>
-                              <li><strong>Total Classes Held:</strong> {{ stdProfileData[0].attendance.total_classes }}</li>
-                              <li><strong>Classes Attended:</strong> {{ stdProfileData[0].attendance.classes_attended }}</li>
-                              <li><strong>Attendance Percentage:</strong> {{ stdProfileData[0].attendance.attendance_percentage }}%</li>
-                            </ul>
-                          </div>
+                <div class="nxtStdProfileBlockRight nxtStdProfileContainerDetails" fxFlex="30" fxLayout="row wrap">
+                  <!-- Attendance Information -->
+                  <div class="attendance section" fxFlex="95">
+                    <h3><i class="pi pi-calendar"></i> Attendance Information</h3>
+                    <ul>
+                      <li><i class="pi pi-book"></i> <strong>Total Classes Held:</strong> {{
+                        stdProfileData[0].attendance.total_classes }}
+                      </li>
+                      <li><i class="pi pi-check"></i> <strong>Classes Attended:</strong> {{
+                        stdProfileData[0].attendance.classes_attended }}
+                      </li>
+                      <li><i class="pi pi-percentage"></i> <strong>Attendance Percentage:</strong> {{
+                        stdProfileData[0].attendance.attendance_percentage }}%</li>
+                      <li><i class="pi pi-times"></i> <strong>Classes Absent:</strong> {{
+                        stdProfileData[0].attendance.total_classes -
+                        stdProfileData[0].attendance.classes_attended }}</li>
+                      <li><i class="pi pi-clock"></i> <strong>Late Attendance:</strong> {{
+                        stdProfileData[0].attendance.attendance_percentage ||
+                        '0' }}</li>
+                      <li>
+                        <i class="pi pi-info-circle"></i> <strong>Attendance Status:</strong>
+                        <span
+                          [ngClass]="{ 'text-success': stdProfileData[0].attendance.attendance_percentage >= 75, 'text-warning': stdProfileData[0].attendance.attendance_percentage >= 50 && stdProfileData[0].attendance.attendance_percentage < 75, 'text-danger': stdProfileData[0].attendance.attendance_percentage < 50 }">
+                          {{ stdProfileData[0].attendance.attendance_percentage >= 75 ? 'Good' :
+                          (stdProfileData[0].attendance.attendance_percentage >= 50 ? 'Needs Improvement' : 'Low
+                          Attendance') }}
+                        </span>
+                      </li>
+                    </ul>
+
+                  </div>
+
+
+                  <div class="transport section" fxFlex="95">
+                    <h3><i class="pi pi-bus"></i> Transport Route Information</h3>
+                    <ul>
+                      <li><i class="pi pi-route"></i> <strong>Route Number:</strong> {{"T1001" }}</li>
+                      <li><i class="pi pi-map-marker"></i> <strong>Bus Stop:</strong> {{"Main Campus"}}</li>
+                      <li><i class="pi pi-clock"></i> <strong>Departure Time:</strong> {{"2025-01-30T08:30:00" }}</li>
+                      <li><i class="pi pi-car"></i> <strong>Vehicle Number:</strong> {{"2025-01-30"}}</li>
+                      <li><i class="pi pi-info-circle"></i> <strong>Transport Status:</strong>
+                        <span>
+                          {{ "Active" }}
+                        </span>
+                      </li>
+                    </ul>
+
+                  </div>
+
                 </div>
               </div>
 
@@ -699,16 +778,316 @@
             <!-- Academic Details -->
             <div *ngSwitchCase="'academicDetails'">
               <p>Here are the Academic Details.</p>
+
+              <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                [loading]="loading" [paginator]="true"
+                [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                <!-- Caption with Global Search -->
+                <ng-template pTemplate="caption">
+                  <div class="flex">
+
+                    <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                      <input pInputText type="text" [(ngModel)]="searchValue"
+                        (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                      <i class="pi pi-search"></i>
+                    </span>
+
+                    <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                      icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                    <p-button class="nxtTableGlobalAdd" label="Add" [outlined]="true" severity="warning"
+                      icon="pi pi-plus" (onClick)="openAddDialog()" />
+
+                  </div>
+                </ng-template>
+
+                <!-- Header with Column Filters -->
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"Name"}}
+                        <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"Board"}}
+                        <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"(Year)"}}
+                        <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"Status"}}
+                        <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+
+
+                    <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                  </tr>
+                </ng-template>
+
+                <!-- Body -->
+                <ng-template pTemplate="body" let-element>
+                  <tr>
+                    <td>{{ element.fullName }}</td>
+                    <td>{{ element.boardName }}</td>
+                    <td>{{ element.currentYear }}</td>
+                    <td>
+                      <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                        [style.color]="element.status === 1 ? 'green' : 'red'"
+                        [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                      </i>
+                    </td>
+
+                    <td class="nxtPrimeTableAction">
+
+                      <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                        class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                      </p-splitButton>
+
+                    </td>
+                  </tr>
+                </ng-template>
+
+                <!-- Empty Message -->
+                <ng-template pTemplate="emptymessage">
+                  @if(dt2.columns){
+                  <tr>
+                    <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                      No data found.
+                    </td>
+                  </tr>
+                  }
+                </ng-template>
+              </p-table>
             </div>
 
             <!-- Attendance -->
             <div *ngSwitchCase="'attendance'">
-              <p>Attendance records will be shown here.</p>
+              <!-- <p>Attendance records will be shown here.</p> -->
+
+              <div class="particularAttendance" fxLayout="row" fxLayoutAlign="space-between center">
+
+
+                <div class="attendanceBlock attendancePrimary" fxFlex="15" fxLayout="row"
+                  fxLayoutAlign="space-between center">
+                  <img src="../../../../assets/svg/particularAttendance-7.svg" alt="" class="imgLogo">
+                  <div class="attendanceBlockValue" fxLayout="column">
+                    <h4 class="attendancePrimary">2</h4>
+                    <p class="nameofAttendance">Absent</p>
+                  </div>
+                </div>
+
+
+
+                <div class="attendanceBlock attendanceGreen" fxFlex="15" fxLayout="row"
+                  fxLayoutAlign="space-between center">
+                  <img src="../../../../assets/svg/particularAttendance-3.svg" alt="" class="imgLogo">
+                  <div class="attendanceBlockValue" fxLayout="column">
+                    <h4 class="attendanceGreen">23</h4>
+                    <p class="nameofAttendance">Present</p>
+                  </div>
+                </div>
+
+
+
+
+                <div class="attendanceBlock attendanceOrange" fxFlex="15" fxLayout="row"
+                  fxLayoutAlign="space-between center">
+                  <img src="../../../../assets/svg/particularAttendance-1.svg" alt="" class="imgLogo">
+                  <div class="attendanceBlockValue" fxLayout="column">
+                    <h4 class="attendanceOrange">1</h4>
+                    <p class="nameofAttendance">Late</p>
+                  </div>
+                </div>
+
+
+
+
+
+
+                <div class="attendanceBlock attendanceSkyBlue" fxFlex="15" fxLayout="row"
+                  fxLayoutAlign="space-between center">
+                  <img src="../../../../assets/svg/particularAttendance-6.svg" alt="" class="imgLogo">
+                  <div class="attendanceBlockValue" fxLayout="column">
+                    <h4 class="attendanceSkyBlue">25</h4>
+                    <p class="nameofAttendance">Total</p>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="particularAttGraph" fxLayout="row" fxLayoutAlign="space-between center">
+
+                <div class="graphBlock">
+
+                  <!-- <google-chart [type]="myTypePie" [data]="myDataPie"></google-chart> -->
+                  <canvas id="lineChart"></canvas>
+
+                </div>
+
+
+                <div class="graphBlock"></div>
+                <div class="graphBlock"></div>
+              </div>
+
             </div>
 
-            <!-- Notice & Upcoming Events -->
-            <div *ngSwitchCase="'certificates'">
-              <p>Stay updated with Notices and Upcoming Events.</p>
+
+            <div *ngSwitchCase="'certificates'" class="particularCertificates">
+
+              <div class="particularCertificatesBlock" fxLayout="row" fxLayoutAlign="space-between center">
+                <!-- Applied -->
+                <div class="particularCertificate appiled" flexLayOutGap="5px" fxLayout="row"
+                  fxLayoutAlign="space-between center" fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Applied</h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-attendance.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+                <!-- Pending -->
+                <div class="particularCertificate pending" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Pending</h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Rejected -->
+                <div class="particularCertificate rejcetd" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Rejected</h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Approved -->
+                <div class="particularCertificate approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Approved</h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+
+              </div>
+
+
+              <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                [loading]="loading" [paginator]="true"
+                [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                <!-- Caption with Global Search -->
+                <ng-template pTemplate="caption">
+                  <div class="flex">
+
+                    <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                      <input pInputText type="text" [(ngModel)]="searchValue"
+                        (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                      <i class="pi pi-search"></i>
+                    </span>
+
+                    <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                      icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                    <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true" severity="warning"
+                      icon="pi pi-plus" (onClick)="openAddDialog()" />
+
+                  </div>
+                </ng-template>
+
+                <!-- Header with Column Filters -->
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"Name"}}
+                        <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"Board"}}
+                        <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"(Year)"}}
+                        <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+
+                    <th>
+                      <div class="flex align-items-center">
+                        {{"Status"}}
+                        <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                      </div>
+                    </th>
+
+
+                    <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                  </tr>
+                </ng-template>
+
+                <!-- Body -->
+                <ng-template pTemplate="body" let-element>
+                  <tr>
+                    <td>{{ element.fullName }}</td>
+                    <td>{{ element.boardName }}</td>
+                    <td>{{ element.currentYear }}</td>
+                    <td>
+                      <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                        [style.color]="element.status === 1 ? 'green' : 'red'"
+                        [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                      </i>
+                    </td>
+
+                    <td class="nxtPrimeTableAction">
+
+                      <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                        class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                      </p-splitButton>
+
+                    </td>
+                  </tr>
+                </ng-template>
+
+                <!-- Empty Message -->
+                <ng-template pTemplate="emptymessage">
+                  @if(dt2.columns){
+                  <tr>
+                    <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                      No data found.
+                    </td>
+                  </tr>
+                  }
+                </ng-template>
+              </p-table>
             </div>
 
             <!-- Library -->

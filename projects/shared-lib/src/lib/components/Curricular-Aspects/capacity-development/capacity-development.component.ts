@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, AutomationExaminationAddComponent, AutomationExaminationViewComponent, AutomationExaminationEditComponent, CapacityDevelopmentAddComponent, CapacityDevelopmentViewComponent, CapacityDevelopmentEditComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, AutomationExaminationAddComponent, AutomationExaminationViewComponent, AutomationExaminationEditComponent, CapacityDevelopmentAddComponent, CapacityDevelopmentViewComponent, CapacityDevelopmentEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-capacity-development',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './capacity-development.component.html',
   styleUrl: './capacity-development.component.css'

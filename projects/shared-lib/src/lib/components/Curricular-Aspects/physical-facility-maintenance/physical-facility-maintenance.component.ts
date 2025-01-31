@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { PhysicalFacilityMaintenanceEditComponent } from './physical-facility-maintenance-edit/physical-facility-maintenance-edit.component';
-import { FileUploadService, FormsService, MaterialModule, PhysicalFacilityMaintenanceAddComponent, PhysicalFacilityMaintenanceViewComponent, SharableModule, SwalService, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FileUploadService, FormsService, MaterialModule, PhysicalFacilityMaintenanceAddComponent, PhysicalFacilityMaintenanceViewComponent, SharableModule, SwalService, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import Swal from 'sweetalert2';
 import { FormGroup } from '@angular/forms';
@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'lib-physical-facility-maintenance',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './physical-facility-maintenance.component.html',
   styleUrl: './physical-facility-maintenance.component.css'

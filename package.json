@@ -30,6 +30,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "ag-charts-angular": "^11.0.4",
     "angular-calendar": "^0.31.1",
+    "angular-google-chart": "^0.1.0",
     "axios": "^1.6.8",
     "chart.js": "^4.4.7",
     "jspdf": "^2.5.1",

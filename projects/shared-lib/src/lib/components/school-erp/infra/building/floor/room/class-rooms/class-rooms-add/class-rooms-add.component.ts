@@ -5,7 +5,7 @@ import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { schoolErpEndpoint } from 'projects/shell/environments/school-erp-endpoint';
 import { MaterialModule, SharableModule, FormsService, SwalService } from 'school-erp-public';
-import { UnderscoreToSpacePipe, YearMonthDayPipe, FileUploadService } from 'shared-lib';
+import {  YearMonthDayPipe, FileUploadService } from 'shared-lib';
 
 @Component({
   selector: 'lib-class-rooms-add',

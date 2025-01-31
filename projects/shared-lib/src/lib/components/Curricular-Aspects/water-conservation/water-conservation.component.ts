@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { FileUploadService, FormsService, MaterialModule, SharableModule, SwalService, TablePaginationService, UnderscoreToSpacePipe, WaterConservationAddComponent, WaterConservationEditComponent, WaterConservationViewComponent, YearMonthDayPipe } from 'shared-lib';
+import { FileUploadService, FormsService, MaterialModule, SharableModule, SwalService, TablePaginationService,  WaterConservationAddComponent, WaterConservationEditComponent, WaterConservationViewComponent, YearMonthDayPipe } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-water-conservation',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './water-conservation.component.html',
   styleUrl: './water-conservation.component.css'

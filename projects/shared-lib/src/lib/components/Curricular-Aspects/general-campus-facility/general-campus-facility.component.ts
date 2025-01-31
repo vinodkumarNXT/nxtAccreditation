@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, CulturalActivityFacilityAddComponent, CulturalActivityFacilityViewComponent, CulturalActivityFacilityEditComponent, GeneralCampusFacilityEditComponent, GeneralCampusFacilityViewComponent, GeneralCampusFacilityAddComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, CulturalActivityFacilityAddComponent, CulturalActivityFacilityViewComponent, CulturalActivityFacilityEditComponent, GeneralCampusFacilityEditComponent, GeneralCampusFacilityViewComponent, GeneralCampusFacilityAddComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-general-campus-facility',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './general-campus-facility.component.html',
   styleUrl: './general-campus-facility.component.css'

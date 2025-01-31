@@ -8,7 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, InstitutionIntegratesAddComponent, InstitutionIntegratesViewComponent, InstitutionIntegratesEditComponent, TransferableLifeskillsAddComponent, TransferableLifeskillsViewComponent, TransferableLifeskillsEditComponent, SwalService } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, InstitutionIntegratesAddComponent, InstitutionIntegratesViewComponent, InstitutionIntegratesEditComponent, TransferableLifeskillsAddComponent, TransferableLifeskillsViewComponent, TransferableLifeskillsEditComponent, SwalService } from 'shared-lib';
 import Swal from 'sweetalert2';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -18,7 +18,7 @@ import { NgxLoadingModule } from 'ngx-loading';
 @Component({
   selector: 'lib-transferable-lifeskills',
   standalone: true,
-  imports: [MaterialModule,NgxLoadingModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule,NgxLoadingModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, SnackbarService, provideNativeDateAdapter()],
   templateUrl: './transferable-lifeskills.component.html',
   styleUrl: './transferable-lifeskills.component.css'

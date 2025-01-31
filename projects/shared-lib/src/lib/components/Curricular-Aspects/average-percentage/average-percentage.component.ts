@@ -8,13 +8,13 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, AveragePercentageViewComponent, AveragePercentageAddComponent, AveragePercentageEditComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, AveragePercentageViewComponent, AveragePercentageAddComponent, AveragePercentageEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-average-percentage',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, SnackbarService, provideNativeDateAdapter()],
   templateUrl: './average-percentage.component.html',
   // styleUrl: './average-percentage.component.css'

@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Lightbox } from 'ngx-lightbox';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, CurricularDevelopementAddComponent, ImageService, CurricularDevelopementEditComponent, CurricularDevelopementViewComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SnackbarService, SpinnerService, TablePaginationService, CurricularDevelopementAddComponent, ImageService, CurricularDevelopementEditComponent, CurricularDevelopementViewComponent } from 'shared-lib';
 
 @Component({
   selector: 'lib-developement-relevance',

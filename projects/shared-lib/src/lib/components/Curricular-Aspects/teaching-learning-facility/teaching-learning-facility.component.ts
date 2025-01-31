@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, FunctionalMousAddComponent, FunctionalMousViewComponent, FunctionalMousEditComponent, TeachingLearningFacilityEditComponent, TeachingLearningFacilityViewComponent, TeachingLearningFacilityAddComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, FunctionalMousAddComponent, FunctionalMousViewComponent, FunctionalMousEditComponent, TeachingLearningFacilityEditComponent, TeachingLearningFacilityViewComponent, TeachingLearningFacilityAddComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-teaching-learning-facility',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './teaching-learning-facility.component.html',
   styleUrl: './teaching-learning-facility.component.css'

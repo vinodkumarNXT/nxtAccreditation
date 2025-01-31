@@ -7,13 +7,13 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import { MaterialModule, SharableModule, FormsService, SwalService } from 'school-erp-public';
-import { UnderscoreToSpacePipe, YearMonthDayPipe, FileUploadService, TablePaginationService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureViewComponent, InfrastractureExpenditureEditComponent, DegradableAddComponent, DegradableViewComponent, DegradableEditComponent } from 'shared-lib';
+import {  YearMonthDayPipe, FileUploadService, TablePaginationService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureViewComponent, InfrastractureExpenditureEditComponent, DegradableAddComponent, DegradableViewComponent, DegradableEditComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-degradable',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './degradable.component.html',
   styleUrl: './degradable.component.css'

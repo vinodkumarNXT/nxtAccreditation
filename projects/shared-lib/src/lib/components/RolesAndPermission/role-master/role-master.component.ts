@@ -8,7 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { FormsService, MaterialModule, RolemasterAddComponent, RolemasterEditComponent, SharableModule, SnackbarService, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FormsService, MaterialModule, RolemasterAddComponent, RolemasterEditComponent, SharableModule, SnackbarService, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 @Component({
   selector: 'lib-role-master',
   standalone: true,

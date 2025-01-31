@@ -7,13 +7,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, ITFacilitiesAddComponent, ITFacilitiesViewComponent, ITFacilitiesEditComponent, StudentComplaintsEditComponent, StudentComplaintsViewComponent, StudentComplaintsAddComponent, StudentComputerRatioEditComponent, StudentComputerRatioViewComponent, StudentComputerRatioAddComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, ITFacilitiesAddComponent, ITFacilitiesViewComponent, ITFacilitiesEditComponent, StudentComplaintsEditComponent, StudentComplaintsViewComponent, StudentComplaintsAddComponent, StudentComputerRatioEditComponent, StudentComputerRatioViewComponent, StudentComputerRatioAddComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-student-computer-ratio',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './student-computer-ratio.component.html',
   styleUrl: './student-computer-ratio.component.css'

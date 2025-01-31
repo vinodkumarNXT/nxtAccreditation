@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { schoolErpEndpoint } from 'projects/shell/environments/school-erp-endpoint';
 import { ErpAppAdminAddComponent, ErpAppAdminEditComponent, ErpAppAdminViewComponent, FormsService, MaterialModule, SharableModule, SwalService } from 'school-erp-public';
-import { FileUploadService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureEditComponent, InfrastractureExpenditureViewComponent, TablePaginationService, UnderscoreToSpacePipe, YearMonthDayPipe } from 'shared-lib';
+import { FileUploadService, InfrastractureExpenditureAddComponent, InfrastractureExpenditureEditComponent, InfrastractureExpenditureViewComponent, TablePaginationService,  YearMonthDayPipe } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({

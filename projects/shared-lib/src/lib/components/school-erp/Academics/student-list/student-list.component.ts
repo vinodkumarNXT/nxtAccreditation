@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Table } from 'primeng/table/public_api';
 import { DatePipe } from '@angular/common';
-
+import { ChartOptions } from 'chart.js';
 import {
   MaterialModule,
   SharableModule,
@@ -13,6 +13,7 @@ import {
   SwalService,
   StudentListViewComponent,
   SessionService,
+  ChartsjsService,
 } from 'school-erp-public';
 import { FileUploadService } from 'shared-lib';
 import Swal from 'sweetalert2';
@@ -23,7 +24,7 @@ import { DialogService } from 'primeng/dynamicdialog'; // Import DialogService
   selector: 'lib-student-list',
   standalone: true,
   imports: [MaterialModule, SharableModule],
-  providers: [FormsService, ConfirmationService, MessageService, DialogService,DatePipe],
+  providers: [FormsService, ConfirmationService, MessageService, DialogService, DatePipe],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.scss',
 })
@@ -60,7 +61,7 @@ export class StudentListComponent {
 
   public academicSectionList: any;
   public academicStudentList: any;
-public submitted:boolean=false;
+  public submitted: boolean = false;
 
 
   public selectedClassID: any;
@@ -72,10 +73,10 @@ public submitted:boolean=false;
   public filteredDistricts: any;
   public selectedCountry: any;
   public districtList: any;
-  public selectedStateID:any;
-  public selectedDistrict:any
-  public isAddForm:boolean=true
-  public selectedBoardYearClassSection:any;
+  public selectedStateID: any;
+  public selectedDistrict: any
+  public isAddForm: boolean = true
+  public selectedBoardYearClassSection: any;
 
   actionItems: any[] = [];
   selectedElement: any;;
@@ -86,77 +87,85 @@ public submitted:boolean=false;
   profileViewActiveItem: MenuItem | any;
 
 
-  public  stdProfileData= [
-      {
-        "id": 1,
-        "branch_id": 'Shaikpet',
-        "board": "CBSE",
-        "year": 2024,
-        "student_id": "S12345",
-        "registration_no": "R123456",
-        "program_id": "10",
-        "admission_no": "A987654",
-        "roll_no": "R101",
-        "user_category_id": 2,
-        "identification_marks": "Small mole on right cheek",
-        "joining_date": "2024-01-10",
-        "seat_type_id": 1,
-        "admission_type_id": 2,
-        "distance_from_residence": "15 km",
-        "phc": "None",
-        "ph_details": "None",
-        "scribe": "No",
-        "group_id": "English",
-        "faculty_id": "Shalini",
-        "class_id": 10,
-        "section_id": "A",
-        "session_id": "Half-Yearly",
-        "admission_date": "2024-01-05",
-        "full_name": "Aarav Sharma",
-        "middle_name": "Kumar",
-        "first_name": "Aarav",
-        "last_name": "Sharma",
-        "father_name": "Rajesh Sharma",
-        "mother_name": "Priya Sharma",
-        "email": "aarav.sharma@mail.com",
-        "email_verified_at": "2024-01-07",
-        "password": "password123",
-        "password_text": "EncryptedPasswordData",
-        "set_password": 1,
-        "attendance": {
-          "total_classes": 50,
-          "classes_attended": 45,
-          "attendance_percentage": 90
-        },
-        "gender": 1,
-        "status": 1,
-        "contact": {
-          "phone": "9876543210",
-          "address": "123, Main Street, Guntur, Andhra Pradesh, 522501"
-        },
-        "date_of_birth": "2000-12-15",
-        "religion": "Hindu",
-        "mother_tongue": "Telugu",
-        "permanent_address": {
-          "country": "India",
-          "state": "Andhra Pradesh",
-          "district": "Guntur",
-          "pincode": "522501",
-          "address_1": "TADEPALLI"
-        },
-        "present_address": {
-          "country": "India",
-          "state": "Andhra Pradesh",
-          "district": "Hyderabad",
-          "pincode": "500001",
-          "address_1": "Banjara Hills"
-        }
+  /*pie*/
+
+  myTypePie: any;
+  myDataPie: any;
+
+
+
+  public stdProfileData = [
+    {
+      "id": 1,
+      "branch_id": 'Shaikpet',
+      "board": "CBSE",
+      "year": 2024,
+      "student_id": "S12345",
+      "registration_no": "R123456",
+      "program_id": "10",
+      "admission_no": "A987654",
+      "roll_no": "R101",
+      "user_category_id": 2,
+      "identification_marks": "Small mole on right cheek",
+      "joining_date": "2024-01-10",
+      "seat_type_id": 1,
+      "admission_type_id": 2,
+      "distance_from_residence": "15 km",
+      "phc": "None",
+      "ph_details": "None",
+      "scribe": "No",
+      "group_id": "English",
+      "faculty_id": "Shalini",
+      "class_id": 10,
+      "section_id": "A",
+      "session_id": "Half-Yearly",
+      "admission_date": "2024-01-05",
+      "full_name": "Aarav Sharma",
+      "middle_name": "Kumar",
+      "first_name": "Aarav",
+      "last_name": "Sharma",
+      "father_name": "Rajesh Sharma",
+      "mother_name": "Priya Sharma",
+      "email": "aarav.sharma@mail.com",
+      "email_verified_at": "2024-01-07",
+      "password": "password123",
+      "password_text": "EncryptedPasswordData",
+      "set_password": 1,
+      "attendance": {
+        "total_classes": 50,
+        "classes_attended": 45,
+        "attendance_percentage": 90
+      },
+      "gender": 1,
+      "status": 1,
+      "contact": {
+        "phone": "9876543210",
+        "address": "123, Main Street, Guntur, Andhra Pradesh, 522501"
+      },
+      "date_of_birth": "2000-12-15",
+      "religion": "Hindu",
+      "mother_tongue": "Telugu",
+      "permanent_address": {
+        "country": "India",
+        "state": "Andhra Pradesh",
+        "district": "Guntur",
+        "pincode": "522501",
+        "address_1": "TADEPALLI"
+      },
+      "present_address": {
+        "country": "India",
+        "state": "Andhra Pradesh",
+        "district": "Hyderabad",
+        "pincode": "500001",
+        "address_1": "Banjara Hills"
       }
-    ];
-  
+    }
+  ];
+
 
 
   constructor(
+    private chartService:ChartsjsService,
     private datePipe: DatePipe,
     private dialogService: DialogService,
     private confirmationService: ConfirmationService,
@@ -195,34 +204,45 @@ public submitted:boolean=false;
       country: ['', Validators.required],
       state: ['', Validators.required],
       district: ['', Validators.required],
-      pincode: ['',[Validators.required, Validators.maxLength(6)]],
+      pincode: ['', [Validators.required, Validators.maxLength(6)]],
       addressLine1: ['', Validators.required],
       addressLine2: ['', Validators.required],
 
       // Gurdian Details
 
       fatherName: [''],
-      fatherMobile: ['',[Validators.maxLength(12)]],
+      fatherMobile: ['', [Validators.maxLength(12)]],
       fatherEmail: [''],
       fatherOccupation: [''],
       fatherIncome: ['', Validators.required],
 
       motherName: [''],
-      motherMobile: ['',[ Validators.maxLength(12)]],
+      motherMobile: ['', [Validators.maxLength(12)]],
       motherEmail: [''],
       motherOccupation: [''],
       motherIncome: ['', Validators.required],
     });
+
+
+    this.myTypePie = "PieChart";
+    this.myDataPie = [
+      ["London", 8136000],
+      ["New York", 8538000],
+      ["Paris", 2244000],
+      ["Berlin", 3470000],
+      ["Kairo", 19500000]
+    ];
   }
 
   ngOnInit(): void {
     this.loadMetaData();
     this.BranchId();
+    this.loadAdminDashBoardData();
 
     this.profileViewItems = [
       { label: 'Profile', icon: 'pi pi-fw pi-user', isfor: "profileView" },
       { label: 'Academic', icon: 'pi pi-fw pi-book', isfor: "academicDetails" },
-      { label: 'Attendance', icon: 'pi pi-fw pi-calendar', isfor: "profileView" },
+      { label: 'Attendance', icon: 'pi pi-fw pi-calendar', isfor: "attendance" },
       { label: 'Certificates', icon: 'pi pi-fw  pi-receipt', isfor: "certificates" },
       { label: 'Library', icon: 'pi pi-fw pi-bookmark', isfor: "library" },
       { label: 'Fee', icon: 'pi pi-fw pi-wallet', isfor: "fee" },
@@ -230,13 +250,19 @@ public submitted:boolean=false;
       { label: 'Communication', icon: 'pi pi-fw pi-comment', isfor: "communication" },
       { label: 'Grievance & Activities', icon: 'pi pi-fw pi-exclamation-circle', isfor: "grievance" },
       { label: 'Settings', icon: 'pi pi-fw pi-cog', isfor: "settings" }
-  ];
+    ];
 
-  this.profileViewActiveItem = this.profileViewItems[0];
-
+    this.profileViewActiveItem = this.profileViewItems[0];
   }
 
 
+
+
+
+  dateFormat(date: Date): string {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 
+            ${date.getHours()}:${date.getMinutes()}`;
+  }
 
   tableActionItems(val: any) {
     return [
@@ -255,11 +281,11 @@ public submitted:boolean=false;
         icon: 'pi pi-trash',
         command: () => this.deleteElement(val),
       },
-          {
-      label: 'Particulars',
-      icon: 'pi pi-user',
-      command: () => this.studentProfileView(val), // Pass `val` dynamically
-    },
+      {
+        label: 'Particulars',
+        icon: 'pi pi-user',
+        command: () => this.studentProfileView(val), // Pass `val` dynamically
+      },
     ];
   }
 
@@ -286,7 +312,7 @@ public submitted:boolean=false;
   openAddDialog(): void {
     // Set visible to true to show the dialog
     this.visible = true;
-    
+
     if (this.isAddForm) {
       this.loadMetaData();
     }
@@ -317,7 +343,7 @@ public submitted:boolean=false;
     });
   }
 
-  async editElement(event:any){
+  async editElement(event: any) {
     this.loading = true;
   }
 
@@ -360,7 +386,7 @@ public submitted:boolean=false;
   async submitForm() {
     this.submitted = true;
     const selectedAcademicData = this.selectedBoardYearClassSection;
-  
+
     // Extract values from the form
     const admissionDate = this.form.get('admissionDate')?.value;
     const dateOfBirth = this.form.get('dateOfBirth')?.value;
@@ -368,7 +394,7 @@ public submitted:boolean=false;
     const caste = this.form.get('caste')?.value.id;
     const bloodGroup = this.form.get('bloodGroup')?.value?.id;
     const district = this.form.get('district')?.value?.id;
-  
+
     // Format dates
     const formattedAdmissionDate = admissionDate
       ? this.datePipe.transform(admissionDate, 'dd/MM/yyyy')
@@ -376,12 +402,12 @@ public submitted:boolean=false;
     const formattedDateOfBirth = dateOfBirth
       ? this.datePipe.transform(dateOfBirth, 'dd/MM/yyyy')
       : null;
-  
+
     console.log('Form Values:', this.form.value);
-  
+
     if (this.form.valid) {
       this.loading = true; // Show loading spinner
-  
+
       const postData = {
         // Academic data
         branchId: this.globalBranchID || selectedAcademicData?.branch_id,
@@ -389,7 +415,7 @@ public submitted:boolean=false;
         yearId: selectedAcademicData?.year_id,
         classId: selectedAcademicData?.class_erp_id,
         sectionId: selectedAcademicData?.id,
-  
+
         // Student details
         rollNumber: this.form.get('rollNumber')?.value,
         fullName: this.form.get('fullName')?.value,
@@ -408,7 +434,7 @@ public submitted:boolean=false;
         motherTongue: this.form.get('motherTongue')?.value,
         nationality: this.form.get('nationality')?.value,
         bloodGroup: bloodGroup,
-  
+
         // Address details
         country: this.form.get('country')?.value?.id || this.selectedCountry,
         state: this.form.get('state')?.value?.id || this.selectedStateID,
@@ -416,7 +442,7 @@ public submitted:boolean=false;
         pincode: this.form.get('pincode')?.value,
         addressLine1: this.form.get('addressLine1')?.value,
         addressLine2: this.form.get('addressLine2')?.value,
-  
+
         // Guardian details
         fatherName: this.form.get('fatherName')?.value,
         fatherMobile: this.form.get('fatherMobile')?.value,
@@ -429,16 +455,16 @@ public submitted:boolean=false;
         motherOccupation: this.form.get('motherOccupation')?.value,
         motherIncome: this.form.get('motherIncome')?.value,
       };
-  
+
       try {
         console.log('POST Data:', postData);
-  
+
         // Submit the form data
         const response = await this.formsService.onFormSubmit(
           postData,
           schoolErpEndpoint.SchoolStudentBasicInfo
         );
-  
+
         // Refresh data and show success notification
         this.listData = response.data;
         await this.loadFormData(); // Refresh list
@@ -461,13 +487,13 @@ public submitted:boolean=false;
     }
   }
 
-  
-  
+
+
   // Utility function for delay
   delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  
+
 
 
   async loadFormData() {
@@ -571,10 +597,10 @@ public submitted:boolean=false;
 
     this.selctedGenderVal = selctedValue;
     try {
-    } catch (error) {}
+    } catch (error) { }
   }
 
-  async onBoardSelection(event: any,refreshTable: boolean = true) {
+  async onBoardSelection(event: any, refreshTable: boolean = true) {
     const selectedID = event.id;
     console.log('Board event', event);
 
@@ -584,7 +610,7 @@ public submitted:boolean=false;
 
     try {
       // Fetching the academic years
-      const acdemicListData = await this.formsService.updateDataID(selectedID,schoolErpEndpoint.SchoolYearOnBoard);
+      const acdemicListData = await this.formsService.updateDataID(selectedID, schoolErpEndpoint.SchoolYearOnBoard);
       this.academicYearList = acdemicListData?.data || [];
 
       // Assuming event is the boardID, filter based on the correct boardID
@@ -598,7 +624,7 @@ public submitted:boolean=false;
     }
   }
 
-  async onYearSelection(event: any,refreshTable: boolean = true) {
+  async onYearSelection(event: any, refreshTable: boolean = true) {
     const selectedID = event.id; // Make sure this is a number or convert it accordingly
     console.log('Board ID For Year:', selectedID); // Log the selected ID to see what is passed
 
@@ -619,7 +645,7 @@ public submitted:boolean=false;
 
 
 
-  async onClassSelection(event: any,refreshTable: boolean = true) {
+  async onClassSelection(event: any, refreshTable: boolean = true) {
     const selectedID = event.id; // Make sure this is a number or convert it accordingly
     console.log('Class ID   FOR  SECTION:', selectedID); // Log the selected ID to see what is passed
 
@@ -641,23 +667,23 @@ public submitted:boolean=false;
     }
   }
 
-  
+
 
   async onSectionSelection(event: any, refreshTable: boolean = true) {
     const selectedID = event; // Get the selected section object from the event
     console.log('Getting Section:', selectedID); // Log the selected section
-    
 
-    this.selectedBoardYearClassSection= selectedID
-  
+
+    this.selectedBoardYearClassSection = selectedID
+
     // If refreshTable is true, start the loading spinner
     if (refreshTable) {
       this.loading = true;
     }
-  
+
     // Clear the table data on new selection
     this.academicStudentList = [];
-  
+
     try {
       // Construct the query parameters object
       const postData = {
@@ -667,23 +693,23 @@ public submitted:boolean=false;
         classId: selectedID.class_erp_id, // Class ID from selected section
         sectionId: selectedID.id, // Section ID from selected section
       };
-  
+
       // Call the service to fetch the student list using the constructed parameters
       const listData = await this.formsService.updateDataQuery(
         postData,
         schoolErpEndpoint.SchoolAcademicStudentList
       );
-  
+
       // Assign the fetched list to academicStudentList
       this.listData = listData?.data || [];
-  
+
       // If refreshTable is true, stop loading and update the list
       if (refreshTable) {
         this.academicStudentList = this.listData; // Update the student list
         this.loading = false; // Stop the loading spinner
         this.spinner.hide(); // Hide the spinner manually
       }
-  
+
       // Log the fetched student list if any
       if (this.listData.length > 0) {
         console.log('Student List:', this.academicStudentList); // Log the fetched student list
@@ -694,86 +720,86 @@ public submitted:boolean=false;
         this.loading = false;
         this.spinner.hide(); // Hide the spinner manually if there's an error
       }
-  
+
       console.error('Failed to load student list:', error); // Handle any errors during the fetch process
     }
   }
-  
 
-  async updateStates(event: any): Promise<void>  {
+
+  async updateStates(event: any): Promise<void> {
     const selectedID = event?.id;
     console.log('countryId', selectedID);
-  
+
     try {
       // Fetch state data based on the country selection
       const stateData = await this.formsService.getListData(
         schoolErpEndpoint.SchoolState
       );
       this.stateList = stateData?.data || [];
-  
+
       // Filter states based on selected country
       this.filteredStates = this.stateList.filter(
         (state) => state.country_id === selectedID
       );
-  
+
       // Clear state and district values in the form
       this.form.get('country')?.setValue(selectedID); // Set country input
       this.form.get('state')?.setValue(null); // Reset state input
       this.filteredDistricts = []; // Clear district list
-  
+
       // Set selected country ID for reference
       this.selectedCountry = selectedID;
-  
+
       console.log('Filtered States:', this.filteredStates); // Log filtered states
     } catch (error) {
       console.error('Failed to load states', error);
     }
   }
-  
+
   async updateDistricts(event: any): Promise<void> {
     const selectedID = event?.id; // Ensure you're using the correct path to the ID
     console.log('Selected District ID:', selectedID);
-  
+
     try {
       // Fetch district data based on the selected state
       const districtData = await this.formsService.getListData(schoolErpEndpoint.SchoolDistrict);
       this.districtList = districtData?.data || [];
-  
+
       console.log('All Districts:', this.districtList);
-  
+
       // Filter districts based on selected state (province_id should match stateId)
       this.filteredDistricts = this.districtList.filter(
         (district) => district.province_id === selectedID
       );
-  
+
       console.log('Filtered Districts:', this.filteredDistricts);
-  
+
       // Optionally reset the district value in the form
       this.form.get('district')?.setValue(null);
-  
+
     } catch (error) {
       console.error('Failed to load districts', error);
     }
   }
-  
-  
-  
-  
+
+
+
+
 
   async getDistrictID(event: any): Promise<void> {
     const districtId = event.id; // Gets the selected district ID
     this.selectedDistrict = districtId; // Store selected district ID in the variable
-    
+
     // Set the district input value if needed
     this.form.get('district')?.setValue(districtId); // Set the form control's value to the selected district ID
-    
+
     try {
       // If there are any additional tasks to perform on district selection, they go here
       // For example, fetching more data related to the selected district, if needed
       console.log('Selected District ID:', districtId);
-      
+
       // You can add any additional logic here, like calling a service to fetch further data related to the selected district
-      
+
     } catch (error) {
       console.error('Error handling district selection:', error);
     }
@@ -791,11 +817,46 @@ public submitted:boolean=false;
     });
   }
 
-  studentProfileView(val:any){
-    console.log("val Details For Profile Vi ew",val);
-    
-     // Set visible to true to show the dialog
-     this.isprofileView = true;
+  studentProfileView(val: any) {
+    console.log("val Details For Profile Vi ew", val);
+
+    // Set visible to true to show the dialog
+    this.isprofileView = true;
   }
+
+
+
+    loadAdminDashBoardData() {
+    this.chartService.createChart('lineChart', 'line', {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      datasets: [
+        {
+          label: 'Attendance',
+          data: [10, 20, 30, 40, 50],
+          borderColor: 'rgba(75, 192, 192, 1)',
+          fill: false,
+        },
+      ],
+    });
+
+
+       this.chartService.createChart('barChart', 'bar', {
+      labels: ['Red', 'Blue', 'Yellow', 'Green'],
+      datasets: [
+        {
+          label: 'Votes',
+          data: [12, 19, 3, 5],
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+        },
+      ],
+    });
+
+  }
+
+  ngOnDestroy(): void {
+    // Destroy all charts when the component is destroyed
+    this.chartService.destroyAllCharts();
+  }
+
 
 }

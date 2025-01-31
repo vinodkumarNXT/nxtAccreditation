@@ -7,14 +7,14 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, PhysicalFacilityMaintenanceAddComponent, PhysicalFacilityMaintenanceViewComponent, ScholarshipSchemesEditComponent, ScholarshipSchemesViewComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, PhysicalFacilityMaintenanceAddComponent, PhysicalFacilityMaintenanceViewComponent, ScholarshipSchemesEditComponent, ScholarshipSchemesViewComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 import { PhysicalFacilityMaintenanceEditComponent } from '../physical-facility-maintenance/physical-facility-maintenance-edit/physical-facility-maintenance-edit.component';
 
 @Component({
   selector: 'lib-scholarship-schemes',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './scholarship-schemes.component.html',
   styleUrl: './scholarship-schemes.component.css'

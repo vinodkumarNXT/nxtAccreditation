@@ -5,13 +5,13 @@ import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { endpoints } from 'projects/shell/environments/endpoint';
 import { MaterialModule, SharableModule, FormsService, SwalService } from 'school-erp-public';
-import { UnderscoreToSpacePipe, YearMonthDayPipe, FileUploadService } from 'shared-lib';
+import {  YearMonthDayPipe, FileUploadService } from 'shared-lib';
 
 @Component({
   selector: 'lib-degradable-add',
   standalone: true,
   
-    imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+    imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
     providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './degradable-add.component.html',
   styleUrl: './degradable-add.component.css'

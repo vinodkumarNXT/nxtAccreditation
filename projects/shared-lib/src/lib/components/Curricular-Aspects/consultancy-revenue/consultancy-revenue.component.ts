@@ -6,13 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, CitationsAddComponent, CitationsViewComponent, CitationsEditComponent, ConsultancyRevenueAddComponent, ConsultancyRevenueEditComponent, ConsultancyRevenueViewComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, FileUploadService, SwalService, TablePaginationService, CitationsAddComponent, CitationsViewComponent, CitationsEditComponent, ConsultancyRevenueAddComponent, ConsultancyRevenueEditComponent, ConsultancyRevenueViewComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-consultancy-revenue',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe, MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './consultancy-revenue.component.html',
   styleUrl: './consultancy-revenue.component.css'

@@ -9,13 +9,13 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { NgxLoadingService } from 'ngx-loading';
 import { endpoints } from 'projects/shell/environments/endpoint';
-import { MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe, FormsService, SwalService, TablePaginationService, SystemAndProcedureEditComponent, SystemAndProcedureViewComponent, SystemAndProcedureAddComponent } from 'shared-lib';
+import { MaterialModule, SharableModule,  YearMonthDayPipe, FormsService, SwalService, TablePaginationService, SystemAndProcedureEditComponent, SystemAndProcedureViewComponent, SystemAndProcedureAddComponent } from 'shared-lib';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'lib-system-and-procedure',
   standalone: true,
-  imports: [MaterialModule, SharableModule, UnderscoreToSpacePipe, YearMonthDayPipe,MatSort],
+  imports: [MaterialModule, SharableModule,  YearMonthDayPipe,MatSort],
   providers: [FormsService, provideNativeDateAdapter()],
   templateUrl: './system-and-procedure.component.html',
   styleUrl: './system-and-procedure.component.css'
