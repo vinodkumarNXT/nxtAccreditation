@@ -7,6 +7,13 @@
     <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
 
       <p-button icon="pi pi-user" label="Student Profile" (onClick)="studentProfileView($event)"></p-button>
+
+      <div class="view-toggle">
+        <button pButton [label]="nxtTableViewMode === 'table' ? 'table' : 'grid'"
+          [icon]="nxtTableViewMode === 'table' ? ' pi pi-table' : ' pi pi-th-large'" (click)="TableToggleView()">
+        </button>
+      </div>
+
     </div>
   </div>
 
@@ -59,8 +66,9 @@
       </div>
 
 
-      <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
-        [loading]="loading" [paginator]="true"
+
+      <p-table *ngIf="nxtTableViewMode === 'table'" #dt2 [value]="academicStudentList" [rows]="10"
+        [rowsPerPageOptions]="[5,10,15,25, 50]" [loading]="loading" [paginator]="true"
         [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
         <!-- Caption with Global Search -->
         <ng-template pTemplate="caption">
@@ -164,7 +172,30 @@
       </p-table>
     </div>
 
+    <div *ngIf="nxtTableViewMode === 'grid'" class="nxtTable-grid-container">
+      <div *ngFor="let product of academicStudentList" class="grid-item">
+        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+          class="nxtPrimeTableAction" (click)="onButtonClick(product)">
+        </p-splitButton>
+
+        <div class="product-card">
+          <h3>{{ product.fullName | slice:0:2 }}</h3>
+          <p>{{ product.year}}</p>
+        </div>
+      </div>
+
+      <!--       
+      <p-paginator *ngIf="nxtTableViewMode === 'grid'" [rows]="pageSize" [totalRecords]="academicStudentList.length"
+        (onPageChange)="onPageChange($event)">
+      </p-paginator> -->
+
+
+    </div>
+
+
   </div>
+
+
 
 </div>
 
@@ -776,100 +807,150 @@
             </div>
 
             <!-- Academic Details -->
-            <div *ngSwitchCase="'academicDetails'">
-              <p>Here are the Academic Details.</p>
-
-              <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
-                [loading]="loading" [paginator]="true"
-                [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
-                <!-- Caption with Global Search -->
-                <ng-template pTemplate="caption">
-                  <div class="flex">
-
-                    <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
-                      <input pInputText type="text" [(ngModel)]="searchValue"
-                        (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
-                      <i class="pi pi-search"></i>
-                    </span>
-
-                    <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
-                      icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
-
-
-                    <p-button class="nxtTableGlobalAdd" label="Add" [outlined]="true" severity="warning"
-                      icon="pi pi-plus" (onClick)="openAddDialog()" />
-
+            <div *ngSwitchCase="'academicDetails'" class="academicDetailsParticular particularCertificates">
+              <div class="particularCertificatesBlock" fxLayout="row" fxLayoutAlign="space-between center">
+                <!-- Applied -->
+                <div class="particularCertificate appiled" flexLayOutGap="5px" fxLayout="row"
+                  fxLayoutAlign="space-between center" fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Applied <span class="count">45</span></h4>
                   </div>
-                </ng-template>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-attendance.svg" alt="Applied Icon">
+                  </div>
+                </div>
 
-                <!-- Header with Column Filters -->
-                <ng-template pTemplate="header">
-                  <tr>
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"Name"}}
-                        <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"Board"}}
-                        <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"(Year)"}}
-                        <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
+                <!-- Pending -->
+                <div class="particularCertificate pending" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Pending <span class="count">5</span></h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
 
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"Status"}}
-                        <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
+                <!-- Rejected -->
+                <div class="particularCertificate rejcetd" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Rejected <span class="count">4</span></h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Approved -->
+                <div class="particularCertificate approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularCertificateLeft">
+                    <h4>Approved <span class="count">35</span></h4>
+                  </div>
+                  <div class="particularCertificateRight">
+                    <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
 
 
-                    <th class="nxtPrimeTableAction">{{"Actions"}}</th>
-                  </tr>
-                </ng-template>
 
-                <!-- Body -->
-                <ng-template pTemplate="body" let-element>
-                  <tr>
-                    <td>{{ element.fullName }}</td>
-                    <td>{{ element.boardName }}</td>
-                    <td>{{ element.currentYear }}</td>
-                    <td>
-                      <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
-                        [style.color]="element.status === 1 ? 'green' : 'red'"
-                        [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
-                      </i>
-                    </td>
+              </div>
 
-                    <td class="nxtPrimeTableAction">
 
-                      <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
-                        class="nxtPrimeTableAction" (click)="onButtonClick(element)">
-                      </p-splitButton>
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
 
-                    </td>
-                  </tr>
-                </ng-template>
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
 
-                <!-- Empty Message -->
-                <ng-template pTemplate="emptymessage">
-                  @if(dt2.columns){
-                  <tr>
-                    <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
-                      No data found.
-                    </td>
-                  </tr>
-                  }
-                </ng-template>
-              </p-table>
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                      <p-button class="nxtTableGlobalAdd" label="Add" [outlined]="true" severity="warning"
+                        icon="pi pi-plus" (onClick)="openAddDialog()" />
+
+                    </div>
+                  </ng-template>
+
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Name"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Board"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"(Year)"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
             </div>
 
             <!-- Attendance -->
@@ -952,7 +1033,7 @@
                 <div class="particularCertificate appiled" flexLayOutGap="5px" fxLayout="row"
                   fxLayoutAlign="space-between center" fxFlex="23">
                   <div class="particularCertificateLeft">
-                    <h4>Applied</h4>
+                    <h4>Applied <span class="count">45</span></h4>
                   </div>
                   <div class="particularCertificateRight">
                     <img src="../../../../assets/svg/dash-attendance.svg" alt="Applied Icon">
@@ -963,7 +1044,7 @@
                 <div class="particularCertificate pending" fxLayout="row" fxLayoutAlign="space-between center"
                   fxFlex="23">
                   <div class="particularCertificateLeft">
-                    <h4>Pending</h4>
+                    <h4>Pending <span class="count">5</span></h4>
                   </div>
                   <div class="particularCertificateRight">
                     <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
@@ -974,7 +1055,7 @@
                 <div class="particularCertificate rejcetd" fxLayout="row" fxLayoutAlign="space-between center"
                   fxFlex="23">
                   <div class="particularCertificateLeft">
-                    <h4>Rejected</h4>
+                    <h4>Rejected <span class="count">4</span></h4>
                   </div>
                   <div class="particularCertificateRight">
                     <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
@@ -985,7 +1066,7 @@
                 <div class="particularCertificate approved" fxLayout="row" fxLayoutAlign="space-between center"
                   fxFlex="23">
                   <div class="particularCertificateLeft">
-                    <h4>Approved</h4>
+                    <h4>Approved <span class="count">35</span></h4>
                   </div>
                   <div class="particularCertificateRight">
                     <img src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
@@ -996,123 +1077,997 @@
 
               </div>
 
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
 
-              <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
-                [loading]="loading" [paginator]="true"
-                [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
-                <!-- Caption with Global Search -->
-                <ng-template pTemplate="caption">
-                  <div class="flex">
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
 
-                    <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
-                      <input pInputText type="text" [(ngModel)]="searchValue"
-                        (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
-                      <i class="pi pi-search"></i>
-                    </span>
-
-                    <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
-                      icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
-
-
-                    <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true" severity="warning"
-                      icon="pi pi-plus" (onClick)="openAddDialog()" />
-
-                  </div>
-                </ng-template>
-
-                <!-- Header with Column Filters -->
-                <ng-template pTemplate="header">
-                  <tr>
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"Name"}}
-                        <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"Board"}}
-                        <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"(Year)"}}
-                        <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
-
-                    <th>
-                      <div class="flex align-items-center">
-                        {{"Status"}}
-                        <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
-                      </div>
-                    </th>
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
 
 
-                    <th class="nxtPrimeTableAction">{{"Actions"}}</th>
-                  </tr>
-                </ng-template>
+                      <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true"
+                        severity="warning" icon="pi pi-plus" (onClick)="openAddDialog()" />
 
-                <!-- Body -->
-                <ng-template pTemplate="body" let-element>
-                  <tr>
-                    <td>{{ element.fullName }}</td>
-                    <td>{{ element.boardName }}</td>
-                    <td>{{ element.currentYear }}</td>
-                    <td>
-                      <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
-                        [style.color]="element.status === 1 ? 'green' : 'red'"
-                        [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
-                      </i>
-                    </td>
+                    </div>
+                  </ng-template>
 
-                    <td class="nxtPrimeTableAction">
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Name of Certificate"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Applied Date"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Applied By"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
 
-                      <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
-                        class="nxtPrimeTableAction" (click)="onButtonClick(element)">
-                      </p-splitButton>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
 
-                    </td>
-                  </tr>
-                </ng-template>
 
-                <!-- Empty Message -->
-                <ng-template pTemplate="emptymessage">
-                  @if(dt2.columns){
-                  <tr>
-                    <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
-                      No data found.
-                    </td>
-                  </tr>
-                  }
-                </ng-template>
-              </p-table>
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
             </div>
 
             <!-- Library -->
-            <div *ngSwitchCase="'library'">
-              <p>Library details and resources can be accessed here.</p>
+            <div *ngSwitchCase="'library'" class="particularLibraryContainer">
+
+              <div fxLayout="row" fxLayoutAlign="space-between center" class="particularLibraryMain">
+                <div class="particularlibraryBlock" fxflex="13" flexLayOutGap="10px" fxLayout="column"
+                  fxLayoutAlign="space-between center">
+
+                  <div class="particularlibraryBlockLeft">
+                    <img class="libImg" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+
+                  </div>
+                  <div class="particularlibraryBlockRight">
+                    <h5 class="title">Issued <span class="count">30</span></h5>
+                  </div>
+                </div>
+
+
+
+                <div class="particularlibraryBlock" fxflex="13" flexLayOutGap="10px" fxLayout="column"
+                  fxLayoutAlign="space-between center">
+
+                  <div class="particularlibraryBlockLeft">
+                    <img class="libImg" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+
+                  </div>
+                  <div class="particularlibraryBlockRight">
+                    <h5 class="title"> Reserved<span class="count">30</span></h5>
+                  </div>
+                </div>
+
+
+                <div class="particularlibraryBlock" fxflex="13" flexLayOutGap="10px" fxLayout="column"
+                  fxLayoutAlign="space-between center">
+
+                  <div class="particularlibraryBlockLeft">
+                    <img class="libImg" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+
+                  </div>
+                  <div class="particularlibraryBlockRight">
+                    <h5 class="title">Pending<span class="count">30</span></h5>
+                  </div>
+                </div>
+
+
+
+                <div class="particularlibraryBlock" fxflex="13" flexLayOutGap="10px" fxLayout="column"
+                  fxLayoutAlign="space-between center">
+
+                  <div class="particularlibraryBlockLeft">
+                    <img class="libImg" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+
+                  </div>
+                  <div class="particularlibraryBlockRight">
+                    <h5 class="title">Fined<span class="count">30</span></h5>
+                  </div>
+                </div>
+
+                <div class="particularlibraryBlock" fxflex="13" flexLayOutGap="10px" fxLayout="column"
+                  fxLayoutAlign="space-between center">
+
+                  <div class="particularlibraryBlockLeft">
+                    <img class="libImg" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+
+                  </div>
+                  <div class="particularlibraryBlockRight">
+                    <h5 class="title">New Arrival<span class="count">30</span></h5>
+                  </div>
+                </div>
+
+
+
+                <div class="particularlibraryBlock" fxflex="20" flexLayOutGap="10px" fxLayout="column"
+                  fxLayoutAlign="space-between center">
+
+                  <div class="particularlibraryBlockLeft">
+                    <img class="libImg" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+
+                  </div>
+                  <div class="particularlibraryBlockRight">
+                    <h5 class="title">Total Access<span class="count">30</span></h5>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
+
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
+
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                      <p-button class="nxtTableGlobalAdd" label=" Add Book" [outlined]="true" severity="warning"
+                        icon="pi pi-plus" (onClick)="openAddDialog()" />
+
+                    </div>
+                  </ng-template>
+
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Name"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Access Number"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Issued Date"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Return Date"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
             </div>
 
             <!-- Fee -->
-            <div *ngSwitchCase="'fee'">
+            <div *ngSwitchCase="'fee'" class="particularFeeContainer">
               <p>Manage and view Fee details here.</p>
+              <div class="particularFeeBlock" fxLayout="row" fxLayoutAlign="space-between center">
+                <!-- Applied -->
+                <div class="particularFee" flexLayOutGap="5px" fxLayout="row" fxFlex="23">
+                  <!-- <img src="../../../../assets/svg/hexagon.svg" alt="" srcset="" class="hexogonaLImg"> -->
+                  <div class="particularFeeDetails" fxLayout="row" fxLayoutAlign="space-between center">
+                    <h4>Total
+                      <span class="count">4509789</span>
+                    </h4>
+                    <img class="feeImg" src="../../../../assets/svg/particularFee4.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+                <div class="particularFee" flexLayOutGap="5px" fxLayout="row" fxFlex="23">
+                  <!-- <img src="../../../../assets/svg/hexagon.svg" alt="" srcset="" class="hexogonaLImg"> -->
+                  <div class="particularFeeDetails" fxLayout="row" fxLayoutAlign="space-between center">
+                    <h4>Paid
+                      <span class="count">23432</span>
+                    </h4>
+                    <img class="feeImg" src="../../../../assets/svg/particularFee1.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+
+                <div class="particularFee" flexLayOutGap="5px" fxLayout="row" fxFlex="23">
+                  <!-- <img src="../../../../assets/svg/hexagon.svg" alt="" srcset="" class="hexogonaLImg"> -->
+                  <div class="particularFeeDetails" fxLayout="row" fxLayoutAlign="space-between center">
+                    <h4>Pending
+                      <span class="count">09879</span>
+                    </h4>
+                    <img class="feeImg" src="../../../../assets/svg/particularFee3.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+
+                <div class="particularFee" flexLayOutGap="5px" fxLayout="row" fxFlex="23">
+                  <!-- <img src="../../../../assets/svg/hexagon.svg" alt="" srcset="" class="hexogonaLImg"> -->
+                  <div class="particularFeeDetails" fxLayout="row" fxLayoutAlign="space-between center">
+                    <h4>Over Due
+                      <span class="count">7655</span>
+                    </h4>
+                    <img class="feeImg" src="../../../../assets/svg/particularFee2.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
+
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
+
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                      <!-- <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true"
+                        severity="warning" icon="pi pi-plus" (onClick)="openAddDialog()" /> -->
+
+                    </div>
+                  </ng-template>
+
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Collection Type"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{" Paid Amount"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{" Due Amount"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Date of Payment"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
+
             </div>
 
             <!-- Transport -->
-            <div *ngSwitchCase="'transport'">
-              <p>Check Transport schedules and routes.</p>
+            <div *ngSwitchCase="'transport'" class="particularTransportContainer">
+              <div class="particularTransportBlock" fxLayout="row" fxLayoutAlign="space-between center">
+                <!-- Applied -->
+                <div class="particularTransport appiled" flexLayOutGap="5px" fxLayout="row"
+                  fxLayoutAlign="space-between center" fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Route Number <span class="count">45</span></h4>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-attendance.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+                <!-- Pending -->
+                <div class="particularTransport pending" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Bus Number <span class="count">5</span></h4>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Rejected -->
+                <div class="particularTransport rejcetd" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Incharge By: <span class="count">Authen</span></h4>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Approved -->
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Status <span class="count">Parked At(School)</span></h4>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+
+              </div>
+
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
+
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
+
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                      <!-- <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true"
+                        severity="warning" icon="pi pi-plus" (onClick)="openAddDialog()" /> -->
+
+                    </div>
+                  </ng-template>
+
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Route Name"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Bus Number"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Driver Name"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Pickup Points"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{" Pickup & Drop Time"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
             </div>
 
             <!-- Communication -->
-            <div *ngSwitchCase="'communication'">
-              <p>Communication records and messages are displayed here.</p>
+            <div *ngSwitchCase="'communication'"
+              class="particularTransportContainer  particularCommunicationContainer ">
+              <!-- <p>Communication records and messages are displayed here.</p> -->
+
+              <div class="particularTransportBlock" fxLayout="row" fxLayoutAlign="space-between center">
+
+                <!-- Pending -->
+                <div class="particularTransport pending" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Notices</h4>
+                    <h3 class="count">05</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Rejected -->
+                <div class="particularTransport rejcetd" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Circular</h4>
+                    <h3 class="count">22</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+                <!-- Approved -->
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Blog</h4>
+                    <h3 class="count">43</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="23">
+                  <div class="particularTransportLeft">
+                    <h4>Post</h4>
+                    <h3 class="count">23</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+
+
+              </div>
+
+
+
+
+
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
+
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
+
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                      <!-- <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true"
+                                                                                severity="warning" icon="pi pi-plus" (onClick)="openAddDialog()" /> -->
+
+                    </div>
+                  </ng-template>
+
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Name"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Date"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Co Ordinator"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Pickup Points"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Participants"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Venue"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
+
             </div>
 
             <!-- Grievance & Activities -->
-            <div *ngSwitchCase="'grivinace'">
-              <p>View and manage Grievances and Activities here.</p>
+            <div *ngSwitchCase="'grievance'" class="particularTransportContainer particularGrivinaceContainer">
+
+
+              <div class="particularTransportBlock" fxLayout="row" fxLayoutAlign="space-between center">
+                <!-- Applied -->
+                <div class="particularTransport appiled" flexLayOutGap="5px" fxLayout="row"
+                  fxLayoutAlign="space-between center" fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Total Grievances </h4>
+                    <h3 class="count">45</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-attendance.svg" alt="Applied Icon">
+                  </div>
+                </div>
+
+                <!-- Pending -->
+                <div class="particularTransport pending" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Escalated Cases </h4>
+                    <h3 class="count">5</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+                <!-- Rejected -->
+                <div class="particularTransport rejcetd" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Pending Grievances </h4>
+                    <h3 class="count">232</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+                <!-- Approved -->
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Sports Activities </h4>
+                    <h3 class="count">23443</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Upcoming Sports </h4>
+                    <h3 class="count">23443</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Ongoing</h4>
+                    <h3 class="count">23443</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+                <div class="particularTransport approved" fxLayout="row" fxLayoutAlign="space-between center"
+                  fxFlex="12">
+                  <div class="particularTransportLeft">
+                    <h4>Completed Activities </h4>
+                    <h3 class="count">23443</h3>
+                  </div>
+                  <div class="particularTransportRight">
+                    <img class="transportIMG" src="../../../../assets/svg/dash-exclamation-mark.svg" alt="Pending Icon">
+                  </div>
+                </div>
+
+
+
+              </div>
+
+
+
+
+
+              <div class="nxtPrimeTable">
+                <p-table #dt2 [value]="academicStudentList" [rows]="10" [rowsPerPageOptions]="[5,10,15,25, 50]"
+                  [loading]="loading" [paginator]="true"
+                  [globalFilterFields]="['fullName', 'board', 'schoolGraduationYear', 'status']">
+                  <!-- Caption with Global Search -->
+                  <ng-template pTemplate="caption">
+                    <div class="flex">
+
+                      <span class="p-input-icon-left ml-auto nxtTableGlobalSearch">
+                        <input pInputText type="text" [(ngModel)]="searchValue"
+                          (input)="dt2.filterGlobal(searchValue, 'contains')" placeholder="Search Here..." />
+                        <i class="pi pi-search"></i>
+                      </span>
+
+                      <p-button class="nxtTableGlobalClear" label="Clear" [outlined]="true" severity="secondary"
+                        icon="pi pi-filter-slash" (onClick)="clear(dt2)" />
+
+
+                      <!-- <p-button class="nxtTableGlobalAdd" label=" Apply Certificate" [outlined]="true"
+                                                    severity="warning" icon="pi pi-plus" (onClick)="openAddDialog()" /> -->
+
+                    </div>
+                  </ng-template>
+
+                  <!-- Header with Column Filters -->
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Name"}}
+                          <p-columnFilter type="text" field="fullName" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Date"}}
+                          <p-columnFilter type="text" field="board" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Co Ordinator"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Pickup Points"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Participants"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Venue"}}
+                          <p-columnFilter type="numeric" field="schoolGraduationYear" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th>
+                        <div class="flex align-items-center">
+                          {{"Status"}}
+                          <p-columnFilter type="numeric" field="status" display="menu"></p-columnFilter>
+                        </div>
+                      </th>
+
+                      <th class="nxtPrimeTableAction">{{"Actions"}}</th>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Body -->
+                  <ng-template pTemplate="body" let-element>
+                    <tr>
+                      <td>{{ element.fullName }}</td>
+                      <td>{{ element.boardName }}</td>
+                      <td>{{ element.currentYear }}</td>
+                      <td>
+                        <i class="pi" [ngClass]="element.status === 1 ? 'pi-check-circle' : 'pi-exclamation-circle'"
+                          [style.color]="element.status === 1 ? 'green' : 'red'"
+                          [pTooltip]="element.status === 1 ? 'Active' : 'in-Active'" tooltipPosition="bottom">
+                        </i>
+                      </td>
+
+                      <td class="nxtPrimeTableAction">
+
+                        <p-splitButton [model]="actionItems" icon="pi pi-ellipsis-h" outlined severity="secondary"
+                          class="nxtPrimeTableAction" (click)="onButtonClick(element)">
+                        </p-splitButton>
+
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                  <!-- Empty Message -->
+                  <ng-template pTemplate="emptymessage">
+                    @if(dt2.columns){
+                    <tr>
+                      <td [attr.colspan]="dt2.columns" class="nxtPrimeTableNoDataFound">
+                        No data found.
+                      </td>
+                    </tr>
+                    }
+                  </ng-template>
+                </p-table>
+              </div>
+
             </div>
 
             <!-- Settings -->

@@ -1952,7 +1952,7 @@ p.nxtCopyRights {
       padding: 7px !important;
       border-radius: 30px !important;
       font-size: 12px !important;
-      width: 130px !important;
+      width: 150px !important;
       color: #fff !important;
       font-family: "Sevillana", cursive;
       font-weight: 600;
@@ -2305,24 +2305,247 @@ p.nxtCopyRights {
   margin: 30px 0;
 
   .particularCertificate {
-    border: 1px dashed rgba(221, 221, 221, 0.8666666667);
+    border: 1px dashed;
     padding: 20px;
     border-radius: 5px;
+
+    .particularCertificateLeft {
+      .count {
+        font-size: 22px;
+        font-weight: 600;
+        color: orangered;
+        padding-left: 4px;
+      }
+    }
   }
 
   .appiled {
-    background-color: #fbfbfb;
+    background-color: #edf1f5;
+    border-color: #edf1f5;
   }
 
   .pending {
-    background-color: #fffcde;
+    background-color: #fffde7;
+    border-color: #fffde7;
   }
 
-  .apporved {
-    background-color: #d4ffd4;
+  .approved {
+    background-color: #e3ffe3;
+    border-color: #e3ffe3;
   }
 
   .rejcetd {
-    background-color: #ffcbcb;
+    background-color: #ffebeb;
+    border-color: #ffebeb;
   }
+}
+
+::ng-deep .particularLibraryContainer {
+  .particularLibraryMain {
+    padding: 20px 0;
+  }
+
+  .particularlibraryBlock {
+    background-color: #91cee6;
+    padding: 10px 15px;
+    border: 1px dashed #65aac5;
+    border-radius: 4px;
+    min-width: 150px;
+
+    background-color: #f8fdff;
+    background-image: url("https://pngfile.net/public/uploads/preview/wave-line-background-free-download-11565985601xzhdvtiqtn.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply; /* Blends the color with the image */
+
+    h5.title {
+      margin: 0;
+      padding-bottom: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--nxtBlack);
+
+      .count {
+        color: var(--nxtDangerBtnHover);
+        font-weight: 600;
+        padding-left: 5px;
+        font-size: 20px;
+      }
+    }
+
+    .particularlibraryBlockLeft {
+      img.libImg {
+        width: 46px;
+        height: 40px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+::ng-deep .particularFeeContainer {
+  .particularFeeBlock {
+    height: 100px;
+    margin-bottom: 90px;
+
+    .particularFee {
+      border: 1px solid #747474;
+      // background-image: url("../assets/svg/hexagon.svg");
+      // width: 180px;
+      // height: 180px;
+      // background-repeat: no-repeat;
+      // background-size: contain;
+      // background-color: #d9d9d9;
+      // position: relative;
+
+      .particularFeeDetails {
+        padding: 10px;
+        width: 100%;
+
+        h4 {
+          margin: 0;
+          font-size: 15px;
+          font-weight: 500;
+          color: var(--nxtIndigo);
+          font-weight: 600;
+
+          .count {
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+        .feeImg {
+          width: 50px;
+        }
+      }
+
+      // .hexogonaLImg {
+      //   position: absolute;
+      //   top: 0%;
+      //   left: 25%;
+      //   width: 200px;
+      //   height: 200px;
+      // }
+    }
+  }
+}
+
+::ng-deep .particularTransportContainer {
+  padding: 20px 0;
+
+  .particularTransportBlock {
+    .particularTransport {
+      border: 1px dashed #939393;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 20px 0;
+
+      .particularTransportLeft {
+        h4 {
+          font-weight: 500;
+          font-size: 15px;
+          margin: 0;
+          padding: 0;
+
+          .count {
+            color: var(--nxtDangerBtnHover);
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .particularTransportRight {
+        .transportIMG {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .particularTransportContainer.particularGrivinaceContainer {
+  .particularTransportBlock {
+    padding: 20px 0;
+  }
+  .particularTransport {
+    border: 1px solid var(--nxtDashTextPrimary);
+    height: 120px;
+    padding: 10px;
+  }
+}
+
+::ng-deep .particularCommunicationContainer {
+  .particularTransport {
+    border: 1px solid var(--nxtDashChart2) !important;
+  }
+}
+
+// ::ng-deep .academicDetailsParticular {
+// }
+
+::ng-deep .nxtTable-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+
+  .grid-item {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .nxtPrimeTableAction {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      .p-button {
+        padding: 0;
+        height: 17px;
+        width: 17px;
+        border: 1px solid #dfdfdf !important;
+
+        .p-icon {
+          width: 13px;
+          height: 13px;
+        }
+      }
+
+      .p-button-icon {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .product-card {
+    text-align: center;
+    h3 {
+      margin: 0;
+      color: var(--nxtOrange);
+      font-weight: 600;
+      padding-bottom: 5px;
+      font-size: 18px;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      padding-bottom: 5px;
+      color: var(--nxtDashChart2);
+      font-weight: 600;
+    }
+  }
+
+  .academicStudentList {
+    position: relative;
+  }
+}
+
+::ng-deep .nxtTable-grid-container {
+  padding: 30px 0;
 }

@@ -78,6 +78,10 @@ export class StudentListComponent {
   public isAddForm: boolean = true
   public selectedBoardYearClassSection: any;
 
+  public  nxtTableViewMode: 'table' | 'grid' = 'table'; 
+  public paginatedStudentList: any[] = []; // This will hold the currently paginated data
+
+
   actionItems: any[] = [];
   selectedElement: any;;
 
@@ -86,6 +90,10 @@ export class StudentListComponent {
 
   profileViewActiveItem: MenuItem | any;
 
+
+  public  pageSize: number = 20;
+  public currentPage: number = 0;
+  public totalRecords: number = 0;
 
   /*pie*/
 
@@ -653,6 +661,8 @@ export class StudentListComponent {
     this.academicSectionList = [];
     this.academicStudentList = [];
 
+ 
+
     try {
       // Fetching the list of academic classes
       const classesData = await this.formsService.updateDataID(
@@ -660,6 +670,17 @@ export class StudentListComponent {
         schoolErpEndpoint.SchoolAcademicSections
       );
       this.academicSectionList = classesData?.data || [];
+
+
+   // Update the total records count
+      this.totalRecords = this.academicStudentList.length;
+
+      // Reset pagination
+      this.currentPage = 0;
+
+      // Call the pagination function to update the view
+      this.updatePaginatedList();
+
 
       console.log('Sections List:', this.academicSectionList);
     } catch (error) {
@@ -856,6 +877,29 @@ export class StudentListComponent {
   ngOnDestroy(): void {
     // Destroy all charts when the component is destroyed
     this.chartService.destroyAllCharts();
+  }
+
+
+TableToggleView() {
+  this.nxtTableViewMode = this.nxtTableViewMode === 'table' ? 'grid' : 'table';
+  this.currentPage = 0; // Reset to first page when toggling views
+}
+
+get paginatedList() {
+  const startIndex = this.currentPage * this.pageSize;
+  return this.academicStudentList.slice(startIndex, startIndex + this.pageSize);
+}
+
+onPageChange(event: any) {
+  this.currentPage = event.page;  // Update currentPage based on paginator change
+  console.log('Current Page:', this.currentPage);
+}
+
+
+  // Update the paginated list based on current page and page size
+  updatePaginatedList() {
+    const startIndex = this.currentPage * this.pageSize;
+    this.paginatedStudentList = this.academicStudentList.slice(startIndex, startIndex + this.pageSize);
   }
 
 

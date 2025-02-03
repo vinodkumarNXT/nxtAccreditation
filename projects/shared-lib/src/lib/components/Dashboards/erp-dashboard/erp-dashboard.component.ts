@@ -24,17 +24,17 @@ export class ErpDashboardComponent implements OnInit {
   cards = Array.from({ length: 12 }, (_, i) => i + 1); // Example: 12 cards
 
   private backgroundColors: string[] = [];
-
+public randomAttendanceData:any
 
   contentList:any;
   timelinePosts=[
     {
       status: 'Day Schedule',
-      date: '15/10/2024',
+      date: '02/01/2025',
       color: '#9C27B0',
       image: 'game-controller.jpg',
       TimeTable: {
-        Day: 'Monday',
+        Day: 'Thursday',
         schedule: [
           { time: '9:00 AM', subject: 'Maths', room: 'R21', BuildingName: 'Millennium', FacultyBy: 'JHON Maxer' },
           { time: '10:00 AM', subject: 'English', room: 'R22', BuildingName: 'Main Block', FacultyBy: 'Sarah Walker' },
@@ -49,9 +49,9 @@ export class ErpDashboardComponent implements OnInit {
         
       }
     },
-      { status: 'Tech Event', date: '10/01/2024 09:00', icon: 'pi pi-futbol', color: '#2196F3', image: 'football.jpg',
+      { status: 'Tech Event', date: '03/01/2025 09:00', icon: 'pi pi-futbol', color: '#2196F3', image: 'football.jpg',
         TimeTable: {
-          Day: 'Tuesday',
+          Day: 'Friday',
           schedule: [
             { time: '9:00 AM', subject: 'Maths', room: 'R21', BuildingName: 'Millennium', FacultyBy: 'JHON Maxer' },
             { time: '10:00 AM', subject: 'English', room: 'R22', BuildingName: 'Main Block', FacultyBy: 'Sarah Walker' },
@@ -66,8 +66,8 @@ export class ErpDashboardComponent implements OnInit {
           
         }
        },
-      { status: 'Science Seminar', date: '10/02/2024 11:00', icon: 'pi pi-briefcase', color: '#4CAF50', image: 'seminar.jpg' },
-      { status: 'Annual Picnic', date: '10/03/2024 08:30', icon: 'pi pi-tree', color: '#FFEB3B', image: 'picnic.jpg' },
+      { status: 'Science Seminar', date: '04/01/2025 11:00', icon: 'pi pi-briefcase', color: '#4CAF50', image: 'seminar.jpg' },
+      { status: 'Annual Picnic', date: '06/01/2025 08:30', icon: 'pi pi-tree', color: '#FFEB3B', image: 'picnic.jpg' },
       { status: 'Math Workshop', date: '10/04/2024 14:00', icon: 'pi pi-pencil', color: '#FF5722', image: 'workshop.jpg',
          TimeTable: {
         Day: 'Wednesday',
@@ -147,18 +147,29 @@ export class ErpDashboardComponent implements OnInit {
       return this.assetService.getAssetPath(fileName);
     }
 
+        // Function to generate random data for the chart
+ generateRandomData(length: any, min: any, max: any): number[] {
+  return Array.from({ length }, () => Math.floor(Math.random() * (max - min + 1) + min));
+}
+
+
+
+
+
+
   loadAdminDashBoardData() {
     this.chartService.createChart('lineChart', 'line', {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-      datasets: [
-        {
-          label: 'Attendance',
-          data: [10, 20, 30, 40, 50],
-          borderColor: 'rgba(75, 192, 192, 1)',
-          fill: false,
-        },
-      ],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+  datasets: [
+    {
+      label: 'Attendance',
+      data:  this.generateRandomData(5, 10, 100),
+      borderColor: 'rgba(75, 192, 192, 1)',
+      fill: false,
+    },
+  ],
     });
+
 
     // Bar Chart
     this.chartService.createChart('barChart', 'bar', {

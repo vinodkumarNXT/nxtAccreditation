@@ -53,11 +53,13 @@ import { MenuItem } from 'primeng/api';
 import { TieredMenuModule } from 'primeng/tieredmenu';  // Import TieredMenuModule
 // Angular Chart Component
 import { AgCharts } from 'ag-charts-angular';
+import { PaginatorModule } from 'primeng/paginator'; // Import PaginatorModule
 
 
 @NgModule({
   declarations: [],
   imports: [
+    PaginatorModule,
     TieredMenuModule,
     TabMenuModule,
     FileUploadModule,
@@ -109,6 +111,7 @@ import { AgCharts } from 'ag-charts-angular';
 
   ],
   exports: [
+    PaginatorModule,
     TieredMenuModule,
     PanelMenuModule,
     TabMenuModule,
