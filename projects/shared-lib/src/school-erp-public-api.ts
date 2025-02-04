@@ -211,11 +211,11 @@ export * from './lib/components/school-erp/attendance/attendance-add/attendance-
 export * from './lib/components/school-erp/attendance/attendance-edit/attendance-edit.component';
 export * from './lib/components/school-erp/attendance/attendance-view/attendance-view.component';
 
-export * from './lib/components/school-erp/academic-yearcalender/academic-yearcalender.component';
+export * from './lib/components/school-erp/Communication/academic-yearcalender/academic-yearcalender.component';
 
 export * from './lib/components/school-erp/attendance-report/attendance-report.component';
 
-export * from './lib/components/school-erp/blogsandpost/blogsandpost.component';
+export * from './lib/components/school-erp/Communication/blogsandpost/blogsandpost.component';
 
 export * from './lib/components/school-erp/compliants/compliants.component';
 
@@ -224,12 +224,12 @@ export * from './lib/components/school-erp/leave-mangement/leave-mangement.compo
 export * from './lib/components/school-erp/payroll/payroll.component';
 
 export * from './lib/components/school-erp/reports-and-analytics/reports-and-analytics.component';
-export * from './lib/components/school-erp/school-magazine/school-magazine.component';
+export * from './lib/components/school-erp/Communication/school-magazine/school-magazine.component';
 export * from './lib/components/school-erp/student-assignment/student-assignment.component';
 
-export * from './lib/components/school-erp/study-and-conduct-certificate/study-and-conduct-certificate.component';
+export * from './lib/components/school-erp/cerificates/study-and-conduct-certificate/study-and-conduct-certificate.component';
 
-export * from './lib/components/school-erp/transfer-certificate/transfer-certificate.component';
+export * from './lib/components/school-erp/cerificates/transfer-certificate/transfer-certificate.component';
 export * from './lib/components/school-erp/upload-attendance/upload-attendance.component';
 
 export * from './lib/interfaces/school-fileipload';
