@@ -1,5 +1,5 @@
 <ng-container *ngIf="!isLoginPage">
-	<div class="nxtMainRouteOutlet  nxtPrimeRouter">
+	<div class="nxtMainRouteOutlet nxtPrimeRouter">
 		<div class="nxtHeaderAndContent">
 			<div class="nxtPrimeHeader">
 				<!-- Toolbar -->
@@ -18,11 +18,9 @@
 
 							<!-- Text section -->
 							<div fxFlex="80" class="textContainer">
-								<p class="brandName">{{"VIVA"}}</p>
+								<p class="brandName">{{ "VIVA" }}</p>
 							</div>
 						</div>
-
-
 
 						<!-- <button pButton type="button" icon="pi pi-bars" class="p-button-text d-none" (click)="toggleSidebar()"></button> -->
 					</div>
@@ -74,7 +72,6 @@
 						</div>
 					</div>
 
-
 					<!-- Right Section -->
 					<div class="p-toolbar-group-right">
 						<!-- <div class="nxtPrimeGlobalSearch">
@@ -97,13 +94,9 @@
 							<i class="pi pi-search search-icon"></i>
 						</div>
 
-
-
-
 						<button pButton [rounded]="true" [outlined]="true" label="Log Out"
 							icon="pi pi-sign-out" class="p-button-danger"
-							(click)="logout()">
-						</button>
+							(click)="logout()"></button>
 					</div>
 
 					<!-- Breadcrumb -->
@@ -118,7 +111,8 @@
 											[ngClass]="[item.icon ? item.icon : '', 'text-color']"></span>
 										<span
 											class="text-primary font-semibold">{{
-											item.label }}</span>
+											item.label
+											}}</span>
 									</a>
 								</ng-container>
 								<ng-template #elseBlock>
@@ -130,26 +124,15 @@
 								</ng-template>
 							</ng-template>
 						</p-breadcrumb>
-
-
-
-
 					</div>
-
-
 				</p-toolbar>
-
 			</div>
-
 
 			<!-- Sidebar Menu -->
 			<div class="nxtPrimeSideMenu">
 				<p-sidebar [(visible)]="isSidebarVisible" position="left" [baseZIndex]="10000">
-					<p-menu [model]="menuItems">
-
-					</p-menu>
+					<p-menu [model]="menuItems"> </p-menu>
 				</p-sidebar>
-
 			</div>
 
 			<!-- Main Content -->
@@ -162,7 +145,7 @@
 		<footer class="nxt-footerSection row m-0">
 			<div class="nxt-footerContent col-md-4 col-sm-12">
 				<div class="nxtPoweredBy">
-					<p>Powered By - </p>
+					<p>Powered By -</p>
 					<img src="../assets/eduNxt.png" alt="logo" />
 				</div>
 			</div>
@@ -170,13 +153,15 @@
 			<div class="nxt-footerContent col-md-4 col-sm-12">
 				<p class="nxtCopyRights">
 					<span><i class="pi pi-copyright"></i></span>
-					<span id="currentYear" style="font-weight: 500; font-size: 13px">{{ currentYear
+					<span id="currentYear" style="font-weight: 500; font-size: 13px">{{
+						currentYear
 						}}</span>
 					<span style="font-weight: 700; font-size: 13px"></span>
 					<span style="font-weight: 600; font-size: 13px; color: #1776d4">Edu</span>
 					<span style="font-weight: 700; font-size: 13px">N</span>
-					<span style="color: #F57F17; font-weight: 700; font-size: 13px">X</span>
-					<span style="font-weight: 700; font-size: 13px">T</span> All Rights Reserved
+					<span style="color: #f57f17; font-weight: 700; font-size: 13px">X</span>
+					<span style="font-weight: 700; font-size: 13px">T</span> All Rights
+					Reserved
 				</p>
 			</div>
 

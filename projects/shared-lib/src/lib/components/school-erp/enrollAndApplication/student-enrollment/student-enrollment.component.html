@@ -1,94 +1,3 @@
-<!-- <div class="accre-forms-container card-1">
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
-      <div fxFlex="80">
-        <h3 class="acc-form-title card-title">{{"Enrollment"}}</h3>
-      </div>
-      <div fxFlex="20" class="example-button-row edit-form-btn" fxLayout="row" fxLayoutAlign="end center">
-  
-      </div>
-    </div>
-  
-    
-  
-    <div fxLayout="row" fxLayoutAlign="end end" class="filterBlockContainer">
-      <div class="filterBlock" fxFlex="30">
-        <mat-form-field>
-          <input matInput (keyup)="applyFilter($event)" placeholder="Search Here...." #input>
-      </mat-form-field>
-      </div>
-      <div class="addCountBlock" fxFlex="7"   fxLayout="row" fxLayoutAlign="space-between center" flexlayouGap="10px">
-        <button mat-raised-button color="warn" (click)="openAddDialog()">
-          <mat-icon>add</mat-icon>
-          <span class="content">ADD</span>
-        </button>
-      </div>
-  
-  
-    </div>
-  
-    <table mat-table [dataSource]="dataSource" appScrollNearEnd class="mat-elevation-z8 nxtAccTable">
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>{{"ID"}}</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-      </ng-container>
-
-     
-    
-   <ng-container matColumnDef="fristName">
-        <th mat-header-cell *matHeaderCellDef>{{"Frist Name"}}</th>
-        <td mat-cell *matCellDef="let element">{{ element.first_name}}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="classApplied">
-        <th mat-header-cell *matHeaderCellDef>{{"Class Applied"}}</th>
-        <td mat-cell *matCellDef="let element">{{ element.class_applied}}</td>
-      </ng-container> 
-    
-  
-  
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef class="globalTableTheadAction">Actions</th>
-        <td mat-cell *matCellDef="let element" class="globalTableTDcellAction">
-          <button mat-button class="globalTableActionBtn" color="primary" (click)="viewElement(element)">
-            <mat-icon>remove_red_eye</mat-icon>
-          </button>
-          <button mat-button class="globalTableActionBtn nxtPrimary"   color="warn"(click)="editElement(element)">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-button class="globalTableActionBtn" color="warn" (click)="deleteElement(element)">
-            <mat-icon>delete_outline</mat-icon>
-          </button>
-        </td>
-      </ng-container>
-    
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" [attr.colspan]="displayedColumns.length">
-          <p class="NoFilterMatchFound" *ngIf="input?.value">  
-            No Data Matching<span class="filterValue"> "{{input.value}}"</span> 
-          </p>
-          <p class="NoFilterMatchFound" *ngIf="!input?.value">  
-            No data found
-          </p>
-        </td>
-      </tr>
-    </table>
-  
-  
-    <mat-paginator [pageSizeOptions]="pageSizeOptions" aria-label="Select page of users"></mat-paginator>
-  
-    
-    
-  
-</div>
-  
-  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
-     -->
-
-
 <div class="accre-forms-container card-1">
   <!-- Title and Add Button Section -->
   <div fxLayout="row" fxLayoutAlign="space-between center" class="form-title-container">
@@ -239,9 +148,7 @@
 
 
 <div class="card">
-  <p-dialog 
-    [header]="isAddForm ? 'Add Record' : 'Edit Record'" 
-   styleClass="nxtGlobalTableHeader" [(visible)]="visible"
+  <p-dialog [header]="isAddForm ? 'Add Record' : 'Edit Record'" styleClass="nxtGlobalTableHeader" [(visible)]="visible"
     [breakpoints]="{'1199px': '75vw', '575px': '90vw'}" [modal]="true" [closable]="true" [maximizable]="true"
     [baseZIndex]="10000" [style]="{'width': '50vw', 'height': 'auto'}" (onShow)="openAddDialog()">
     <div class="nxtPrimeFormContainer">
@@ -285,46 +192,48 @@
 
           <div fxFlex="0 0 48%">
             <div fxLayout="column" class="form-group">
-                <label>{{"Date Of Joining"}}</label>
-                <p-calendar formControlName="dateOfJoining" dateFormat="dd/mm/yy" showIcon="true" placeholder="Select Joining Date "></p-calendar>
+              <label>{{"Date Of Joining"}}</label>
+              <p-calendar formControlName="dateOfJoining" dateFormat="dd/mm/yy" showIcon="true"
+                placeholder="Select Joining Date "></p-calendar>
             </div>
-        </div>
+          </div>
 
 
-            <div fxFlex="0 0 48%">
-              <div fxLayout="column" class="form-group">
-                  <label>{{"First Name"}}</label>
-                  <input pInputText formControlName="firstName" placeholder="Enter First Name" />
-              </div>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{"First Name"}}</label>
+              <input pInputText formControlName="firstName" placeholder="Enter First Name" />
             </div>
+          </div>
 
 
-            <div fxFlex="0 0 48%">
-              <div fxLayout="column" class="form-group">
-                  <label>{{"Middle Name"}}</label>
-                  <input pInputText formControlName="middleName" placeholder="EnterFirst Name" />
-              </div>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{"Middle Name"}}</label>
+              <input pInputText formControlName="middleName" placeholder="EnterFirst Name" />
             </div>
+          </div>
 
-            <div fxFlex="0 0 48%">
-              <div fxLayout="column" class="form-group">
-                  <label>{{"Last Name"}}</label>
-                  <input pInputText formControlName="lastName" placeholder="Enter Last Name" />
-              </div>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{"Last Name"}}</label>
+              <input pInputText formControlName="lastName" placeholder="Enter Last Name" />
             </div>
+          </div>
 
-            <div fxFlex="0 0 48%">
-              <div fxLayout="column" class="form-group">
-                  <label>{{"Pevious School"}}</label>
-                  <input pInputText formControlName="previousSchool" placeholder="School Name" />
-              </div>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{"Pevious School"}}</label>
+              <input pInputText formControlName="previousSchool" placeholder="School Name" />
             </div>
+          </div>
 
-            <div fxFlex="0 0 48%">
-              <div fxLayout="column" class="form-group">
-                  <label>{{"Date Of Birth"}}</label>
-                  <p-calendar  formControlName="dateOfBirth"  dateFormat="dd/mm/yy" showIcon="true" placeholder="Select DOB"></p-calendar>
-              </div>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{"Date Of Birth"}}</label>
+              <p-calendar formControlName="dateOfBirth" dateFormat="dd/mm/yy" showIcon="true"
+                placeholder="Select DOB"></p-calendar>
+            </div>
           </div>
 
 
@@ -352,7 +261,7 @@
             <div fxLayout="column" class="form-group">
               <label>{{ "Gender" }}</label>
               <p-dropdown class="full-width-dropdown" [options]="genderMetaData" optionLabel="value"
-                placeholder="Select Gender" emptyMessage="No Data Found" formControlName="gender" >
+                placeholder="Select Gender" emptyMessage="No Data Found" formControlName="gender">
               </p-dropdown>
             </div>
           </div>
@@ -362,164 +271,144 @@
             <div fxLayout="column" class="form-group">
               <label>{{ "Blood Group " }}</label>
               <p-dropdown class="full-width-dropdown" [options]="bloodGroupList" optionLabel="name"
-                placeholder="Select Blood Group " emptyMessage="No Data Found" formControlName="gender" >
+                placeholder="Select Blood Group " emptyMessage="No Data Found" formControlName="gender">
               </p-dropdown>
             </div>
           </div>
 
 
-          
-          
-          
-          
+
+
+
+
           <div fxFlex="0 0 48%">
             <div fxLayout="column" class="form-group">
               <label>{{ "Caste Category" }}</label>
               <p-dropdown class="full-width-dropdown" [options]="castCategoryList" optionLabel="name"
-              placeholder="Select Caste Category" emptyMessage="No Data Found" formControlName="casteCategory" >
-            </p-dropdown>
-          </div>
-        </div>
-        
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Select Caste Category" }}</label>
-            <p-dropdown class="full-width-dropdown" [options]="castList" optionLabel="name"
-              placeholder="Select Gender" emptyMessage="No Data Found" formControlName="gender" >
-            </p-dropdown>
-          </div>
-        </div>
-
-        <div class="form-group" fxFlex="1 1 100%">
-          <h2> Gurdian & Address Details</h2>
-        </div>
-
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Guardian Name" }}</label>
-              <input pInputText formControlName="guardianName" placeholder="Enter Gurdian Name"/>
+                placeholder="Select Caste Category" emptyMessage="No Data Found" formControlName="casteCategory">
+              </p-dropdown>
             </div>
           </div>
-          
+
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Select Caste Category" }}</label>
+              <p-dropdown class="full-width-dropdown" [options]="castList" optionLabel="name"
+                placeholder="Select Gender" emptyMessage="No Data Found" formControlName="gender">
+              </p-dropdown>
+            </div>
+          </div>
+
+          <div class="form-group" fxFlex="1 1 100%">
+            <h2> Gurdian & Address Details</h2>
+          </div>
+
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Guardian Name" }}</label>
+              <input pInputText formControlName="guardianName" placeholder="Enter Gurdian Name" />
+            </div>
+          </div>
+
           <div fxFlex="0 0 48%">
             <div fxLayout="column" class="form-group">
               <label>{{ "Guardian Contact Number" }}</label>
-              <p-inputNumber 
-              formControlName="guardianContactNumber"
-              placeholder="Enter Gurdian Number"
-              mode="decimal"  
-              [min]="1000000000" 
-              [max]="9999999999" 
-              inputId="withoutgrouping" 
-              [useGrouping]="false" /> 
+              <p-inputNumber formControlName="guardianContactNumber" placeholder="Enter Gurdian Number" mode="decimal"
+                [min]="1000000000" [max]="9999999999" inputId="withoutgrouping" [useGrouping]="false" />
+            </div>
           </div>
-        </div>
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Guardian Email" }}</label>
-              <input pInputText formControlName="guardianEmail" placeholder="Enter Email "/>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Guardian Email" }}</label>
+              <input pInputText formControlName="guardianEmail" placeholder="Enter Email " />
+            </div>
           </div>
-        </div>
 
 
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Emergency Contact Number" }}</label>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Emergency Contact Number" }}</label>
               <!-- <input pInputText formControlName="emergencyContactNumber" type="number" placeholder="Enter  Contact Number "/> -->
-              <p-inputNumber
-              formControlName="emergencyContactNumber"
-              placeholder="Enter Guardian Number"
-              mode="decimal"
-              [min]="1000000000" 
-              [max]="9999999999" 
-              inputId="withoutgrouping"
-              [useGrouping]="false" />
+              <p-inputNumber formControlName="emergencyContactNumber" placeholder="Enter Guardian Number" mode="decimal"
+                [min]="1000000000" [max]="9999999999" inputId="withoutgrouping" [useGrouping]="false" />
 
+            </div>
           </div>
-        </div>
 
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Address Line" }}</label>
-              <input pInputText formControlName="addressLine" placeholder="Enter  Address Line"/>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Address Line" }}</label>
+              <input pInputText formControlName="addressLine" placeholder="Enter  Address Line" />
+            </div>
           </div>
-        </div>
 
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Country" }}</label>
-            <p-dropdown class="full-width-dropdown" [options]="countryList" optionLabel="title"
-              placeholder="Select Country" emptyMessage="No Data Found" formControlName="country"  (onChange)="updateStates($event.value)" >
-            </p-dropdown>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Country" }}</label>
+              <p-dropdown class="full-width-dropdown" [options]="countryList" optionLabel="title"
+                placeholder="Select Country" emptyMessage="No Data Found" formControlName="country"
+                (onChange)="updateStates($event.value)">
+              </p-dropdown>
+            </div>
           </div>
-        </div>
 
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "State" }}</label>
-            <p-dropdown class="full-width-dropdown" [options]="filteredStates" optionLabel="title"
-              placeholder="Select State" emptyMessage="No Data Found" formControlName="state"  (onChange)="updateDistricts($event.value)" >
-            </p-dropdown>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "State" }}</label>
+              <p-dropdown class="full-width-dropdown" [options]="filteredStates" optionLabel="title"
+                placeholder="Select State" emptyMessage="No Data Found" formControlName="state"
+                (onChange)="updateDistricts($event.value)">
+              </p-dropdown>
+            </div>
           </div>
-        </div>
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "District" }}</label>
-            <p-dropdown class="full-width-dropdown" [options]="filteredDistricts" optionLabel="title"
-              placeholder="Select District" emptyMessage="No Data Found" formControlName="district"  (onChange)="updateDistricts($event.value)" >
-            </p-dropdown>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "District" }}</label>
+              <p-dropdown class="full-width-dropdown" [options]="filteredDistricts" optionLabel="title"
+                placeholder="Select District" emptyMessage="No Data Found" formControlName="district"
+                (onChange)="updateDistricts($event.value)">
+              </p-dropdown>
+            </div>
           </div>
-        </div>
 
 
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Postal Code" }}</label>
-              <p-inputNumber 
-              formControlName="postalCode"
-              placeholder="Enter  Pin Code"
-              mode="decimal"  
-              inputId="withoutgrouping" 
-              [min]="100000" 
-              [max]="999999" 
-              [useGrouping]="false" /> 
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Postal Code" }}</label>
+              <p-inputNumber formControlName="postalCode" placeholder="Enter  Pin Code" mode="decimal"
+                inputId="withoutgrouping" [min]="100000" [max]="999999" [useGrouping]="false" />
+            </div>
           </div>
-        </div>
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Residential Contact Number" }}</label>
-              <p-inputNumber 
-              formControlName="residentialContactNumber"
-              placeholder="Enter Contact Number"
-              mode="decimal"  
-              [min]="1000000000" 
-              [max]="9999999999" 
-              inputId="withoutgrouping" 
-              [useGrouping]="false" /> 
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Residential Contact Number" }}</label>
+              <p-inputNumber formControlName="residentialContactNumber" placeholder="Enter Contact Number"
+                mode="decimal" [min]="1000000000" [max]="9999999999" inputId="withoutgrouping" [useGrouping]="false" />
+            </div>
           </div>
-        </div>
 
-        <div fxFlex="0 0 48%">
-          <div fxLayout="column" class="form-group">
-            <label>{{ "Approved By" }}</label>
-              <input pInputText formControlName="approvedBy"/>
+          <div fxFlex="0 0 48%">
+            <div fxLayout="column" class="form-group">
+              <label>{{ "Approved By" }}</label>
+              <input pInputText formControlName="approvedBy" />
+            </div>
           </div>
-        </div>
 
         </div>
 
 
         <div class="p-dialog-footer nxtPrimeFormAction">
           <div class fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="end center">
-            <p-button  type="submit" label="Submit" severity="success" [rounded]="true" size="small" icon="pi pi-check" [disabled]="!form.valid" (click)="submitForm()"/>
+            <p-button type="submit" label="Submit" severity="success" [rounded]="true" size="small" icon="pi pi-check"
+              [disabled]="!form.valid" (click)="submitForm()" />
             <p-button label="Cancel" severity="warning" [rounded]="true" icon="pi pi-times" size="small" />
           </div>
         </div>

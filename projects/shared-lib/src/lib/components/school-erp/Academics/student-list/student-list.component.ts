@@ -5,7 +5,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Table } from 'primeng/table/public_api';
 import { DatePipe } from '@angular/common';
-import { ChartOptions } from 'chart.js';
 import {
   MaterialModule,
   SharableModule,
@@ -19,12 +18,13 @@ import { FileUploadService } from 'shared-lib';
 import Swal from 'sweetalert2';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog'; // Import DialogService
+import { TableGridService } from 'projects/shared-lib/src/lib/services/tablegrid.service';
 
 @Component({
   selector: 'lib-student-list',
   standalone: true,
   imports: [MaterialModule, SharableModule],
-  providers: [FormsService, ConfirmationService, MessageService, DialogService, DatePipe],
+  providers: [FormsService, ConfirmationService, MessageService, DialogService, DatePipe, TableGridService],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.scss',
 })
@@ -79,7 +79,7 @@ export class StudentListComponent {
   public selectedBoardYearClassSection: any;
 
   public  nxtTableViewMode: 'table' | 'grid' = 'table'; 
-  public paginatedStudentList: any[] = []; // This will hold the currently paginated data
+  // public paginatedStudentList: any[] = []; // This will hold the currently paginated data
 
 
   actionItems: any[] = [];
@@ -93,7 +93,7 @@ export class StudentListComponent {
 
   public  pageSize: number = 20;
   public currentPage: number = 0;
-  public totalRecords: number = 0;
+  // public totalRecords: number = 0;
 
   /*pie*/
 
@@ -173,6 +173,7 @@ export class StudentListComponent {
 
 
   constructor(
+    private tableGridService: TableGridService,
     private chartService:ChartsjsService,
     private datePipe: DatePipe,
     private dialogService: DialogService,
@@ -672,16 +673,8 @@ export class StudentListComponent {
       this.academicSectionList = classesData?.data || [];
 
 
-   // Update the total records count
-      this.totalRecords = this.academicStudentList.length;
-
-      // Reset pagination
-      this.currentPage = 0;
 
       // Call the pagination function to update the view
-      this.updatePaginatedList();
-
-
       console.log('Sections List:', this.academicSectionList);
     } catch (error) {
       console.error('Failed to load academic classes:', error);
@@ -885,22 +878,58 @@ TableToggleView() {
   this.currentPage = 0; // Reset to first page when toggling views
 }
 
-get paginatedList() {
-  const startIndex = this.currentPage * this.pageSize;
-  return this.academicStudentList.slice(startIndex, startIndex + this.pageSize);
-}
+// get paginatedList() {
+//   const startIndex = this.currentPage * this.pageSize;
+//   return this.academicStudentList.slice(startIndex, startIndex + this.pageSize);
+// }
 
-onPageChange(event: any) {
-  this.currentPage = event.page;  // Update currentPage based on paginator change
-  console.log('Current Page:', this.currentPage);
-}
+// onPageChange(event: any) {
+//   this.currentPage = event.page;  // Update currentPage based on paginator change
+//   console.log('Current Page:', this.currentPage);
+// }
 
 
-  // Update the paginated list based on current page and page size
-  updatePaginatedList() {
-    const startIndex = this.currentPage * this.pageSize;
-    this.paginatedStudentList = this.academicStudentList.slice(startIndex, startIndex + this.pageSize);
+//   // Update the paginated list based on current page and page size
+//   updatePaginatedList() {
+//     const startIndex = this.currentPage * this.pageSize;
+//     this.paginatedStudentList = this.academicStudentList.slice(startIndex, startIndex + this.pageSize);
+//   }
+
+
+  async fetchStudentData() {
+    // Replace with your actual data fetching logic
+    const selectedID = 1;  // Example selected ID for the API call
+    console.log('Fetching data for Class ID:', selectedID);
+
+    // Example: Assume this is your data fetched from an API
+    const studentsData = await this.formsService.updateDataID(
+      selectedID,
+      schoolErpEndpoint.SchoolStudentBasicInfo
+    );
+
+    this.academicStudentList = studentsData?.data || [];
+    this.tableGridService.setAcademicStudentList(this.academicStudentList, this.pageSize);
   }
 
+  // Get the current paginated list from the service
+  get paginatedStudentList() {
+    return this.tableGridService.getPaginatedStudentList();
+  }
+
+  // Get the total number of records from the service
+  get totalRecords() {
+    return this.tableGridService.getTotalRecords();
+  }
+
+  // Method to handle page changes
+  onPageChange(event: any) {
+    this.tableGridService.setCurrentPage(event.page);
+  }
+
+  // Optionally, you can change the page size
+  onPageSizeChange(pageSize: number) {
+    this.pageSize = pageSize;
+    this.tableGridService.setPageSize(pageSize);
+  }
 
 }

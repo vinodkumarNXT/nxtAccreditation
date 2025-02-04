@@ -91,6 +91,7 @@ SchoolBlogAndPostType : 'api/blog-type',
 
 SchoolNoticeBoard : 'api/noticeboard',
 
+SchoolAttendance : 'api/attendance',
 
 
 
