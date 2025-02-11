@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { SharableModule } from 'school-erp-public';
 
 @Component({
   selector: 'lib-blogsandpost',
-  imports: [],
+  imports: [SharableModule],
+  standalone: true,
   templateUrl: './blogsandpost.component.html',
-  styleUrl: './blogsandpost.component.css'
+  styleUrl: './blogsandpost.component.css',
 })
-export class BlogsandpostComponent {
-
-}
+export class BlogsandpostComponent {}

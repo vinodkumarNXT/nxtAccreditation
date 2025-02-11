@@ -291,7 +291,7 @@ export const routes: Routes = [
 
       {
         path: 'blogs-and-posts',
-        component: BlogsandpostComponent,
+        component: BlogPostComponent,
         data: {
           title: 'Blogs-And-Posts',
           breadcrumb: 'Blogs-And-Posts',

@@ -95,7 +95,7 @@ export class StudentAssignmentComponent {
 
   async deleteElement(val: any): Promise<void> {
     const id = val.id;
-    const endpoint = schoolErpEndpoint.SchoolEnrollment;
+    const endpoint = schoolErpEndpoint.SchoolstudentAssignment;
     this.loading = true; // Start the loading spinner
 
     // Show confirmation dialog
@@ -203,7 +203,7 @@ export class StudentAssignmentComponent {
       // Fetch the list data from the server using the forms service.
       // The specific endpoint for this data is provided as an argument.
       const listData = await this.formsService.getListData(
-        schoolErpEndpoint.SchoolEnrollment
+        schoolErpEndpoint.SchoolstudentAssignment
       );
 
       // Store the fetched data in the component's `listData` property.
